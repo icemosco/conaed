@@ -25,10 +25,11 @@ $('.btns_menu').click(function() {
 
 
 $('.phone_icon').click(function(){
-	var sizew=$( window ).width();
+	var sizew=$(window).width();
 	if(sizew <= 768){
 		$('.btns_call_mobile').animate({"top":"60px",'z-index':'1'}, "slow");
 	}
+
 });
 
 $('.ph1, .ph2').click(function(){
