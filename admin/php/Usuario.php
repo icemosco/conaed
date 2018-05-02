@@ -1,6 +1,4 @@
 <?php
-	//error_reporting(E_ALL);
-  //ini_set("display_errors", 1);
 	date_default_timezone_set('America/Mexico_City');
 	
 class Usuario extends DbConnect 
@@ -149,90 +147,49 @@ class Usuario extends DbConnect
 	   	
 	   	return $msg;
   }
-  
-  function insertamosOpcionesMenu($idUsr, $tipoUsuario){
-	  $sql = "SELECT menu FROM cat_tipousuario WHERE id = {$tipoUsuario}";
-	  $res  = $this->query($sql) or 
-	   			die("Error en query validacion usuario ". $this->errno());
-	  
-	  $regs = $res->num_rows;
-	  if($regs > 0)
-    {
-	     $data = $res->fetch_array(MYSQLI_ASSOC);
-	     $opciones = explode("|", $data['menu']);
-	     foreach($opciones as $key => $val){
-		     $sql = "INSERT INTO permisos_menu(id_usuario,modulo,a,b,m)
-		     				 VALUES ({$idUsr}, {$val}, 1, 1, 1)";
-		     $this->query($sql) or 
-	   			die("Error en query validacion usuario ". $this->errno());
-	     }
-    }
 
-  }
-  
-  function asociaUsuarioEmpresa($idEst, $idUsr){
-	  $sql = "INSERT INTO negocio_usuario(id_usuario,id_negocio)
-	  				VALUES($idUsr, $idEst)";
-	  $res  = $this->query($sql) or 
-	   			die("Error en query insertar negocio con  usuario ". $this->errno());
-  }
 
   // ============================	
   // LOGIN DEL USUARIO	
   // ============================
-  public function login()
+    public function login()
 	{ 
-		$msg  = array('error' => '','success' => '');
+		$error  = '';
 		
 	   //Verificamos si el usuario existe
-	   $sql = "SELECT u.*, n.*, p.codigo as id_pais, p.latitud, p.longitud, p.descripcion as nom_pais
-	   				 FROM usuario u
-	   				 INNER JOIN cat_pais p ON u.pais = p.codigo
-	   				 LEFT JOIN negocio_usuario n ON u.id = n.id_usuario
-	   				 WHERE u.usuario = '".$this->getUsuario()."'";
+	   $sql = "SELECT u.*
+	   			FROM usuario u
+	   			WHERE u.usuario = '".$this->getUsuario()."'";
+	   			
 	   $res  = $this->query($sql) or 
 	   			die("Error en query validacion usuario ". $this->errno());
 	   			
 	   $regs = $res->num_rows;
 	   if($regs == 0)
-     {
-	      $msg['error'] = "El usuario no existe";
-        return  $msg;
-     }
+       {
+	      $error = "El usuario no existe";
+          return  $error;
+       }
 
 	   //Si el usuario existe validamos otras cosas..  
 	   $fila = $res->fetch_array(MYSQLI_ASSOC);
-	   
-	   
-	   //Si está activo el usuario
-     if($fila["activo"] == 2)
-     {
-        $msg['error'] = "Su usuario se encuentra inactivo";
-        return  $msg;
-     }
-     if($fila["activo"] != 1)
-     {
-        $msg['error'] = "El usuario no está activo";
-        return  $msg;
-     }
-     
-     //si el usuario no tiene acceso via web
-     if($fila["tipo_acceso"] == 'movil')
-     {
-        $msg['error'] = "Usted solo tiene acceso vía movil";
-        return $msg;
-     }
-	   
+
+       if($fila["activo"] != 1)
+       {
+          $error = "El usuario no está activo";
+          return  $error;
+       }
+       
 	   //Si el password es correcto
-	   if(!password_verify($this->getPassword(),$fila['password']))
-		 {
-			  $msg['error'] = 'La contraseña es inválida';															
-			  return $msg;
-		 }
+	   if($this->getPassword() != $fila['password'])
+	   {
+		  $error = 'La contraseña es inválida';															
+		  return $error;
+	   }
 		 
-		 //Seteamos las variables de sesion			
-		 $this->setSesion($fila);
-  }
+	   //Seteamos las variables de sesion			
+	   $this->setSesion($fila);
+    }
   
   // ==================================	
   // SETEANDO VARIABLES DE SESSION LOGIN
@@ -240,27 +197,22 @@ class Usuario extends DbConnect
   function setSesion($inf)
   {
 	  
-	  $nom = $inf['nombre']." ".$inf['apellidos'];
+	  $nom = $inf['nombre']." ".$inf['apellido_pat']." ".$inf['apellido_mat'];
 	  //Si la imagen de perfil no se ha dado de alta
 	  //colocamos una por default
 	  if(empty($inf['img_perfil'])) $inf['img_perfil'] = "usuario_default.png";
 	  
 	  session_start();
 	  
-		$_SESSION['is_logged_in'] = 'true';   // nos indica
-		$_SESSION['id_usr']			  = $inf['id'];
-		$_SESSION['usrname'] 			= $inf['usuario'];
-		if(empty($inf['id_negocio'])) $inf['id_negocio'] = $inf['id'];
-		$_SESSION['id_negocio'] 	= $inf['id_negocio'];
+		$_SESSION['isLoggedIn']     = 'true';   // nos indica
+		$_SESSION['idUsr']			= $inf['id'];
+		$_SESSION['usrName'] 		= $inf['usuario'];
 		$_SESSION['nombreCompleto'] = $nom;
-		$_SESSION['tipo_usr'] 	  = $inf['id_tipousuario']; 
-		$_SESSION['tpo_acceso'] 	= $inf['tipo_acceso'];
-		$_SESSION['img_perfil'] 	= $inf['img_perfil'];
-		$_SESSION['id_pais'] 	    = $inf['id_pais'];
-		$_SESSION['latitudPais'] 	= $inf['latitud'];
-		$_SESSION['longitudPais'] = $inf['longitud'];
+		$_SESSION['tipoUsr'] 	    = $inf['id_tipousuario']; 
+		$_SESSION['imgPerfil'] 	    = $inf['img_perfil'];
+		$_SESSION['permisosMenu'] 	= $inf['permisos_menu'];
 		
-		header('location: ./perfil.php');
+		header('location: ../views/home.php');
   }
   
   // ==================================	
