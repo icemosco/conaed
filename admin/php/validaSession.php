@@ -5,7 +5,7 @@
 	//Si el usuario no se encuentra logueado lo sacamos de la sesion
 	if(!isset($_SESSION['isLoggedIn']) || $_SESSION['isLoggedIn'] != true ) {
 		
-    header ("Location: {$varUrl}/views/login.php");
+    header ("Location: ./views/login.php");
     exit;
 	}
 	

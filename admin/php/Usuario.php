@@ -102,8 +102,8 @@ class Usuario extends DbConnect
 		  							  id_tipousuario
 		  							, usuario
 		  							, nombre
-		  							, apellidos
-		  							, password
+		  							, apellido_pat
+		  							, apellido_mat
 		  							, tipo_acceso
 		  							, telefono
 		  							, pais
