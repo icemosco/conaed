@@ -1,4 +1,5 @@
-<?PHP
+<?php
+
 class DbConnect
 {
 	/**
@@ -6,35 +7,105 @@ class DbConnect
 	*
 	* @var string
 	*/
-	var $link;
+	public $link;
+
+	/**
+	* Holds the most recent connection.
+	*
+	* @var string
+	*/
+	public $recent_link = null;
 
 	/**
 	* Holds the contents of the most recent SQL query.
 	*
 	* @var string
 	*/
-	var $sql = '';
+	public $sql = '';
 
 	/**
 	* Holds the number of queries executed.
 	*
 	* @var integer
 	*/
-	var $query_count = 0;
+	public $query_count = 0;
 
 	/**
 	* The text of the most recent database error message.
 	*
 	* @var string
 	*/
-	var $error = '';
+	public $error = '';
 
+	/**
+	* The error number of the most recent database error message.
+	*
+	* @var integer
+	*/
+	public $errno = '';
+
+	/**
+	* Do we currently have a lock in place?
+	*
+	* @var boolean
+	*/
+	public $is_locked = false;
+
+	/**
+	* Show errors? If set to true, the error message/sql is displayed.
+	*
+	* @var boolean
+	*/
+	public $show_errors = false;
+	
 	/**
 	* The Database.
 	*
 	* @var string
 	*/
 	public $DB_DATABASE;
+	
+	/**
+	* Ip Database Server.
+	*
+	* @var string
+	*/
+	
+	public $DB_HOST;
+	
+	/**
+	* User The Database.
+	*
+	* @var string
+	*/
+	
+	public $DB_USERNAME;
+	
+	/**
+	* Password The Database.
+	*
+	* @var string
+	*/
+	
+	public $DB_PASSWORD;
+	
+	/**
+	* Puerto  Database.
+	*
+	* @var string
+	*/
+	
+	public $DB_PORT;
+	
+	
+
+	/**
+	* Log errors? If set to true, the error message/sql is logged.
+	*
+	* @var boolean
+	*/
+	public $log_errors = false;
+
 
 	/**
 	* The variable used to contain a singleton instance of the database connection.
@@ -43,9 +114,15 @@ class DbConnect
 	*/
 	static $instance;
 
+	/**
+	* The number of rows affected by the most recent query.
+	*
+	* @var string
+	*/
+	public $affected_rows;
+
 	public $insert_id;
-
-
+  
 
 	/**
 	* Constructor. Initializes a database connection and selects our database.
@@ -54,16 +131,40 @@ class DbConnect
 	* @param string $password	The password of the user to login to the database.
 	* @param string $database	The name of the database to which to connect.
 	*/
-	function __construct($nom_bd, $servidor, $usuario, $clavesec, $pais="mx",$bdport="3306") 
+	function __construct()
 	{
-	
-		 $this->DB_HOST     = $servidor;
-		 $this->DB_USERNAME = $usuario;
-		 $this->DB_PASSWORD = $clavesec;
-		 $this->DB_DATABASE = $nom_bd;
-		 $this->DB_PORT     = $bdport;
-		 
-		 $this->connect();
+	  
+	}
+
+	/**
+	* Singleton pattern to retrieve database connection.
+	*
+	* @return mixed	MySQL database connection
+	*/
+	function _get($property)
+	{
+		if(self::$instance == NULL)
+		{
+			self::$instance = $this->connect();
+		}
+
+		return self::$instance->$property;
+
+	}
+
+
+	/**
+	* Singleton pattern to retrieve database connection.
+	*
+	* @return mixed	MySQL database connection
+	*/
+	function Connection()
+	{
+		if(self::$instance == NULL)
+		{
+			self::$instance = $this->connect();
+		}
+		return self::$instance;
 	}
 
 
@@ -72,13 +173,18 @@ class DbConnect
 	*
 	*/
 	function connect()
-	{
-		self::$instance = new mysqli($this->DB_HOST, $this->DB_USERNAME, $this->DB_PASSWORD, $this->DB_DATABASE,$this->DB_PORT);
-
-		if (mysqli_connect_errno()) {
+	{ 
+	
+	     //echo "DAtos de conexion  $this->DB_HOST, $this->DB_USERNAME, $this->DB_PASSWORD, $this->DB_DATABASET";
+	     //die();
+	     
+		self::$instance = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+        
+		if (mysqli_connect_errno()){
 			$this->raise_error(printf("Connect failed: %s\n", mysqli_connect_error()));
-			die();
 		}
+		
+		self::$instance->set_charset(DB_CHARSET); 
 
 		return self::$instance;
 	}
@@ -94,24 +200,17 @@ class DbConnect
 	*/
 	function query($sql, $only_first = false)
 	{
-
-/*
-			self::$instance = $this->connect();
-
-if(self::$instance == NULL)
+		if(self::$instance == NULL)
 		{
 			self::$instance = $this->connect();
 		}
-*/
-
-  self::$instance->query("SET NAMES utf8");
 
 		$this->recent_link =& self::$instance;
 		$this->sql =& $sql;
 
 		if(!$result = self::$instance->query($sql))
 		{
-			$this->raise_error(printf("Connect failed [ {$sql} ]: %s\n", self::$instance->error));
+			$this->raise_error(printf("Falló el query: %s\n".$sql, self::$instance->error));
 		}
 
 		$this->affected_rows = self::$instance->affected_rows;
@@ -127,19 +226,6 @@ if(self::$instance == NULL)
 		return $result;
 	}
 
-
-	/**
-	* extrae los campos
-	*
-	* @return array
-	*/
-	 function fetch_fields($result){
-	   return $result->fetch_fields();
-	 }
-
-
-
-
 	/**
 	* Fetches a row from a query result and returns the values from that row as an array.
 	*
@@ -148,8 +234,7 @@ if(self::$instance == NULL)
 	*/
 	function fetch_array($result)
 	{
-		//return @mysql_fetch_assoc($result);
-		return self::$instance->fetch_array($result);
+		return @mysql_fetch_assoc($result);
 	}
 
 	/**
@@ -174,49 +259,6 @@ if(self::$instance == NULL)
 	}
 
 
-	/**
-	* Returns the number of queries executed.
-	*
-	* @param  none
-	* @return integer
-	*/
-	function num_queries()
-	{
-		return $this->query_count;
-	}
-
-	/**
-	* Lock database tables
-	*
-	* @param   array  Array of table => lock type
-	* @return  void
-	*/
-	function lock($tables)
-	{
-		if (is_array($tables) AND count($tables))
-		{
-			$sql = '';
-
-			foreach ($tables AS $name => $type)
-			{
-				$sql .= (!empty($sql) ? ', ' : '') . "$name $type";
-			}
-
-			$this->query("LOCK TABLES $sql");
-			$this->is_locked = true;
-		}
-	}
-
-	/**
-	* Unlock tables
-	*/
-	function unlock()
-	{
-		if ($this->is_locked)
-		{
-			$this->query("UNLOCK TABLES");
-		}
-	}
 
 	/**
 	* Returns the ID of the most recently inserted item in an auto_increment field
@@ -262,22 +304,6 @@ if(self::$instance == NULL)
 	}
 
 	/**
-	* Turns database error reporting on
-	*/
-	function show_errors()
-	{
-		$this->show_errors = true;
-	}
-
-	/**
-	* Turns database error reporting off
-	*/
-	function hide_errors()
-	{
-		$this->show_errors = false;
-	}
-
-	/**
 	* Closes our connection to MySQL.
 	*
 	* @param  none
@@ -301,59 +327,7 @@ if(self::$instance == NULL)
 		return $this->error;
 	}
 
-	/**
-	* Returns the MySQL error number.
-	*
-	* @param  none
-	* @return string
-	*/
-	function errno()
-	{
-		$this->errno = (is_null($this->recent_link)) ? 0 : self::$instance->errno ;
-		return $this->errno;
-	}
-
-	/**
-	* Gets the url/path of where we are when a MySQL error occurs.
-	*
-	* @access private
-	* @param  none
-	* @return string
-	*/
-	function _get_error_path()
-	{
-		if ($_SERVER['REQUEST_URI'])
-		{
-			$errorpath = $_SERVER['REQUEST_URI'];
-		}
-		else
-		{
-			if ($_SERVER['PATH_INFO'])
-			{
-				$errorpath = $_SERVER['PATH_INFO'];
-			}
-			else
-			{
-				$errorpath = $_SERVER['PHP_SELF'];
-			}
-
-			if ($_SERVER['QUERY_STRING'])
-			{
-				$errorpath .= '?' . $_SERVER['QUERY_STRING'];
-			}
-		}
-
-		if (($pos = strpos($errorpath, '?')) !== false)
-		{
-			$errorpath = urldecode(substr($errorpath, 0, $pos)) . substr($errorpath, $pos);
-		}
-		else
-		{
-			$errorpath = urldecode($errorpath);
-		}
-		return $_SERVER['HTTP_HOST'] . $errorpath;
-	}
-
+	
 	/**
 	* If there is a database error, the script will be stopped and an error message displayed.
 	*
@@ -384,21 +358,16 @@ if(self::$instance == NULL)
 		{
 			$message = "<!--\n\n$message\n\n-->";
 		}
-		else die("There seems to have been a slight problem with our database, porfavor trate despues nuevamente.<br /><br />\n$message");
+		else die("Parece que ha habido un pequeño problema con la base de datos, por favor intente de nuevo más tarde.<br /><br />\n$message");
 	}
 	
-	
+	//Funciones db_result 
 	function db_result($res,$row,$field) {       
-     $res->data_seek($row);
-     $ceva=$res->fetch_array();
-     $rasp=$ceva[$field]; 
-  return $rasp; 
-}
-	
-	
-	
-	
-	
+       $res->data_seek($row);
+       $ceva=$res->fetch_array();
+       $rasp=$ceva[$field]; 
+       return $rasp; 
+    }
 }
 
 ?>
