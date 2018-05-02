@@ -14,7 +14,13 @@
 <meta name="distribution" content="Local">
 <meta name="country" content="MX">
 <style>
-
+.respuesta_res{width: 100%;
+			 display: block;
+			 padding: 10px;
+			 font-size: 1em;
+			 text-align: center;
+			 outline: 1px solid fuchsia
+		 }
 </style>
 </head>
 <body>
