@@ -3,7 +3,7 @@
 
 <div class="wrapper_right">
 	PROGRAMAS ACREDITADOS
-	<img src="../img/programas.png" />
+	<img src="../img/programas.png" /> huevitos
 </div><!--main_wrapper-->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/main.js"></script>
