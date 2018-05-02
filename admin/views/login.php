@@ -14,13 +14,13 @@
 <meta name="distribution" content="Local">
 <meta name="country" content="MX">
 <style>
-.respuesta_res{width: 100%;
+/*.respuesta_res{width: 100%;
 			 display: block;
 			 padding: 10px;
 			 font-size: 1em;
 			 text-align: center;
 			 outline: 1px solid fuchsia
-		 }
+		 }*/
 </style>
 </head>
 <body>
@@ -34,7 +34,7 @@
 			<input type="password" name="contrasena" id="contrasena" class="" maxlength="8" required />
 			<a href="#" title="" class="">Reestablecer Contraseña</a>
 			<div class="restablecer">
-				<span class="txt">Porfavor introduce tu correo electrónico</span>
+				<span class="txt"><?=$_REQUEST['msg']?></span>
 				<a href="javascript:void(0)" class="env_res">Restablecer</a>
 				<div class="respuesta_res"></div>
 			</div>
