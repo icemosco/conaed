@@ -8,9 +8,9 @@
 	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
 	$regs      = $res->num_rows;
 	$rowsTable = '';
-    if($regs != 0)
+    if( $regs != 0 )
     {
-	   while($info = $res->fetch_array(MYSQLI_ASSOC))
+	   while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
 	   {
 		 	$rowsTable .= '<li>
 								<span class="num">'.$info['id_universidad'].'</span>
@@ -177,76 +177,6 @@
 		</div>
 		<ul class="programas">
 			<?php echo $rowsTable ?>
-			<!--<li>
-				<span class="num">1</span>
-				<span>Facultad de Derecho UNAM</span>
-				<a href="https://www.derecho.unam.mx/" target="_blank">https://www.derecho.unam.mx/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">2</span>
-				<span>Facultad de Estudios Superiores Acatlán UNAM</span>
-				<a href="http://www.acatlan.unam.mx/" target="_blank">http://www.acatlan.unam.mx/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">3</span>
-				<span>Universidad Panamericana</span>
-				<a href="http://www.up.edu.mx/es" target="_blank">http://www.up.edu.mx/es</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">4</span>
-				<span>Instituto Tecnológico y de Estudios Superiores de Monterrey, CEM</span>
-				<a href="http://www.itesm.mx/wps/wcm/connect/Campus/CEM/Estado+de+Mexico/" target="_blank">http://www.itesm.mx/wps/wcm/connect/Campus/CEM/Estado+de+Mexico/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">5</span>
-				<span>Universidad Iberoamericana</span>
-				<a href="http://www.ibero.mx/" target="_blank">http://www.ibero.mx/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">6</span>
-				<span>Universidad de Monterrey</span>
-				<a href="https://www.umm.edu.mx/" target="_blank">https://www.umm.edu.mx/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">7</span>
-				<span>Instituto de Estudios Superiores de Occidente</span>
-				<a href="hhttps://www.iteso.mx/" target="_blank">https://www.iteso.mx/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">8</span>
-				<span>Instituto Tecnológico y de Estudios Superiores de Monterrey, CCM</span>
-				<a href="https://tec.mx/es" target="_blank">https://tec.mx/es</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">9</span>
-				<span>Centro de Investigación y Docencia Económicas CIDE</span>
-				<a href="http://cide.edu/" target="_blank">http://cide.edu/</a>
-				<span></span>
-				
-			</li>
-			<li>
-				<span class="num">10</span>
-				<span>Universidad La Salle</span>
-				<a href="https://www.lasalle.mx/" target="_blank">https://www.lasalle.mx/</a>
-				<span></span>
-				
-			</li>-->
 		</ul>
 		<a href="" class="lista_c">ver lista completa</a>
 	</article>
