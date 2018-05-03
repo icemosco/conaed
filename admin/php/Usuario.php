@@ -23,26 +23,6 @@ class Usuario extends DbConnect
   */
   private $usrStatus;
   
-  /*
-  * @var string Nivel de accesos Usuario
-  * privilegios que tendra el usuario
-  * editar,eliminar,crear
-  */
-  private $accessUsr;
-
-  /*
-  * @var string  Escuela a la que pertenece
-  *  el usuario.
-  */
-  private $schoolUsr;
-  
-  /*
-  * @var string  si el usuario es
-  *  web o movil
-  */
-  public $tipoUsr;
-  
-  
   public function getUsuario() 
   {
      return $this->user;
@@ -73,10 +53,9 @@ class Usuario extends DbConnect
      $this->stUser = $estatus;        
   }
 
-	public function __construct()
-	{ 
-    parent::__construct();
-    
+  public function __construct()
+  { 
+    parent::__construct();  
   }
     	
   // =========================================	
@@ -127,8 +106,6 @@ class Usuario extends DbConnect
 		   			die("Error en query insertar usuario ". $this->errno());
 		   	
 		   	$idUsr = $this->insert_id();
-		   	
-		   	$this->insertamosOpcionesMenu($idUsr, $data['tipoUsuario']);
     }
     else{
 	    $con = "";

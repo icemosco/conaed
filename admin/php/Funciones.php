@@ -1,6 +1,6 @@
 <?php
 	
-class Funciones extends DbConnect 
+class Funciones
 {
 	//Generamos un password aleatorio
 	function randomPassword()
