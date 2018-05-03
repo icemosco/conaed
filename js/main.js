@@ -20,6 +20,11 @@ $('.btns_menu').click(function() {
 	$('.menu_p').animate({"right":"-400px"}, "slow");
 	
 });
+$('.btns_menu_footer').click(function() {
+	var id=$(this).attr('title');
+	$('html, body').animate({scrollTop: $("#"+id).offset().top}, 1000);
+	
+});
 
 
 
@@ -35,6 +40,45 @@ $('.phone_icon').click(function(){
 $('.ph1, .ph2').click(function(){
 	$('.btns_call_mobile').animate({"top":"0px",'z-index':'-1'}, "slow");
 	
+});
+
+
+
+$("#contact_form").bind("submit",function(){
+      var btn_envio = $("#btn_envio");
+       $.ajax({
+            type:$(this).attr("method"),
+            url:$(this).attr("action"),
+            data:$(this).serialize(),
+
+            beforeSend: function(){
+                btn_envio.val("Enviando"); // Para input de tipo button
+                btn_envio.attr("disabled","disabled");
+},
+            complete:function(data){
+                //Se ejecuta al termino de la petición
+                btn_envio.val("Enviar");
+                btn_envio.removeAttr("disabled");
+            },
+            success: function(data){
+                //Se ejecuta cuando termina la petición y esta ha sido correcta
+				$('.email_response').show();
+                $('.email_response').html(data);
+},
+            error: function(data){
+                // Se ejecuta si la peticón ha sido erronea
+                
+                alert("Problemas al tratar de enviar el formulario");
+            }
+        });
+
+        // Nos permite cancelar el envio del formulario
+        return false;
+    
+    });
+$(document).on('click','.close_contacto',function (e) {
+	$('.email_response').html('').hide();
+	$('.br1').val('');
 });
 
 	
