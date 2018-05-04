@@ -9,4 +9,6 @@
     define('DB_NAME','cms-conaed');
     define('DB_CHARSET','UTF8');
 
+    $folderSlider = "/htdocs/conaed/img/slider/";
+
 ?>
