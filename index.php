@@ -1,26 +1,8 @@
 <?php
 	include_once("./admin/php/config.php");
 	include_once("./admin/php/DbConnect.php");
-	
-	$oCnx      = new DbConnect();
-	
-	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad";
-	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
-	$regs      = $res->num_rows;
-	$rowsTable = '';
-    if( $regs != 0 )
-    {
-	   while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
-	   {
-		 	$rowsTable .= '<li>
-								<span class="num">'.$info['id_universidad'].'</span>
-								<span>'.$info['nombre_uni'].'</span>
-								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-								<span>'.$info['vigencia_ini'].' - '.$info['vigencia_fin'].'</span>								
-							</li>';					
-	   }
-	}
-	
+	include_once("./php/functions.php");
+
 ?>	
 <!doctype html>
 <html>
@@ -51,8 +33,8 @@
 	<div class="cont_header">
 	  <ul class="contact_icons">
 		<li><a href="javascript:void(0)" class="phone_icon" style="margin:0 10px 0 25px;"><img src="img/phone.png" /></a></li>
-		<li class="nmt"><a href="tel:5514.1700" class="phone1">(55) 5514.1700 /</a></li>
-		<li class="nmt"><a href="tel:5538880671" class="phone2">5538880671</a></li>
+		<li class="nmt"><a href="tel:5514.1700" class="phone1">(55) 5514.1700 /&nbsp;</a></li>
+		<li class="nmt"><a href="tel:5538880671" class="phone2">55.3888.0671</a></li>
 		<li><a href="javascript:void(0)" class="email_icon" style="margin:0 0px 0 25px;"><img src="img/email.png" /></a></li>
 		<li><a href="mailto:conaed@gmail.com" class="email">conaed@gmail.com</a></li>
 	  </ul>
@@ -68,8 +50,9 @@
 			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="btns_menu">Consejo conaed</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu">Temas y noticias</a></li>
+			<li><a href="javascript:void(0)" title="consejo" class="btns_menu">Consejo conaed</a></li>
+			
 			<li><a href="javascript:void(0)" title="referencias" class="btns_menu">Nuestras referencias <br />y Asociados</a></li>
 			
 			
@@ -82,10 +65,14 @@
 	</ul>
 </header>
 <section id="slider" class="">
+	<div class="screen_slider"></div>
 		<div class="logo_flot"><img src="img/logo_conaed_bco.png" /></div>
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide"><img src="img/slider/img_1.png"></div>
+			<div class="swiper-slide">
+				<div class="txt1"></div>
+				<div class="txt2"></div>
+				<img src="img/slider/img_1.png"></div>
 			<div class="swiper-slide"><img src="img/slider/img_2.png"></div>
 			<div class="swiper-slide"><img src="img/slider/img_3.png"></div>
 			<div class="swiper-slide"><img src="img/slider/img_4.png"></div>
@@ -123,17 +110,17 @@
 		<ul class="nums">
 			<li>
 				<span class="img n_ico1"></span>
-				<span id="n1" class="numbers">0</span>
+				<span id="n1" class="numbers oxygenbold">0</span>
 				<span class="titles">Programas Acreditados</span>
 			</li>
 			<li>
-				<span class="img n_ico2"></span>
-				<span id="n2" class="numbers">0</span>
+				<span class="img n_ico2 "></span>
+				<span id="n2" class="numbers oxygenbold">0</span>
 				<span class="titles">Evaluadores Especialistas</span>
 			</li>
 			<li>
 				<span class="img n_ico3"></span>
-				<span id="n3" class="numbers">0</span>
+				<span id="n3" class="numbers oxygenbold">0</span>
 				<span class="titles">Años de Experiencia</span>
 			</li>
 		</ul>
@@ -162,8 +149,8 @@
 </section><!--proceso de acreditacion-->
 <section id="descarga" class="bg2 np1">
 	<article>
-		<p class="txt-c">Sí desea iniciar con su proceso de Acreditación, lo invitamos a descargar nuestro formato de autoevaluación, siga los pasos según se muestra en el diagrama de flujo</p>
-		<a href="files/Instrumento de autoevaluación 2018.docx" class="descargas" title="Descargar archivo">DESCARGAR FORMATO</a>
+		<p class="txt-c oxygenlight">Sí desea iniciar con su proceso de Acreditación, lo invitamos a descargar nuestro formato de autoevaluación, siga los pasos según se muestra en el diagrama de flujo.</p>
+		<a href="files/instrumento_de autoevaluacion_2018.docx" class="descargas" title="Descargar archivo">DESCARGAR FORMATO</a>
 	</article>
 </section><!--descargas-->
 <section id="programas_acreditados" class="">
@@ -176,9 +163,10 @@
 			<span class="col3">Vigencia</span>
 		</div>
 		<ul class="programas">
-			<?php echo $rowsTable ?>
+			<?php echo programas() ?>
+
 		</ul>
-		<a href="" class="lista_c">ver lista completa</a>
+		<a href="programas-acreditados.php" class="lista_c">ver lista completa</a>
 	</article>
 </section><!--ntec-->
 	<section id="padron_evaluadores">
@@ -235,7 +223,7 @@
 
 						</ul>
 					</div>
-					<a href="" class="lista_c">ver lista completa</a>
+					<a href="padron-evaluadores.html" class="lista_c">ver lista completa</a>
 			</article>
 	</section><!--hogar-->
 <section id="temas">
@@ -259,7 +247,7 @@
 							</div>
 							<div class="redes"></div>
 					</div>
-					<div class="block_t block_t_r">
+					<div class="block_t block_t_r brleft">
 							<h4>Últimas noticias</h4>
 							<ul class="news">
 								<li>
@@ -293,7 +281,7 @@
 		<div class="blocks_cont">
 			<ul class="btns_consejo">
 				<li>
-					<a href="javascript:void(0)" alt="">Lic. Felipe ibañez Mariel</a>
+					<a href="javascript:void(0)" class="active_consejo" alt="">Lic. Felipe ibañez Mariel</a>
 					<div class="profile_mobile">
 						<div class="img_c">
 								<img src="img/consejo/felipe_ibanez.png" alt="" />
@@ -315,6 +303,9 @@
 				<div class="img_c"><img src="img/consejo/felipe_ibanez.png" alt="" /></div>
 
 				<div class="resena">
+					<span class="oxygenbold fts1">FELIPE IBAÑEZ MARIEL</span>
+					<span class="clr_rose">PRESIDENTE</span>
+
 					<p>Egresado de la Escuela Libre de Derecho en 1978. Cursó Estudios de Postgrado con Especialidad en Derecho  Económico y Corporativo, así como Amparo y Derecho Penal en la Universidad Panamericana.</p>
 							<p>Miembro de la Barra Mexicana, Colegio de Abogados, A.C desde 1986.</p>
 							<p>Presidente del Consejo para la Acreditación de la Enseñanza del Derecho, A.C.</p>
@@ -444,15 +435,16 @@ solicitud</p>
 			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de acreditación de los programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas acreditados</a></li>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de evaluadores copaes / conaed</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo conaed</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y noticias</a></li>
+			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo conaed</a></li>
+			
 			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras referencias y Asociados</a></li>
 			
 			
 			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contáctanos</a></li>
 		</ul>
 		</div>
-		
+		<div class="rights">CONAED, 2018. Todos los Derechos Reservados</div>
 
 	</footer>
 </div><!--main_wrapper-->

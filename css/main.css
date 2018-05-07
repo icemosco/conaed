@@ -10,9 +10,9 @@ a{text-decoration:none;}
 ul,ol{list-style: none; padding:0; margin:0;}
 h3,h4,h5{width:90%;margin:5%;font-size:2em; text-align:center;}
 header{background: #9a4b86; position:fixed;top:0; left:0;height:90px;max-height:90px;color:#FFF;width:100%;max-width:100%;z-index:5;}
-header span{width:100%;display: block; font-size:0.8em;position:absolute;z-index:;bottom:5%;left:2%;}
+header span{width:100%;display: block; font-size:0.8em;position:absolute;z-index:;bottom:5%;left:2%;padding-left:30px;}
 .cont_header{width:100%;background:#3a437e;color:#FFF;height:45px;max-height:45px;overflow: hidden;position:relative;padding:10px 0;-webkit-box-shadow: 2px 10px 18px -10px rgba(0,0,0,0.69);-moz-box-shadow: 2px 10px 18px -10px rgba(0,0,0,0.69);box-shadow: 2px 10px 18px -10px rgba(0,0,0,0.69);}
-.cont_header ul.contact_icons{float:left;width:100%;align-items: center;display:flex;}
+.cont_header ul.contact_icons{float:left;width:100%;align-items: center;display:flex;margin-top:10px;padding-left:30px;}
 .cont_header ul.contact_icons li{display:inline-block;}
 .cont_header ul.contact_icons li a{text-decoration: none;color:#FFF;font-size:1em;display:block;}
 .cont_header ul.contact_icons li:last-child{margin-left:0%; padding-left:15px;}
@@ -20,10 +20,10 @@ header span{width:100%;display: block; font-size:0.8em;position:absolute;z-index
 .main_wrapper{position:relative;}
 .cont_header a.btn_menu.closed{background-image:url(../img/burguer.png); background-repeat: no-repeat; background-size:18% 40%; background-position:7px 12px; }
 .cont_header a.btn_menu.opened{background-image:url(../img/cross.png); background-repeat: no-repeat; background-size: 17% 61%;background-position: 8px 8px;padding-left:33px;}
-header nav{width:400px;overflow:hidden;background:#3a437e;position:absolute;right:-400px;z-index:3;display:block;padding:50px 0 50px;}
+header nav{width:400px;overflow:hidden;background:#3a437e;position:absolute;right:-400px;z-index:3;display:block;padding:50px 0 50px;height:580px;}
 header nav ul{width:100%;} 
-header nav ul li{float:left;width:80%;padding-right:10px;}
-header nav ul li a.btns_menu{display:block; text-decoration:none;width:100%;padding:10px;text-align: right;color:#FFF;text-transform: uppercase; font-size:1.2em;}
+header nav ul li{float:left;width:80%;padding-right:10px;margin-bottom:15px;}
+header nav ul li a.btns_menu{display:block; text-decoration:none;width:100%;padding:10px;text-align: right;color:#FFF;text-transform: uppercase; font-size:1.2em;font-family:oxygenlight;}
 header nav ul li a.btns_menu:hover, .selected_c{background:#9a4b86;}
 
 .phone_icon{width:25px;height:25px;}
@@ -31,20 +31,21 @@ header nav ul li a.btns_menu:hover, .selected_c{background:#9a4b86;}
 .email_icon{width:30px;height:20px;}
 .email_icon img{width:100%; height:100%;}
 section{width:100%; position:relative;padding:90px 0 30px 0;overflow:hidden;}
-.logo_flot{position:absolute; top:15%; left:2%; width:200px; height:auto;z-index:3;}
+.logo_flot{position:absolute; top:15%; left:4%; width:200px; height:auto;z-index:3;}
 .logo_flot img{width:100%;height:100%;}
 article{width:90%;margin:0 auto;padding:0 3%;}
 article h2{width:100%;text-align:center;font-size:2.5em;color:#49519b;}
 article .blocks_cont{width:100%; overflow:hidden;display: flex;
   justify-content: center;/*align-items: center;*/}
 article .blocks_cont .block{width:45%;padding:2%; display:inline-block; }
-article .blocks_cont .block p{margin:2% 0;text-align: justify;}
+article .blocks_cont .block p{margin:2% 0;text-align: justify;line-height:1.4em;}
 article .blocks_cont .block span.icon{width:80px; height:80px; margin:0 auto; display:block; 
  margin-bottom:5%;}
 article .blocks_cont .block_t{width:70%;padding:2%; display:inline-block; ;overflow:hidden;}
 article .blocks_cont .block_t .img_t{width:50%;float:left;margin-top:3%;max-width:50%;}
 article .blocks_cont .block_t .img_t img{width:100%; height:100%;}
-article .blocks_cont .block_t p{max-width:43%; float:left;padding:0 3%;margin:3% 0 0px; }
+article .blocks_cont .block_t p{max-width:43%; float:left;padding:0 3%;margin:3% 0 0px;line-height: 1.4em; text-align:justify;}
+.brleft{border-left:1px solid #3a4181;}
 article .blocks_cont .block_t  h3{width:100%; margin:0 0 2% 0; color:#49519b;text-align: left;}
 .block_t_r{width:25%!important;float:left;}
 article .blocks_cont .block_t span.sub_{color:#9a4b86;float:left;width:100%;}
@@ -62,10 +63,14 @@ article .blocks_cont .block_t .redes_m a{float:left; width:20px; height:20px; }
 article .blocks_cont ul.btns_consejo{width: 30%;display: inline-block;margin-right:5%;}
 article .blocks_cont ul.btns_consejo li{width:100%;float:left;margin-bottom:5%;}
 article .blocks_cont ul.btns_consejo li a{display:block; padding:20px 10px;text-align: center;background:#3a437e;color:#FFF;text-transform:uppercase;}
+article .blocks_cont ul.btns_consejo li a.active_consejo{background:#9b4987;}
 article .blocks_cont .profile{width:70%; display: flex;}
 article .blocks_cont .profile .img_c{width:50%; display:inline-block;margin-right:3%;}
 article .blocks_cont .profile .img_c img{width: 100%;height:100%;}
 article .blocks_cont .profile .resena{width:50%; display:inline-block;}
+article .blocks_cont .profile .resena span{width:100%;display:block;}
+article .blocks_cont .profile .resena p{line-height: 1.4em;}
+
 article ul.nums{width:100%;overflow:hidden;display:flex;align-items: center;}
 article ul.nums li{width:30%;padding:3%;display: inline-block;}
 article ul.nums li span.img{width:120px; height:120px;display:block; margin:0 auto;}
@@ -98,12 +103,12 @@ header ul.btns_call_mobile{display:none;}
 #contacto{-webkit-box-shadow: 2px 10px 18px -10px rgba(0,0,0,0.69);-moz-box-shadow: 2px 10px 18px -10px rgba(0,0,0,0.69);box-shadow: 2px 10px 18px -10px rgba(0,0,0,0.69);}
 .pant_2{width:100%; height:100%; position:absolute;background:#3a4181;opacity:0.97;z-index:-1;}
 .nopadding1{padding:0!important;}
-
+.txt-c{width:65%; margin:0 auto;text-align: justify;display:block;margin-bottom:20px;color:#434343;}
 
 /***********************/
 /****listado de programas******/
 article .row_titulo{width:99.5%; display:block; overflow:hidden; height:auto; padding:10px 0 0 10px;background:#e0e0ec;}
-article .row_titulo span{float:left;width:33%; max-width:33%;text-align:center;font-size:1.2em;padding:10px 0;}
+article .row_titulo span{float:left;width:33%; max-width:33%;text-align:left;font-size:1.2em;padding:10px 0;}
 article .row_titulo span:before{content: url(../img/arrow_down.png);}
 article ul.programas{display:block; width:100%; }
 article ul.programas li{width:100%; display:flex;align-items: center;}
@@ -139,14 +144,14 @@ article .cont_names ul.padron li:nth-child(even){background:#e7e9ff}
 #contacto p{width:35%;display:block;margin-left:5%;color:#FFF;text-align: justify;}
 
 .nwlist{width:46%;display:inline-block;margin-right:14px;}
-
+.clr_rose{color:#9b4987;}
 
 ul.logos_reel{width:100%; height:auto; display:block;}
 ul.logos_reel li{width:23%; margin-right:10px; display:inline-block;text-align: center;}
 
-
-
-
+.txt1{width:50%; display:block;font-family:oxygenlight;font-size}
+.fts1{font-size:21px;}
+#padron_evaluadores{padding-top:0!important;}
 
 
 footer{width:100%; position:relative;padding:90px 0 30px 0;overflow:hidden;}
@@ -157,15 +162,14 @@ footer .left_f .logo_bco img{width:100%; height:auto;}
 footer .left_f .adress{width:100%; display:block;margin:10% 0 0 25%;}
 footer .left_f .adress span.ico{display:inline-block;width:30px; height:30px;margin-right:20px;}
 footer .left_f .adress span.text{display:inline-block;color:#FFF;width:250px;font-size:1em;}
-footer .right_f{width:30%; max-width:30%;float:left;}
+footer .right_f{width:30%; max-width:30%;float:right;}
 footer .right_f ul{width:80%; margin-top:25%; display:block;}
 footer .right_f ul li{width:100%; display:block;padding:5px 0;}
 footer .right_f ul li a{color:#FFF; font-family:oxygenlight;font-size:1em;}
+footer .rights{width:100%; height:auto; text-align: center;float:left; margin:2% 0; color:#FFF; font-family: oxygenlight;font-size:14px;}
 .email_response{width:100%; height:100%; background:#000;opacity:0.9;position:absolute;color:#FFF; font-size:1.5em;display:none;}
-
-
-
-
+#slider{padding-bottom:0;}
+.screen_slider{position:absolute;width:100%; height:90%; background:#000;z-index:2;opacity:0.6;}
 
 
 

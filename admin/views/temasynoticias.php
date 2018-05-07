@@ -1,6 +1,4 @@
 <?php include_once('./header.php') ?>
-
-
 <div class="wrapper_right">
 	TEMAS Y NOTICIAS
 </div><!--main_wrapper-->

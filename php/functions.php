@@ -1,10 +1,31 @@
 <?php
-// Conectando, seleccionando la base de datos
-$link = mysql_connect('localhost', 'conaed_admin', 'caludia0Peniche2018')
-    or die('No se pudo conectar: ' . mysql_error());
-echo 'Connected successfully';
-mysql_select_db('cms-conaed') or die('No se pudo seleccionar la base de datos');
 
+
+function programas(){
+
+	$oCnx      = new DbConnect();
+	
+	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad LIMIT 10";
+	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
+	$regs      = $res->num_rows;
+	$rowsTable = '';
+    if( $regs != 0 )
+    {
+	   while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
+	   {
+		 	$rowsTable .= '<li>
+								<span class="num">'.$info['id_universidad'].'</span>
+
+								<span>'.$info['nombre_uni'].'</span>
+								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+								<span>'.$info['vigencia_ini'].' - '.$info['vigencia_fin'].'</span>								
+							</li>';					
+	   }
+
+	}
+	echo $rowsTable;
+	
+}
 
 
 ?>

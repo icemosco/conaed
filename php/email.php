@@ -8,7 +8,7 @@ $telefono_m = strip_tags($_POST['telefono_movil']);
 $empresa = strip_tags($_POST['empresa']);
 $asunto_int = strip_tags($_POST['asunto']);
 
-$email_destino="icemosco@gmail.com";
+$email_destino="conaed@gmail.com";
 if(isset($_POST['g-recaptcha-response'])){
         $captcha=$_POST['g-recaptcha-response'];
         
@@ -27,7 +27,7 @@ if(isset($_POST['g-recaptcha-response'])){
 
 //ini_set("SMTP","mail.google.com");
 //ini_set("smtp_port",25);
-ini_set("sendmail_from","icemosco@gmail.com");
+ini_set("sendmail_from","conaed@gmail.com");
 $asunto = "Correo enviado desde sito web CONAED";
 $para = $email_destino; 
    //Cuerpo
