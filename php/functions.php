@@ -5,7 +5,7 @@ function programas(){
 
 	$oCnx      = new DbConnect();
 	
-	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad LIMIT 10";
+	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad";
 	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
 	$regs      = $res->num_rows;
 	$rowsTable = '';
