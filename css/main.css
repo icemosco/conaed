@@ -140,7 +140,7 @@ article .cont_names ul.padron li:nth-child(even){background:#e7e9ff}
 .form_cont input{width:95%; height:30px;font-size:1.2em; background: transparent;
     border: none; border-bottom:1px solid #FFF;margin-bottom:15px;color:#FFF; font-size:1.2em;}
 .form_cont input::placeholder{color:#FFF; font-size:1.2em;font-family:oxygenlight;}
-.form_cont input[type="submit"].btn_enviar_m{float:right;padding:10px 20px;text-align: center; background:#3a4181;color:#FFF;width:20%; border-bottom: none!important}
+.form_cont input[type="submit"].btn_enviar_m{float:right;padding:5px 20px;text-align: center; background:#3a4181;color:#FFF;width:20%; border-bottom: none!important}
 #contacto p{width:35%;display:block;margin-left:5%;color:#FFF;text-align: justify;margin-top:5%;}
 
 .nwlist{width:46%;display:inline-block;margin-right:14px;}
