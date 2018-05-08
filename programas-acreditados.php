@@ -81,7 +81,7 @@ include_once("./php/functions.php");
 			<span class="col3">Vigencia</span>
 		</div>
 		<ul class="programas">
-			<?php echo programas() ?>
+			<?php echo programas(100) ?>
 
 		</ul>
 		
