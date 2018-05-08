@@ -35,7 +35,7 @@ include_once("./php/functions.php");
 	  <a href="javascript:void(0)" class="btn_menu closed">Menú</a>
 
 	 </div><!--cont_header-->
-	  <span>Consejo para la Acreditación de la Enseñanza del derecho A.C</span>
+	  <span>Consejo para la Acreditación de la Enseñanza del Derecho A.C</span>
 <nav class="menu_p">
 		<ul>
 		  <li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
@@ -62,11 +62,11 @@ include_once("./php/functions.php");
 		<div class="screen_slider"></div>
 		<img src="img/back_programas.png" />
 	</div>
-	<span class="header_title">Programas Acreditados</span>
+	<span class="header_title oxygenlight">Programas Acreditados</span>
 </section>
 	<section id="programas_acreditados" class="">
 		<div class="menu_int_cont">
-			<a href="http://www.conaed.org.mx" class="clr_rose back">Regresar</a>
+			<a href="http://www.conaed.org.mx#programas_acreditados" class="clr_rose back">Regresar</a>
 			<ul class="update">
 				<li class="">última actualización</li>
 				<li class="clr_rose">48 resultados</li>
@@ -94,11 +94,12 @@ include_once("./php/functions.php");
 
 <section id="contacto" class="nopadding1">
 	<div class="pant_1"></div>
-		<div class="email_response"></div>
+		<div class="email_response">
+
+		</div>
 			<article>
-			<p>Si desea recibir información a cerca de los servicios del CONAED, compártanos 
-los siguientes datos y en breve nos comunicarémos con usted para atender su 
-solicitud</p>
+			<p class="oxygenlight">Si desea recibir información acerca de los servicios del CONAED, compártanos los siguientes datos y en breve nos comunicarémos con usted para atender su 
+solicitud.</p>
 					
 					
 					<div class="form_cont">
@@ -117,11 +118,11 @@ solicitud</p>
 								</li>
 								<li class="nwlist">
 									<!--<label>Teléfono:</label>-->
-									<input type="number" class="br1" name="telefono_fijo" placeholder="Teléfono fijo" maxlength="10">
+									<input type="text" class="br1" name="telefono_fijo" placeholder="Teléfono fijo" maxlength="10">
 								</li>
 								<li class="nwlist">
 									
-									<input type="number" class="br1" name="telefono_movil" required placeholder="Teléfono celular*" maxlength="10">
+									<input type="text" class="br1" name="telefono_movil" required placeholder="Teléfono celular*" maxlength="10">
 									
 								</li>
 								<li>*Campos obligatorios</li>
@@ -135,16 +136,13 @@ solicitud</p>
 								<li>
 										<input type="text" class="br1" name="asunto" required placeholder="Asunto*" maxlength="200">
 								</li>
-								<!--<li class="" style="opacity:0;">
-									
-									<input type="text" class="br1" name="" placeholder=" ">
-								</li>-->
+								
 								<li class="">
 									<input type="hidden" name="mensaje" value="0" />
 							<div class="g-recaptcha" style="margin:3% 0;" data-sitekey="6LcU61YUAAAAAEGmBx43bOsX1NAI3dUR7kpXr5yy" required></div>
 								</li>
 								
-								<li> <input type="submit" value="Enviar" class="btn_enviar_m" id="btn_envio" ></li>
+								<li> <input type="submit" value="ENVIAR" class="btn_enviar_m" id="btn_envio" ></li>
 							</ul>
 							
 							
@@ -178,22 +176,22 @@ solicitud</p>
 				
 			</div>
 			<div class="adress mtop_adr">
-				<span class="ico" style="height:20px"><img src="img/email.png" /></span>
+				<span class="ico" style="height:15px"><img src="img/email.png" /></span>
 				<a href="mailto:conaed@gmail.com" class="phone_f oxygenlight">conaed@gmail.com</a>
 			</div>
 		</div>
 		<div class="right_f">
 			<ul>
 			
-			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu_footer">Quienes somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de acreditación de los programas</a></li>
-			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas acreditados</a></li>
-			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de evaluadores copaes / conaed</a></li>
-			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y noticias</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo conaed</a></li>
+			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
+			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
+			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
+			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
+			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>
+			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo CONAED</a></li>
 			
-			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras referencias y Asociados</a></li>
-			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contáctanos</a></li>
+			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras Referencias y Asociados</a></li>
+			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contacto</a></li>
 		</ul>
 		</div>
 		<div class="rights">CONAED, 2018. Todos los Derechos Reservados</div>
