@@ -1,5 +1,5 @@
 <?php 
-	/*include_once('./header.php'); 
+	include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 
 	//Guardado / Edicion
@@ -13,7 +13,7 @@
 								, $folderSlider
 								, $_FILES['imagenSlider'] );
 		}		
-	}*/
+	}
 	
 ?>
 
@@ -32,7 +32,7 @@
 	</div><!--forms_cont-->
 	<style>
 		.save_slider{width:100%; padding:5px 0;}
-		.save_slider {
+		.save_slider {}
 	</style>
 	<div class="save_slider">
 		
@@ -42,9 +42,9 @@
 </div><!--main_wrapper-->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/main.js"></script>
+<script src="../js/jquery-validate.min.js"></script>
 <script>
-
-
+	
 </script>
 </body>
 

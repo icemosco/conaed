@@ -12,7 +12,7 @@
 	   while($info = $res->fetch_array(MYSQLI_ASSOC))
 	   {
 		 	$itemsMenu .= '<li>
-		 					<a href="'.$info['url'].'" class="btns_menu" rel="slider">
+		 					<a href="'.$info['url'].'" class="btns_menu" rel="'.$info['relacion'].'">
 		 						<span class="'.$info['icono'].'"></span>
 		 						<span>'.$info['descripcion'].'</span>
 		 					</a>

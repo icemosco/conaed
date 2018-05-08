@@ -28,14 +28,15 @@ include_once("../php/Modelo.php");
 					<div class="sub_text_cont">
 						<span class="">Titulo (100 caracteres máx)</span>
 						<span class="conteo_char">[CARCTITULO] caracteres</span>
-						<textarea name="titulo[]" id="titulo" class="infoSlide" maxlength="100" required>[TITULO]</textarea>
+						<textarea name="titulo[]" id="titulo" class="infoSlide" maxlength="100" data-required="true">[TITULO]</textarea>
 					</div>
-
+					<div id="age-description"></div>
 					<div class="sub_text_cont">
 						<span class="">Subtitulo (225 caracteres máx)</span>
 						<span class="conteo_char">[CARCSUBTITULO] caracteres</span>
-						<textarea name="subtitulo[]" id="subtitulo" class="infoSlide" maxlength="225" required>[SUBTITULO]</textarea>
+						<textarea name="subtitulo[]" id="subtitulo" class="infoSlide" maxlength="225" data-required="true">[SUBTITULO]</textarea>
 					</div>
+					<div id="age-description"></div>
 				</div>
 				<input type="hidden" name="idSlide[]" id="idSlide"  value="[IDSLIDE]"/> 	
 			</div><!--slider_fill-->';
@@ -84,8 +85,9 @@ include_once("../php/Modelo.php");
 							, 'tmp_name' => $fileImgSlide['tmp_name'][$id]
 							, 'error' =>  $fileImgSlide['error'][$id]
 							, 'size' =>$fileImgSlide['size'][$id]);	
-
-			$msgArch = $oFun->guardarArchivos($folderSlider, $infoImg);
+			$newSizeW = 1366;
+			$newSizeH = 620;
+			$msgArch = $oFun->guardarArchivos($folderSlider, $infoImg, $newSizeW, $newSizeH );
 
 			if($msgArch == "OK"){ 
 				$nomImgSlide  = $oFun->getnameArch();}

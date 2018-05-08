@@ -44,10 +44,35 @@ class Funciones
 	    $ext = strtolower($ext);
 	    return $ext;
   	} 
+  	
+  	
+  	function redimensionar_imagen($nombreimg, $extension, $rutaimg, $xmax, $ymax){  
+      
+      	$extension = strtolower($extension);
+      
+        if($extension == "jpg" || $extension == "jpeg")  
+            $imagen = imagecreatefromjpeg($rutaimg);  
+        elseif($extension == "png")  
+            $imagen = imagecreatefrompng($rutaimg);  
+        elseif($extension == "gif")  
+            $imagen = imagecreatefromgif($rutaimg);  
+        
+        $x = imagesx($imagen);  
+	    $y = imagesy($imagen);  
+        
+         //redimensionamos con el ancho y largo proporcionado
+	    $img2 = imagecreatetruecolor($nuevax, $nuevay);
+	    imagecopyresized($img2, $imagen, 0, 0, 0, 0, $xmax, $ymax, $x, $y);   
+        
+        imagejpeg($img2, $rutaimg);
+
+        return $img2;   
+    }
+  	
 	
 	
 	//guarda los archivos en la carpeta indicada
-	function guardarArchivos($carpeta, $infoFile)
+	function guardarArchivos( $carpeta, $infoFile, $newSizeW = "", $newSizeH = "" )
 	{
 		//verificamos si no hay error de tamaño en el archivo
 		if($infoFile["error"] == 2)
@@ -60,18 +85,21 @@ class Funciones
 		{
 			  return "error";
 		}
-				
 		$ext = $this->extensionArch($infoFile["name"]);
 	    $tmp_name = $infoFile["tmp_name"];
+	    
 		//generamos un nombre nuevo
-		$date = date_create();
+		$date 	  = date_create();
 	    $archivo  = date_timestamp_get($date).rand(1,3000).".".$ext;
 			
 		$this->setnameArch($archivo);
-	    $movido = move_uploaded_file($tmp_name, "$carpeta/$archivo");
+	    $movido = move_uploaded_file($tmp_name, $carpeta.$archivo);
 	
 	    if(!$movido) return "error";
-		   	
+	    
+	    if(!empty($newSizeW) && !empty($newSizeH)){
+	    	echo $this->redimensionar_imagen($archivo, $ext, $carpeta.$archivo, $newSizeW, $newSizeH);
+	    }   	
 			
 	 	  return "OK";
 	}
