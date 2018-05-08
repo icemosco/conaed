@@ -1,30 +1,7 @@
 <?php
 include_once("./admin/php/config.php");
-include_once("./admin/php/DbConnect.php");
-
-	
-$oCnx      = new DbConnect();
-	
-	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad LIMIT 10";
-	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
-	$regs      = $res->num_rows;
-	$rowsTable = '';
-	$contAcreditados = 1;
-    if( $regs != 0 )
-    {
-	   while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
-	   {
-		 	$rowsTable .= '<li>
-								<span class="num">'.$contAcreditados.'</span>
-
-								<span>'.$info['nombre_uni'].'</span>
-								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-								<span>'.$info['vigencia_ini'].' - '.$info['vigencia_fin'].'</span>								
-							</li>';					
-			$contAcreditados++;				
-	   }
-
-	}
+include_once("./admin/php/DbConnect.php");	
+include_once("./php/functions.php")
 	
 ?>
 <!doctype html>
@@ -198,7 +175,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 			<span class="col3">Vigencia</span>
 		</div>
 		<ul class="programas">
-			<?php echo $rowsTable ?>
+			<?php echo programas(10) ?>
 
 		</ul>
 		<a href="programas-acreditados.php" class="lista_c">ver lista completa</a>
