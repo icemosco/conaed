@@ -201,13 +201,8 @@ solicitud.</p>
 </div><!--bg_on-->
 </body>
 <script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/animate_numbers.js"></script>
 <script src="js/main.js"></script>
-<script src="js/swiper.min.js"></script>
-<!--<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBS1xV-Sum8FnUGvI4YVjcupvxiZHRPJAg" async defer type="text/javascript"></script>-->
 
-
-<!--<script src="js/map.js"></script>-->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
 <script>
