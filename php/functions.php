@@ -1,11 +1,12 @@
 <?php
+function programas($limite){
+	if(!empty $limite){
+		$extra='LIMIT'.$limite;
 
-
-function programas(){
+	}
 
 	$oCnx      = new DbConnect();
-	
-	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad";
+	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad ".$extra;
 	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
 	$regs      = $res->num_rows;
 	$rowsTable = '';
