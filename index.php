@@ -362,10 +362,10 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
   		
   	</style>
   		<ul class="logos_reel">
-  			<li><img src="img/logo_1.png"></li>
-  			<li><img src="img/logo_2.png"></li>
-  			<li><img src="img/logo_3.png"></li>
-  			<li><img src="img/logo_4.png"></li>
+  			<li><img src="img/barra.jpg"></li>
+  			<li><img src="img/colegio-abogados.jpg"></li>
+  			<li><img src="img/copaes.jpg"></li>
+  			<li><img src="img/escuela.jpg"></li>
   		</ul>
 
 	</article>
