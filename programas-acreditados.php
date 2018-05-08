@@ -25,7 +25,8 @@ include_once("./php/functions.php");
 <body>
 <header>
 	<div class="cont_header">
-	  <ul class="contact_icons">
+		<div class="logo_int"><img src="img/logo_conaed_bco.png" /></div>
+	  <ul class="contact_icons" style="width:auto;">
 		<li><a href="javascript:void(0)" class="phone_icon" style="margin:0 10px 0 25px;"><img src="img/phone.png" /></a></li>
 		<li class="nmt"><a href="tel:5514.1700" class="phone1">(55) 5514.1700 /&nbsp;</a></li>
 		<li class="nmt"><a href="tel:5538880671" class="phone2">55.3888.0671</a></li>
@@ -38,15 +39,15 @@ include_once("./php/functions.php");
 	  <span>Consejo para la Acreditación de la Enseñanza del Derecho A.C</span>
 <nav class="menu_p">
 		<ul>
-		  <li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
-		  <li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
-			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
-			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
-			<li><a href="javascript:void(0)" title="temas" class="btns_menu">Temas y noticias</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="btns_menu">Consejo conaed</a></li>
+		  <li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
+		  <li><a href="http://www.conaed.org.mx#proceso_de_acreditacion" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
+			<li><a href="jhttp://www.conaed.org.mx#quienes_somos" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
+			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
+			<li><a href="http://www.conaed.org.mx#padron_evaluadores" title="temas" class="btns_menu">Temas y noticias</a></li>
+			<li><a href="http://www.conaed.org.mx#consejo" title="consejo" class="btns_menu">Consejo conaed</a></li>
 			
-			<li><a href="javascript:void(0)" title="referencias" class="btns_menu">Nuestras referencias <br />y Asociados</a></li>
-			<li><a href="javascript:void(0)" title="contacto" class="btns_menu">Contáctanos</a></li>
+			<li><a href="http://www.conaed.org.mx#referencias" title="referencias" class="btns_menu">Nuestras referencias <br />y Asociados</a></li>
+			<li><a href="http://www.conaed.org.mx#contacto" title="contacto" class="btns_menu">Contáctanos</a></li>
 		</ul>
 	</nav>
 	<ul class="btns_call_mobile">
@@ -62,14 +63,14 @@ include_once("./php/functions.php");
 		<div class="screen_slider"></div>
 		<img src="img/back_programas.png" />
 	</div>
-	<span class="header_title oxygenlight">Programas Acreditados</span>
+	<span class="header_title oxygenlight" style="left:32%">Programas Acreditados</span>
 </section>
 	<section id="programas_acreditados" class="">
 		<div class="menu_int_cont">
 			<a href="http://www.conaed.org.mx#programas_acreditados" class="clr_rose back">Regresar</a>
-			<ul class="update">
-				<li class="">última actualización</li>
-				<li class="clr_rose"><?php echo programas(0, true); ?> resultados</li>
+			<ul class="update mr5">
+				<li class="calendar ">última actualización 02 de Mayo de 2018</li>
+				<li class="clr_rose numreg_total"><?php echo programas(0, true); ?> resultados</li>
 			</ul>
 		</div>
 	<article>

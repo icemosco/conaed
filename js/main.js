@@ -23,8 +23,8 @@ $('.btns_menu').click(function() {
 });
 
 $('.btns_menu_footer').click(function() {
-	var id=$(this).attr('title');
-	$('html, body').animate({scrollTop: $("#"+id).offset().top}, 1000);
+	var id_2=$(this).attr('title');
+	$('html, body').animate({scrollTop: $("#"+id_2).offset().top}, 1000);
 	
 });
 

@@ -54,7 +54,7 @@ include_once("./php/functions.php")
 		<ul>
 			
 			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación<br />de los programas</a></li>
+			<li><a href="javascript:void(0)" title="proceso_de_acreditacion" class="btns_menu">Proceso de acreditación<br />de los programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores<br />copaes / conaed</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu">Temas y noticias</a></li>
@@ -78,23 +78,36 @@ include_once("./php/functions.php")
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
 				<div class="screen_slider"></div>
+				<div class="txt1">La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</div>
+				<div class="txt2">La carrera de Derecho de la Universidad Peruana de Ciencias Aplicadas (UPC) recibió la acreditación internacional por parte del Consejo para la Acreditación de la Enseñanza del Derecho (CONAED), convirtiéndose así en la primera y única en recibir esta importante distinción.</div>
+				<img src="img/slider/sld_1.png">
+			</div>
+
+			<div class="swiper-slide">
+				<div class="screen_slider"></div>
+				<div class="txt1">CONAED acredita a la Facultad de Derecho de la UNITEC de Campus Sur.</div>
+				<div class="txt2">La carrera de Derecho de la Universidad Peruana de Ciencias Aplicadas (UPC) recibió la acreditación internacional por parte del Consejo para la Acreditación de la Enseñanza del Derecho (CONAED), convirtiéndose así en la primera y única en recibir esta importante distinción.</div>
+				<img src="img/slider/sld_2.png" />
+			</div>
+			<div class="swiper-slide">
+				<div class="screen_slider"></div>
+				<div class="txt1">La apuesta de la UP para crecer profesionalmente.</div>
+				<div class="txt2">Al obtener esta acreditación, el presidente de CONAED, Felipe Ibáñez Mariel, declaró que con logros como este, la Universidad Panamericana demuestra ser “una institución educativa que va en pos de la excelencia académica, por lo que este es un proceso dinámico que debe continuar evolucionando”.</div>
+				<img src="img/slider/sld_3.png" />
+			</div>
+			<div class="swiper-slide">
+				<div class="screen_slider"></div>
 				<div class="txt1">La carrera de Derecho de la Facultad de la UNAM cumple totalmente con lineamientos de calidad avalados por la CONAED.</div>
-				<div class="txt2">Felipe Ibáñez, presidente de la Conaed, resaltó que hay en el territorio nacional mil 770 instituciones educativas que imparten esa carrera y sólo 200 están acreditadas. “Y no creo que más de 600 puedan ser susceptibles a ese proceso”. 
-Enfatizó el papel de la Universidad Nacional como institución formadora de abogados de excelencia.</div>
-				<img src="img/slider/img_1.png"></div>
-			<div class="swiper-slide"><div class="screen_slider"></div>
-				<div class="txt1">Slider 1</div>
-				<div class="txt2">Cont slider 1</div>
-				<img src="img/slider/img_2.png"></div>
-			<div class="swiper-slide"><img src="img/slider/img_3.png"></div>
-			<div class="swiper-slide"><img src="img/slider/img_4.png"></div>
+				<div class="txt2">Felipe Ibáñez, presidente de la Conaed, resaltó que hay en el territorio nacional mil 770 instituciones educativas que imparten esa carrera y sólo 200 están acreditadas. “Y no creo que más de 600 puedan ser susceptibles a ese proceso”. Enfatizó el papel de la Universidad Nacional como institución formadora de abogados de excelencia.</div>
+				<img src="img/slider/sld_4.png" />
+			</div>
 		</div>
   	</div>
 </section>
 <section id="quienes_somos" class="">
 	<article>
 		<h2 class="oxygenlight">Quiénes Somos</h2>
-		<p class="">El <strong>CONAED</strong> es una organización civil sin fines de lucro que se constituyó en febrero de 2003, a instancias de la Barra Mexicana Colegio de Abogados A.C. con el propósito de contribuir al desarrollo de la enseñanza del Derecho en México. En abril de 2006, el COPAES lo reconoció como <strong>organismo acreditador</strong>.</p> 
+		<p class="justify">El <strong>CONAED</strong> es una organización civil sin fines de lucro que se constituyó en febrero de 2003, a instancias de la Barra Mexicana Colegio de Abogados A.C. con el propósito de contribuir al desarrollo de la enseñanza del Derecho en México. En abril de 2006, el COPAES lo reconoció como <strong>organismo acreditador</strong>.</p> 
 
 		<p>Dicho Consejo es la instancia capacitada y reconocida por el Gobierno Federal, a través de la Secretaría de Educación Pública (SEP), para conferir reconocimiento formal a organizaciones que busquen acreditar programas académicos de educación superior ofrecidos por instituciones públicas y particulares. </p>
 
@@ -138,7 +151,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 		</ul>
 	</article>
 </section>
-<section id="proceso_de_acreditación" class="">
+<section id="proceso_de_acreditacion" class="">
 	<article>
 		<h2 class="oxygenlight">Proceso de Acreditación de los Programas</h2>
 		<div class="blocks_cont nomtop">
@@ -188,54 +201,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 			<article>
 					<h2 class="oxygenlight">Padrón de Evaluadores COPAES / CONAED</h2>
 					<? echo padronEvaluadores( 30 ); ?>
-					<!--<div class="cont_names">
-						<span class="title_top">Nombre</span>
-						<ul class="padron">
-							<li><span>Abadie Aguilar Javier</span></li>
-							<li><span>Abaroa García Alfredo</span></li>
-							<li><span>Aguilar Altamirano Jesús</span></li>
-							<li><span>Alemán Campos, Eloisa Rosa</span></li>
-							<li><span>Anguiano Barbosa Laura</span></li>
-							<li><span>Argente Villarreal ,Arturo David</span></li>
-							<li><span>Ascencio Ascencio,Silvia</span></li>
-							<li><span>Castellanos Jiménez Bertha Yanira</span></li>
-							<li><span>Castillo González Enrique</span></li>
-							<li><span>Castrejón Díaz Ana Beatriz</span></li>
-						</ul>
-					</div>
-					<div class="cont_names">
-						<span class="title_top">Nombre</span>	
-						<ul class="padron">
-							<li><span>Cervantes Cabrera Sergio</span></li>
-							<li><span>Colín Cano Cipactli</span></li>
-							<li><span>Díaz Reyes, Irene</span></li>
-							<li><span>Duque Alanís, José Francisco</span></li>
-							<li><span>Escobar Menaldo Rolando</span></li>
-							<li><span>Espinoza Monroy, Elizabeth</span></li>
-							<li><span>Estrada Bernal Benito</span></li>
-							<li><span>Gallardo Martínez Yurixhi</span></li>
-							<li><span>Galvan del Castillo Perla</span></li>
-							<li><span>González Medina Ana María</span></li>
-
-						</ul>
-					</div>
-
-					<div class="cont_names">
-						<span class="title_top">Nombre</span>	
-						<ul class="padron">
-							<li><span>Gradilla Esparza, Gabriela</span></li>
-							<li><span>Gutiérrez Parada, Oscar</span></li>
-							<li><span>Hernández Manzano María del Socorro</span></li>
-							<li><span>Hernández Haro Patricia</span></li>
-							<li><span>Iannacone de la Flor Marco Luigi</span></li>
-							<li><span>Lara Olivares, Alicia</span></li>
-							<li><span>López Ávila,Eduardo</span></li>
-							<li><span>Miranda De la Lama Beatriz</span></li>
-							<li><span>Mireles Rangel Aida</span></li>
-							<li><span>Peniche Giordani Luis Fernando</span></li>
-
-						</ul>
-					</div>-->
+					
 					<a href="padron-evaluadores.php" class="lista_c">ver lista completa</a>
 			</article>
 	</section><!--hogar-->
@@ -252,7 +218,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 
  
 
-							<a href="" class="leer_mas" id="">LEER MÁS</a>
+							<a href="temas-noticias.php" class="leer_mas" id="">LEER MÁS</a>
 							<div class="redes_m">
 								<a href="" class=""></span>
 								<a href="" class=""></span>
@@ -264,22 +230,29 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 							<h4>Últimas noticias</h4>
 							<ul class="news">
 								<li>
-									<a href="">
-										<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+									<a href="javascript:void(0)">
+										<span>La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</span>
 									</a>
 									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
 									</span>
 								</li>
 								<li>
 									<a href="">
-										<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+										<span>CONAED acredita a la Facultad de Derecho de la UNITEC de Campus Sur.</span>
 									</a>
 									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
 									</span>
 								</li>
 								<li>
 									<a href="">
-										<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
+										<span>La apuesta de la UP para crecer profesionalmente.</span>
+									</a>
+									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
+									</span>
+								</li>
+								<li>
+									<a href="">
+										<span>La carrera de Derecho de la Facultad de la UNAM cumple totalmente con lineamientos de calidad avalados por la CONAED.</span>
 									</a>
 									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
 									</span>
@@ -450,11 +423,11 @@ solicitud.</p>
 			<ul>
 			
 			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
+			<li><a href="javascript:void(0)" title="proceso_de_acreditacion" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo CONAED</a></li>
+			<li><a href="javascript:void(0)" title="consejo" class="btns_menu_footer">Consejo CONAED</a></li>
 			
 			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras Referencias y Asociados</a></li>
 			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contacto</a></li>
@@ -470,37 +443,16 @@ solicitud.</p>
 <script src="js/animate_numbers.js"></script>
 <script src="js/main.js"></script>
 <script src="js/swiper.min.js"></script>
-<!--<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBS1xV-Sum8FnUGvI4YVjcupvxiZHRPJAg" async defer type="text/javascript"></script>-->
-
-
-<!--<script src="js/map.js"></script>-->
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
 <script>
-	
-/*window.onload = function () {
-$("#pre-load-web").fadeOut(1000,function() { 
- $(this).remove();
- $("body").css({"overflow-y":"auto"}); }); 
-};
-
-/*
-$(document).ready(function(){
-  $("body").css({"overflow-y":"hidden"});
-    var alto=$(window).height();
-    $('body').append('<div id="pre-load-web"><div id="imagen-load"><img src="/img/logo_sasec.png" /><span>Cargando...</span><span><img src="/img/loading_spinner.gif" style="width:50px; height:50px;" alt="" /></span></div></div>');
-    $('#pre-load-web').css({height:alto+"px"}); 
-       
-    $("#imagen-load").css({"margin-top":(alto/2)-30+"px"}); 
-});     
-
-*/
 
 
 	var swiper = new Swiper('.swiper-container',{
     speed: 300,
-    autoplay: false,
+    autoplay: {delay: 6000},
     loop:4,
+    preloadImages:true,
     lazyLoading: true
 
 });
