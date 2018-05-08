@@ -66,7 +66,7 @@ function padronEvaluadores( $limite = '' , $contador = false ){
 									<ul class="padron">';					
 		   	}
 		   	
-		   	$rowsTable .= '<li><span>'.$info['nombre'].' '.$info['a_paterno'].' '.$info['a_materno'].'</span></li>';
+		   	$rowsTable .= '<li><span>'.$info['a_paterno'].' '.$info['a_materno'].' '.$info['nombre'].'</span></li>';
 		   	
 		 	
 		 	$contTemp++;
