@@ -69,7 +69,7 @@ include_once("./php/functions.php");
 			<a href="http://www.conaed.org.mx#programas_acreditados" class="clr_rose back">Regresar</a>
 			<ul class="update">
 				<li class="">última actualización</li>
-				<li class="clr_rose">48 resultados</li>
+				<li class="clr_rose"><?php echo programas(0, true); ?> resultados</li>
 			</ul>
 		</div>
 	<article>
@@ -81,7 +81,7 @@ include_once("./php/functions.php");
 			<span class="col3">Vigencia</span>
 		</div>
 		<ul class="programas">
-			<?php echo programas(100) ?>
+			<?php echo programas(100); ?>
 
 		</ul>
 		

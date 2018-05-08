@@ -1,10 +1,9 @@
 <?php
-function programas($limite){
-	if(!empty ($limite)){
+function programas( $limite, $contador = false ){
+	
+	if(!empty ($limite) && $contador == false ){
 		$extra='LIMIT '.$limite;
-
 	}
-
 
 	$oCnx      = new DbConnect();
 	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad ".$extra;
@@ -27,7 +26,10 @@ function programas($limite){
 	   }
 
 	}
-	echo $rowsTable;
+	if($contador == true)
+		return ($contAcreditados-1);
+	else	
+		return $rowsTable;
 	
 }
 
