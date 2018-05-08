@@ -1,6 +1,6 @@
 <?php
 function programas($limite){
-	if(!empty $limite){
+	if(!empty ($limite)){
 		$extra='LIMIT'.$limite;
 
 	}
