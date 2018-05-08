@@ -1,4 +1,4 @@
-<?php/*
+<?php
 include_once("./admin/php/config.php");
 	include_once("./admin/php/DbConnect.php");
 	
@@ -22,7 +22,7 @@ $oCnx      = new DbConnect();
 	   }
 
 	}
-	*/
+	
 ?>
 <!doctype html>
 <html>
@@ -68,22 +68,22 @@ $oCnx      = new DbConnect();
 	  <a href="javascript:void(0)" class="btn_menu closed">Menú</a>
 
 	 </div><!--cont_header-->
-	  <span>Consejo para la Acreditación de la Enseñanza del derecho A.C</span>
+	  <span>Consejo para la Acreditación de la Enseñanza del Derecho A.C.</span>
 
 <nav class="menu_p">
 		<ul>
 			
 			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
+			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación<br />de los programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
-			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
+			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores<br />copaes / conaed</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu">Temas y noticias</a></li>
 			<li><a href="javascript:void(0)" title="consejo" class="btns_menu">Consejo conaed</a></li>
 			
-			<li><a href="javascript:void(0)" title="referencias" class="btns_menu">Nuestras referencias <br />y Asociados</a></li>
+			<li><a href="javascript:void(0)" title="referencias" class="btns_menu">Nuestras referencias<br />y Asociados</a></li>
 			
 			
-			<li><a href="javascript:void(0)" title="contacto" class="btns_menu">Contáctanos</a></li>
+			<li><a href="javascript:void(0)" title="contacto" class="btns_menu">Contacto</a></li>
 		</ul>
 	</nav>
 	<ul class="btns_call_mobile">
@@ -143,17 +143,17 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 			<li>
 				<span class="img n_ico1"></span>
 				<span id="n1" class="numbers oxygenbold">0</span>
-				<span class="titles">Programas Acreditados</span>
+				<span class="titles oxygenlight">Programas Acreditados</span>
 			</li>
 			<li>
 				<span class="img n_ico2 "></span>
 				<span id="n2" class="numbers oxygenbold">0</span>
-				<span class="titles">Evaluadores Especialistas</span>
+				<span class="titles oxygenlight">Evaluadores Especialistas</span>
 			</li>
 			<li>
 				<span class="img n_ico3"></span>
 				<span id="n3" class="numbers oxygenbold">0</span>
-				<span class="titles">Años de Experiencia</span>
+				<span class="titles oxygenlight">Años de Experiencia</span>
 			</li>
 		</ul>
 	</article>
@@ -161,7 +161,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 <section id="proceso_de_acreditación" class="">
 	<article>
 		<h2 class="oxygenlight">Proceso de Acreditación de los Programas</h2>
-		<div class="blocks_cont">
+		<div class="blocks_cont nomtop">
 			<div class="block">
 				
 				<p>El CONAED, como organismo acreditador, busca mejorar los niveles en la educación profesional de las instituciones educativas que imparten la Licenciatura en Derecho, EN Criminología y en Criminalística propiciando su idoneidad y solidez.  Es a través de la medición de indicadores acordes a las necesidades del mercado y a la optimización de recursos en las propias instituciones y sus programas, que el CONAED busca fomentar que éstas cumplan con su misión y objetivos y que además realicen cambios significativos de acuerdo a las necesidades sociales presentes y futuras.</p>
@@ -271,7 +271,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 
  
 
-							<a href="" class="leer_mas" id="">Leer más</a>
+							<a href="" class="leer_mas" id="">LEER MÁS</a>
 							<div class="redes_m">
 								<a href="" class=""></span>
 								<a href="" class=""></span>
@@ -349,7 +349,7 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 </section><!--Consejo-->
 <section id="referencias">
 	<article>
-		<h2 class="oxygenlight">Nuestras referencias y Asociados</h2>
+		<h2 class="oxygenlight">Nuestras Referencias y Asociados</h2>
 		<!--<div id="slider_2" class="swiper-container-2">
 			<div class="swiper-wrapper">
 				<div class="swiper-slide logos"><img src="img/logo_1.png"></div>
@@ -379,9 +379,8 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 
 		</div>
 			<article>
-			<p>Si desea recibir información a cerca de los servicios del CONAED, compártanos 
-los siguientes datos y en breve nos comunicarémos con usted para atender su 
-solicitud</p>
+			<p class="oxygenlight">Si desea recibir información acerca de los servicios del CONAED, compártanos los siguientes datos y en breve nos comunicarémos con usted para atender su 
+solicitud.</p>
 					
 					
 					<div class="form_cont">
@@ -400,11 +399,11 @@ solicitud</p>
 								</li>
 								<li class="nwlist">
 									<!--<label>Teléfono:</label>-->
-									<input type="number" class="br1" name="telefono_fijo" placeholder="Teléfono fijo" maxlength="10">
+									<input type="text" class="br1" name="telefono_fijo" placeholder="Teléfono fijo" maxlength="10">
 								</li>
 								<li class="nwlist">
 									
-									<input type="number" class="br1" name="telefono_movil" required placeholder="Teléfono celular*" maxlength="10">
+									<input type="text" class="br1" name="telefono_movil" required placeholder="Teléfono celular*" maxlength="10">
 									
 								</li>
 								<li>*Campos obligatorios</li>
@@ -424,7 +423,7 @@ solicitud</p>
 							<div class="g-recaptcha" style="margin:3% 0;" data-sitekey="6LcU61YUAAAAAEGmBx43bOsX1NAI3dUR7kpXr5yy" required></div>
 								</li>
 								
-								<li> <input type="submit" value="Enviar" class="btn_enviar_m" id="btn_envio" ></li>
+								<li> <input type="submit" value="ENVIAR" class="btn_enviar_m" id="btn_envio" ></li>
 							</ul>
 							
 							
@@ -462,22 +461,22 @@ solicitud</p>
 				
 			</div>
 			<div class="adress mtop_adr">
-				<span class="ico" style="height:20px"><img src="img/email.png" /></span>
+				<span class="ico" style="height:15px"><img src="img/email.png" /></span>
 				<a href="mailto:conaed@gmail.com" class="phone_f oxygenlight">conaed@gmail.com</a>
 			</div>
 		</div>
 		<div class="right_f">
 			<ul>
 			
-			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu_footer">Quienes somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de acreditación de los programas</a></li>
-			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas acreditados</a></li>
-			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de evaluadores copaes / conaed</a></li>
-			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y noticias</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo conaed</a></li>
+			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
+			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
+			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
+			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
+			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>
+			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo CONAED</a></li>
 			
-			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras referencias y Asociados</a></li>
-			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contáctanos</a></li>
+			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras Referencias y Asociados</a></li>
+			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contacto</a></li>
 		</ul>
 		</div>
 		<div class="rights">CONAED, 2018. Todos los Derechos Reservados</div>
