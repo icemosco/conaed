@@ -1,5 +1,5 @@
 <?php 
-	include_once('./header.php'); 
+	/*include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 
 	//Guardado / Edicion
@@ -13,7 +13,7 @@
 								, $folderSlider
 								, $_FILES['imagenSlider'] );
 		}		
-	}
+	}*/
 	
 ?>
 
@@ -30,6 +30,13 @@
 			<?php echo fnTemplateSlide(); ?>
 		</form>
 	</div><!--forms_cont-->
+	<style>
+		.save_slider{width:100%; padding:5px 0;}
+		.save_slider {
+	</style>
+	<div class="save_slider">
+		
+	</div>
 </div><!--wrapper_right-->
 
 </div><!--main_wrapper-->

@@ -44,7 +44,7 @@ article .blocks_cont .block span.icon{width:80px; height:80px; margin:0 auto; di
 article .blocks_cont .block_t{width:70%;padding:2%; display:inline-block; ;overflow:hidden;}
 article .blocks_cont .block_t .img_t{width:50%;float:left;margin-top:3%;max-width:50%;}
 article .blocks_cont .block_t .img_t img{width:100%; height:100%;}
-article .blocks_cont .block_t p{max-width:43%; float:left;padding:0 3%;margin:3% 0 0px;line-height: 1.4em; text-align:justify;}
+article .blocks_cont .block_t p{max-width:47%; float:left;padding:0 0 0 3%;margin:3% 0 0px;line-height: 1.4em; text-align:justify;}
 .brleft{border-left:1px solid #3a4181;}
 article .blocks_cont .block_t  h3{width:100%; margin:0 0 2% 0; color:#49519b;text-align: left;}
 .block_t_r{width:25%!important;float:left;}
@@ -149,7 +149,8 @@ article .cont_names ul.padron li:nth-child(even){background:#e7e9ff}
 ul.logos_reel{width:100%; height:auto; display:block;}
 ul.logos_reel li{width:23%; margin-right:10px; display:inline-block;text-align: center;}
 
-.txt1{width:50%; display:block;font-family:oxygenlight;font-size}
+.txt1{width:50%; display:block;font-family:oxygenlight;font-size:25px; color:#FFF;position:absolute;z-index:3; bottom:25%; left:5%;}
+.txt2{width:45%; display:block;font-family:oxygenlight;font-size:16px; color:#FFF;bottom:5%; left:5%;position:absolute;z-index:3;}
 .fts1{font-size:21px;}
 #padron_evaluadores, #programas_acreditados{padding-top:0!important;}
 
@@ -169,11 +170,31 @@ footer .right_f ul li a{color:#FFF; font-family:oxygenlight;font-size:1em;}
 footer .rights{width:100%; height:auto; text-align: center;float:left; margin:2% 0; color:#FFF; font-family: oxygenlight;font-size:14px;}
 .email_response{width:100%; height:100%; background:#000;opacity:0.9;position:absolute;color:#FFF; font-size:1.5em;display:none;}
 #slider{padding-bottom:0;}
-.screen_slider{position:absolute;width:100%; height:90%; background:#000;z-index:2;opacity:0.6;}
+.screen_slider{position:absolute;width:100%; height:100%; background:#000;z-index:2;opacity:0.6;}
+.phone_foot{width:100%;display:block;color:#FFF;padding-left:20px;background-image:url(img/phone.png);background-repeat:no-repeat; background-position:0 0; background-size: contain;}
+.email_foot{width:100%;display:block;color:#FFF;}
+.phone_f{display:inline-block;font-size:1em;color:#FFF;}
+.mtop_adr{margin-top:3%!important;}
+.answer{width: 70%;margin: 0 auto;display: block;margin-top:12%;color: #FFF;font-size: 1.2em;text-align: center;}
+.close_contacto{float:right; color:#FFF;font-size:1em; margin:2% 2% 0;}
+.back{width:auto; display:block; margin-left:3%; padding-left:30px; background-image: url(../img/arrow_left.png); background-repeat:no-repeat; background-position:0 0;}
+.img_cont_head{width:100%; height:auto; position:relative;z-index:1;}
+span.header_title {width: 520px;display: block;position: absolute;z-index: 4;left: 41%;font-size: 2.3em;top: 50%;color: #FFf;}
+.menu_int_cont{position:relative; overflow:hidden; width:100%;margin-bottom:30px; }
+.menu_int_cont ul.update{float:right;}
+.menu_int_cont .back{float:left;}
 
 
 
 
+
+
+
+
+@media screen and (max-width:1200px) and (min-width:769px){
+.txt1{font-size:1em;width:70%;bottom:20%;}
+.txt2{font-size:0.8em;width:60%;bottom:3%;}
+}
 
 
 @media screen and (max-width:768px) and (min-width:400px){
@@ -204,8 +225,10 @@ header ul.btns_call_mobile li:first-child{border-right:2px solid #FFF;}
 header ul.btns_call_mobile li a{display:block; padding:10px 5px; text-align: center;font-size:1.2em;color:#FFF;}
 a.lista_c{width:80%;}
 .descargas{width:60%;}
-.logo_flot{top:20%;}
+.logo_flot{top:30%;}
 #contacto p{width:90%;}
 ul.logos_reel li{width:100%;display:block;margin-bottom:15px;}
 .form_cont ul{width:100%; margin-bottom:15px;max-width:90%; display:block;}
+.txt1{font-size:0.9em;width:90%;bottom:20%;}
+.txt2{display:none;}
 }

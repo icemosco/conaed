@@ -43,7 +43,7 @@ $para = $email_destino;
             </body></center>
           </html>";
    //Cabecera
-   $cabecera = "From: $nombre <conaed@gmail.com>\r\n"; //Remitente
+   $cabecera = "From: $nombre <conaed@gmail.com>\r\n"; //Rem1itente
     // $cabecera .= "Bcc: contacto@gmail.com\r\n"; //Copia oculta
    $cabecera .= "Content-type: text/html; charset=UTF-8\r\n";
                  

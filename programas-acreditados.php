@@ -2,14 +2,12 @@
 include_once("./admin/php/config.php");
 include_once("./admin/php/DbConnect.php");
 include_once("./php/functions.php");
-
-
 ?>
 <!doctype html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>.:: CONAED - Padrón de Evaluadores ::.</title>
+<title>.:: CONAED - Programas Acreditados ::.</title>
 <link href="css/main.css" rel="stylesheet" title="stylesheet" type="text/css" />
 <link rel="stylesheet" href="css/swiper.min.css">
 <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -23,13 +21,8 @@ include_once("./php/functions.php");
 <meta name="country" content="MX">
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-
-<style>
-
-</style>
 </head>
 <body>
-
 <header>
 	<div class="cont_header">
 	  <ul class="contact_icons">
@@ -43,20 +36,16 @@ include_once("./php/functions.php");
 
 	 </div><!--cont_header-->
 	  <span>Consejo para la Acreditación de la Enseñanza del derecho A.C</span>
-
 <nav class="menu_p">
 		<ul>
-			
-			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
+		  <li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
+		  <li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu">Temas y noticias</a></li>
 			<li><a href="javascript:void(0)" title="consejo" class="btns_menu">Consejo conaed</a></li>
 			
 			<li><a href="javascript:void(0)" title="referencias" class="btns_menu">Nuestras referencias <br />y Asociados</a></li>
-			
-			
 			<li><a href="javascript:void(0)" title="contacto" class="btns_menu">Contáctanos</a></li>
 		</ul>
 	</nav>
@@ -66,21 +55,18 @@ include_once("./php/functions.php");
 	</ul>
 </header>
 <style>
-.img_cont_head{width:100%; height:auto; position:relative;z-index:1;}
-span.header_title {width: 520px;display: block;position: absolute;z-index: 4;left: 41%;font-size: 2.3em;top: 50%;color: #FFf;}
-.menu_int_cont{position:relative; overflow:hidden; width:100%;margin-bottom:30px; }
-.menu_int_cont ul.update{float:right;}
-.menu_int_cont .back{float:left;}
+
 </style>
 <section>
 	<div class="img_cont_head">
-		<img src="img/back_evaluadores.png" />
+		<div class="screen_slider"></div>
+		<img src="img/back_programas.png" />
 	</div>
 	<span class="header_title">Programas Acreditados</span>
 </section>
 	<section id="programas_acreditados" class="">
 		<div class="menu_int_cont">
-			<a href="http://www.conaed.org.mx" class="clr_roseback">Regresar</a>
+			<a href="http://www.conaed.org.mx" class="clr_rose back">Regresar</a>
 			<ul class="update">
 				<li class="">última actualización</li>
 				<li class="clr_rose">48 resultados</li>
@@ -178,15 +164,22 @@ solicitud</p>
 			<div class="logo_bco"><img src="img/logo_conaed_bco.png" /></div>
 			<div class="adress">
 				<span class="ico"><img src="img/building.png" /></span>
-				<span class="text">Durango 208 - 101, Col. Roma, Ciudad de México, C.P. 06700</span>
+				<span class="text oxygenlight">Durango 208 - 101, Col. Roma, Ciudad de México, C.P. 06700</span>
 			</div>
 			<style>
-			.phone_foot{width:100%;display:block;color:#FFF; }
-			.email_foot{width:100%;display:block;color:#FFF;}
+			
+
 		</style>
-			<div class="adress">
-				<a href="tel:5514.1700" class="phone_foot">(55) 5514.1700 / </a>
-				<a href="mailto:conaed@gmail.com" class="email_foot">conaed@gmail.com</a>
+			<div class="adress mtop_adr">
+				<span class="ico"><img src="img/phone.png" /></span>
+				<a href="tel:5514.1700" class="phone_f oxygenlight">(55) 5514.1700 /&nbsp; </a>
+				
+				<a href="tel:5538880671" class="phone_f oxygenlight">55.3888.0671 </a>
+				
+			</div>
+			<div class="adress mtop_adr">
+				<span class="ico" style="height:20px"><img src="img/email.png" /></span>
+				<a href="mailto:conaed@gmail.com" class="phone_f oxygenlight">conaed@gmail.com</a>
 			</div>
 		</div>
 		<div class="right_f">
@@ -198,9 +191,8 @@ solicitud</p>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de evaluadores copaes / conaed</a></li>
 			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y noticias</a></li>
 			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo conaed</a></li>
+			
 			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras referencias y Asociados</a></li>
-			
-			
 			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contáctanos</a></li>
 		</ul>
 		</div>

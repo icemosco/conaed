@@ -8,9 +8,10 @@ $(document).ready(function(){
 				$(this).removeClass('opened').addClass('closed').html('MENU').show();
 				$('.menu_p').animate({"right":"-400px"}, "slow");
 			}
-			
-		});
-		
+});
+	
+
+
 $('.btns_menu').click(function() {
 	$('.btns_menu').removeClass('selected_c');
 	$(this).addClass('selected_c');
@@ -20,6 +21,7 @@ $('.btns_menu').click(function() {
 	$('.menu_p').animate({"right":"-400px"}, "slow");
 	
 });
+
 $('.btns_menu_footer').click(function() {
 	var id=$(this).attr('title');
 	$('html, body').animate({scrollTop: $("#"+id).offset().top}, 1000);

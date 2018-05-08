@@ -1,5 +1,5 @@
-<?php
-	include_once("./admin/php/config.php");
+<?php/*
+include_once("./admin/php/config.php");
 	include_once("./admin/php/DbConnect.php");
 	
 $oCnx      = new DbConnect();
@@ -22,7 +22,8 @@ $oCnx      = new DbConnect();
 	   }
 
 	}
-?>	
+	*/
+?>
 <!doctype html>
 <html>
 <head>
@@ -42,9 +43,16 @@ $oCnx      = new DbConnect();
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-<style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-118766206-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-</style>
+  gtag('config', 'UA-118766206-1');
+</script>
+
 </head>
 <body>
 
@@ -84,15 +92,20 @@ $oCnx      = new DbConnect();
 	</ul>
 </header>
 <section id="slider" class="">
-	<div class="screen_slider"></div>
+	
 		<div class="logo_flot"><img src="img/logo_conaed_bco.png" /></div>
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-slide">
-				<div class="txt1"></div>
-				<div class="txt2"></div>
+				<div class="screen_slider"></div>
+				<div class="txt1">La carrera de Derecho de la Facultad de la UNAM cumple totalmente con lineamientos de calidad avalados por la CONAED.</div>
+				<div class="txt2">Felipe Ibáñez, presidente de la Conaed, resaltó que hay en el territorio nacional mil 770 instituciones educativas que imparten esa carrera y sólo 200 están acreditadas. “Y no creo que más de 600 puedan ser susceptibles a ese proceso”. 
+Enfatizó el papel de la Universidad Nacional como institución formadora de abogados de excelencia.</div>
 				<img src="img/slider/img_1.png"></div>
-			<div class="swiper-slide"><img src="img/slider/img_2.png"></div>
+			<div class="swiper-slide"><div class="screen_slider"></div>
+				<div class="txt1">Slider 1</div>
+				<div class="txt2">Cont slider 1</div>
+				<img src="img/slider/img_2.png"></div>
 			<div class="swiper-slide"><img src="img/slider/img_3.png"></div>
 			<div class="swiper-slide"><img src="img/slider/img_4.png"></div>
 		</div>
@@ -362,7 +375,9 @@ $oCnx      = new DbConnect();
 
 <section id="contacto" class="nopadding1">
 	<div class="pant_1"></div>
-		<div class="email_response"></div>
+		<div class="email_response">
+
+		</div>
 			<article>
 			<p>Si desea recibir información a cerca de los servicios del CONAED, compártanos 
 los siguientes datos y en breve nos comunicarémos con usted para atender su 
@@ -403,10 +418,7 @@ solicitud</p>
 								<li>
 										<input type="text" class="br1" name="asunto" required placeholder="Asunto*" maxlength="200">
 								</li>
-								<!--<li class="" style="opacity:0;">
-									
-									<input type="text" class="br1" name="" placeholder=" ">
-								</li>-->
+								
 								<li class="">
 									<input type="hidden" name="mensaje" value="0" />
 							<div class="g-recaptcha" style="margin:3% 0;" data-sitekey="6LcU61YUAAAAAEGmBx43bOsX1NAI3dUR7kpXr5yy" required></div>
@@ -436,15 +448,22 @@ solicitud</p>
 			<div class="logo_bco"><img src="img/logo_conaed_bco.png" /></div>
 			<div class="adress">
 				<span class="ico"><img src="img/building.png" /></span>
-				<span class="text">Durango 208 - 101, Col. Roma, Ciudad de México, C.P. 06700</span>
+				<span class="text oxygenlight">Durango 208 - 101, Col. Roma, Ciudad de México, C.P. 06700</span>
 			</div>
 			<style>
-			.phone_foot{width:100%;display:block;color:#FFF; }
-			.email_foot{width:100%;display:block;color:#FFF;}
+			
+
 		</style>
-			<div class="adress">
-				<a href="tel:5514.1700" class="phone_foot">(55) 5514.1700 / </a>
-				<a href="mailto:conaed@gmail.com" class="email_foot">conaed@gmail.com</a>
+			<div class="adress mtop_adr">
+				<span class="ico"><img src="img/phone.png" /></span>
+				<a href="tel:5514.1700" class="phone_f oxygenlight">(55) 5514.1700 /&nbsp; </a>
+				
+				<a href="tel:5538880671" class="phone_f oxygenlight">55.3888.0671 </a>
+				
+			</div>
+			<div class="adress mtop_adr">
+				<span class="ico" style="height:20px"><img src="img/email.png" /></span>
+				<a href="mailto:conaed@gmail.com" class="phone_f oxygenlight">conaed@gmail.com</a>
 			</div>
 		</div>
 		<div class="right_f">
@@ -458,8 +477,6 @@ solicitud</p>
 			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo conaed</a></li>
 			
 			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras referencias y Asociados</a></li>
-			
-			
 			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contáctanos</a></li>
 		</ul>
 		</div>
@@ -502,7 +519,7 @@ $(document).ready(function(){
 
 	var swiper = new Swiper('.swiper-container',{
     speed: 300,
-    autoplay: true,
+    autoplay: false,
     loop:4,
     lazyLoading: true
 
