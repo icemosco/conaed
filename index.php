@@ -187,7 +187,8 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 		</style>
 			<article>
 					<h2 class="oxygenlight">Padrón de Evaluadores COPAES / CONAED</h2>
-					<div class="cont_names">
+					<? echo padronEvaluadores( 30 ); ?>
+					<!--<div class="cont_names">
 						<span class="title_top">Nombre</span>
 						<ul class="padron">
 							<li><span>Abadie Aguilar Javier</span></li>
@@ -234,8 +235,8 @@ Enfatizó el papel de la Universidad Nacional como institución formadora de abo
 							<li><span>Peniche Giordani Luis Fernando</span></li>
 
 						</ul>
-					</div>
-					<a href="padron-evaluadores.html" class="lista_c">ver lista completa</a>
+					</div>-->
+					<a href="padron-evaluadores.php" class="lista_c">ver lista completa</a>
 			</article>
 	</section><!--hogar-->
 <section id="temas">
