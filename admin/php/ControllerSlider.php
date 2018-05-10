@@ -11,15 +11,15 @@ include_once("../php/Modelo.php");
 		$slider    = '';
 		$imgSlider = '../../img/slider/img_1.png';
 		$template  = '<div class="slider_fill">
-				<span class="title_sl">Slider [NUMSLIDE]</span>
+				<span class="title_sl oxygenlight">Slider [NUMSLIDE]</span>
 				
 				<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
-					<input type="text" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
+					<input type="text" class="order_box_s" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
 					<div class="img_loaded"><img src="../../img/slider/[IMAGENSLIDE]" /></div>
 					<div class="path">ruta del archivo</div>
 					<div class="cont_r">
-						<input type="file" name="imagenSlider[]" id="imagenSlider" class="file_upload" name="file" />
+						<input type="file" name="imagenSlider[]" required="required" id="imagenSlider" class="file_upload" name="file" />
 						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
 					</div><!--cont_r-->
 				</div><!--left-->
@@ -28,13 +28,13 @@ include_once("../php/Modelo.php");
 					<div class="sub_text_cont">
 						<span class="">Titulo (100 caracteres máx)</span>
 						<span class="conteo_char">[CARCTITULO] caracteres</span>
-						<textarea name="titulo[]" id="titulo" class="infoSlide" maxlength="100" data-required="true">[TITULO]</textarea>
+						<textarea name="titulo[]" id="titulo" class="infoSlide" required="required" maxlength="100" data-required="true">[TITULO]</textarea>
 					</div>
 					<div id="age-description"></div>
 					<div class="sub_text_cont">
 						<span class="">Subtitulo (225 caracteres máx)</span>
 						<span class="conteo_char">[CARCSUBTITULO] caracteres</span>
-						<textarea name="subtitulo[]" id="subtitulo" class="infoSlide" maxlength="225" data-required="true">[SUBTITULO]</textarea>
+						<textarea name="subtitulo[]" id="subtitulo" class="infoSlide" maxlength="225" data-required="true" required="required">[SUBTITULO]</textarea>
 					</div>
 					<div id="age-description"></div>
 				</div>

@@ -19,16 +19,19 @@
 
 <div class="wrapper_right">
 	<div class="header_int">
-		<h2>Slider Home Page</h2>
+		<h2 class="muestra_msg">Slider Home Page</h2>
 		<div class="search">
-			<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>
+			<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider">
+				<img src="../img/plus.png" alt="" /></a>
 		</div>
 	</div>
 	<div class="forms_cont">
 		<form class="slider" name="sliders" id="" action="./home.php" method="post" enctype="multipart/form-data">
-			<button type="submit" name="guardar" id="guardar" >Guardar</button>
+			
 			<?php echo fnTemplateSlide(); ?>
+			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
 		</form>
+		
 	</div><!--forms_cont-->
 	<style>
 		.save_slider{width:100%; padding:5px 0;}
@@ -36,6 +39,9 @@
 	</style>
 	<div class="save_slider">
 		
+	</div>
+	<div class="msg">
+		<span>El slider se ha guardado con éxito</span>
 	</div>
 </div><!--wrapper_right-->
 
