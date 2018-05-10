@@ -39,7 +39,7 @@ include_once("./php/functions.php");
 	  <span>Consejo para la Acreditación de la Enseñanza del Derecho A.C</span>
 <nav class="menu_p">
 		<ul>
-		  <li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
+		  <li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu">Quiénes somos</a></li>
 		  <li><a href="http://www.conaed.org.mx#proceso_de_acreditacion" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
 			<li><a href="jhttp://www.conaed.org.mx#quienes_somos" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
 			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>

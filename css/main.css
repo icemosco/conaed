@@ -118,9 +118,9 @@ header ul.btns_call_mobile{display:none;}
 .topnone{margin-top:0!important;}
 /***********************/
 /****listado de programas******/
-article .row_titulo{width:99.5%; display:block; overflow:hidden; height:auto; padding:10px 0 0 10px;background:#e0e0ec;}
+article .row_titulo{width:99.5%; display:block; overflow:hidden; height:auto; padding:10px 0 0 35px;background:#e0e0ec;}
 article .row_titulo span{float:left;width:33%; max-width:33%;text-align:left;font-size:1.2em;padding:10px 0;}
-article .row_titulo span:before{content: url(../img/arrow_down.png);}
+/*article .row_titulo span:before{content: url(../img/arrow_down.png);}*/
 article ul.programas{display:block; width:100%; }
 article ul.programas li{width:100%; display:flex;align-items: center;}
 article ul.programas li span{width:31%;max-width:33%;display: inline-block;font-size: 0.9em;text-align: left;padding:10px;}

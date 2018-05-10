@@ -53,7 +53,7 @@ include_once("./php/functions.php")
 <nav class="menu_p">
 		<ul>
 			
-			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
+			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu">Quiénes somos</a></li>
 			<li><a href="javascript:void(0)" title="proceso_de_acreditacion" class="btns_menu">Proceso de acreditación<br />de los programas</a></li>
 			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
 			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores<br />copaes / conaed</a></li>
@@ -76,7 +76,9 @@ include_once("./php/functions.php")
 		<div class="logo_flot"><img src="img/logo_conaed_bco.png" /></div>
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
+			<div class="swiper-button-next" style="width:30px; height:30px;">next</div>
 			<div class="swiper-slide">
+
 				<div class="screen_slider"></div>
 				<div class="txt1">La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</div>
 				<div class="txt2">La carrera de Derecho de la Universidad Peruana de Ciencias Aplicadas (UPC) recibió la acreditación internacional por parte del Consejo para la Acreditación de la Enseñanza del Derecho (CONAED), convirtiéndose así en la primera y única en recibir esta importante distinción.</div>
@@ -86,7 +88,7 @@ include_once("./php/functions.php")
 			<div class="swiper-slide">
 				<div class="screen_slider"></div>
 				<div class="txt1">CONAED acredita a la Facultad de Derecho de la UNITEC de Campus Sur.</div>
-				<div class="txt2">La carrera de Derecho de la Universidad Peruana de Ciencias Aplicadas (UPC) recibió la acreditación internacional por parte del Consejo para la Acreditación de la Enseñanza del Derecho (CONAED), convirtiéndose así en la primera y única en recibir esta importante distinción.</div>
+				<div class="txt2">Con esta acreditación, la UNITEC Campus Sur se fortalece y manifiesta ser una de las instituciones educativas que imparten la Licenciatura en Derecho que propicia idoneidad y solidez en su plan de estudios, aviva y fomenta el cumplimiento de su misión, objetivos y adecuaciones con bases a los cambios significativos que demandan las generaciones de estudiantes presentes y futuras.</div>
 				<img src="img/slider/sld_2.png" />
 			</div>
 			<div class="swiper-slide">
@@ -157,8 +159,8 @@ include_once("./php/functions.php")
 		<div class="blocks_cont nomtop">
 			<div class="block">
 				
-				<p>El CONAED, como organismo acreditador, busca mejorar los niveles en la educación profesional de las instituciones educativas que imparten la Licenciatura en Derecho, EN Criminología y en Criminalística propiciando su idoneidad y solidez.  Es a través de la medición de indicadores acordes a las necesidades del mercado y a la optimización de recursos en las propias instituciones y sus programas, que el CONAED busca fomentar que éstas cumplan con su misión y objetivos y que además realicen cambios significativos de acuerdo a las necesidades sociales presentes y futuras.</p>
-				<p>El proceso de acreditación se caracteriza por ser voluntario; integral; objetivo, justo y transparente; externo; producto del trabajo colegiado de personas de reconocida competencia en la materia; ético y responsable; temporal, ya que tendrá validez por un período determinado, y confiable, porque se centra en altos niveles de calidad.</p>	
+				<p>El CONAED, como organismo acreditador, busca mejorar los niveles en la educación profesional de las instituciones educativas que imparten la Licenciatura en Derecho, en Criminología y en Criminalística propiciando su idoneidad y solidez.  Es a través de la medición de indicadores acordes a las necesidades del mercado y a la optimización de recursos en las propias instituciones y sus programas, que el CONAED busca fomentar que éstas cumplan con su misión y objetivos y que además realicen cambios significativos de acuerdo a las necesidades sociales presentes y futuras.</p>
+				<p>El proceso de acreditación se caracteriza por ser voluntario, integral, objetivo, justo y transparente, externo, producto del trabajo colegiado de personas de reconocida competencia en la materia, ético y responsable, temporal, ya que tendrá validez por un período determinado, y confiable, porque se centra en altos niveles de calidad.</p>	
 			</div><!--blocks-->
 			<div class="block">
 				<p>La acreditación se otorga previa valoración de la capacidad organizativa, técnica y operativa de los Departamentos, Escuelas y Facultades, así como de la administración de sus procedimientos. </p>
@@ -452,6 +454,11 @@ solicitud.</p>
     speed: 300,
     autoplay: {delay: 6000},
     loop:4,
+    navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
     preloadImages:true,
     lazyLoading: true
 
