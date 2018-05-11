@@ -42,7 +42,11 @@
 			.new_programa ul{width:100%; height:auto;display:block;}
 			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
 			</style>
-			<div class="new_programa">
+			
+			
+			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
+		</form>
+		<div class="new_programa">
 				<ul>
 					<li>
 						<label>Universidad o Institucion Educativa:</label>
@@ -56,20 +60,57 @@
 				<ul>
 					<li>
 						<label>Vigencia desde:</label>
-						<input type="text" name="vigencia_ini " max-lenght="100" class="datepicker" required="required" placeholder="">
+						<input type="text" name="vigencia_ini " max-lenght="100" id="datepickerini" required="required" placeholder="">
 					</li>
 					<li>
 						<label>Vigencia hasta:</label>
-						<input type="text" name="vigencia_fin " max-lenght="100" class="datepicker" required="required" placeholder="">
+						<input type="text" name="vigencia_fin " max-lenght="100" id="datepickerfin" required="required" placeholder="">
 					</li>
 				</ul>
 
 			</div>
 			
 			
+		
+	</div><!--forms_cont-->
+	<div class="forms_cont evaluadores">
+		
+			
+		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
+			<style>
+			.new_programa{width:100%; float:left;overflow:hidden;}
+			.new_programa ul{width:100%; height:auto;display:block;}
+			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
+			</style>
+			
 			
 			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
 		</form>
+		<div class="new_programa">
+				<ul>
+					<li>
+						<label>Universidad o Institucion Educativa:</label>
+						<input type="text" name="nombre_uni" max-lenght="500" class="" required="required" placeholder="">
+					</li>
+					<li>
+						<label>Página Web:</label>
+						<input type="text" name="pagina_web" max-lenght="500" class="" required="required" placeholder="http:// ó https://">
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label>Vigencia desde:</label>
+						<input type="text" name="vigencia_ini " max-lenght="100" id="datepickerini" required="required" placeholder="">
+					</li>
+					<li>
+						<label>Vigencia hasta:</label>
+						<input type="text" name="vigencia_fin " max-lenght="100" id="datepickerfin" required="required" placeholder="">
+					</li>
+				</ul>
+
+			</div>
+			
+			
 		
 	</div><!--forms_cont-->
 	
@@ -82,8 +123,13 @@
 </div><!--main_wrapper-->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/main.js"></script>
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-	
+	$( function() {
+    $( "#datepickerini" ).datepicker();
+    $( "#datepickerfin" ).datepicker();
+  } );
 </script>
 </body>
 

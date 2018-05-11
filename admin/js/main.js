@@ -13,6 +13,7 @@ $(document).ready(function(){
 		    case "sliders":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Slider Home Page');
+		        	$('.header_int > .search').html('')
 		        break;
 		    case "programas":
 		        	$('.'+btn).show();
