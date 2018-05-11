@@ -59,6 +59,7 @@ $('.muestra_msg').click(function(){
 
 
 $('.edit').click(function(){
+	$(".new_programa").css("display", "none");
 	$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
 });
 /*  
