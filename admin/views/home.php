@@ -42,7 +42,16 @@
 			.new_programa ul{width:100%; height:auto;display:block;margin-bottom:5%;}
 			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
 			</style>
-			<div class="new_programa">
+			<ul class="table_res">
+				<li>
+					<span class="nom_uni"></span>
+					<a href="javascript:void(0)" class="disable">disable</a>
+					<a href="javascript:void(0)" class="edit">editar</a>
+					
+				</li>
+
+			</ul>
+			<div class="new_programa" style="display:none;">
 				<ul>
 					<li>
 						<label>Universidad o Institucion Educativa:</label>
@@ -73,6 +82,23 @@
 		
 	</div><!--forms_cont-->
 	
+
+
+
+
+
+
+
+
+
+id_universidad
+ nombre_uni
+website
+vigencia_ini
+vigencia_fin
+
+
+
 	
 	<div class="msg">
 		<span>El slider se ha guardado con éxito</span>
