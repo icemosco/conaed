@@ -56,7 +56,7 @@ $('.muestra_msg').click(function(){
 
 
 });
-s
+
 	/*$('.file_upload').change(function(){
 	     var fupload=$(this).val();
 	      $(this).parent().parent().find('.path').html(fupload);
