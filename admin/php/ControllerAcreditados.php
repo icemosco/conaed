@@ -38,11 +38,13 @@
 								<ul>
 									<li>
 										<label>Vigencia desde:</label>
-										<input type="text" name="vigencia_ini[]" max-lenght="100" value="'.$info["vigencia_ini"].'" id="datepickerini" required="required" placeholder="">
+										<input type="text" name="vigencia_ini[]" max-lenght="100" 
+										value="'.$info["vigencia_ini"].'" id="datepickerini" class="datepickerinit" required="required" placeholder="">
 									</li>
 									<li>
 										<label>Vigencia hasta:</label>
-										<input type="text" name="vigencia_fin[]" max-lenght="100"  value="'.$info["vigencia_fin"].'" id="datepickerfin" required="required" placeholder="">
+										<input type="text" name="vigencia_fin[]" max-lenght="100"  value="'.$info["vigencia_fin"].'" 
+										id="datepickerfin" required="required" class="datepickerfint" placeholder="">
 										<input type="hidden" name="idAcreditado[]" value="'.$info["id_universidad"].'"/> 
 									</li>
 								</ul>
