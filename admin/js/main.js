@@ -2,43 +2,11 @@ $(document).ready(function(){
 	//MENU
 
 	$('.btns_menu').click(function(){
-		var btn=$(this).attr('rel');
 		$('.btns_menu').removeClass('selected');
 		$('.icon').removeClass('selected');
 		$(this).addClass('selected');
 		$(this).find('.icon').addClass('selected');
-		$('.forms_cont').hide();
-		
-		switch (btn) {
-		    case "sliders":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Slider Home Page');
-		        	$('.search').html('<a href="javascript:void(0)" class="add_item" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>');
-		        break;
-		    case "programas":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Programas Acreditados');
-		        break;
-		    case "evaluadores":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Padrón de Evaluadores');
-		        break;
-		    case "asociados":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Referencias y Asociados');
-		        break;
-		    case "temasynoticias":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Temas y Noticias');
-		        break;
-		    case "usuarios":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Gestor de Usuarios');
-		        break;
-		   
-		}
-		
-		
+		var btn=$(this).attr('rel');
 	
 	});
 	$('.fslect').change(function(){
@@ -46,16 +14,8 @@ $(document).ready(function(){
 	     $(this).parent().find('.fake_select').html(slider_s);
 		});
 	
-$('.muestra_msg').click(function(){
-	//alert('hey');
-	$('.msg').fadeIn(100).animate({"bottom":"0px"}, "slow");
-	 setTimeout(function() {
-        $(".msg").fadeOut(1500).animate({"bottom":"-120px"}, "slow");
-    },3000);
 
-
-});
-    
+	$(')'
 	/*$('.file_upload').change(function(){
 	     var fupload=$(this).val();
 	      $(this).parent().parent().find('.path').html(fupload);
@@ -73,7 +33,7 @@ $('.muestra_msg').click(function(){
 	
 	
 	var nom_slide=1;
-	$('.add_item').click(function(){
+	$('.add_n_slider').click(function(){
 		var num_slides=$('.slider_fill').length;
 			nom_slide=num_slides+1;
 			
