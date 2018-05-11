@@ -42,18 +42,25 @@
 			.new_programa ul{width:100%; height:auto;display:block;margin-bottom:5%;}
 			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
 			ul.table_res{width:100%;overflow:hidden;}
-			ul.table_res li {width:100%;}
+			ul.table_res li {width:100%;height: auto;overflow:hidden;}
 			ul.table_res li .nom_uni{width:50%;display:inline-block;max-width: 50%; overflow:hidden;}
-			ul.table_res a{float:right;font-size:0.7em; font-family: oxygenlight;padding:10px 30px;}
-			ul.table_res li span{float:left;padding:0 5px;}
-			ul.table_res li span.nom_uni{float:left;}
+			ul.table_res a{float:right;font-size:0.7em; font-family: oxygenlight;padding:10px 30px;width:auto: margin-right:5%;display:block;}
+			ul.table_res li span{float:left;padding:0 5px;width: auto;}
+			ul.table_res li span.nom_uni{float:left;max-width:60%;}
 			</style>
 			<ul class="table_res">
 				<li>
 					<span class="num_id">1</span>
 					<span class="nom_uni">Unviversidad del Valle de mexico</span>
-					<a href="javascript:void(0)" class="disable">disable</a>
-					<a href="javascript:void(0)" class="edit">editar</a>
+					<a href="javascript:void(0)" class="disable funct">disable</a>
+					<a href="javascript:void(0)" class="edit funct">editar</a>
+					
+				</li>
+				<li class="clr2">
+					<span class="num_id">1</span>
+					<span class="nom_uni">Unviversidad del Valle de mexico</span>
+					<a href="javascript:void(0)" class="disable funct">disable</a>
+					<a href="javascript:void(0)" class="edit funct">editar</a>
 					
 				</li>
 

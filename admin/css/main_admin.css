@@ -89,11 +89,14 @@ header a.close_s{float:right;padding:2px 0 5px 35px;margin-right:20px;text-align
 .cont_r{position: relative;float: left;width: 100%;margin-top: 4px;overflow: hidden;height: 49px;}
 .path{width:90%;padding:5px 10px;margin:15px 0 15px 15px;float:left;border:1px solid #dcdfe3;}
 .file_upload{position: absolute;bottom: 2%;right: 1%;display: block;z-index: 1;width: 80px;opacity:0;cursor: pointer!important;}
+
 .title_sl{width:100%; float:left;font-size:1.2em;}
 .btn_cargar{display: block;position: absolute;bottom: 29%;right: 0%;width: auto;background: #394180;color: #FFF;padding:5px 37px;font-size:1em;}
 .restablecer{display:block}
 .order_box_s{float:left; clear:both; margin-top:15px; width:5%;}
 .new_programa{display:none;}
+.funct{width:3%; margin-rifh:1%;}
+.clr2{background:#aeaeae!important;}
 
 /*******************/
 /*nuevos width's*/
