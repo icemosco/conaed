@@ -53,7 +53,7 @@
 				<ul>
 					<li>
 						<label>Vigencia desde:</label>
-						<input type="text" name="vigencia_ini" max-lenght="100" class="" required="required" placeholder="">
+						<input type="text" name="vigencia_ini" max-lenght="100" class="" required="required" placeholder="inicia">
 					</li>
 					<li>
 						<label>Vigencia hasta:</label>
