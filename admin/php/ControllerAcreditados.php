@@ -21,7 +21,7 @@
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
 				
 				$template .= '<li '.$clase.'>
-							<span class="num_id">'.$info["id_universidad"].'</span>
+							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
 							<a href="javascript:void(0)" class="disable funct">disable</a>
 							<a href="javascript:void(0)" class="camb funct">editar</a>

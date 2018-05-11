@@ -58,14 +58,6 @@
 		</form>
 		
 	</div><!--forms_cont-->
-	
-
-
-
-
-
-
-
 
 	
 	<div class="msg">
