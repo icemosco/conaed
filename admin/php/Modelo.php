@@ -61,7 +61,45 @@ class Modelo extends DbConnect
 		}
 		
 		return $infoAcreditados;
-		
 	}
+	
+	
+	function fnInsertaAcreditados( $nombreUni, $paginaWeb, $fechaIni, $fechaFin ){
+		$sql  = "INSERT INTO programas_1(nombre_uni, website, vigencia_ini, vigencia_fin)
+					VALUES('".$nombreUni."','".$paginaWeb."',".$fechaIni.",'".$fechaFin."')";	
+		$res  = $this->query($sql) or 
+		   			die("Error en query insertar acreditados ". $this->errno());
+		   	
+		 $id   = $this->insert_id();	
+		 return $id;
+	}
+	
+	function fnActualizaAcreditados( $idAcreditado, $nombreUni, $paginaWeb, $fechaIni, $fechaFin)
+	{
+		$sql = "UPDATE programas_1 SET nombre_uni    = '{$nombreUni}'
+									, website        = '{$paginaWeb}'
+									, vigencia_ini   = '{$fechaIni}' 
+									, vigencia_fin   = '{$fechaFin}' 
+						WHERE id_universidad = {$idAcreditado}";
+		$res  = $this->query($sql);		
+		return $idAcreditado;	
+	}
+	
+	
+	
+	
+	function fnListadoUsuarios( ){
+		$sql   = "SELECT * FROM usuario";
+		$res   = $this->query($sql) or die( "Error en Usuarios ". $oCnx->errno() );
+		$regs  = $res->num_rows;
+	    if( $regs != 0 ){
+		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
+		   		$infoUsuarios[] =  $info;
+		   }
+		}
+		
+		return $infoUsuarios;
+	}
+	
 }	
 ?>	

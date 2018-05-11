@@ -4,7 +4,7 @@
 	include_once("../php/ControllerAcreditados.php");
 
 	//Guardado / Edicion
-	if(isset($_POST['guardar'])){
+	if(isset($_POST['guardar_slider'])){
 		$idSlide   = $_POST['idSlide'];
 		foreach( $idSlide as $key => $info){
 			$msgErr = fnGuardarSlide( $key, $idSlide[ $key ]
@@ -13,6 +13,18 @@
 								, $_POST['num_slider'][ $key ]
 								, $folderSlider
 								, $_FILES['imagenSlider'] );
+		}		
+	}
+	
+	
+	if(isset($_POST['guardar_acreditados'])){
+		$idAcreditado = $_POST['idAcreditado'];	
+		foreach( $idAcreditado as $key => $info){
+			$msgErr = fnGuardarAcreditados( $key, $idAcreditado[ $key ]
+										, $_POST['nombre_uni'][ $key ]
+										, $_POST['pagina_web'][ $key ]
+										, $_POST['vigencia_ini'][ $key ]
+										, $_POST['vigencia_fin'][ $key ] );
 		}		
 	}
 	
@@ -30,7 +42,7 @@
 		<form class="slider" name="sliders" id="" action="./home.php" method="post" enctype="multipart/form-data">
 			
 			<?php echo fnTemplateSlide(); ?>
-			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
+			<button type="submit"  class="save_btn" name="guardar_slider" id="guardar_slider" >Guardar</button>
 		</form>
 		
 	</div><!--forms_cont-->
@@ -54,7 +66,7 @@
 				<?php echo fnTemplateAcreditados(); ?>
 			</ul>
 
-			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
+			<button type="submit"  class="save_btn" name="guardar_acreditados" id="guardar_acreditados" >Guardar</button>
 		</form>
 		
 	</div><!--forms_cont-->

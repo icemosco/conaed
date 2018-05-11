@@ -55,4 +55,21 @@
 		return $template;
 	}	
 	
+	
+	
+	function fnGuardarAcreditados( $id, $idAcreditado, $nombreUni, $paginaWeb, $fechaIni, $fechaFin )
+	{
+		global $oMod, $oFun;
+		
+		
+		if( empty($idSlide )){
+			$id = $oMod->fnInsertaAcreditados( $nombreUni, $paginaWeb, $fechaIni, $fechaFin );
+		}else{
+			$id = $oMod->fnActualizaAcreditados( $idAcreditado, $nombreUni, $paginaWeb, $fechaIni, $fechaFin);
+		}	
+		
+		
+		return $error;
+	}
+	
 ?>	
