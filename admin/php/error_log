@@ -1,0 +1,9 @@
+[10-May-2018 20:07:57 America/Mexico_City] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'icemosco'@'localhost' (using password: NO) in /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php on line 181
+[10-May-2018 20:07:57 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Usuario::_get_error_path() in /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php:355
+Stack trace:
+#0 /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php(184): DbConnect->raise_error('83')
+#1 /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php(205): DbConnect->connect()
+#2 /home/ppfbayaa9nb9/public_html/admin/php/Usuario.php(141): DbConnect->query('SELECT u.*\n\t   ...')
+#3 /home/ppfbayaa9nb9/public_html/admin/php/validateLogin.php(27): Usuario->login(Array)
+#4 {main}
+  thrown in /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php on line 355

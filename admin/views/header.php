@@ -11,7 +11,6 @@
 <meta charset="utf-8">
 	<title>.:: CMS-CONAED ::.</title>
 	<link href="../css/main_admin.css" rel="stylesheet" title="stylesheet" type="text/css" />
-	 <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
