@@ -93,6 +93,7 @@ header a.close_s{float:right;padding:2px 0 5px 35px;margin-right:20px;text-align
 .btn_cargar{display: block;position: absolute;bottom: 29%;right: 0%;width: auto;background: #394180;color: #FFF;padding:5px 37px;font-size:1em;}
 .restablecer{display:block}
 .order_box_s{float:left; clear:both; margin-top:15px; width:5%;}
+.new_programa{display:none;}
 
 /*******************/
 /*nuevos width's*/
