@@ -58,10 +58,9 @@ $('.muestra_msg').click(function(){
 })
 
 
-/*$('.edit').click(function(){
-	alert('hey');
-	$(this).parent().('.next').css('background','#000');
-});Ç
+$('.edit').click(function(){
+	$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
+});
 /*  
 	/*$('.file_upload').change(function(){
 	     var fupload=$(this).val();
@@ -78,7 +77,6 @@ $('.muestra_msg').click(function(){
 		$(this).parent().parent().find('.path').html(fupload);
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
-xs
 
 	
 	var nom_slide  = 2;
