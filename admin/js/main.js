@@ -2,11 +2,43 @@ $(document).ready(function(){
 	//MENU
 
 	$('.btns_menu').click(function(){
+		var btn=$(this).attr('rel');
 		$('.btns_menu').removeClass('selected');
 		$('.icon').removeClass('selected');
 		$(this).addClass('selected');
 		$(this).find('.icon').addClass('selected');
-		var btn=$(this).attr('rel');
+		$('.forms_cont').hide();
+		
+		switch (btn) {
+		    case "sliders":
+		        	$('.'+btn).show();
+		        	
+		        	$('.header_int > h2').html('Slider Home Page');
+		        break;
+		    case "programas":
+		        	$('.'+btn).show();
+		        	$('.header_int > h2').html('Programas Acreditados');
+		        break;
+		    case "evaluadores":
+		        	$('.'+btn).show();
+		        	$('.header_int > h2').html('Padrón de Evaluadores');
+		        break;
+		    case "asociados":
+		        	$('.'+btn).show();
+		        	$('.header_int > h2').html('Referencias y Asociados');
+		        break;
+		    case "temasynoticias":
+		        	$('.'+btn).show();
+		        	$('.header_int > h2').html('Temas y Noticias');
+		        break;
+		    case "usuarios":
+		        	$('.'+btn).show();
+		        	$('.header_int > h2').html('Gestor de Usuarios');
+		        break;
+		   
+		}
+		
+		
 	
 	});
 	$('.fslect').change(function(){

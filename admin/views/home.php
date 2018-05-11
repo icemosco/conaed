@@ -25,7 +25,7 @@
 				<img src="../img/plus.png" alt="" /></a>
 		</div>
 	</div>
-	<div class="forms_cont">
+	<div class="forms_cont sliders">
 		<form class="slider" name="sliders" id="" action="./home.php" method="post" enctype="multipart/form-data">
 			
 			<?php echo fnTemplateSlide(); ?>
@@ -33,13 +33,17 @@
 		</form>
 		
 	</div><!--forms_cont-->
-	<style>
-		.save_slider{width:100%; padding:5px 0;}
-		.save_slider {}
-	</style>
-	<div class="save_slider">
+	<div class="forms_cont programas">
+		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
+			<div class=""
+
+			
+			
+			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
+		</form>
 		
-	</div>
+	</div><!--forms_cont-->
+	
 	<div class="msg">
 		<span>El slider se ha guardado con éxito</span>
 	</div>
