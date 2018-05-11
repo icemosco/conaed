@@ -2,43 +2,11 @@ $(document).ready(function(){
 	//MENU
 
 	$('.btns_menu').click(function(){
-		var btn=$(this).attr('rel');
 		$('.btns_menu').removeClass('selected');
 		$('.icon').removeClass('selected');
 		$(this).addClass('selected');
 		$(this).find('.icon').addClass('selected');
-		$('.forms_cont').hide();
-		
-		switch (btn) {
-		    case "sliders":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Slider Home Page');
-		        	//$('.search').html('<a href="javascript:void(0)" class="add_n_slider" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>');
-		        break;
-		    case "programas":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Programas Acreditados');
-		        break;
-		    case "evaluadores":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Padrón de Evaluadores');
-		        break;
-		    case "asociados":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Referencias y Asociados');
-		        break;
-		    case "temasynoticias":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Temas y Noticias');
-		        break;
-		    case "usuarios":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Gestor de Usuarios');
-		        break;
-		   
-		}
-		
-		
+		var btn=$(this).attr('rel');
 	
 	});
 	$('.fslect').change(function(){
@@ -81,7 +49,7 @@ $('.muestra_msg').click(function(){
 				return false;
 			}
 	
-		$('.save_btn').insertBefore('<div class="slider_fill"><span class="title_sl">Slider '+nom_slide+'</span><div class="left mr"><span class="indications">Imágen .jpg ó .png</span><input type="text" name="num_slider[]" class="order_box_s" id="num_slider"  value="" size="2" style="width: 5%"/><ul><li></li></ul><div class="img_loaded"><img src="../img/pic.png"></div><div class="path">ruta del archivo</div><div class="cont_r"><input type="file" name="imagenSlider[]" id="imagenSlider[]"class="file_upload" name="file" style="width: 125px;height: 35px;bottom: 28%;right: 0%;" /><a href="javascript:void(0)" class="btn_cargar">Cargar</a></div></div><!--left--><div class="right"><div class="sub_text_cont"><span class="">Titulo (100 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea name="titulo[]" id="titulo" id="titulo" class="infoSlide" maxlength="100" required ></textarea></div><div class="sub_text_cont"><span class="">Subtitulo (225 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea name="subtitulo[]" id="subtitulo" class="infoSlide"  maxlength="225" required ></textarea></div><input type="hidden" name="idSlide[]" id="idSlide"  value=""/></div><!--slider_fill-->');
+		$('.save_btn').before('<div class="slider_fill"><span class="title_sl">Slider '+nom_slide+'</span><div class="left mr"><span class="indications">Imágen .jpg ó .png</span><input type="text" class="order_box_s" name="num_slider[]" id="num_slider"  value="'+nom_slide+'" size="2" style="width: 5%"/><div class="img_loaded"><img src="../img/pic.png"></div><div class="path">ruta del archivo</div><div class="cont_r"><input type="file" required="required" name="imagenSlider[]" id="imagenSlider[]"class="file_upload" name="file" style="width: 125px;height: 35px;bottom: 28%;right: 0%;" /><a href="javascript:void(0)" class="btn_cargar">Cargar</a></div></div><!--left--><div class="right"><div class="sub_text_cont"><span class="">Titulo (100 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea required="required" name="titulo[]" id="titulo" id="titulo" class="infoSlide" maxlength="100" required ></textarea></div><div class="sub_text_cont"><span class="">Subtitulo (225 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea required="required" name="subtitulo[]" id="subtitulo" class="infoSlide"  maxlength="225" required ></textarea></div><input type="hidden" name="idSlide[]" id="idSlide"  value=""/></div><!--slider_fill-->');
 	
 	});
 	
@@ -98,7 +66,7 @@ $('.muestra_msg').click(function(){
 		var key = window.event ? e.which : e.keyCode;
   		if (key < 48 || key > 57) {
     		e.preventDefault();
-  		}
+  		}  		
     }); 
 
     //Validamos que el numero solo sea de 1-5
@@ -108,7 +76,8 @@ $('.muestra_msg').click(function(){
   			e.currentTarget.value = '';
   		}
 
-    });     
+    });
+     
 
 });//ready
 
