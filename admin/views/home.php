@@ -35,11 +35,43 @@
 	</div><!--forms_cont-->
 	<div class="forms_cont programas">
 		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
-			<div class=""
+			<div class="forms_cont programas" style="display:block">
+		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
+			<style>
+			.new_programa{width:100%; float:left;overflow:hidden;}
+			.new_programa ul{width:100%; height:auto;display:block;}
+			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
+			</style>
+			<div class="new_programa">
+				<ul>
+					<li>
+						<label>Universidad o Institucion Educativa:</label>
+						<input type="text" name="nombre_uni" max-lenght="500" class="" required="required" placeholder="">
+					</li>
+					<li>
+						<label>Página Web:</label>
+						<input type="text" name="pagina_web" max-lenght="500" class="" required="required" placeholder="http:// ó https://">
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label>Vigencia desde:</label>
+						<input type="text" name="vigencia_ini " max-lenght="100" class="datepicker" required="required" placeholder="">
+					</li>
+					<li>
+						<label>Vigencia hasta:</label>
+						<input type="text" name="vigencia_fin " max-lenght="100" class="datepicker" required="required" placeholder="">
+					</li>
+				</ul>
 
+			</div>
+			
 			
 			
 			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
+		</form>
+		
+	</div><!--forms_cont-->
 		</form>
 		
 	</div><!--forms_cont-->
