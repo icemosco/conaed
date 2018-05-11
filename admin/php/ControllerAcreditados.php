@@ -13,9 +13,7 @@
 		
 		if(!empty( $infoAcreditado )){
 			
-			$cont  = 0;
-			
-			
+			$cont  = 1;
 			foreach($infoAcreditado as $key =>$info){
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
