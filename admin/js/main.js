@@ -12,8 +12,8 @@ $(document).ready(function(){
 		switch (btn) {
 		    case "sliders":
 		        	$('.'+btn).show();
-		        	
 		        	$('.header_int > h2').html('Slider Home Page');
+		        	$('.search').html('<a href="javascript:void(0)" class="add_item" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "programas":
 		        	$('.'+btn).show();
