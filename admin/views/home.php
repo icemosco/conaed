@@ -21,8 +21,7 @@
 	<div class="header_int">
 		<h2 class="muestra_msg">Slider Home Page</h2>
 		<div class="search">
-			<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider">
-				<img src="../img/plus.png" alt="" /></a>
+			
 		</div>
 	</div>
 	<div class="forms_cont sliders">
