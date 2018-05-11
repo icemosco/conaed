@@ -22,7 +22,7 @@
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
 							<a href="javascript:void(0)" class="disable funct">disable</a>
-							<a href="javascript:void(0)" class="camb funct">editar</a>
+							<a href="javascript:void(0)" class="edit funct">editar</a>
 						</li>
 						<li>
 							<div class="new_programa">
