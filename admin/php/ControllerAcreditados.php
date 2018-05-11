@@ -12,7 +12,6 @@
 
 		
 		if(!empty( $infoAcreditado )){
-			
 			$cont  = 1;
 			foreach($infoAcreditado as $key =>$info){
 				$clase = "";	
@@ -60,7 +59,7 @@
 	function fnGuardarAcreditados( $id, $idAcreditado, $nombreUni, $paginaWeb, $fechaIni, $fechaFin )
 	{
 		global $oMod, $oFun;
-		
+		$error = '';
 		
 		if( empty($idSlide )){
 			$id = $oMod->fnInsertaAcreditados( $nombreUni, $paginaWeb, $fechaIni, $fechaFin );

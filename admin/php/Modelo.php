@@ -85,6 +85,18 @@ class Modelo extends DbConnect
 		return $idAcreditado;	
 	}
 	
+	function fnListEvaluadores(){
+		$sql   = "SELECT * FROM evaluadores";
+		$res   = $this->query($sql) or die( "Error en evaluadores ". $oCnx->errno() );
+		$regs  = $res->num_rows;
+	    if( $regs != 0 ){
+		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
+		   		$infoEvaluadores[] =  $info;
+		   }
+		}
+		
+		return $infoEvaluadores;
+	}
 	
 	
 	
