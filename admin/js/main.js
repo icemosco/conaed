@@ -56,13 +56,15 @@ $('.muestra_msg').click(function(){
 
 
 });
-    
+s
 	/*$('.file_upload').change(function(){
 	     var fupload=$(this).val();
 	      $(this).parent().parent().find('.path').html(fupload);
 	      $(this).parent().parent().find('.img_loaded').html('<img src="'+fupload+'" />');
 	     
 	 });*/
+	 
+	 
 	
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
@@ -71,7 +73,7 @@ $('.muestra_msg').click(function(){
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
 	
-	
+
 	
 	var nom_slide  = 2;
 	

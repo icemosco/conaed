@@ -48,24 +48,17 @@
 			ul.table_res li span{float:left;padding:0 5px;width: auto;}
 			ul.table_res li span.nom_uni{float:left;max-width:60%;}
 			</style>
+			
 			<ul class="table_res">
 				<li>
 					<span class="num_id">1</span>
 					<span class="nom_uni">Unviversidad del Valle de mexico</span>
 					<a href="javascript:void(0)" class="disable funct">disable</a>
-					<a href="javascript:void(0)" class="edit funct">editar</a>
+					<a href="javascript:void(0)" class="camb funct">editar</a>
 					
 				</li>
-				<li class="clr2">
-					<span class="num_id">1</span>
-					<span class="nom_uni">Unviversidad del Valle de mexico</span>
-					<a href="javascript:void(0)" class="disable funct">disable</a>
-					<a href="javascript:void(0)" class="edit funct">editar</a>
-					
-				</li>
-
-			</ul>
-			<div class="new_programa">
+				<li>
+				<div class="new_programa">
 				<ul>
 					<li>
 						<label>Universidad o Institucion Educativa:</label>
@@ -88,6 +81,17 @@
 				</ul>
 
 			</div>
+				</li>
+				<li class="clr2">
+					<span class="num_id">1</span>
+					<span class="nom_uni">Unviversidad del Valle de mexico</span>
+					<a href="javascript:void(0)" class="disable funct">disable</a>
+					<a href="javascript:void(0)" class="edit funct">editar</a>
+					
+				</li>
+
+			</ul>
+			
 			
 			
 			
@@ -115,12 +119,18 @@
 <script src="../js/main.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <!--<script>
+				$('.cambt').click(function(){º
+					alert('edit');
+
+				}
+			</script>
 <script>
 	$( function() {
     $( "#datepickerini" ).datepicker();
     $( "#datepickerfin" ).datepicker();
    } );
-</script>
+</script>-->
 </body>
 
 </html>
