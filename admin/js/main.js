@@ -13,7 +13,7 @@ $(document).ready(function(){
 		    case "sliders":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Slider Home Page');
-		        	//$('.search').html('<a href="javascript:void(0)" class="ad_item" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>');
+		        	//$('.search').html('<a href="javascript:void(0)" class="add_n_slider" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "programas":
 		        	$('.'+btn).show();
@@ -81,7 +81,7 @@ $('.muestra_msg').click(function(){
 				return false;
 			}
 	
-		$('.slider').append('<div class="slider_fill"><span class="title_sl">Slider '+nom_slide+'</span><div class="left mr"><span class="indications">Imágen .jpg ó .png</span><input type="text" name="num_slider[]" class="order_box_s" id="num_slider"  value="" size="2" style="width: 5%"/><ul><li></li></ul><div class="img_loaded"><img src="../img/pic.png"></div><div class="path">ruta del archivo</div><div class="cont_r"><input type="file" name="imagenSlider[]" id="imagenSlider[]"class="file_upload" name="file" style="width: 125px;height: 35px;bottom: 28%;right: 0%;" /><a href="javascript:void(0)" class="btn_cargar">Cargar</a></div></div><!--left--><div class="right"><div class="sub_text_cont"><span class="">Titulo (100 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea name="titulo[]" id="titulo" id="titulo" class="infoSlide" maxlength="100" required ></textarea></div><div class="sub_text_cont"><span class="">Subtitulo (225 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea name="subtitulo[]" id="subtitulo" class="infoSlide"  maxlength="225" required ></textarea></div><input type="hidden" name="idSlide[]" id="idSlide"  value=""/></div><!--slider_fill-->');
+		$('.save_btn').insertBefore('<div class="slider_fill"><span class="title_sl">Slider '+nom_slide+'</span><div class="left mr"><span class="indications">Imágen .jpg ó .png</span><input type="text" name="num_slider[]" class="order_box_s" id="num_slider"  value="" size="2" style="width: 5%"/><ul><li></li></ul><div class="img_loaded"><img src="../img/pic.png"></div><div class="path">ruta del archivo</div><div class="cont_r"><input type="file" name="imagenSlider[]" id="imagenSlider[]"class="file_upload" name="file" style="width: 125px;height: 35px;bottom: 28%;right: 0%;" /><a href="javascript:void(0)" class="btn_cargar">Cargar</a></div></div><!--left--><div class="right"><div class="sub_text_cont"><span class="">Titulo (100 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea name="titulo[]" id="titulo" id="titulo" class="infoSlide" maxlength="100" required ></textarea></div><div class="sub_text_cont"><span class="">Subtitulo (225 caracteres máx)</span><span class="conteo_char">0 caracteres</span><textarea name="subtitulo[]" id="subtitulo" class="infoSlide"  maxlength="225" required ></textarea></div><input type="hidden" name="idSlide[]" id="idSlide"  value=""/></div><!--slider_fill-->');
 	
 	});
 	

@@ -21,6 +21,7 @@
 	<div class="header_int">
 		<h2 class="muestra_msg">Slider Home Page</h2>
 		<div class="search">
+			<!--<a href="javascript:void(0)" class="add_n_slider" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>-->
 			<a href="javascript:void(0)" class="add_n_slider" rel="slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>
 		</div>
 	</div>
