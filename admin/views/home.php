@@ -70,18 +70,18 @@
 <script src="../js/main.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--<script>
-				$('.cambt').click(function(){º
+ <script>
+				$('.funct').click(function(){
 					alert('edit');
 
-				}
+				});
 			</script>
 <script>
 	$( function() {
     $( "#datepickerini" ).datepicker();
     $( "#datepickerfin" ).datepicker();
    } );
-</script>-->
+</script>
 </body>
 
 </html>

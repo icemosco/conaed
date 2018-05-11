@@ -55,8 +55,14 @@ $('.muestra_msg').click(function(){
     },3000);
 
 
-});
+})
 
+
+/*$('.edit').click(function(){
+	alert('hey');
+	$(this).parent().('.next').css('background','#000');
+});Ç
+/*  
 	/*$('.file_upload').change(function(){
 	     var fupload=$(this).val();
 	      $(this).parent().parent().find('.path').html(fupload);
@@ -72,7 +78,7 @@ $('.muestra_msg').click(function(){
 		$(this).parent().parent().find('.path').html(fupload);
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
-	
+xs
 
 	
 	var nom_slide  = 2;
