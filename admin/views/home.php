@@ -1,6 +1,7 @@
 <?php 
 	include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
+	include_once("../php/ControllerAcreditados.php");
 
 	//Guardado / Edicion
 	if(isset($_POST['guardar'])){
@@ -50,51 +51,9 @@
 			</style>
 			
 			<ul class="table_res">
-				<li>
-					<span class="num_id">1</span>
-					<span class="nom_uni">Unviversidad del Valle de mexico</span>
-					<a href="javascript:void(0)" class="disable funct">disable</a>
-					<a href="javascript:void(0)" class="camb funct">editar</a>
-					
-				</li>
-				<li>
-				<div class="new_programa">
-				<ul>
-					<li>
-						<label>Universidad o Institucion Educativa:</label>
-						<input type="text" name="nombre_uni" max-lenght="500" class="" required="required" placeholder="">
-					</li>
-					<li>
-						<label>Página Web:</label>
-						<input type="text" name="pagina_web" max-lenght="500" class="" required="required" placeholder="http:// ó https://">
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<label>Vigencia desde:</label>
-						<input type="text" name="vigencia_ini " max-lenght="100" id="datepickerini" required="required" placeholder="">
-					</li>
-					<li>
-						<label>Vigencia hasta:</label>
-						<input type="text" name="vigencia_fin " max-lenght="100" id="datepickerfin" required="required" placeholder="">
-					</li>
-				</ul>
-
-			</div>
-				</li>
-				<li class="clr2">
-					<span class="num_id">1</span>
-					<span class="nom_uni">Unviversidad del Valle de mexico</span>
-					<a href="javascript:void(0)" class="disable funct">disable</a>
-					<a href="javascript:void(0)" class="edit funct">editar</a>
-					
-				</li>
-
+				<?php echo fnTemplateAcreditados(); ?>
 			</ul>
-			
-			
-			
-			
+
 			<button type="submit"  class="save_btn" name="guardar" id="guardar" >Guardar</button>
 		</form>
 		
