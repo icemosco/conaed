@@ -33,7 +33,7 @@
 		</form>
 		
 	</div><!--forms_cont-->
-	<div class="forms_cont programas" style="display:block">
+	<div class="forms_cont programas">
 		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
 			<style>
 			.new_programa{width:100%; float:left;overflow:hidden;}
@@ -54,11 +54,11 @@
 				<ul>
 					<li>
 						<label>Vigencia desde:</label>
-						<input type="text" name="vigencia_ini" max-lenght="100" class="" required="required" placeholder="">
+						<input type="text" name="vigencia_ini " max-lenght="100" id="datepicker" required="required" placeholder="">
 					</li>
 					<li>
 						<label>Vigencia hasta:</label>
-						<input type="text" name="vigencia_fin" max-lenght="100" class="" required="required" placeholder="">
+						<input type="text" name="vigencia_fin " max-lenght="100" id="datepicker" required="required" placeholder="">
 					</li>
 				</ul>
 
@@ -79,8 +79,11 @@
 </div><!--main_wrapper-->
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/main.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
-	
+	$( function() {
+    $( "#datepicker" ).datepicker();
+  } );
 </script>
 </body>
 

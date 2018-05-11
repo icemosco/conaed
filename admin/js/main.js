@@ -73,7 +73,7 @@ $('.muestra_msg').click(function(){
 	
 	
 	var nom_slide=1;
-	$('.add_n_slider').click(function(){
+	$('.add_item').click(function(){
 		var num_slides=$('.slider_fill').length;
 			nom_slide=num_slides+1;
 			
