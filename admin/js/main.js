@@ -58,6 +58,21 @@ $('.muestra_msg').click(function(){
 })
 
 
+<<<<<<< HEAD
+=======
+$('.edit').click(function(){
+	$(".new_programa").css("display", "none");
+	$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
+});
+/*  
+	/*$('.file_upload').change(function(){
+	     var fupload=$(this).val();
+	      $(this).parent().parent().find('.path').html(fupload);
+	      $(this).parent().parent().find('.img_loaded').html('<img src="'+fupload+'" />');
+	     
+	 });*/
+	 
+>>>>>>> 7405362fec6800ea24fa1274a16fc2d18aa894ca
 	 
 	
 	$(document).on('change','.file_upload',function (e) {
