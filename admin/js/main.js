@@ -12,7 +12,6 @@ $(document).ready(function(){
 		switch (btn) {
 		    case "sliders":
 		        	$('.'+btn).show();
-		        	
 		        	$('.header_int > h2').html('Slider Home Page');
 		        break;
 		    case "programas":

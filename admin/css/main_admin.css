@@ -73,7 +73,7 @@ header a.close_s{float:right;padding:2px 0 5px 35px;margin-right:20px;text-align
 .wrapper_right .header_int .search ul li select{width:100%; position:absolute;top:0;height:30px;opacity:0;}
 .wrapper_right .header_int .search .add_n_slider{width:30px; height:30px; float:right;margin-right:5%;}
 .fake_select{width:90%;padding-right:30px;background-image:url(../img/arrow.png);background-position:top right; height:25px;background-repeat:no-repeat;border:1px solid #dbdee2; text-align: center;padding-top:5px;}
-.wrapper_right .forms_cont{width:98%; padding:10px;background:#FFF;float:left;margin-top:10px;position:relative;}
+.wrapper_right .forms_cont{width:98%; padding:10px;background:#FFF;float:left;margin-top:10px;position:relative;display:none;}
 
 .wrapper_right .forms_cont .save_btn{width:auto; padding:10px 20px; text-align: center; background:#9b4987;color:#FFF;float:right;font-size:1em;cursor:pointer!important}
 .wrapper_right .msg{width:100%; height:auto;padding:20px 0; overflow:hidden;position:absolute; bottom:-120px;background:#394180;color:#FFF; font-family:oxygenlight;max-height:120px;}

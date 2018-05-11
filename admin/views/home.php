@@ -34,8 +34,8 @@
 		
 	</div><!--forms_cont-->
 	<div class="forms_cont programas">
-		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
-			<div class="forms_cont programas">
+		
+			
 		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
 			<style>
 			.new_programa{width:100%; float:left;overflow:hidden;}
@@ -72,9 +72,7 @@
 		</form>
 		
 	</div><!--forms_cont-->
-		</form>
-		
-	</div><!--forms_cont-->
+	
 	
 	<div class="msg">
 		<span>El slider se ha guardado con éxito</span>
