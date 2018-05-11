@@ -75,7 +75,7 @@ $('.muestra_msg').click(function(){
 	
 	var nom_slide  = 2;
 	
-	$('.add_n_slider').click(function(){
+	$(document).on('click','.add_n_slider',function (e) {
 			if(nom_slide > 5){
 				return false;
 			}
