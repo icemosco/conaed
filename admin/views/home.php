@@ -6,8 +6,10 @@
 	//Guardado / Edicion
 	if(isset($_POST['guardar_slider'])){
 		$idSlide   = $_POST['idSlide'];
+		$msgErr    = '';
+		
 		foreach( $idSlide as $key => $info){
-			$msgErr = fnGuardarSlide( $key, $idSlide[ $key ]
+			$msgErr .= fnGuardarSlide( $key, $idSlide[ $key ]
 								, $_POST['titulo'][ $key ]
 								, $_POST['subtitulo'][ $key ]
 								, $_POST['num_slider'][ $key ]
@@ -39,7 +41,7 @@
 		</div>
 	</div>
 	<div class="forms_cont sliders">
-		<form class="slider" name="sliders" id="" action="./home.php" method="post" enctype="multipart/form-data">
+		<form class="slider" name="sliders" id="sliders" action="./home.php" method="post" enctype="multipart/form-data">
 			
 			<?php echo fnTemplateSlide(); ?>
 			<button type="submit"  class="save_btn" name="guardar_slider" id="guardar_slider" >Guardar</button>
@@ -73,7 +75,6 @@
 
 	
 	<div class="msg">
-		<span>El slider se ha guardado con éxito</span>
 	</div>
 </div><!--wrapper_right-->
 
@@ -91,6 +92,7 @@
 		    dateFormat: 'dd-mm-yy'
 	    });
    	} );
+   	
 </script>
 </body>
 

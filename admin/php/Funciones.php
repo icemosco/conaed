@@ -61,7 +61,7 @@ class Funciones
 	    $y = imagesy($imagen);  
         
          //redimensionamos con el ancho y largo proporcionado
-	    $img2 = imagecreatetruecolor($nuevax, $nuevay);
+	    $img2 = imagecreatetruecolor($xmax, $ymax);
 	    imagecopyresized($img2, $imagen, 0, 0, 0, 0, $xmax, $ymax, $x, $y);   
         
         imagejpeg($img2, $rutaimg);
