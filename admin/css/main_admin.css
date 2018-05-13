@@ -86,19 +86,19 @@ ul.paginator li a{display:block; padding:3px 10px; color:#3a4181;font-family:oxy
 ul.paginator li a:hover, .active_page{background:#3a4181; color:#FFF; }
 ul.paginator li a.previuos_page{padding:3px 10px;}
 
-.radius-left{-webkit-border-top-left-radius: 10px;
+/*.radius-left{-webkit-border-top-left-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
--moz-border-radius-topleft: 10px;
--moz-border-radius-bottomleft: 10px;
+-moz-border-radius-top-left: 10px;
+-moz-border-radius-bottom-left: 10px;
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;};
 .radius-right{-webkit-border-top-right-radius: 10px;
 -webkit-border-bottom-right-radius: 10px;
--moz-border-radius-topright: 10px;
--moz-border-radius-bottomright: 10px;
+-moz-border-radius-top-right: 10px;
+-moz-border-radius-bottom-right: 10px;
 border-top-right-radius: 10px;
 border-bottom-right-radius: 10px;};
-
+*/
 
 .wrapper_right{background:#dbdee2;height:auto; width:80%;padding:5px;float:right;margin:30px 50px 0 0;overflow:hidden;position:relative;}
 .wrapper_right .header_int{width:98%; padding:10px;background:#FFF;float:left;}
@@ -114,7 +114,7 @@ border-bottom-right-radius: 10px;};
 .wrapper_right .forms_cont{width:98%; padding:10px;background:#FFF;float:left;margin-top:10px;position:relative;display:none;}
 
 .wrapper_right .forms_cont .save_btn{width:auto; padding:10px 20px; text-align: center; background:#9b4987;color:#FFF;float:right;font-size:1em;cursor:pointer!important; margin-bottom:10px;}
-.wrapper_right .msg{width:100%; height:auto;padding:20px 0; overflow:hidden;position:absolute; bottom:-120px;background:#394180;color:#FFF; font-family:oxygenlight;max-height:120px;}
+.wrapper_right .msg{width:100%; height:auto;padding:20px 0; overflow:hidden;position:absolute; bottom:-120px;background:#394180;color:#FFF; font-family:oxygenlight;max-height:120px;display:none;}
 .wrapper_right .msg span{width:90%; margin:0 auto; display:block; text-align: center;}
 .wrapper_right .forms_cont form{width:100%;float:left;}
 .slider_fill{width:100%; float:left;margin-bottom:40px;padding-bottom:20px; border-bottom: 1px solid #CCC;}
