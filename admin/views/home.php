@@ -97,11 +97,14 @@
 
 			<button type="submit"  class="save_btn" name="guardar_acreditados" id="guardar_acreditados" >Guardar</button>
 		</form>
-		<ul calss="paginator">
+		<ul class="paginator">
+			<!---->
 			<?php 
+				echo '<li class="radius-left"><a href="previuos_page">Anterior</a></li>';
 				for($i = 1; $infoAcreditados['totalPagina'] >= $i; $i++){
 					echo '<li><a href="./home.php?npa='.$i.'" class="number_link">'.$i .'</a></li>';
 				}
+				echo '<li class="radius-right"><a href="next_page">Siguiente</a></li>';
 			?>
 		</ul>
 	</div><!--forms_cont-->
@@ -123,12 +126,14 @@
 
 			<button type="submit"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores" >Guardar</button>
 		</form>
-		<ul calss="paginator">
+		<ul class="paginator">
+			<!--<li class="radius-left"><a href="previuos_page">Anterior</a></li>-->
 			<?php 
 				for($i = 1; $infoEvaluadores['totalPagina'] >= $i; $i++){
 					echo '<li><a href="./home.php?npe='.$i.'" class="number_link">'.$i .'</a></li>';
 				}
 			?>
+			<!--<li class="radius-right"><a href="next_page">Siguiente</a></li>-->
 		</ul>
 		
 	</div><!--forms_cont-->

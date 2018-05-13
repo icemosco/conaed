@@ -80,9 +80,24 @@ ul.table_res a{float:right;font-size:0.7em; font-family: oxygenlight;padding:10p
 ul.table_res li span{float:left;padding:0 5px;width: auto;}
 ul.table_res li span.nom_uni{float:left;max-width:60%;}
 
+ul.paginator{width:auto; float:right; margin-right:3%;}
+ul.paginator li{float:left;outline:1px solid #dddddd;}
+ul.paginator li a{display:block; padding:3px 10px; color:#3a4181;font-family:oxygenlight;}
+ul.paginator li a:hover, .active_page{background:#3a4181; color:#FFF; }
+ul.paginator li a.previuos_page{padding:3px 10px;}
 
-
-
+.radius-left{-webkit-border-top-left-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-topleft: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-top-left-radius: 10px;
+border-bottom-left-radius: 10px;};
+.radius-right{-webkit-border-top-right-radius: 10px;
+-webkit-border-bottom-right-radius: 10px;
+-moz-border-radius-topright: 10px;
+-moz-border-radius-bottomright: 10px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;};
 
 
 .wrapper_right{background:#dbdee2;height:auto; width:80%;padding:5px;float:right;margin:30px 50px 0 0;overflow:hidden;position:relative;}
