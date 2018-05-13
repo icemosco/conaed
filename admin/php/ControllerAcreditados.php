@@ -17,17 +17,23 @@
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
 				
+				if($info['activo'] == 1) $activo = 'disable';
+				else
+					$activo = 'enable';
+				
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
-							<a href="javascript:void(0)" class="disable funct">disable</a>
-							<a href="javascript:void(0)" class="edit funct">editar</a>
+							<a href="javascript:void(0)" class="disable_acreditado funct">'.$activo.'</a>
+							<input type="hidden" name="idAcreditado[]" value="'.$info["id_universidad"].'"/> 
+							<input type="hidden" name="statusHabilitado[]" value="'.$info["activo"].'"/> 
+							<a href="javascript:void(0)" class="edit_acreditado funct">editar</a>
 						</li>
 						<li>
 							<div class="new_programa">
 								<ul>
 									<li>
-										<label>Universidad o Institucion Educativa:</label>
+										<label>Universidad o Institución Educativa:</label>
 										<input type="text" name="nombre_uni[]" max-lenght="500" value="'.$info["nombre_uni"].'" class="requerido"  placeholder="">
 									</li>
 									<li>
@@ -45,7 +51,6 @@
 										<label>Vigencia hasta:</label>
 										<input type="text" name="vigencia_fin[]" max-lenght="25"  value="'.$info["vigencia_fin"].'" id="datepickerfinit_'.$cont.'" 
 											class="datepickerfinit" placeholder="">
-										<input type="hidden" name="idAcreditado[]" value="'.$info["id_universidad"].'"/> 
 									</li>
 								</ul>
 							</div>

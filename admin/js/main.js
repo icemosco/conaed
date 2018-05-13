@@ -56,12 +56,6 @@ $('.muestra_msg').click(function(){
 
 
 })
-
-$('.edit').click(function(){
-	$(".new_programa").css("display", "none");
-	$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
-});
-	 
 	
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
@@ -184,6 +178,45 @@ $('.edit').click(function(){
 		    dateFormat: 'dd-mm-yy'
 	    });
 	});
+	
+	
+	//===================================================
+   	// EDICION ACREDITADOS
+	$('.edit_acreditado').click(function(){
+		$(".new_programa").css("display", "none");
+		$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
+	});
+	
+	$('.disable_acreditado').click(function( elem ){
+
+		var elem 	     = this;
+		var idAcreditado = this.nextElementSibling.value;
+		var idStatus     = this.nextElementSibling.nextElementSibling.value;
+		
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxAcreditados.php",
+	        //dataType: "json",
+	        data: {
+		        accion  : "desactivar",
+		        id      : idAcreditado,
+		        estatus : idStatus
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	if(idStatus == '1'){
+				     	$(elem).text('enable');
+			     	}
+			     	if(idStatus == '0'){
+				     	$(elem).text('disable');
+			     	}
+		        }
+	        }
+		});
+	});	
 
 });//ready
 

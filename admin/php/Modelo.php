@@ -85,6 +85,16 @@ class Modelo extends DbConnect
 		return $idAcreditado;	
 	}
 	
+	function fnDesactivarAcreditados( $idAcreditado, $estatus ){
+		$sql = "UPDATE programas_1 SET activo = {$estatus} 
+				WHERE id_universidad = {$idAcreditado}";
+		$res  = $this->query($sql);		
+		
+		return "OK";		
+	}
+	
+	
+	
 	function fnListEvaluadores(){
 		$sql   = "SELECT * FROM evaluadores";
 		$res   = $this->query($sql) or die( "Error en evaluadores ". $oCnx->errno() );
