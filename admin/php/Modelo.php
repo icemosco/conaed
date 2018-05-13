@@ -66,7 +66,7 @@ class Modelo extends DbConnect
 	
 	function fnInsertaAcreditados( $nombreUni, $paginaWeb, $fechaIni, $fechaFin ){
 		$sql  = "INSERT INTO programas_1(nombre_uni, website, vigencia_ini, vigencia_fin)
-					VALUES('".$nombreUni."','".$paginaWeb."',".$fechaIni.",'".$fechaFin."')";	
+					VALUES('".$nombreUni."','".$paginaWeb."',STR_TO_DATE('".$fechaIni."', '%d-%m-%Y'),STR_TO_DATE('".$fechaFin."', '%d-%m-%Y'))";	
 		$res  = $this->query($sql) or 
 		   			die("Error en query insertar acreditados ". $this->errno());
 		   	
@@ -78,9 +78,9 @@ class Modelo extends DbConnect
 	{
 		$sql = "UPDATE programas_1 SET nombre_uni    = '{$nombreUni}'
 									, website        = '{$paginaWeb}'
-									, vigencia_ini   = '{$fechaIni}' 
-									, vigencia_fin   = '{$fechaFin}' 
-						WHERE id_universidad = {$idAcreditado}";
+									, vigencia_ini   = STR_TO_DATE('".$fechaIni."', '%d-%m-%Y')
+									, vigencia_fin   = STR_TO_DATE('".$fechaFin."', '%d-%m-%Y')
+						WHERE id_universidad = {$idAcreditado}";				
 		$res  = $this->query($sql);		
 		return $idAcreditado;	
 	}

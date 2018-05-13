@@ -104,5 +104,10 @@ class Funciones
 	 	  return "OK";
 	}
 	
+	//Colocamos la fecha con formato apra la BD
+	function fechasBD(){
+		
+	}
+	
 }	
 ?>		

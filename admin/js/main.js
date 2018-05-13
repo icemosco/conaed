@@ -38,10 +38,8 @@ $(document).ready(function(){
 		        break;
 		   
 		}
-		
-		
-	
 	});
+	
 	$('.fslect').change(function(){
 	     var slider_s=$(this).val();
 	     $(this).parent().find('.fake_select').html(slider_s);
@@ -78,7 +76,7 @@ $('.muestra_msg').click(function(){
 			return false;
 		}
 	
-	$('#guardar_slider').before('<div class="slider_fill">'
+		$('#guardar_slider').before('<div class="slider_fill">'
 									+'<span class="title_sl">Slider '+nom_slide+'</span>'
 									+'<div class="left mr">'
 										+'<span class="indications">Imágen .jpg ó .png</span>'
@@ -187,6 +185,7 @@ $('.muestra_msg').click(function(){
 		$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
 	});
 	
+	// HABILITANDO DESHABILITANDO ACREDITADOS
 	$('.disable_acreditado').click(function( elem ){
 
 		var elem 	     = this;
@@ -208,7 +207,7 @@ $('.muestra_msg').click(function(){
 
 		        if(info.success == 'OK'){
 			     	if(idStatus == '1'){
-				     	$(elem).text('enable');
+				     	$(elem).text('enable'); //Cambiamos el label
 			     	}
 			     	if(idStatus == '0'){
 				     	$(elem).text('disable');
@@ -217,7 +216,66 @@ $('.muestra_msg').click(function(){
 	        }
 		});
 	});	
-
 });//ready
+
+
+//ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR
+	function guardarAcreditados( elem, consec ){
+		var error  = 0;
+		//validamos los campos 
+		var nombre = $("#nombre_uni_"+consec);
+		var pagina = $("#pagina_web_"+consec);
+		var dateI  = $("#datepickerinit_"+consec);
+		var dateF  = $("#datepickerfinit_"+consec);
+		var idAcreditado = $("#idAcreditado_"+consec);
+		
+		if( nombre.val() == ''){
+			$(nombre).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( pagina.val() == ''){
+			$(pagina).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( dateI.val() == ''){
+			$(dateI).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( dateF.val() == ''){
+			$(dateF).css({'border':'1px solid red'});
+			error++;	
+		}
+		if(error > 0){
+			return false;
+		}
+		
+		//Validar que la fecha final sea mayor a la inicial
+		
+		
+		//Realizamos el guardado y edicion de la informacion
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxAcreditados.php",
+	        //dataType: "json",
+	        data: {
+		        "accion"  : "guardar",
+		        "id"      : idAcreditado.val(),
+		        "nombre"  : nombre.val(),
+		        "pagina"  : pagina.val(),
+		        "fechaI"  : dateI.val(),
+		        "fechaF"  : dateF.val()
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	console.log("SE HA GUARDADO");	
+		        }
+	        }
+		});
+		
+		
+	}
 
 
