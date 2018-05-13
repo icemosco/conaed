@@ -44,20 +44,42 @@
 		</form>
 		
 	</div><!--forms_cont-->
-	<div class="forms_cont programas">
-		
+	<div class="forms_cont programas" style="display:none;">
+		<div class="add_programa oxygenlight">
+			<ul>
+				<li>
+					<label>Universidad o Institución Educativa:</label>
+					<input type="text" name="" id="" max-lenght="500" value="" class="requerido" placeholder="">
+									</li>
+									<li>
+										<label>Página Web:</label>
+										<input type="text" name="pagina_web[]" id="pagina_web_4" max-lenght="500" value="www.pjedomex.gob.mx/ejem/" class="requerido" placeholder="http:// ó https://">
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<label>Vigencia desde:</label>
+										<input type="text" name="datepickerinit[]" max-lenght="25" readonly="" value="" id="datepickerinit_4" class="datepickerinit hasDatepicker" placeholder="">
+									</li>
+									<li>
+										<label>Vigencia hasta:</label>
+										<input type="text" name="datepickerfinit[]" max-lenght="25" readonly="" value="" id="datepickerfinit_4" class="datepickerfinit hasDatepicker" placeholder="">
+									</li>
+								</ul>
+								<button type="button" class="save_btn" id="guardar_acreditados_4" onclick="guardarAcreditados(this, 4);">Guardar</button>
+							</div>
 			
 		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
 			<style>
-			.new_programa{width:100%; float:left;overflow:hidden;}
-			.new_programa ul{width:100%; height:auto;display:block;margin-bottom:5%;}
-			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
-			ul.table_res{width:100%;overflow:hidden;}
-			ul.table_res li {width:100%;height: auto;overflow:hidden;}
+		
+		
+
+		/*ul.table_res{width:100%;overflow:hidden;}
+			ul.table_res li {height: auto;overflow:hidden;}
 			ul.table_res li .nom_uni{width:50%;display:inline-block;max-width: 50%; overflow:hidden;}
 			ul.table_res a{float:right;font-size:0.7em; font-family: oxygenlight;padding:10px 30px;width:auto: margin-right:5%;display:block;}
 			ul.table_res li span{float:left;padding:0 5px;width: auto;}
-			ul.table_res li span.nom_uni{float:left;max-width:60%;}
+			ul.table_res li span.nom_uni{float:left;max-width:60%;}*/
 			</style>
 			
 			<ul class="table_res">
@@ -82,15 +104,8 @@
 			
 		<form class="prog" name="evaluadores" id="" action="./home.php" method="post" enctype="multipart/form-data">
 			<style>
-			.new_programa{width:100%; float:left;overflow:hidden;}
-			.new_programa ul{width:100%; height:auto;display:block;margin-bottom:5%;}
-			.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
-			ul.table_res{width:100%;overflow:hidden;}
-			ul.table_res li {width:100%;height: auto;overflow:hidden;}
-			ul.table_res li .nom_uni{width:50%;display:inline-block;max-width: 50%; overflow:hidden;}
-			ul.table_res a{float:right;font-size:0.7em; font-family: oxygenlight;padding:10px 30px;width:auto: margin-right:5%;display:block;}
-			ul.table_res li span{float:left;padding:0 5px;width: auto;}
-			ul.table_res li span.nom_uni{float:left;max-width:60%;}
+			
+			
 			</style>
 			
 			<ul class="table_res">
