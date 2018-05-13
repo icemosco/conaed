@@ -28,23 +28,23 @@
 								<ul>
 									<li>
 										<label>Universidad o Institucion Educativa:</label>
-										<input type="text" name="nombre_uni[]" max-lenght="500" value="'.$info["nombre_uni"].'" class="" required="required" placeholder="">
+										<input type="text" name="nombre_uni[]" max-lenght="500" value="'.$info["nombre_uni"].'" class="requerido"  placeholder="">
 									</li>
 									<li>
 										<label>Página Web:</label>
-										<input type="text" name="pagina_web[]" max-lenght="500" value="'.$info["website"].'" class="" required="required" placeholder="http:// ó https://">
+										<input type="text" name="pagina_web[]" max-lenght="500" value="'.$info["website"].'" class="requerido" placeholder="http:// ó https://">
 									</li>
 								</ul>
 								<ul>
 									<li>
 										<label>Vigencia desde:</label>
-										<input type="text" name="vigencia_ini[]" max-lenght="100" 
-										value="'.$info["vigencia_ini"].'" id="datepickerini" class="datepickerinit" required="required" placeholder="">
+										<input type="text" name="vigencia_ini[]" max-lenght="25" 
+										value="'.$info["vigencia_ini"].'" id="datepickerinit_'.$cont.'" class="datepickerinit" placeholder="">
 									</li>
 									<li>
 										<label>Vigencia hasta:</label>
-										<input type="text" name="vigencia_fin[]" max-lenght="100"  value="'.$info["vigencia_fin"].'" 
-										id="datepickerfin" required="required" class="datepickerfint" placeholder="">
+										<input type="text" name="vigencia_fin[]" max-lenght="25"  value="'.$info["vigencia_fin"].'" id="datepickerfinit_'.$cont.'" 
+											class="datepickerfinit" placeholder="">
 										<input type="hidden" name="idAcreditado[]" value="'.$info["id_universidad"].'"/> 
 									</li>
 								</ul>

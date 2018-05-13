@@ -169,7 +169,21 @@ $('.edit').click(function(){
 	});
 	//FIN Validamos los inputs de SLIDERS
 	//===================================================
-     
+	
+	
+	//===================================================
+   	//DATAPICKER DE PROGRAMAS ACREDITADOS
+   	$('.datepickerinit').each(function(i, elem){
+		$( '#datepickerinit_'+i ).datepicker({
+		    dateFormat: 'dd-mm-yy'
+	    });
+	});
+	
+	$('.datepickerfinit').each(function(i, elem){
+		$( '#datepickerfinit_'+i ).datepicker({
+		    dateFormat: 'dd-mm-yy'
+	    });
+	});
 
 });//ready
 
