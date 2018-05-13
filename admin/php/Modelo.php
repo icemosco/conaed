@@ -49,9 +49,11 @@ class Modelo extends DbConnect
 		return $idSlide;	
 	}
 	
-	function fnListAcreditados( ){
+	function fnListAcreditados( $empezarDesde = '', $cantidadReg = ''){
 		
-		$sql   = "SELECT * FROM programas_1";
+		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
+		
+		$sql   = "SELECT * FROM programas_1 ORDER BY nombre_uni $limit";
 		$res   = $this->query($sql) or die( "Error en la Acreditados ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){

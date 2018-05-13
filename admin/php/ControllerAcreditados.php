@@ -5,12 +5,19 @@
 	$oMod = new Modelo();
 	$oFun = new Funciones();
 	
-	function fnTemplateAcreditados(){
+	function fnTemplateAcreditados( $numPagina ){
 		global $oMod;
 		
-		$infoAcreditado = $oMod->fnListAcreditados();	
-
+		$totalRegXpag   = 15; 
 		
+		//Obtenemos todos los registros
+		$totalRegistros = $oMod->fnListAcreditados();	
+		
+		$totalRegistros = count($totalRegistros);
+		$totalPaginas   = ceil( $totalRegistros / $totalRegXpag );
+		$empezarDesde   = ($numPagina-1) * $totalRegXpag;
+
+		$infoAcreditado = $oMod->fnListAcreditados( $empezarDesde, $totalRegXpag);
 		if(!empty( $infoAcreditado )){
 			$cont  = 1;
 			foreach($infoAcreditado as $key =>$info){
@@ -63,8 +70,9 @@
 						</li>';
 				$cont++;		
 			}
-		}				
-		return $template;
+		}
+				
+		return array( 'template' => $template, 'totalPagina' => $totalPaginas);
 	}	
 	
 ?>	

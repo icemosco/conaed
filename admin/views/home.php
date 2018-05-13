@@ -4,6 +4,7 @@
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
 
+	//======================= SLIDER
 	//Guardado / Edicion
 	if(isset($_POST['guardar_slider'])){
 		$idSlide   = $_POST['idSlide'];
@@ -18,17 +19,11 @@
 								, $_FILES['imagenSlider'] );
 		}		
 	}
-	
-	
-	if(isset($_POST['guardar_acreditados'])){
-		$idAcreditado = $_POST['idAcreditado'];	
-		foreach( $idAcreditado as $key => $info){
-			$msgErr = fnGuardarAcreditados( $key, $idAcreditado[ $key ]
-										, $_POST['nombre_uni'][ $key ]
-										, $_POST['pagina_web'][ $key ]
-										, $_POST['vigencia_ini'][ $key ]
-										, $_POST['vigencia_fin'][ $key ] );
-		}		
+
+	//======================= ACREDITADOS
+	$numPaginaAcreditados = 1;
+	if(isset( $_REQUEST['npa']) ){
+		$numPaginaAcreditados= $_REQUEST['npa'];
 	}
 	
 ?>
@@ -66,13 +61,20 @@
 			</style>
 			
 			<ul class="table_res">
-				<?php echo fnTemplateAcreditados(); ?>
+				<?php 
+					$infoAcreditados =  fnTemplateAcreditados($numPaginaAcreditados );
+					echo $infoAcreditados['template']; 
+				?>
 			</ul>
 
 			<button type="submit"  class="save_btn" name="guardar_acreditados" id="guardar_acreditados" >Guardar</button>
 		</form>
 		<ul calss="paginator">
-			<li><a href="" class="number_link">1</a></li>
+			<?php 
+				for($i = 1; $infoAcreditados['totalPagina'] >= $i; $i++){
+					echo '<li><a href="./home.php?npa='.$i.'" class="number_link">'.$i .'</a></li>';
+				}
+			?>
 		</ul>
 	</div><!--forms_cont-->
 	<div class="forms_cont evaluadores">
@@ -92,7 +94,8 @@
 			</style>
 			
 			<ul class="table_res">
-				<?php echo fnTemplateEvaluadores(); ?>
+				<?php 
+					echo fnTemplateEvaluadores();?>
 			</ul>
 
 			<button type="submit"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores" >Guardar</button>
