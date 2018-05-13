@@ -27,7 +27,6 @@ class Modelo extends DbConnect
 	{
 		$sql  = "INSERT INTO slider(titulo, subtitulo, orden, img)
 					 VALUES('".$titulo."','".$subTitulo."',".$numSlide.",'".$nomImagen."')";
-					 echo $sql;	
 		$res  = $this->query($sql) or 
 		   			die("Error en query insertar slider ". $this->errno());
 		   	

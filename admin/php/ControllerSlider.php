@@ -19,6 +19,7 @@ include_once("../php/Modelo.php");
 					<div class="img_loaded"><img src="../../img/slider/[IMAGENSLIDE]" /></div>
 					<div class="path">ruta del archivo</div>
 					<div class="cont_r">
+						<input type="hidden" name="nombreSlideImg[]" value="[NOMIMGSLIDE]"/>
 						<input type="file" name="imagenSlider[]" class="file_upload requerido" name="file" />
 						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
 					</div><!--cont_r-->
@@ -38,7 +39,6 @@ include_once("../php/Modelo.php");
 					</div>
 					
 				</div>
-				<input type="hidden" name="nombreSlideImg[]" value="[NOMIMGSLIDE]"/>
 				<input type="hidden" name="idSlide[]" value="[IDSLIDE]"/> 	
 			</div><!--slider_fill-->';
 
@@ -61,7 +61,7 @@ include_once("../php/Modelo.php");
 		}else{
 			$tmpl = str_replace("[NUMSLIDE]", '1', $template);	
 			$tmpl = str_replace("[IMAGENSLIDE]", $imgSlider, $tmpl);
-			$tmpl = str_replace("[NOMIMGSLIDE]", $imgSlider, $tmpl);	
+			$tmpl = str_replace("[NOMIMGSLIDE]", '', $tmpl);	
 			$tmpl = str_replace("[TITULO]", '', $tmpl);	
 			$tmpl = str_replace("[CARCTITULO]", 0, $tmpl);	
 			$tmpl = str_replace("[SUBTITULO]", '', $tmpl);	
@@ -81,7 +81,8 @@ include_once("../php/Modelo.php");
 		//Guardamos la imagen 
 		$nomImgSlide = '';
 		$error		 = '';
-		if(isset($fileImgSlide['name'][$id])){
+
+		if(isset($fileImgSlide['name'][$id]) && !empty($fileImgSlide['name'][$id])){
 
 			$infoImg = array( 'name' => $fileImgSlide['name'][$id]
 							, 'type' => $fileImgSlide['type'][$id]
@@ -102,14 +103,11 @@ include_once("../php/Modelo.php");
 		if(empty($error)){
 			$nomImagen = (!empty($nomImgSlide) ? $nomImgSlide : '');
 			if( empty($idSlide )){
-				echo "insertar";
 				$id = $oMod->fnInsertaSlide( $numSlide, $titulo, $subTitulo, $nomImagen);
 			}else{
-				echo "update";
 				$id = $oMod->fnActualizaSlide( $idSlide, $numSlide, $titulo, $subTitulo, $nomImagen);
 			}	
 		}
-		
 		return $error;
 	}
 	

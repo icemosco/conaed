@@ -70,12 +70,19 @@ $('.edit').click(function(){
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
 	
-	var nom_slide  = 2;
+	var nom_slide  = 1;
 	
 	$(document).on('click','.add_n_slider',function (e) {
-			if(nom_slide > 5){
-				return false;
-			}
+		
+		$('.order_box_s').each(function(i, elem){
+			nom_slide = (i+1);
+		});
+
+		nom_slide = nom_slide+1;
+
+		if(nom_slide > 5){
+			return false;
+		}
 	
 	$('#guardar_slider').before('<div class="slider_fill">'
 									+'<span class="title_sl">Slider '+nom_slide+'</span>'
@@ -85,6 +92,7 @@ $('.edit').click(function(){
 										+'<div class="img_loaded"><img src="../img/pic.png"></div>'
 										+'<div class="path">ruta del archivo</div>'
 										+'<div class="cont_r">'
+											+'<input type="hidden" name="nombreSlideImg[]" value=""/>'
 											+'<input type="file" name="imagenSlider[]" class="file_upload requerido" name="file" />'
 											+'<a href="javascript:void(0)" class="btn_cargar">Cargar</a>'
 										+'</div>'
@@ -101,11 +109,10 @@ $('.edit').click(function(){
 											+'<textarea name="subtitulo[]" class="infoSlide requerido"  maxlength="225" ></textarea>'
 										+'</div>'
 									+'</div>'
-									+'<input type="hidden" name="nombreSlideImg[]" value=""/>'
 									+'<input type="hidden" name="idSlide[]"   value=""/>'
 								+'</div><!--slider_fill-->');
+
 		
-		nom_slide = nom_slide+1;
 		
 	});
 	
@@ -137,17 +144,25 @@ $('.edit').click(function(){
     //===================================================
    	//Validamos los inputs de SLIDERS
    	$(document).on('submit','#sliders',function(event){
-		var error = 0;
-		
+		var error     = 0;
 		$('.requerido').each(function(i, elem){
-			$(elem).css({'border':'1px solid #737373'});
+			var imgSlider = '';			
+			$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
 			if($(elem).val() == ''){
-				$(elem).css({'border':'1px solid red'});
-				error++;
+				if($(elem).attr('name') == 'imagenSlider[]'){		
+					if(this.previousElementSibling.value == ''){
+						$(elem).css({'border':'1px solid red'});
+						error++;
+					}
+				}else{
+					$(elem).css({'border':'1px solid red'});
+					error++;	
+				}
 			}
 		});
 		if(error > 0){
 			event.preventDefault();
+			console.log('Debe rellenar los campos requeridos');
 				$('.msg').html('<span>Debe rellenar los campos requeridos </span>');
 			//error = 0;	
 		}
