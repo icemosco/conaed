@@ -23,7 +23,13 @@
 	//======================= ACREDITADOS
 	$numPaginaAcreditados = 1;
 	if(isset( $_REQUEST['npa']) ){
-		$numPaginaAcreditados= $_REQUEST['npa'];
+		$numPaginaAcreditados = $_REQUEST['npa'];
+	}
+	
+	//======================= EVALUADORES
+	$numPaginaEvaluadores = 1;
+	if(isset( $_REQUEST['npe']) ){
+		$numPaginaEvaluadores = $_REQUEST['npe'];
 	}
 	
 ?>
@@ -62,7 +68,7 @@
 			
 			<ul class="table_res">
 				<?php 
-					$infoAcreditados =  fnTemplateAcreditados($numPaginaAcreditados );
+					$infoAcreditados =  fnTemplateAcreditados( $numPaginaAcreditados );
 					echo $infoAcreditados['template']; 
 				?>
 			</ul>
@@ -95,11 +101,20 @@
 			
 			<ul class="table_res">
 				<?php 
-					echo fnTemplateEvaluadores();?>
+					$infoEvaluadores =  fnTemplateEvaluadores( $numPaginaEvaluadores );
+					echo $infoEvaluadores['template']; 
+				?>
 			</ul>
 
 			<button type="submit"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores" >Guardar</button>
 		</form>
+		<ul calss="paginator">
+			<?php 
+				for($i = 1; $infoEvaluadores['totalPagina'] >= $i; $i++){
+					echo '<li><a href="./home.php?npe='.$i.'" class="number_link">'.$i .'</a></li>';
+				}
+			?>
+		</ul>
 		
 	</div><!--forms_cont-->
 	

@@ -11,15 +11,13 @@
 		$totalRegXpag   = 15; 
 		
 		//Obtenemos todos los registros
-		$totalRegistros = $oMod->fnListAcreditados();	
-		
-		$totalRegistros = count($totalRegistros);
+		$totalRegistros = count($oMod->fnListAcreditados());	
 		$totalPaginas   = ceil( $totalRegistros / $totalRegXpag );
 		$empezarDesde   = ($numPagina-1) * $totalRegXpag;
 
 		$infoAcreditado = $oMod->fnListAcreditados( $empezarDesde, $totalRegXpag);
 		if(!empty( $infoAcreditado )){
-			$cont  = 1;
+			$cont  = ($empezarDesde+1);
 			foreach($infoAcreditado as $key =>$info){
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
