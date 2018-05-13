@@ -70,8 +70,8 @@ $('.edit').click(function(){
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
 	
-	var nom_slide  = 1;
 	
+	var nom_slide  = 1;
 	$(document).on('click','.add_n_slider',function (e) {
 		
 		$('.order_box_s').each(function(i, elem){
