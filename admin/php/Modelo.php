@@ -95,10 +95,10 @@ class Modelo extends DbConnect
 		return "OK";		
 	}
 	
-	
-	
-	function fnListEvaluadores(){
-		$sql   = "SELECT * FROM evaluadores";
+	function fnListEvaluadores( $empezarDesde = '', $cantidadReg = '' ){
+		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
+		
+		$sql   = "SELECT * FROM evaluadores ORDER BY a_paterno ".$limit;
 		$res   = $this->query($sql) or die( "Error en evaluadores ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){

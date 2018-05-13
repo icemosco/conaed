@@ -5,14 +5,17 @@
 	$oMod = new Modelo();
 	$oFun = new Funciones();
 	
-	function fnTemplateEvaluadores(){
+	function fnTemplateEvaluadores( $numPagina ){
 		global $oMod;
 		
-		$infoEvaluadores = $oMod->fnListEvaluadores();	
-
+		$totalRegXpag    = 15; 
+		$totalRegistros  = count($oMod->fnListEvaluadores());	
+		$totalPaginas    = ceil( $totalRegistros / $totalRegXpag );
+		$empezarDesde    = ($numPagina-1) * $totalRegXpag;
 		
+		$infoEvaluadores = $oMod->fnListEvaluadores( $empezarDesde, $totalRegXpag);
 		if(!empty( $infoEvaluadores )){
-			$cont  = 1;
+			$cont  = ($empezarDesde+1);
 			foreach($infoEvaluadores as $key =>$info){
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
@@ -28,26 +31,27 @@
 								<ul>
 									<li>
 										<label>Nombre:</label>
-										<input type="text" name="nombre_evaluador[]" max-lenght="500" value="'.$info["nombre"].'" class="" required="required" placeholder="">
+										<input type="text" name="nombre_evaluador[]" max-lenght="500" value="'.$info["nombre"].'" class="requerido" placeholder="">
 									</li>
 									<li>
 										<label>Apellido Paterno:</label>
-										<input type="text" name="paterno_evaluador[]" max-lenght="500" value="'.$info["a_paterno"].'" class="" required="required" placeholder="">
+										<input type="text" name="paterno_evaluador[]" max-lenght="500" value="'.$info["a_paterno"].'" class="requerido" placeholder="">
 									</li>
 								</ul>
 								<ul>
 									<li>
 										<label>Apellido Materno:</label>
-										<input type="text" name="materno_evaluador[]" max-lenght="100" value="'.$info["a_materno"].'" required="required" placeholder="">
+										<input type="text" name="materno_evaluador[]" max-lenght="100" value="'.$info["a_materno"].'" class="requerido" placeholder="">
 										<input type="hidden" name="idEvaluador[]" value="'.$info["id_evaluador"].'"/> 
 									</li>
 								</ul>
 							</div>
-						</li>';
+						</li> ';
 				$cont++;		
 			}
 		}				
-		return $template;
+		
+		return array( 'template' => $template, 'totalPagina' => $totalPaginas);
 	}	
 	
 	
