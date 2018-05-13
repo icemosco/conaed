@@ -71,7 +71,9 @@
 
 			<button type="submit"  class="save_btn" name="guardar_acreditados" id="guardar_acreditados" >Guardar</button>
 		</form>
-		
+		<ul calss="paginator">
+			<li><a href="" class="number_link">1</a></li>
+		</ul>
 	</div><!--forms_cont-->
 	<div class="forms_cont evaluadores">
 		
