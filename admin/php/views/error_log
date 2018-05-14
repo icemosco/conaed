@@ -1,0 +1,23 @@
+[08-May-2018 15:41:02 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30
+[08-May-2018 15:41:08 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function fnTemplateSlide() in /home/ppfbayaa9nb9/public_html/admin/views/home.php:30
+Stack trace:
+#0 {main}
+  thrown in /home/ppfbayaa9nb9/public_html/admin/views/home.php on line 30
+[08-May-2018 15:43:43 UTC] PHP Warning:  mysqli::__construct(): (28000/1045): Access denied for user 'icemosco'@'localhost' (using password: NO) in /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php on line 181
+[08-May-2018 15:43:43 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method DbConnect::_get_error_path() in /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php:355
+Stack trace:
+#0 /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php(184): DbConnect->raise_error('83')
+#1 /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php(205): DbConnect->connect()
+#2 /home/ppfbayaa9nb9/public_html/admin/views/menu.php(7): DbConnect->query('SELECT * FROM m...')
+#3 /home/ppfbayaa9nb9/public_html/admin/views/header.php(42): include('/home/ppfbayaa9...')
+#4 /home/ppfbayaa9nb9/public_html/admin/views/home.php(2): include_once('/home/ppfbayaa9...')
+#5 {main}
+  thrown in /home/ppfbayaa9nb9/public_html/admin/php/DbConnect.php on line 355
+[08-May-2018 15:48:09 UTC] PHP Warning:  move_uploaded_file(/img/slider/1525794489251.png): failed to open stream: No such file or directory in /home/ppfbayaa9nb9/public_html/admin/php/Funciones.php on line 96
+[08-May-2018 15:48:09 UTC] PHP Warning:  move_uploaded_file(): Unable to move '/tmp/phpEnum8G' to '/img/slider/1525794489251.png' in /home/ppfbayaa9nb9/public_html/admin/php/Funciones.php on line 96
+[08-May-2018 18:15:24 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30
+[09-May-2018 02:56:15 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30
+[09-May-2018 02:57:44 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30
+[09-May-2018 02:58:03 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30
+[09-May-2018 03:40:31 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30
+[11-May-2018 01:07:55 UTC] PHP Notice:  Undefined index: msg in /home/ppfbayaa9nb9/public_html/admin/views/login.php on line 30

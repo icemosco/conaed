@@ -209,7 +209,7 @@ span.header_title {width: 520px;display: block;position: absolute;z-index: 4;lef
 }
 
 
-@media screen and (max-width:768px) and (min-width:400px){
+@media screen and (max-width:768px) and (min-width:300px){
 article .cont_names{width:100%;max-width: 100%;margin-bottom:30px;}
 .profile_mobile{display:block;overflow:hidden;}
 .profile{display:none!important;}
@@ -238,7 +238,7 @@ header ul.btns_call_mobile li:first-child{border-right:2px solid #FFF;}
 header ul.btns_call_mobile li a{display:block; padding:10px 5px; text-align: center;font-size:1.2em;color:#FFF;}
 a.lista_c{width:80%;}
 .descargas{width:60%;}
-.logo_flot{top:30%;}
+.logo_flot{top:35%; width:150px;}
 #contacto p{width:90%;}
 ul.logos_reel li{width:100%;display:block;margin-bottom:15px;}
 .form_cont ul{width:100%; margin-bottom:15px;max-width:90%; display:block;}
