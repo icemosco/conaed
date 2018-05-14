@@ -109,6 +109,25 @@
 		</ul>
 	</div><!--forms_cont-->
 	<div class="forms_cont evaluadores">
+		<div class="add_evaluador">
+								<ul>
+									<li>
+										<label>Nombre:</label>
+										<input type="text" name="nombre_evaluador" max-lenght="500" value="" class="requerido" placeholder="">
+									</li>
+									<li>
+										<label>Apellido Paterno:</label>
+										<input type="text" name="paterno_evaluador" max-lenght="500" value="Accinelli" class="requerido" placeholder="">
+									</li>
+								</ul>
+								<ul>
+									<li>
+										<label>Apellido Materno:</label>
+										<input type="text" name="materno_evaluador" max-lenght="500" value="Rezkalah" class="requerido" placeholder="">
+										
+									</li>
+								</ul>
+							</div>
 		
 			
 		<form class="prog" name="evaluadores" id="" action="./home.php" method="post" enctype="multipart/form-data">

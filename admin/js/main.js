@@ -24,6 +24,7 @@ $(document).ready(function(){
 		    case "evaluadores":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Padrón de Evaluadores');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador"><img src="../img/plus.png" alt="" /></a>')
 		        break;
 		    case "asociados":
 		        	$('.'+btn).show();
@@ -54,6 +55,13 @@ $(document).on('click','.add_item',function (e) {
 				$('.new_programa').slideUp('300');
 		    
 		    break;
+		case "evaluadores_plus":
+				$('.add_evaluador').slideDown('500');
+				$('.add_evaluador').slideUp('300');
+		    
+		    break;
+
+		   // add_evaluador
 		}
 
     });
@@ -190,13 +198,16 @@ $('.muestra_msg').click(function(){
 		    dateFormat: 'dd-mm-yy'
 	    });
 	});
-	
+	$('.edit_evaluador').click(function(){
+		$(".new_evaluador").css("display", "none");
+		$(this).parent().next().find( ".new_evaluador" ).slideDown(500);
+	});
 	
 	//===================================================
    	// EDICION ACREDITADOS
 	$('.edit_acreditado').click(function(){
 		$(".new_programa").css("display", "none");
-		$(this).parent().next().find( ".new_programa" ).css( "display", "block" );
+		$(this).parent().next().find( ".new_programa" ).slideDown(500);
 	});
 	
 	// HABILITANDO DESHABILITANDO ACREDITADOS

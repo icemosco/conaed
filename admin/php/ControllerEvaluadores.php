@@ -24,7 +24,7 @@
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["a_paterno"].' '.$info["a_materno"].' '.$info["nombre"].'</span>
 							<a href="javascript:void(0)" class="disable funct">disable</a>
-							<a href="javascript:void(0)" class="edit funct">editar</a>
+							<a href="javascript:void(0)" class="edit_evaluador funct">editar</a>
 						</li>
 						<li>
 							<div class="new_evaluador">
