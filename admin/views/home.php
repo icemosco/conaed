@@ -25,12 +25,14 @@
 	if(isset( $_REQUEST['npa']) ){
 		$numPaginaAcreditados = $_REQUEST['npa'];
 	}
+	$infoAcre =  fnTemplateAcreditados( $numPaginaAcreditados );
 	
 	//======================= EVALUADORES
 	$numPaginaEvaluadores = 1;
 	if(isset( $_REQUEST['npe']) ){
 		$numPaginaEvaluadores = $_REQUEST['npe'];
 	}
+	$infoEval =  fnTemplateEvaluadores( $numPaginaEvaluadores );
 	
 ?>
 
@@ -49,65 +51,39 @@
 			<button type="submit"  class="save_btn" name="guardar_slider" id="guardar_slider" >Guardar</button>
 		</form>
 		
-	</div><!--forms_cont-->
+	</div><!--forms_cont. SLIDE-->
 	<div class="forms_cont programas" style="display:none;">
 		<div class="add_programa oxygenlight">
 			<ul>
 				<li>
 					<label>Universidad o Institución Educativa:</label>
-					<input type="text" name="" id="" max-lenght="500" value="" class="requerido" placeholder="">
-									</li>
-									<li>
-										<label>Página Web:</label>
-										<input type="text" name="pagina_web[]" id="pagina_web_4" max-lenght="500" value="www.pjedomex.gob.mx/ejem/" class="requerido" placeholder="http:// ó https://">
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<label>Vigencia desde:</label>
-										<input type="text" name="datepickerinit[]" max-lenght="25" readonly="" value="" id="datepickerinit_4" class="datepickerinit hasDatepicker" placeholder="">
-									</li>
-									<li>
-										<label>Vigencia hasta:</label>
-										<input type="text" name="datepickerfinit[]" max-lenght="25" readonly="" value="" id="datepickerfinit_4" class="datepickerfinit hasDatepicker" placeholder="">
-									</li>
-								</ul>
-								<button type="button" class="save_btn" id="guardar_acreditados_4" onclick="guardarAcreditados(this, 4);">Guardar</button>
-							</div>
-			
-		<form class="prog" name="programas" id="" action="./home.php" method="post" enctype="multipart/form-data">
-			<style>
-		
-		
-
-		/*ul.table_res{width:100%;overflow:hidden;}
-			ul.table_res li {height: auto;overflow:hidden;}
-			ul.table_res li .nom_uni{width:50%;display:inline-block;max-width: 50%; overflow:hidden;}
-			ul.table_res a{float:right;font-size:0.7em; font-family: oxygenlight;padding:10px 30px;width:auto: margin-right:5%;display:block;}
-			ul.table_res li span{float:left;padding:0 5px;width: auto;}
-			ul.table_res li span.nom_uni{float:left;max-width:60%;}*/
-			</style>
-			
-			<ul class="table_res">
-				<?php 
-					$infoAcreditados =  fnTemplateAcreditados( $numPaginaAcreditados );
-					echo $infoAcreditados['template']; 
-				?>
+					<input type="text" name="nombre_uni[]" id="nombre_uni_" max-lenght="500" value="" class="requerido" placeholder="">
+				</li>
+				<li>
+					<label>Página Web:</label>
+					<input type="text" name="pagina_web[]" id="pagina_web_" max-lenght="500" value="www.pjedomex.gob.mx/ejem/" class="requerido" placeholder="http:// ó https://">
+				</li>
 			</ul>
-
-			<button type="submit"  class="save_btn" name="guardar_acreditados" id="guardar_acreditados" >Guardar</button>
+			<ul>
+				<li>
+					<label>Vigencia desde:</label>
+					<input type="text" name="datepickerinit[]" max-lenght="25"  id="datepickerinit" class="datepickerfinit hasDatepicker" placeholder="">
+				</li>
+				<li>
+					<label>Vigencia hasta:</label>
+					<input type="text" name="datepickerfinit[]" max-lenght="25"  id="datepickerfinit" class="datepickerfinit hasDatepicker" placeholder="">
+					</li>
+			</ul>
+			<button type="button" class="save_btn" id="guardar_acreditados_" >Guardar</button>
+		</div>
+			
+		<form class="prog" name="acreditados" id="" action="./home.php" method="post">
+			<ul class="table_res">
+				<?php echo $infoAcre['template']; ?>
+			</ul>
 		</form>
-		<ul class="paginator">
-			<!---->
-			<?php 
-				echo '<li class="radius-left"><a href="previuos_page">Anterior</a></li>';
-				for($i = 1; $infoAcreditados['totalPagina'] >= $i; $i++){
-					echo '<li><a href="./home.php?npa='.$i.'" class="number_link">'.$i .'</a></li>';
-				}
-				echo '<li class="radius-right"><a href="next_page">Siguiente</a></li>';
-			?>
-		</ul>
-	</div><!--forms_cont-->
+		<ul class="paginator"> <?php  echo $infoAcre['paginador'];  ?> </ul>
+	</div><!--forms_cont ACREDITADOS-->
 	<div class="forms_cont evaluadores">
 		<div class="add_evaluador">
 								<ul>
@@ -130,30 +106,15 @@
 							</div>
 		
 			
-		<form class="prog" name="evaluadores" id="" action="./home.php" method="post" enctype="multipart/form-data">
-			<style>
-			
-			
-			</style>
+		<form class="prog" name="evaluadores" id="" action="./home.php" method="post" >
 			
 			<ul class="table_res">
-				<?php 
-					$infoEvaluadores =  fnTemplateEvaluadores( $numPaginaEvaluadores );
-					echo $infoEvaluadores['template']; 
-				?>
+				<?php  echo $infoEval['template']; ?>
 			</ul>
 
 			<button type="submit"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores" >Guardar</button>
 		</form>
-		<ul class="paginator">
-			<!--<li class="radius-left"><a href="previuos_page">Anterior</a></li>-->
-			<?php 
-				for($i = 1; $infoEvaluadores['totalPagina'] >= $i; $i++){
-					echo '<li><a href="./home.php?npe='.$i.'" class="number_link">'.$i .'</a></li>';
-				}
-			?>
-			<!--<li class="radius-right"><a href="next_page">Siguiente</a></li>-->
-		</ul>
+		<ul class="paginator"> <?php echo $infoEval['paginador']; ?> </ul>
 		
 	</div><!--forms_cont-->
 	

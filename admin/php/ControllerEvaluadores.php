@@ -6,9 +6,11 @@
 	$oFun = new Funciones();
 	
 	function fnTemplateEvaluadores( $numPagina ){
-		global $oMod;
+		global $oMod, $oFun;
 		
 		$totalRegXpag    = 15; 
+		
+		//Obtenemos todos los registros
 		$totalRegistros  = count($oMod->fnListEvaluadores());	
 		$totalPaginas    = ceil( $totalRegistros / $totalRegXpag );
 		$empezarDesde    = ($numPagina-1) * $totalRegXpag;
@@ -49,9 +51,11 @@
 						</li> ';
 				$cont++;		
 			}
-		}				
+		}
 		
-		return array( 'template' => $template, 'totalPagina' => $totalPaginas);
+		$paginador = $oFun->Paginador($numPagina, $totalPaginas, 'npe');
+		
+		return array( 'template' => $template, 'paginador' => $paginador);
 	}	
 	
 	
