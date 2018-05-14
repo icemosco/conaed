@@ -104,8 +104,22 @@ class Funciones
 	 	  return "OK";
 	}
 	
-	//Colocamos la fecha con formato apra la BD
-	function fechasBD(){
+	//Paginador
+	function Paginador($numPagina, $totalPaginas, $var ){
+		$paginador = "";
+		
+		if(($numPagina-1) >= 1) 
+			$paginador = '<li class="radius-left"><a href="./home.php?'.$var.'='.($numPagina-1).'">Anterior</a></li>';
+		for($i = 1; $totalPaginas >= $i; $i++){
+			$stylePag = ""; 
+			if( $numPagina == $i) $stylePag = "style='color:red'";
+					
+			$paginador .= '<li><a href="./home.php?'.$var.'='.$i.'" class="number_link" '.$stylePag.'>'.$i .'</a></li>';
+		}
+		if(($numPagina+1) <= $totalPaginas) 
+			$paginador .=  '<li class="radius-right"><a href="./home.php?'.$var.'='.($numPagina+1).'">Siguiente</a></li>';
+		
+		return $paginador;	
 		
 	}
 	

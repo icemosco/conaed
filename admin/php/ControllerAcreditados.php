@@ -6,7 +6,7 @@
 	$oFun = new Funciones();
 	
 	function fnTemplateAcreditados( $numPagina ){
-		global $oMod;
+		global $oMod, $oFun;
 		
 		$totalRegXpag   = 15; 
 		
@@ -18,13 +18,14 @@
 		$infoAcreditado = $oMod->fnListAcreditados( $empezarDesde, $totalRegXpag);
 		if(!empty( $infoAcreditado )){
 			$cont  = ($empezarDesde+1);
+			$i     = 0;
 			foreach($infoAcreditado as $key =>$info){
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
 				
-				if($info['activo'] == 1) $activo = 'disable';
+				if($info['activo'] == 1) $activo = 'activo';
 				else
-					$activo = 'enable';
+					$activo = 'inactivo';
 					
 				$fechaI = 	(!empty($info["vigencia_ini"]) ? date('d-m-Y', strtotime($info["vigencia_ini"])) : '');
 				$fechaF = 	(!empty($info["vigencia_fin"]) ? date('d-m-Y', strtotime($info["vigencia_fin"])) : '');
@@ -33,7 +34,7 @@
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
 							<a href="javascript:void(0)" class="disable_acreditado funct">'.$activo.'</a>
-							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$cont.'" value="'.$info["id_universidad"].'"/> 
+							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$i.'" value="'.$info["id_universidad"].'"/> 
 							<input type="hidden" name="statusHabilitado[]" value="'.$info["activo"].'"/> 
 							<a href="javascript:void(0)" class="edit_acreditado funct">editar</a>
 						</li>
@@ -42,12 +43,12 @@
 								<ul>
 									<li>
 										<label>Universidad o Institución Educativa:</label>
-										<input type="text" name="nombre_uni[]" id="nombre_uni_'.$cont.'" max-lenght="500" value="'.$info["nombre_uni"].'" 
+										<input type="text" name="nombre_uni[]" id="nombre_uni_'.$i.'" max-lenght="500" value="'.$info["nombre_uni"].'" 
 												class="requerido"  placeholder="">
 									</li>
 									<li>
 										<label>Página Web:</label>
-										<input type="text" name="pagina_web[]" id="pagina_web_'.$cont.'" max-lenght="500" value="'.$info["website"].'" 
+										<input type="text" name="pagina_web[]" id="pagina_web_'.$i.'" max-lenght="500" value="'.$info["website"].'" 
 												class="requerido" placeholder="http:// ó https://">
 									</li>
 								</ul>
@@ -55,22 +56,25 @@
 									<li>
 										<label>Vigencia desde:</label>
 										<input type="text" name="datepickerinit[]" max-lenght="25"  readonly
-										value="'.$fechaI.'" id="datepickerinit_'.$cont.'" class="datepickerinit" placeholder="">
+										value="'.$fechaI.'" id="datepickerinit_'.$i.'" class="datepickerinit" placeholder="">
 									</li>
 									<li>
 										<label>Vigencia hasta:</label>
 										<input type="text" name="datepickerfinit[]" max-lenght="25"  readonly
-										value="'.$fechaF.'" id="datepickerfinit_'.$cont.'"  class="datepickerfinit" placeholder="">
+										value="'.$fechaF.'" id="datepickerfinit_'.$i.'"  class="datepickerfinit" placeholder="">
 									</li>
 								</ul>
-								<button type="button" class="save_btn" id="guardar_acreditados_'.$cont.'" onclick="guardarAcreditados(this, '.$cont.');">Guardar</button>
+								<button type="button" class="save_btn" id="guardar_acreditados_'.$i.'" onclick="guardarAcreditados(this, '.$i.');">Guardar</button>
 							</div>
 						</li>';
-				$cont++;		
+				$cont++;
+				$i++;		
 			}
 		}
+		
+		$paginador = $oFun->Paginador($numPagina, $totalPaginas, 'npa');
 				
-		return array( 'template' => $template, 'totalPagina' => $totalPaginas);
+		return array( 'template' => $template, 'paginador' => $paginador);
 	}	
 	
 ?>	

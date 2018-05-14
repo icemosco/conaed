@@ -179,6 +179,7 @@ $('.muestra_msg').click(function(){
 	
 	//===================================================
    	//DATAPICKER DE PROGRAMAS ACREDITADOS
+
    	$('.datepickerinit').each(function(i, elem){
 		$( '#datepickerinit_'+i ).datepicker({
 		    dateFormat: 'dd-mm-yy'
@@ -190,6 +191,9 @@ $('.muestra_msg').click(function(){
 		    dateFormat: 'dd-mm-yy'
 	    });
 	});
+	
+	//$( '#caluno' ).datepicker({dateFormat: 'dd-mm-yy'});
+	//$( '#caldos' ).datepicker({dateFormat: 'dd-mm-yy'});
 	
 	
 	//===================================================
@@ -221,10 +225,10 @@ $('.muestra_msg').click(function(){
 
 		        if(info.success == 'OK'){
 			     	if(idStatus == '1'){
-				     	$(elem).text('enable'); //Cambiamos el label
+				     	$(elem).text('activo'); //Cambiamos el label
 			     	}
 			     	if(idStatus == '0'){
-				     	$(elem).text('disable');
+				     	$(elem).text('inactivo');
 			     	}
 		        }
 	        }
