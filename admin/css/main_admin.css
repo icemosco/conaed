@@ -199,6 +199,8 @@ border-bottom-right-radius: 10px;};
 .reel_asociados ul{width:100%;display:block;overflow-x:scroll;max-width:90%;}
 .reel_asociados ul li{display:inline-block; width:200px;height:200px; }
 .reel_asociados ul li span{width:100%; display:block;text-align: center;}
+.reel_asociados ul li input{width:10px;display:block;margin:0 auto;text-align: center;}
+
 /*******************/
 /*nuevos width's*/
 /*******************/

@@ -415,19 +415,19 @@
 				<ul>
 					<li>
 					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" >
 					</li>
 					<li>
 					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" >
 					</li>
 					<li>
 					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" >
 					</li>
 					<li>
 					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="">
 					</li>
 				</ul>
 			</div>
