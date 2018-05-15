@@ -79,7 +79,6 @@ include_once("./php/functions.php")
 		<div class="swiper-wrapper">
 			<div class="swiper-button-next" style="width:30px; height:30px;">next</div>
 			<div class="swiper-slide">
-
 				<div class="screen_slider"></div>
 				<div class="txt1">La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</div>
 				<div class="txt2">La carrera de Derecho de la Universidad Peruana de Ciencias Aplicadas (UPC) recibió la acreditación internacional por parte del Consejo para la Acreditación de la Enseñanza del Derecho (CONAED), convirtiéndose así en la primera y única en recibir esta importante distinción.</div>
