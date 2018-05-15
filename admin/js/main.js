@@ -179,13 +179,8 @@ $('.muestra_msg').click(function(){
 					if(this.previousElementSibling.value == ''){
 						$(elem).css({'border':'1px solid red'});
 						error++;
-						console.log("error de aqui2");
 					}
-					
-					console.log("error de aqui3= "+$(elem).attr('name'));
 				}else{
-					
-					console.log("error de aqui1= "+$(elem).attr('name'));
 					$(elem).css({'border':'1px solid red'});
 					error++;	
 				}
