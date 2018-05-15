@@ -52,7 +52,7 @@
 		</form>
 		
 	</div><!--forms_cont. SLIDE-->
-	<div class="forms_cont programas" style="display:none;">
+	<div class="forms_cont programas">
 		<div class="add_programa oxygenlight">
 			<ul>
 				<li>
@@ -86,24 +86,23 @@
 	</div><!--forms_cont ACREDITADOS-->
 	<div class="forms_cont evaluadores">
 		<div class="add_evaluador">
-								<ul>
-									<li>
-										<label>Nombre:</label>
-										<input type="text" name="nombre_evaluador" max-lenght="500" value="" class="requerido" placeholder="">
-									</li>
-									<li>
-										<label>Apellido Paterno:</label>
-										<input type="text" name="paterno_evaluador" max-lenght="500" value="Accinelli" class="requerido" placeholder="">
-									</li>
-								</ul>
-								<ul>
-									<li>
-										<label>Apellido Materno:</label>
-										<input type="text" name="materno_evaluador" max-lenght="500" value="Rezkalah" class="requerido" placeholder="">
-										
-									</li>
-								</ul>
-							</div>
+			<ul>
+				<li>
+					<label>Nombre:</label>
+					<input type="text" name="nombre_evaluador" max-lenght="500" value="" class="requerido" placeholder="">
+				</li>
+				<li>
+					<label>Apellido Paterno:</label>
+					<input type="text" name="paterno_evaluador" max-lenght="500" value="Accinelli" class="requerido" placeholder="">
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<label>Apellido Materno:</label>
+					<input type="text" name="materno_evaluador" max-lenght="500" value="Rezkalah" class="requerido" placeholder="">
+				</li>
+			</ul>
+		</div>
 		
 			
 		<form class="prog" name="evaluadores" id="" action="./home.php" method="post" >
@@ -117,7 +116,279 @@
 		<ul class="paginator"> <?php echo $infoEval['paginador']; ?> </ul>
 		
 	</div><!--forms_cont-->
-	
+	<div class="forms_cont usuarios oxygenlight">
+		<div class="add_usuario">
+				<ul>
+					<li>
+						<label>Nombre(s):</label>
+						<input type="text" class="" name="nombres" required="required" />
+					</li>
+					<li>
+						<label>Apellido Paterno:</label>
+						<input type="text" class="" name="a_paterno" required="required" />
+					</li>
+					<li>
+						<label>Apellido Materno:</label>
+						<input type="text" class="" name="a_materno" required="required" />
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label>Nombre de usuario:</label>
+						<input type="text" class="" name="nom_user" required="required" maxlength="8"
+						placeholder="máximo 8 caracteres" />
+					</li>
+					<li>
+						<label>Email:</label>
+						<input type="text" class="" name="email_usario" required="required" maxlength="8" placeholder="correo@correo.com" />
+					</li>
+					<li>
+						<label>Confirmar Email:</label>
+						<input type="email" class="" name="conf_email_usuario" required="required" placeholder="correo@correo.com" />
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label>Contraseña:</label>
+						<input type="password" class="" id="password" name="contrasena" required="required" maxlength="10"
+						placeholder="máximo 10 caracteres" />
+					</li>
+					<li>
+						<label>Confirmar contraseña:</label>
+						<input type="password" class="" name="conf_contrasena" required="required" maxlength="10" placeholder="confirma la contraseña" />
+					</li>
+				
+					<li>
+						<meter max="4" id="password-strength-meter"></meter>
+						<p id="password-strength-text"></p>
+					</li>
+					
+				</ul>
+				<div class="mensaje_bot"></div>
+
+				<div class="privilege">
+					<ul>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Slider Home Page</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Programas Acreditados</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Padrón de Evaluadores</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Referencias y Asociados</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Temas y Noticias</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Gestor de Usuarios</label>
+						</li>
+
+					</ul>
+						
+				</div>
+				<button type="submit" class="save_btn" name="guardar_nuevo_usuario" id="add_nuevo_user">Agregar Usuario</button>
+				
+			</div><!--add_usuario-->
+		<form class="users_gest" name="usuarios" id="usuarios" action="./home.php" method="post" enctype="multipart/form-data">
+
+			
+
+			<ul class="table_res">
+				<li>
+					<span class="nom_user">Accinelli Rezkalah Eduardo</span>
+					<a href="javascript:void(0)" class="disable funct">disable</a>
+					<a href="javascript:void(0)" class="edit_user funct">editar</a>
+				</li>
+				<li>
+					<div class="new_user">
+							<ul>
+					 <li>
+						<label>Nombre(s):</label>
+						<input type="text" class="" name="nombres" required="required" />
+					 </li>
+					 <li>
+						<label>Apellido Paterno:</label>
+						<input type="text" class="" name="a_paterno" required="required" />
+					 </li>
+					 <li>
+						<label>Apellido Materno:</label>
+						<input type="text" class="" name="a_materno" required="required" />
+					 </li>
+				    </ul>
+				<ul>
+					<li>
+						<label>Nombre de usuario:</label>
+						<input type="text" class="" name="nom_user" required="required" maxlength="8"
+						placeholder="máximo 8 caracteres" />
+					</li>
+					<li>
+						<label>Email:</label>
+						<input type="text" class="" name="email_usario" required="required" maxlength="8" placeholder="correo@correo.com" />
+					</li>
+					<li>
+						<label>Confirmar Email:</label>
+						<input type="email" class="" name="conf_email_usuario" required="required" placeholder="correo@correo.com" />
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label>Contraseña:</label>
+						<input type="password" class="" id="password" name="contrasena" required="required" maxlength="10"
+						placeholder="máximo 10 caracteres" />
+					</li>
+					<li>
+						<label>Confirmar contraseña:</label>
+						<input type="password" class="" name="conf_contrasena" required="required" maxlength="10" placeholder="confirma la contraseña" />
+					</li>
+				
+					<li>
+						<meter max="4" id="password-strength-meter"></meter>
+						<p id="password-strength-text"></p>
+					</li>
+					
+				</ul>
+				<div class="mensaje_bot"></div>
+
+				<div class="privilege">
+					<ul>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Slider Home Page</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Programas Acreditados</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Padrón de Evaluadores</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Referencias y Asociados</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Temas y Noticias</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Gestor de Usuarios</label>
+						</li>
+
+					</ul>
+						
+				</div>
+				<button type="button" class="save_btn" id="guardar_usuarios" onclick="">Actualizar Usuario</button>	
+				</div><!--new_user-->
+				</li>
+				<li class="clr2">
+					<span class="nom_user">Accinelli Rezkalah Eduardo 2</span>
+					<a href="javascript:void(0)" class="disable funct">disable</a>
+					<a href="javascript:void(0)" class="edit_user funct">editar</a>
+				</li>
+				<li>
+					<div class="new_user">
+							<ul>
+					 <li>
+						<label>Nombre(s):</label>
+						<input type="text" class="" name="nombres" required="required" />
+					 </li>
+					 <li>
+						<label>Apellido Paterno:</label>
+						<input type="text" class="" name="a_paterno" required="required" />
+					 </li>
+					 <li>
+						<label>Apellido Materno:</label>
+						<input type="text" class="" name="a_materno" required="required" />
+					 </li>
+				    </ul>
+				<ul>
+					<li>
+						<label>Nombre de usuario:</label>
+						<input type="text" class="" name="nom_user" required="required" maxlength="8"
+						placeholder="máximo 8 caracteres" />
+					</li>
+					<li>
+						<label>Email:</label>
+						<input type="text" class="" name="email_usario" required="required" maxlength="8" placeholder="correo@correo.com" />
+					</li>
+					<li>
+						<label>Confirmar Email:</label>
+						<input type="email" class="" name="conf_email_usuario" required="required" placeholder="correo@correo.com" />
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label>Contraseña:</label>
+						<input type="password" class="" id="password" name="contrasena" required="required" maxlength="10"
+						placeholder="máximo 10 caracteres" />
+					</li>
+					<li>
+						<label>Confirmar contraseña:</label>
+						<input type="password" class="" name="conf_contrasena" required="required" maxlength="10" placeholder="confirma la contraseña" />
+					</li>
+				
+					<li>
+						<meter max="4" id="password-strength-meter"></meter>
+						<p id="password-strength-text"></p>
+					</li>
+					
+				</ul>
+				<div class="mensaje_bot"></div>
+
+				<div class="privilege">
+					<ul>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Slider Home Page</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Programas Acreditados</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Padrón de Evaluadores</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Referencias y Asociados</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Temas y Noticias</label>
+						</li>
+						<li>
+							<input type="checkbox" name="sl1" id="1" class="">
+							<label>Gestor de Usuarios</label>
+						</li>
+
+					</ul>
+						
+				</div>
+				<button type="button" class="save_btn" id="guardar_usuarios" onclick="">Actualizar Usuario</button>	
+				</div><!--new_user-->
+				</li>
+			</ul>
+			
+
+
+
+
+
+		</form>
+	</div>
 	
 
 	
@@ -129,8 +400,35 @@
 <script src="../js/jquery-3.3.1.min.js"></script>
 <script src="../js/main.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
+<script>
+	var strength = {
+  0: "Necesitas Mejorar",
+  1: "Muy débil",
+  2: "Débil",
+  3: "Buena",
+  4: "Perfecta"
+}
+var password = document.getElementById('password');
+var meter = document.getElementById('password-strength-meter');
+var text = document.getElementById('password-strength-text');
 
+password.addEventListener('input', function() {
+  var val = password.value;
+  var result = zxcvbn(val);
+
+  // Update the password strength meter
+  meter.value = result.score;
+
+  // Update the text indicator
+  if (val !== "") {
+    text.innerHTML = "Strength: " + strength[result.score]; 
+  } else {
+    text.innerHTML = "";
+  }
+});
+</script>
 </body>
 
 </html>

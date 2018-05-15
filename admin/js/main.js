@@ -19,7 +19,7 @@ $(document).ready(function(){
 		    case "programas":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Programas Acreditados');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="programas_plus" class="add_item" title="Agregar una nueva universidad"><img src="../img/plus.png" alt="" /></a>')
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="programas_plus" class="add_item" title="Agregar una nueva universidad"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "evaluadores":
 		        	$('.'+btn).show();
@@ -37,6 +37,7 @@ $(document).ready(function(){
 		    case "usuarios":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Gestor de Usuarios');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="usuarios_plus" class="add_item" title="Agregar un nuevo Usuario"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		   
 		}
@@ -52,12 +53,17 @@ $(document).on('click','.add_item',function (e) {
 		switch (rel_plus) {
 		case "programas_plus":
 				$('.add_programa').slideDown('500');
-				$('.new_programa').slideUp('300');
+				//$('.new_programa').slideUp('300');
 		    
 		    break;
 		case "evaluadores_plus":
 				$('.add_evaluador').slideDown('500');
-				$('.add_evaluador').slideUp('300');
+				//$('.add_evaluador').slideUp('300');
+		    
+		    break;
+		case "usuarios_plus":
+				$('.add_usuario').slideDown('500');
+				//$('.add_usuario').slideUp('300');
 		    
 		    break;
 
@@ -203,6 +209,12 @@ $('.muestra_msg').click(function(){
 		$(this).parent().next().find( ".new_evaluador" ).slideDown(500);
 	});
 	
+
+	$('.edit_user').click(function(){
+		$(".new_user").css("display", "none");
+		$(this).parent().next().find( ".new_user" ).slideDown(500);
+	});
+
 	//===================================================
    	// EDICION ACREDITADOS
 	$('.edit_acreditado').click(function(){

@@ -28,7 +28,7 @@
 			<a href="#" title="" class="">Reestablecer Contraseña</a>
 			<div class="restablecer">
 				<span class="txt"><?=$_REQUEST['msg']?></span>
-				<a href="javascript:void(0)" class="env_res">Restablecer</a>
+				<!--<a href="javascript:void(0)" class="env_res">Restablecer</a>-->
 				<div class="respuesta_res"></div>
 			</div>
 			<input type="submit" class="entrar" value="Entrar">

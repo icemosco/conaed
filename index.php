@@ -1,6 +1,7 @@
 <?php
 include_once("./admin/php/config.php");
-include_once("./admin/php/DbConnect.php");	
+include_once("./admin/php/DbConnect.php");
+include_once("./admin/php/Modelo.php");	
 include_once("./php/functions.php")
 	
 ?>

@@ -64,25 +64,41 @@ header a.close_s{float:right;padding:2px 0 5px 35px;margin-right:20px;text-align
 /*****************************/
 /*listado de programas  y evaluadores*/
 /*************************************/
-.new_programa{width:100%; float:left;overflow:hidden;}
+.new_programa{width:100%; float:left;overflow:hidden;background:#f2f2f2;}
 .new_programa ul{width:100%; height:auto;display:block;/*margin-bottom:5%;*/}
-.new_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid red;}
+.new_programa ul li{width:48%; display: inline-block;padding:5px;}
 
-.new_evaluador{width:100%; float:left;overflow:hidden;display:none;}
+.new_evaluador{width:100%; float:left;overflow:hidden;display:none;background:#f2f2f2;}
 .new_evaluador ul{width:100%; height:auto;display:block;/*margin-bottom:5%;*/}
-.new_evaluador ul li{width:48%; display: inline-block;padding:5px;outline:1px solid blue;}
+.new_evaluador ul li{width:48%; display: inline-block;padding:5px;}
+
+.new_evaluador{width:100%; float:left;overflow:hidden;display:none;background:#f2f2f2;}
+.new_evaluador ul{width:100%; height:auto;display:block;/*margin-bottom:5%;*/}
+.new_evaluador ul li{width:48%; display: inline-block;padding:5px;}
+
+.new_user{width:100%; float:left;overflow:hidden;display:none; background:#f2f2f2;}
+.new_user ul{width:100%; height:auto;display:block;/*margin-bottom:5%;*/}
+.new_user ul li{width:32%; display: inline-block;padding:5px;}
+
 
 .add_programa{width:100%; float:left;overflow:hidden;}
 .add_programa ul{width:100%; height:auto;display:block;/*margin-bottom:5%*/;}
-.add_programa ul li{width:48%; display: inline-block;padding:5px;outline:1px solid #000;}
-.add_programa ul li input{width:90%; display:block;padding:5px;outline:1px solid #red;}
+.add_programa ul li{width:48%; display: inline-block;padding:5px;}
+.add_programa ul li input{width:90%; display:block;padding:5px;}
 .add_programa{display:none;}
 
 .add_evaluador{width:100%; float:left;overflow:hidden;}
 .add_evaluador ul{width:100%; height:auto;display:block;/*margin-bottom:5%*/;}
-.add_evaluador ul li{width:48%; display: inline-block;padding:5px;outline:1px solid #000;}
-.add_evaluador ul li input{width:90%; display:block;padding:5px;outline:1px solid #red;}
+.add_evaluador ul li{width:48%; display: inline-block;padding:5px;}
+.add_evaluador ul li input{width:90%; display:block;padding:5px;}
 .add_evaluador{display:none;}
+
+
+.add_usuario{width:100%; float:left;overflow:hidden;}
+.add_usuario ul{width:100%; height:auto;display:block;/*margin-bottom:5%*/;}
+.add_usuario ul li{width:32%; display: inline-block;padding:5px;}
+.add_usuario ul li input{width:90%; display:block;padding:5px;}
+.add_usuario{display:none;}
 
 
 
@@ -98,6 +114,14 @@ ul.paginator li{float:left;outline:1px solid #dddddd;}
 ul.paginator li a{display:block; padding:3px 10px; color:#3a4181;font-family:oxygenlight;}
 ul.paginator li a:hover, .active_page{background:#3a4181; color:#FFF; }
 ul.paginator li a.previuos_page{padding:3px 10px;}
+
+/*****************************/
+/*listado gestion de usuarios*/
+/*************************************/
+.cont_fields{width:100%;display: block; overflow:hidden;}
+.cont_fields ul{ width:100%;display:block; }
+.cont_fields ul li{display:inline-block;width:30%;} 
+.cont_fields ul li label{width:100%;display:block;}
 
 /*.radius-left{-webkit-border-top-left-radius: 10px;
 -webkit-border-bottom-left-radius: 10px;
@@ -158,3 +182,42 @@ border-bottom-right-radius: 10px;};
 /*nuevos margenes*/
 /*******************/
 .mr{margin-right:20px;}
+
+
+
+
+/*******************/
+/*Strenght Meter*/
+/*******************/
+
+meter {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+            
+    margin: 0 auto 1em;
+    width: 100%;
+    height: .5em;
+    
+    /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0,0,0,0.1);
+}
+
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: orange; }
+meter[value="4"]::-moz-meter-bar { background: green; }
+
+
