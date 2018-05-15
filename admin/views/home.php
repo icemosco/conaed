@@ -6,6 +6,7 @@ include_once('./header.php');
 
 	//======================= SLIDER
 	//Guardado / Edicion
+	
 	if(isset($_POST['guardar_slider'])){
 		$idSlide   = $_POST['idSlide'];
 		$msgErr    = '';
@@ -400,7 +401,7 @@ include_once('./header.php');
 					<div class="path">ruta del archivo</div>-->
 					<!--<div class="cont_r">
 						<input type="hidden" name="" value=""/>
-						<input type="file" name="" class="file_upload_1 " name="file" />
+						<!--<input type="file" name="" class="file_upload_1 " name="file" />-->
 						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
 					</div>--><!--cont_r-->
 			<!--</div>--><!--left-->

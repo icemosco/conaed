@@ -7,7 +7,6 @@
 	$oMod         = new Modelo();
 	$accion 	  = $_POST['accion'];
 	$idAcreditado = $_POST['id'];
-	$estatus      = $_POST['estatus'];
 	$nombre		  =  $_POST['nombre']; 
 	$pagina		  =  $_POST['pagina'];
 	$fechaI		  =  $_POST['fechaI'];
@@ -35,7 +34,7 @@
 	
 	switch( $accion ){
 		case 'desactivar':
-			$oMod->fnDesactivarAcreditados( $idAcreditado, $estatus );
+			$oMod->fnDesactivarAcreditados( $idAcreditado );
 		break;
 		case 'guardar':
 			fnGuardarAcreditados( $nombre, $pagina, $fechaI, $fechaF, $idAcreditado );

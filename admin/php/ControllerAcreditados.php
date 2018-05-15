@@ -33,9 +33,9 @@
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
-							<a href="javascript:void(0)" class="disable_acreditado funct">'.$activo.'</a>
+							<a href="javascript:void(0)" class="delete_acreditado funct">'.$activo.'</a>
 							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$i.'" value="'.$info["id_universidad"].'"/> 
-							<input type="hidden" name="statusHabilitado[]" value="'.$info["activo"].'"/> 
+							
 							<a href="javascript:void(0)" class="edit_acreditado funct">editar</a>
 						</li>
 						<li>
