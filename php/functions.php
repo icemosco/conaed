@@ -82,6 +82,29 @@ function padronEvaluadores( $limite = '' , $contador = false ){
 			return $rowsTable;
 
 	}
+	
+}
+
+
+function mostrarSlider(){
+	$oCnx       = new DbConnect();
+	$sql  	    = "SELECT * FROM slider ORDER BY orden ";
+	$regs       = $oCnx->query($sql) or die( "Error en slider ". $oCnx->errno() );
+	$rowSliders = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$rowSliders .= '<div class="swiper-slide">
+								<div class="screen_slider"></div>
+								<div class="txt1">'.$info['titulo'].'</div>
+								<div class="txt2">'.$info['subtitulo'].'</div>
+								<img src="img/slider/'.$info['img'].'">
+							</div>';
+		}
+	}
+	return $rowSliders;
+		
 }
 
 

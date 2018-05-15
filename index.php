@@ -78,32 +78,7 @@ include_once("./php/functions.php")
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-button-next" style="width:30px; height:30px;">next</div>
-			<div class="swiper-slide">
-
-				<div class="screen_slider"></div>
-				<div class="txt1">La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</div>
-				<div class="txt2">La carrera de Derecho de la Universidad Peruana de Ciencias Aplicadas (UPC) recibió la acreditación internacional por parte del Consejo para la Acreditación de la Enseñanza del Derecho (CONAED), convirtiéndose así en la primera y única en recibir esta importante distinción.</div>
-				<img src="img/slider/sld_1.png">
-			</div>
-
-			<div class="swiper-slide">
-				<div class="screen_slider"></div>
-				<div class="txt1">CONAED acredita a la Facultad de Derecho de la UNITEC de Campus Sur.</div>
-				<div class="txt2">Con esta acreditación, la UNITEC Campus Sur se fortalece y manifiesta ser una de las instituciones educativas que imparten la Licenciatura en Derecho que propicia idoneidad y solidez en su plan de estudios, aviva y fomenta el cumplimiento de su misión, objetivos y adecuaciones con bases a los cambios significativos que demandan las generaciones de estudiantes presentes y futuras.</div>
-				<img src="img/slider/sld_2.png" />
-			</div>
-			<div class="swiper-slide">
-				<div class="screen_slider"></div>
-				<div class="txt1">La apuesta de la UP para crecer profesionalmente.</div>
-				<div class="txt2">Al obtener esta acreditación, el presidente de CONAED, Felipe Ibáñez Mariel, declaró que con logros como este, la Universidad Panamericana demuestra ser “una institución educativa que va en pos de la excelencia académica, por lo que este es un proceso dinámico que debe continuar evolucionando”.</div>
-				<img src="img/slider/sld_3.png" />
-			</div>
-			<div class="swiper-slide">
-				<div class="screen_slider"></div>
-				<div class="txt1">La carrera de Derecho de la Facultad de la UNAM cumple totalmente con lineamientos de calidad avalados por la CONAED.</div>
-				<div class="txt2">Felipe Ibáñez, presidente de la Conaed, resaltó que hay en el territorio nacional mil 770 instituciones educativas que imparten esa carrera y sólo 200 están acreditadas. “Y no creo que más de 600 puedan ser susceptibles a ese proceso”. Enfatizó el papel de la Universidad Nacional como institución formadora de abogados de excelencia.</div>
-				<img src="img/slider/sld_4.png" />
-			</div>
+			<?php echo mostrarSlider();?>
 		</div>
   	</div>
 </section>
@@ -437,7 +412,6 @@ solicitud.</p>
 		</ul>
 		</div>
 		<div class="rights">CONAED, 2018. Todos los Derechos Reservados</div>
-
 	</footer>
 </div><!--main_wrapper-->
 </div><!--bg_on-->

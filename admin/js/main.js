@@ -171,7 +171,7 @@ $('.muestra_msg').click(function(){
    	//Validamos los inputs de SLIDERS
    	$(document).on('submit','#sliders',function(event){
 		var error     = 0;
-		$('.requerido').each(function(i, elem){
+		$('.requeridoSlider').each(function(i, elem){
 			var imgSlider = '';			
 			$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
 			if($(elem).val() == ''){
@@ -179,8 +179,13 @@ $('.muestra_msg').click(function(){
 					if(this.previousElementSibling.value == ''){
 						$(elem).css({'border':'1px solid red'});
 						error++;
+						console.log("error de aqui2");
 					}
+					
+					console.log("error de aqui3= "+$(elem).attr('name'));
 				}else{
+					
+					console.log("error de aqui1= "+$(elem).attr('name'));
 					$(elem).css({'border':'1px solid red'});
 					error++;	
 				}
@@ -199,6 +204,10 @@ $('.muestra_msg').click(function(){
 	
 	//===================================================
    	//DATAPICKER DE PROGRAMAS ACREDITADOS
+   	
+   	$( '#datepickerinit_I' ).datepicker({dateFormat: 'dd-mm-yy'});
+   	$( '#datepickerfinit_F' ).datepicker({dateFormat: 'dd-mm-yy'});
+   	
    	$('.datepickerinit').each(function(i, elem){
 		$( '#datepickerinit_'+i ).datepicker({
 		    dateFormat: 'dd-mm-yy'
@@ -259,6 +268,8 @@ $('.muestra_msg').click(function(){
 	        }
 		});
 	});	
+	
+	
 });//ready
 
 
