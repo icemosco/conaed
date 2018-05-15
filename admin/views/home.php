@@ -1,5 +1,5 @@
-<?php 
-	include_once('./header.php'); 
+<?php
+include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
@@ -394,20 +394,20 @@
 		<div class="add_asociado">
 
 			<div class="asociado_fill">
-				<div class="left mr">
+				<!--<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
 					<input type="text" class="order_box_s requerido" name="" id=""  size="2" maxlength="1" value="" style="width: 5%"/> 
 					<div class="img_loaded"><img src="" /></div>
-					<div class="path">ruta del archivo</div>
-					<div class="cont_r">
+					<div class="path">ruta del archivo</div>-->
+					<!--<div class="cont_r">
 						<input type="hidden" name="" value=""/>
 						<!--<input type="file" name="" class="file_upload_1 " name="file" />-->
 						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
-					</div><!--cont_r-->
-				</div><!--left-->
+					</div>--><!--cont_r-->
+			<!--</div>--><!--left-->
 				
 				
-				<input type="hidden" name="" value=""/> 	
+				<!--<input type="hidden" name="" value=""/>--> 	
 			</div><!--asociado_fill-->'
 		</div><!--add_asociado-->
 		

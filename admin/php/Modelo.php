@@ -87,9 +87,8 @@ class Modelo extends DbConnect
 		return $idAcreditado;	
 	}
 	
-	function fnDesactivarAcreditados( $idAcreditado, $estatus ){
-		$sql = "UPDATE programas_1 SET activo = {$estatus} 
-				WHERE id_universidad = {$idAcreditado}";
+	function fnEliminarAcreditados( $idAcreditado ){
+		$sql = "DELETE programas_1 WHERE id_universidad = {$idAcreditado}";
 		$res  = $this->query($sql);		
 		
 		return "OK";		
