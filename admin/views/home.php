@@ -77,7 +77,7 @@
 			<button type="button" class="save_btn" id="guardar_acreditados_" >Guardar</button>
 		</div>
 			
-		<form class="prog" name="acreditados" id="" action="./home.php" method="post">
+		<form class="prog" name="acreditados" id="acreditados" action="./home.php" method="post">
 			<ul class="table_res">
 				<?php echo $infoAcre['template']; ?>
 			</ul>
@@ -105,7 +105,7 @@
 		</div>
 		
 			
-		<form class="prog" name="evaluadores" id="" action="./home.php" method="post" >
+		<form class="prog" name="evaluadores" id="evaluadores" action="./home.php" method="post" >
 			
 			<ul class="table_res">
 				<?php  echo $infoEval['template']; ?>
@@ -173,23 +173,23 @@
 							<label>Slider Home Page</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="2" class="">
 							<label>Programas Acreditados</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="3" class="">
 							<label>Padrón de Evaluadores</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="4" class="">
 							<label>Referencias y Asociados</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="5" class="">
 							<label>Temas y Noticias</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="6" class="">
 							<label>Gestor de Usuarios</label>
 						</li>
 
@@ -262,27 +262,27 @@
 				<div class="privilege">
 					<ul>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="1-7" class="">
 							<label>Slider Home Page</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="1-8" class="">
 							<label>Programas Acreditados</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="1-9" class="">
 							<label>Padrón de Evaluadores</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="1-10" class="">
 							<label>Referencias y Asociados</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="1-11" class="">
 							<label>Temas y Noticias</label>
 						</li>
 						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
+							<input type="checkbox" name="sl1" id="1-12" class="">
 							<label>Gestor de Usuarios</label>
 						</li>
 
