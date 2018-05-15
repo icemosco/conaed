@@ -15,6 +15,6 @@
     define('DB_NAME','conaed');
     define('DB_CHARSET','UTF8');
 
-    $folderSlider = "/htdocs/conaed/img/slider/";
+    $folderSlider = "/htdocs/coned_git/conaed/slider/";
 
 ?>

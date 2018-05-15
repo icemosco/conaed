@@ -395,12 +395,12 @@
 			<div class="asociado_fill">
 				<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
-					<input type="text" class="order_box_s requerido" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
-					<div class="img_loaded"><img src="../../img/slider/[IMAGENSLIDE]" /></div>
+					<input type="text" class="order_box_s requerido" name="" id=""  size="2" maxlength="1" value="" style="width: 5%"/> 
+					<div class="img_loaded"><img src="" /></div>
 					<div class="path">ruta del archivo</div>
 					<div class="cont_r">
-						<input type="hidden" name="nombreSlideImg[]" value="[NOMIMGSLIDE]"/>
-						<input type="file" name="imagenSlider[]" class="file_upload requerido" name="file" />
+						<input type="hidden" name="" value=""/>
+						<input type="file" name="" class="file_upload_1 " name="file" />
 						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
 					</div><!--cont_r-->
 				</div><!--left-->
