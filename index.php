@@ -78,6 +78,7 @@ include_once("./php/functions.php")
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-button-next" style="width:30px; height:30px;">next</div>
+<<<<<<< HEAD
 			<div class="swiper-slide">
 				<div class="screen_slider"></div>
 				<div class="txt1">La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</div>
@@ -103,6 +104,9 @@ include_once("./php/functions.php")
 				<div class="txt2">Felipe Ibáñez, presidente de la Conaed, resaltó que hay en el territorio nacional mil 770 instituciones educativas que imparten esa carrera y sólo 200 están acreditadas. “Y no creo que más de 600 puedan ser susceptibles a ese proceso”. Enfatizó el papel de la Universidad Nacional como institución formadora de abogados de excelencia.</div>
 				<img src="img/slider/sld_4.png" />
 			</div>
+=======
+			<?php echo mostrarSlider();?>
+>>>>>>> 6dc1cb2cbcccd17f8f4cfd13bf29f30047afd0be
 		</div>
   	</div>
 </section>
@@ -436,7 +440,6 @@ solicitud.</p>
 		</ul>
 		</div>
 		<div class="rights">CONAED, 2018. Todos los Derechos Reservados</div>
-
 	</footer>
 </div><!--main_wrapper-->
 </div><!--bg_on-->

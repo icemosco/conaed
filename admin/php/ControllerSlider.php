@@ -15,12 +15,12 @@ include_once("../php/Modelo.php");
 				
 				<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
-					<input type="text" class="order_box_s requerido" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
+					<input type="text" class="order_box_s requeridoSlider" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
 					<div class="img_loaded"><img src="../../img/slider/[IMAGENSLIDE]" /></div>
 					<div class="path">ruta del archivo</div>
 					<div class="cont_r">
 						<input type="hidden" name="nombreSlideImg[]" value="[NOMIMGSLIDE]"/>
-						<input type="file" name="imagenSlider[]" class="file_upload requerido" name="file" />
+						<input type="file" name="imagenSlider[]" class="file_upload requeridoSlider" name="file" />
 						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
 					</div><!--cont_r-->
 				</div><!--left-->
@@ -29,13 +29,13 @@ include_once("../php/Modelo.php");
 					<div class="sub_text_cont">
 						<span class="">Titulo (100 caracteres máx) *</span>
 						<span class="conteo_char">[CARCTITULO] caracteres</span>
-						<textarea name="titulo[]" class="infoSlide requerido"  maxlength="100" >[TITULO]</textarea>
+						<textarea name="titulo[]" class="infoSlide requeridoSlider"  maxlength="100" >[TITULO]</textarea>
 					</div>
 					
 					<div class="sub_text_cont">
 						<span class="">Subtitulo (225 caracteres máx) *</span>
 						<span class="conteo_char">[CARCSUBTITULO] caracteres</span>
-						<textarea name="subtitulo[]" class="infoSlide requerido" maxlength="225">[SUBTITULO]</textarea>
+						<textarea name="subtitulo[]" class="infoSlide requeridoSlider" maxlength="225">[SUBTITULO]</textarea>
 					</div>
 					
 				</div>
