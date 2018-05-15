@@ -150,7 +150,7 @@
 				<ul>
 					<li>
 						<label>Contraseña:</label>
-						<input type="password" class="" id="password" name="contrasena" required="required" maxlength="10"
+						<input type="password" class="" id="password_1" name="contrasena" required="required" maxlength="10"
 						placeholder="máximo 10 caracteres" />
 					</li>
 					<li>
