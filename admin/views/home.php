@@ -400,15 +400,15 @@ include_once('./header.php');
 					<div class="img_loaded"><img src="" /></div>
 					<div class="path">ruta del archivo</div>-->
 					<!--<div class="cont_r">
-						<input type="hidden" name="" value=""/>
+						<input type="hidden" name="" value=""/>-->
 						<!--<input type="file" name="" class="file_upload_1 " name="file" />-->
-						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
-					</div>--><!--cont_r-->
+						<!--<a href="javascript:void(0)" class="btn_cargar">Cargar</a>-->
+					<!--</div>--><!--cont_r-->
 			<!--</div>--><!--left-->
 				
 				
 				<!--<input type="hidden" name="" value=""/>--> 	
-			</div><!--asociado_fill-->'
+			</div><!--asociado_fill-->
 		</div><!--add_asociado-->
 		
 		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
