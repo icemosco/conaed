@@ -29,6 +29,7 @@ $(document).ready(function(){
 		    case "asociados":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Referencias y Asociados');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="asociados_plus" class="add_item" title="Agregar un nuevo Asociado"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "temasynoticias":
 		        	$('.'+btn).show();
@@ -63,6 +64,11 @@ $(document).on('click','.add_item',function (e) {
 		    break;
 		case "usuarios_plus":
 				$('.add_usuario').slideDown('500');
+				//$('.add_usuario').slideUp('300');
+		    
+		    break;
+		case "asociados_plus":
+				$('.add_asociado').slideDown('500');
 				//$('.add_usuario').slideUp('300');
 		    
 		    break;

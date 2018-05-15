@@ -388,7 +388,54 @@
 
 
 		</form>
-	</div>
+	</div><!--forms_cont-->
+	<div class="forms_cont asociados oxygenlight">
+		<div class="add_asociado">
+
+			<div class="asociado_fill">
+				<div class="left mr">
+					<span class="indications">Imágen .jpg ó .png</span>
+					<input type="text" class="order_box_s requerido" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
+					<div class="img_loaded"><img src="../../img/slider/[IMAGENSLIDE]" /></div>
+					<div class="path">ruta del archivo</div>
+					<div class="cont_r">
+						<input type="hidden" name="nombreSlideImg[]" value="[NOMIMGSLIDE]"/>
+						<input type="file" name="imagenSlider[]" class="file_upload requerido" name="file" />
+						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
+					</div><!--cont_r-->
+				</div><!--left-->
+				
+				
+				<input type="hidden" name="" value=""/> 	
+			</div><!--asociado_fill-->'
+		</div><!--add_asociado-->
+		
+		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
+			<div class="reel_asociados">
+				<ul>
+					<li>
+					  <span class="img_asoc"><img src="../img/pic.png" /></span>
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					</li>
+					<li>
+					  <span class="img_asoc"><img src="../img/pic.png" /></span>
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					</li>
+					<li>
+					  <span class="img_asoc"><img src="../img/pic.png" /></span>
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					</li>
+					<li>
+					  <span class="img_asoc"><img src="../img/pic.png" /></span>
+					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="width:10px;display:block;margin:0 auto;">
+					</li>
+				</ul>
+			</div>
+
+		</form>
+
+
+	</div><!--form_cont-asociados-->
 	
 
 	
