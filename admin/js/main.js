@@ -232,33 +232,26 @@ $('.muestra_msg').click(function(){
 		$(this).parent().next().find( ".new_programa" ).slideDown(500);
 	});
 	
-	// HABILITANDO DESHABILITANDO ACREDITADOS
-	$('.disable_acreditado').click(function( elem ){
+	// ELIMINANDO REGISTRO
+	$('.delete_acreditado').click(function( elem ){
 
 		var elem 	     = this;
 		var idAcreditado = this.nextElementSibling.value;
-		var idStatus     = this.nextElementSibling.nextElementSibling.value;
 		
 		$.ajax({
 	        type: "POST",
 	        url: "../ajax/ajaxAcreditados.php",
 	        //dataType: "json",
 	        data: {
-		        accion  : "desactivar",
-		        id      : idAcreditado,
-		        estatus : idStatus
+		        accion  : "eliminar",
+		        id      : idAcreditado
 		    },
 	        success: function(data)
 	        { 
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	if(idStatus == '1'){
-				     	$(elem).text('enable'); //Cambiamos el label
-			     	}
-			     	if(idStatus == '0'){
-				     	$(elem).text('disable');
-			     	}
+			     	console.log('SE HA ELIMIANDO EL PROGRAMA');
 		        }
 	        }
 		});
