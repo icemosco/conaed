@@ -16,7 +16,7 @@ include_once("../php/Modelo.php");
 				<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
 					<input type="text" class="order_box_s requeridoSlider" name="num_slider[]" id="num_slider"  size="2" maxlength="1" value="[NUMSLIDE]" style="width: 5%"/> 
-					<div class="img_loaded"><img src="../../img/slider/[IMAGENSLIDE]" /></div>
+					<div class="img_loaded" ><img src="../../img/slider/[IMAGENSLIDE]" /></div>
 					<div class="path">ruta del archivo</div>
 					<div class="cont_r">
 						<input type="hidden" name="nombreSlideImg[]" value="[NOMIMGSLIDE]"/>

@@ -91,12 +91,28 @@ $('.muestra_msg').click(function(){
 	
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
+		//console.log(event.target.files[0]);
 		var tmppath = URL.createObjectURL(e.target.files[0]);
 		$(this).parent().parent().find('.path').html(fupload);
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
-	
 
+/*$('.file_upload').change(function(){
+     /*var fupload=$(this).val();
+     console.log(this);
+      $(this).parent().parent().find('.path').html(fupload);
+      alert(fupload);
+     // $(this).parent().parent().find('.img_loaded').html('<img src="'+fupload+'" />');*/
+    /* var input = this;
+	var fReader = new FileReader();
+	fReader.readAsDataURL(input.files[0]);
+	fReader.onloadend = function(event){
+    var img = document.getElementById("img_loaded");
+    console.log(img);
+    img.src = event.target.result;
+}
+
+ });*/
 
 
 	
