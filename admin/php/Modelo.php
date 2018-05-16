@@ -1,5 +1,5 @@
 <?php
-	
+session_start();	
 class Modelo extends DbConnect 
 {
 	public function __construct()
@@ -88,8 +88,8 @@ class Modelo extends DbConnect
 	}
 	
 	function fnEliminarAcreditados( $idAcreditado ){
-		$sql = "DELETE programas_1 WHERE id_universidad = {$idAcreditado}";
-		$res  = $this->query($sql);		
+		$sql = "DELETE FROM programas_1 WHERE id_universidad = {$idAcreditado}";
+		$this->query($sql);		
 		
 		return "OK";		
 	}
@@ -108,11 +108,42 @@ class Modelo extends DbConnect
 		
 		return $infoEvaluadores;
 	}
+
+	function fnInsertaEvaluadores( $nombre, $paterno, $materno ){
+		global $_SESSION;
+		$sql  = "INSERT INTO evaluadores(nombre, a_paterno, a_materno, last_update, by_user)
+					VALUES('".$nombre."','".$paterno."','".$materno."',NOW(),'".$_SESSION['usrName']."')";	
+		$res  = $this->query($sql) or 
+		   			die("Error en query insertar acreditados ". $this->errno());
+		   	
+		 $id   = $this->insert_id();	
+		 return $id;
+	}
 	
+	function fnActualizaEvaluadores( $idEvaluador, $nombre, $paterno, $materno )
+	{
+		$sql = "UPDATE evaluadores SET nombre         = '{$nombre}'
+									  , a_paterno       = '{$paterno}'
+									  , a_materno       = '{$materno}'
+									  , last_update   = NOW()
+									  , by_user       = '".$_SESSION['usrName']."'
+						WHERE id_evaluador = {$idEvaluador}";				
+		$res  = $this->query($sql);		
+		return $idAcreditado;	
+	}
 	
-	
-	function fnListadoUsuarios( ){
-		$sql   = "SELECT * FROM usuario";
+	function fnEliminarEvaluadores( $idEvaluador ){
+		$sql = "DELETE FROM evaluadores WHERE id_evaluador = {$idEvaluador}";
+		$this->query($sql);		
+		
+		return "OK";		
+	}
+
+	function fnListadoUsuarios( $empezarDesde = '', $cantidadReg = '' ){
+
+		$limit = (!empty($cantidadReg) ? " LIMIT {$empezarDesde}, {$cantidadReg} " : '');
+
+		$sql   = "SELECT * FROM usuario ".$limit;
 		$res   = $this->query($sql) or die( "Error en Usuarios ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){

@@ -33,8 +33,8 @@
 	
 	
 	switch( $accion ){
-		case 'desactivar':
-			$oMod->fnDesactivarAcreditados( $idAcreditado );
+		case 'eliminar':
+			$oMod->fnEliminarAcreditados( $idAcreditado );
 		break;
 		case 'guardar':
 			fnGuardarAcreditados( $nombre, $pagina, $fechaI, $fechaF, $idAcreditado );

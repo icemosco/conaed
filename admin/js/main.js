@@ -206,8 +206,8 @@ $('.muestra_msg').click(function(){
 	//===================================================
    	//DATAPICKER DE PROGRAMAS ACREDITADOS
    	
-   	$( '#datepickerinit_I' ).datepicker({dateFormat: 'dd-mm-yy'});
-   	$( '#datepickerfinit_F' ).datepicker({dateFormat: 'dd-mm-yy'});
+   	$( '#datepickerinit_n' ).datepicker({dateFormat: 'dd-mm-yy'});
+   	$( '#datepickerfinit_n' ).datepicker({dateFormat: 'dd-mm-yy'});
    	
    	$('.datepickerinit').each(function(i, elem){
 		$( '#datepickerinit_'+i ).datepicker({
@@ -240,17 +240,35 @@ $('.muestra_msg').click(function(){
 	
 	// ELIMINANDO REGISTRO
 	$('.delete_acreditado').click(function( elem ){
-
-		var elem 	     = this;
 		var idAcreditado = this.nextElementSibling.value;
-		
 		$.ajax({
 	        type: "POST",
 	        url: "../ajax/ajaxAcreditados.php",
-	        //dataType: "json",
 	        data: {
 		        accion  : "eliminar",
 		        id      : idAcreditado
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	console.log('SE HA ELIMIANDO EL PROGRAMA');
+		        }
+	        }
+		});
+	});	
+
+
+	// ELIMINANDO REGISTRO
+	$('.delete_evaluador').click(function( elem ){
+		var idEvaluador = this.nextElementSibling.value;
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxEvaluadores.php",
+	        data: {
+		        accion  : "eliminar",
+		        id      : idEvaluador
 		    },
 	        success: function(data)
 	        { 
@@ -267,8 +285,9 @@ $('.muestra_msg').click(function(){
 });//ready
 
 
-//ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR
+//ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR ACREDITADOS
 	function guardarAcreditados( elem, consec ){
+
 		var error  = 0;
 		//validamos los campos 
 		var nombre = $("#nombre_uni_"+consec);
@@ -276,7 +295,7 @@ $('.muestra_msg').click(function(){
 		var dateI  = $("#datepickerinit_"+consec);
 		var dateF  = $("#datepickerfinit_"+consec);
 		var idAcreditado = $("#idAcreditado_"+consec);
-		
+
 		if( nombre.val() == ''){
 			$(nombre).css({'border':'1px solid red'});
 			error++;	
@@ -321,9 +340,55 @@ $('.muestra_msg').click(function(){
 			     	console.log("SE HA GUARDADO");	
 		        }
 	        }
-		});
-		
-		
+		});	
 	}
 
 
+
+//ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR EVALUADORES
+	function guardarEvaluadores( elem, consec ){
+	
+		var error  = 0;
+		//validamos los campos 
+		var nombre      = $("#nombre_evaluador_"+consec);
+		var paterno     = $("#paterno_evaluador_"+consec);
+		var materno     = $("#materno_evaluador_"+consec);
+		var idEvaluador = $("#idEvaluador_"+consec);
+
+		if( nombre.val() == ''){
+			$(nombre).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( paterno.val() == ''){
+			$(paterno).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( materno.val() == ''){
+			$(materno).css({'border':'1px solid red'});
+			error++;	
+		}
+		if(error > 0){
+			return false;
+		}
+		//Realizamos el guardado y edicion de la informacion
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxEvaluadores.php",
+	        //dataType: "json",
+	        data: {
+		        "accion"  : "guardar",
+		        "id"      : idEvaluador.val(),
+		        "nombre"  : nombre.val(),
+		        "paterno"  : paterno.val(),
+		        "materno"  : materno.val()
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	console.log("SE HA GUARDADO");	
+		        }
+	        }
+		});	
+	}	

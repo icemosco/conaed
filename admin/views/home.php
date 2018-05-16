@@ -1,12 +1,12 @@
 <?php
-include_once('./header.php'); 
+	include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
+	include_once("../php/ControllerUsuarios.php");
 
 	//======================= SLIDER
 	//Guardado / Edicion
-	
 	if(isset($_POST['guardar_slider'])){
 		$idSlide   = $_POST['idSlide'];
 		$msgErr    = '';
@@ -35,7 +35,14 @@ include_once('./header.php');
 	}
 	$infoEval =  fnTemplateEvaluadores( $numPaginaEvaluadores );
 	
+	//======================= USUARIOS
+	$numPaginaUsuarios = 1;
+	if(isset( $_REQUEST['npu']) ){
+		$numPaginaUsuario = $_REQUEST['npu'];
+	}
+	$infoUsus =  fnTemplateUsuarios( $numPaginaUsuarios );
 ?>
+
 
 <div class="wrapper_right">
 	<div class="header_int">
@@ -53,343 +60,43 @@ include_once('./header.php');
 		</form>
 		
 	</div><!--forms_cont. SLIDE-->
+	
+	
+	
 	<div class="forms_cont programas">
-		<div class="add_programa oxygenlight">
-			<ul>
-				<li>
-					<label>Universidad o Institución Educativa:</label>
-					<input type="text" name="nombre_uni[]" id="nombre_uni_" max-lenght="500" value="" class="requerido" placeholder="">
-				</li>
-				<li>
-					<label>Página Web:</label>
-					<input type="text" name="pagina_web[]" id="pagina_web_" max-lenght="500" value="www.pjedomex.gob.mx/ejem/" class="requerido" placeholder="http:// ó https://">
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<label>Vigencia desde:</label>
-					<input type="text" name="datepickerinit[]" max-lenght="25"  id="datepickerinit" class="datepickerfinit hasDatepicker" placeholder="">
-				</li>
-				<li>
-					<label>Vigencia hasta:</label>
-					<input type="text" name="datepickerfinit[]" max-lenght="25"  id="datepickerfinit" class="datepickerfinit hasDatepicker" placeholder="">
-					</li>
-			</ul>
-			<button type="button" class="save_btn" id="guardar_acreditados_" >Guardar</button>
-		</div>
-			
+		<div class="add_programa oxygenlight"><? echo fnTemplateNuevoAcreditado(); ?></div>
 		<form class="prog" name="acreditados" id="acreditados" action="./home.php" method="post">
-			<ul class="table_res">
-				<?php echo $infoAcre['template']; ?>
-			</ul>
+			<ul class="table_res"><?php echo $infoAcre['template']; ?></ul>
 		</form>
 		<ul class="paginator"> <?php  echo $infoAcre['paginador'];  ?> </ul>
-	</div><!--forms_cont ACREDITADOS-->
+	</div><!--forms_cont PROGRAMAS-->
+	
+	
+	
+	
+	
 	<div class="forms_cont evaluadores">
-		<div class="add_evaluador">
-			<ul>
-				<li>
-					<label>Nombre:</label>
-					<input type="text" name="nombre_evaluador" max-lenght="500" value="" class="requerido" placeholder="">
-				</li>
-				<li>
-					<label>Apellido Paterno:</label>
-					<input type="text" name="paterno_evaluador" max-lenght="500" value="Accinelli" class="requerido" placeholder="">
-				</li>
-			</ul>
-			<ul>
-				<li>
-					<label>Apellido Materno:</label>
-					<input type="text" name="materno_evaluador" max-lenght="500" value="Rezkalah" class="requerido" placeholder="">
-				</li>
-			</ul>
-		</div>
-		
-			
+		<div class="add_evaluador"><?php echo fnTemplateNuevoEvaluadores(); ?></div>
 		<form class="prog" name="evaluadores" id="evaluadores" action="./home.php" method="post" >
-			
-			<ul class="table_res">
-				<?php  echo $infoEval['template']; ?>
-			</ul>
-
-			<button type="submit"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores" >Guardar</button>
+			<ul class="table_res"><?php  echo $infoEval['template']; ?></ul>
 		</form>
 		<ul class="paginator"> <?php echo $infoEval['paginador']; ?> </ul>
 		
 	</div><!--forms_cont-->
+	
+	
+			
+
 	<div class="forms_cont usuarios oxygenlight">
-		<div class="add_usuario">
-				<ul>
-					<li>
-						<label>Nombre(s):</label>
-						<input type="text" class="" name="nombres" required="required" />
-					</li>
-					<li>
-						<label>Apellido Paterno:</label>
-						<input type="text" class="" name="a_paterno" required="required" />
-					</li>
-					<li>
-						<label>Apellido Materno:</label>
-						<input type="text" class="" name="a_materno" required="required" />
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<label>Nombre de usuario:</label>
-						<input type="text" class="" name="nom_user" required="required" maxlength="8"
-						placeholder="máximo 8 caracteres" />
-					</li>
-					<li>
-						<label>Email:</label>
-						<input type="text" class="" name="email_usario" required="required" maxlength="8" placeholder="correo@correo.com" />
-					</li>
-					<li>
-						<label>Confirmar Email:</label>
-						<input type="email" class="" name="conf_email_usuario" required="required" placeholder="correo@correo.com" />
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<label>Contraseña:</label>
-						<input type="password" class="" id="password_1" name="contrasena" required="required" maxlength="10"
-						placeholder="máximo 10 caracteres" />
-					</li>
-					<li>
-						<label>Confirmar contraseña:</label>
-						<input type="password" class="" name="conf_contrasena" required="required" maxlength="10" placeholder="confirma la contraseña" />
-					</li>
-				
-					<li>
-						<meter max="4" id="password-strength-meter"></meter>
-						<p id="password-strength-text"></p>
-					</li>
-					
-				</ul>
-				<div class="mensaje_bot"></div>
-
-				<div class="privilege">
-					<ul>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Slider Home Page</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="2" class="">
-							<label>Programas Acreditados</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="3" class="">
-							<label>Padrón de Evaluadores</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="4" class="">
-							<label>Referencias y Asociados</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="5" class="">
-							<label>Temas y Noticias</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="6" class="">
-							<label>Gestor de Usuarios</label>
-						</li>
-
-					</ul>
-						
-				</div>
-				<button type="submit" class="save_btn" name="guardar_nuevo_usuario" id="add_nuevo_user">Agregar Usuario</button>
-				
-			</div><!--add_usuario-->
+		<div class="add_usuario"><?php echo fnTemplateNuevoUsuario(); ?></div><!--add_usuario-->
 		<form class="users_gest" name="usuarios" id="usuarios" action="./home.php" method="post" enctype="multipart/form-data">
-
-			
-
-			<ul class="table_res">
-				<li>
-					<span class="nom_user">Accinelli Rezkalah Eduardo</span>
-					<a href="javascript:void(0)" class="disable funct">disable</a>
-					<a href="javascript:void(0)" class="edit_user funct">editar</a>
-				</li>
-				<li>
-					<div class="new_user">
-							<ul>
-					 <li>
-						<label>Nombre(s):</label>
-						<input type="text" class="" name="nombres" required="required" />
-					 </li>
-					 <li>
-						<label>Apellido Paterno:</label>
-						<input type="text" class="" name="a_paterno" required="required" />
-					 </li>
-					 <li>
-						<label>Apellido Materno:</label>
-						<input type="text" class="" name="a_materno" required="required" />
-					 </li>
-				    </ul>
-				<ul>
-					<li>
-						<label>Nombre de usuario:</label>
-						<input type="text" class="" name="nom_user" required="required" maxlength="8"
-						placeholder="máximo 8 caracteres" />
-					</li>
-					<li>
-						<label>Email:</label>
-						<input type="text" class="" name="email_usario" required="required" maxlength="8" placeholder="correo@correo.com" />
-					</li>
-					<li>
-						<label>Confirmar Email:</label>
-						<input type="email" class="" name="conf_email_usuario" required="required" placeholder="correo@correo.com" />
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<label>Contraseña:</label>
-						<input type="password" class="" id="password" name="contrasena" required="required" maxlength="10"
-						placeholder="máximo 10 caracteres" />
-					</li>
-					<li>
-						<label>Confirmar contraseña:</label>
-						<input type="password" class="" name="conf_contrasena" required="required" maxlength="10" placeholder="confirma la contraseña" />
-					</li>
-				
-					<li>
-						<meter max="4" id="password-strength-meter"></meter>
-						<p id="password-strength-text"></p>
-					</li>
-					
-				</ul>
-				<div class="mensaje_bot"></div>
-
-				<div class="privilege">
-					<ul>
-						<li>
-							<input type="checkbox" name="sl1" id="1-7" class="">
-							<label>Slider Home Page</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1-8" class="">
-							<label>Programas Acreditados</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1-9" class="">
-							<label>Padrón de Evaluadores</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1-10" class="">
-							<label>Referencias y Asociados</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1-11" class="">
-							<label>Temas y Noticias</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1-12" class="">
-							<label>Gestor de Usuarios</label>
-						</li>
-
-					</ul>
-						
-				</div>
-				<button type="button" class="save_btn" id="guardar_usuarios" onclick="">Actualizar Usuario</button>	
-				</div><!--new_user-->
-				</li>
-				<li class="clr2">
-					<span class="nom_user">Accinelli Rezkalah Eduardo 2</span>
-					<a href="javascript:void(0)" class="disable funct">disable</a>
-					<a href="javascript:void(0)" class="edit_user funct">editar</a>
-				</li>
-				<li>
-					<div class="new_user">
-							<ul>
-					 <li>
-						<label>Nombre(s):</label>
-						<input type="text" class="" name="nombres" required="required" />
-					 </li>
-					 <li>
-						<label>Apellido Paterno:</label>
-						<input type="text" class="" name="a_paterno" required="required" />
-					 </li>
-					 <li>
-						<label>Apellido Materno:</label>
-						<input type="text" class="" name="a_materno" required="required" />
-					 </li>
-				    </ul>
-				<ul>
-					<li>
-						<label>Nombre de usuario:</label>
-						<input type="text" class="" name="nom_user" required="required" maxlength="8"
-						placeholder="máximo 8 caracteres" />
-					</li>
-					<li>
-						<label>Email:</label>
-						<input type="text" class="" name="email_usario" required="required" maxlength="8" placeholder="correo@correo.com" />
-					</li>
-					<li>
-						<label>Confirmar Email:</label>
-						<input type="email" class="" name="conf_email_usuario" required="required" placeholder="correo@correo.com" />
-					</li>
-				</ul>
-				<ul>
-					<li>
-						<label>Contraseña:</label>
-						<input type="password" class="" id="password" name="contrasena" required="required" maxlength="10"
-						placeholder="máximo 10 caracteres" />
-					</li>
-					<li>
-						<label>Confirmar contraseña:</label>
-						<input type="password" class="" name="conf_contrasena" required="required" maxlength="10" placeholder="confirma la contraseña" />
-					</li>
-				
-					<li>
-						<meter max="4" id="password-strength-meter"></meter>
-						<p id="password-strength-text"></p>
-					</li>
-					
-				</ul>
-				<div class="mensaje_bot"></div>
-
-				<div class="privilege">
-					<ul>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Slider Home Page</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Programas Acreditados</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Padrón de Evaluadores</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Referencias y Asociados</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Temas y Noticias</label>
-						</li>
-						<li>
-							<input type="checkbox" name="sl1" id="1" class="">
-							<label>Gestor de Usuarios</label>
-						</li>
-
-					</ul>
-						
-				</div>
-				<button type="button" class="save_btn" id="guardar_usuarios" onclick="">Actualizar Usuario</button>	
-				</div><!--new_user-->
-				</li>
-			</ul>
-			
-
-
-
-
-
+			<ul class="table_res"> <?php echo $infoUsus['template']; ?> </ul>
 		</form>
+		<ul class="paginator"> <?php echo $infoUsus['paginador']; ?> </ul>
 	</div><!--forms_cont-->
+
+
+
 	<div class="forms_cont asociados oxygenlight">
 		<div class="add_asociado">
 
@@ -432,12 +139,8 @@ include_once('./header.php');
 					</li>
 				</ul>
 			</div>
-
 		</form>
-
-
-	</div><!--form_cont-asociados-->
-	
+	</div><!--form_cont-asociados-->	
 
 	
 	<div class="msg">
@@ -451,6 +154,7 @@ include_once('./header.php');
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
 <script>
+	/*
 	var strength = {
   0: "Necesitas Mejorar",
   1: "Muy débil",
@@ -475,7 +179,7 @@ password.addEventListener('input', function() {
   } else {
     text.innerHTML = "";
   }
-});
+});*/
 </script>
 </body>
 
