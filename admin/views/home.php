@@ -1,5 +1,5 @@
 <?php
-	include_once('./header.php'); 
+include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
@@ -18,6 +18,7 @@
 								, $_POST['num_slider'][ $key ]
 								, $folderSlider
 								, $_FILES['imagenSlider'] );
+			//echo $msgErr;
 		}		
 	}
 
@@ -34,15 +35,15 @@
 		$numPaginaEvaluadores = $_REQUEST['npe'];
 	}
 	$infoEval =  fnTemplateEvaluadores( $numPaginaEvaluadores );
-	
+
 	//======================= USUARIOS
 	$numPaginaUsuarios = 1;
 	if(isset( $_REQUEST['npu']) ){
 		$numPaginaUsuario = $_REQUEST['npu'];
 	}
 	$infoUsus =  fnTemplateUsuarios( $numPaginaUsuarios );
+	
 ?>
-
 
 <div class="wrapper_right">
 	<div class="header_int">
@@ -60,9 +61,10 @@
 		</form>
 		
 	</div><!--forms_cont. SLIDE-->
-	
-	
-	
+
+
+
+
 	<div class="forms_cont programas">
 		<div class="add_programa oxygenlight"><? echo fnTemplateNuevoAcreditado(); ?></div>
 		<form class="prog" name="acreditados" id="acreditados" action="./home.php" method="post">
@@ -70,11 +72,11 @@
 		</form>
 		<ul class="paginator"> <?php  echo $infoAcre['paginador'];  ?> </ul>
 	</div><!--forms_cont PROGRAMAS-->
-	
-	
-	
-	
-	
+
+
+
+
+
 	<div class="forms_cont evaluadores">
 		<div class="add_evaluador"><?php echo fnTemplateNuevoEvaluadores(); ?></div>
 		<form class="prog" name="evaluadores" id="evaluadores" action="./home.php" method="post" >
@@ -83,18 +85,17 @@
 		<ul class="paginator"> <?php echo $infoEval['paginador']; ?> </ul>
 		
 	</div><!--forms_cont-->
-	
-	
-			
+
+
+
 
 	<div class="forms_cont usuarios oxygenlight">
 		<div class="add_usuario"><?php echo fnTemplateNuevoUsuario(); ?></div><!--add_usuario-->
-		<form class="users_gest" name="usuarios" id="usuarios" action="./home.php" method="post" enctype="multipart/form-data">
+		<form class="users_gest" name="usuarios" id="usuarios" action="./home.php" method="post">
 			<ul class="table_res"> <?php echo $infoUsus['template']; ?> </ul>
 		</form>
-		<ul class="paginator"> <?php echo $infoUsus['paginador']; ?> </ul>
+		<ul class="paginator"> <?php //echo $infoUsus['paginador']; ?> </ul>
 	</div><!--forms_cont-->
-
 
 
 	<div class="forms_cont asociados oxygenlight">
@@ -139,8 +140,12 @@
 					</li>
 				</ul>
 			</div>
+
 		</form>
-	</div><!--form_cont-asociados-->	
+
+
+	</div><!--form_cont-asociados-->
+	
 
 	
 	<div class="msg">
@@ -149,38 +154,20 @@
 
 </div><!--main_wrapper-->
 <script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/main.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>
-<script>
-	/*
-	var strength = {
-  0: "Necesitas Mejorar",
-  1: "Muy débil",
-  2: "Débil",
-  3: "Buena",
-  4: "Perfecta"
-}
-var password = document.getElementById('password');
-var meter = document.getElementById('password-strength-meter');
-var text = document.getElementById('password-strength-text');
 
-password.addEventListener('input', function() {
-  var val = password.value;
-  var result = zxcvbn(val);
+ <script src="../plugins/croppie/prism.js"></script>
+ <script src="../plugins/croppie/croppie.js"></script>
+ <script src="../plugins/croppie/img_perfil.js"></script>
 
-  // Update the password strength meter
-  meter.value = result.score;
+ <script src="../js/main.js"></script>
+ <script>
 
-  // Update the text indicator
-  if (val !== "") {
-    text.innerHTML = "Strength: " + strength[result.score]; 
-  } else {
-    text.innerHTML = "";
-  }
-});*/
-</script>
+            Demo.init();
+          
+        </script>
 </body>
 
 </html>

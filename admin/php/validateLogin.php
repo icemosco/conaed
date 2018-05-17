@@ -18,7 +18,6 @@
 		header("location: {$enlace}");
 		exit;
     }
-    
     $oUsr  = new Usuario();
 	  
 	$oUsr->setUsuario($usr);

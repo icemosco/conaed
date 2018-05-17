@@ -29,7 +29,7 @@
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
-							<a href="javascript:void(0)" class="delete_acreditado funct">eliminar</a>
+							<a href="javascript:void(0)" class="delete_acreditado funct">Eliminar</a>
 							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$i.'" value="'.$info["id_universidad"].'"/> 
 							<a href="javascript:void(0)" class="edit_acreditado funct">editar</a>
 						</li>
@@ -38,11 +38,13 @@
 								<ul>
 									<li>
 										<label>Universidad o Institución Educativa:</label>
-										<input type="text" name="nombre_uni[]" id="nombre_uni_'.$i.'" max-lenght="500" value="'.$info["nombre_uni"].'" >
+										<input type="text" name="nombre_uni[]" id="nombre_uni_'.$i.'" max-lenght="500" value="'.$info["nombre_uni"].'" 
+												class="requerido"  placeholder="">
 									</li>
 									<li>
 										<label>Página Web:</label>
-										<input type="text" name="pagina_web[]" id="pagina_web_'.$i.'" max-lenght="500" value="'.$info["website"].'"  placeholder="http:// ó https://">
+										<input type="text" name="pagina_web[]" id="pagina_web_'.$i.'" max-lenght="500" value="'.$info["website"].'" 
+												class="requerido" placeholder="http:// ó https://">
 									</li>
 								</ul>
 								<ul>

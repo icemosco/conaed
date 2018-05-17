@@ -26,7 +26,7 @@
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["a_paterno"].' '.$info["a_materno"].' '.$info["nombre"].'</span>
-							<a href="javascript:void(0)" class="delete_evaluador funct">eliminar</a>
+							<a href="javascript:void(0)" class="delete_evaluador funct">Eliminar</a>
 							<input type="hidden" name="idEvaluador[]" id="idEvaluador_'.$i.'" value="'.$info["id_evaluador"].'"/> 
 							<a href="javascript:void(0)" class="edit_evaluador funct">editar</a>
 						</li>
@@ -35,20 +35,21 @@
 								<ul>
 									<li>
 										<label>Nombre:</label>
-										<input type="text" name="nombre_evaluador[]" id="nombre_evaluador_'.$i.'" max-lenght="100" value="'.$info["nombre"].'" >
+										<input type="text" name="nombre_evaluador[]" id="nombre_evaluador_'.$i.'" max-lenght="100" value="'.$info["nombre"].'" 
+										class="requerido" placeholder="">
 									</li>
 									<li>
 										<label>Apellido Paterno:</label>
-										<input type="text" name="paterno_evaluador[]" id="paterno_evaluador_'.$i.'" max-lenght="100" value="'.$info["a_paterno"].'">
+										<input type="text" name="paterno_evaluador[]" id="paterno_evaluador_'.$i.'" max-lenght="100" value="'.$info["a_paterno"].'" class="requerido" placeholder="">
 									</li>
 								</ul>
 								<ul>
 									<li>
 										<label>Apellido Materno:</label>
-										<input type="text" name="materno_evaluador[]"  id="materno_evaluador_'.$i.'" max-lenght="100" value="'.$info["a_materno"].'">
+										<input type="text" name="materno_evaluador[]"  id="materno_evaluador_'.$i.'" max-lenght="100" value="'.$info["a_materno"].'" class="requerido" placeholder="">
 									</li>
 								</ul>
-								<button type="button"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores_'.$i.'"  onclick="guardarEvaluadores(this, '.$i.');">Guardar</button>
+								<button type="submit"  class="save_btn" name="guardar_evaluadores" id="guardar_evaluadores_'.$i.'"  onclick="guardarEvaluadores(this, '.$i.');">Guardar</button>
 							</div>
 						</li> ';
 				$cont++;		
@@ -66,17 +67,17 @@
 		$template= '<ul>
 				<li>
 					<label>Nombre:</label>
-					<input type="text" name="nombre_evaluador" id="nombre_evaluador_n" max-lenght="100" value="" placeholder="">
+					<input type="text" name="nombre_evaluador" id="nombre_evaluador_n" max-lenght="100" value="" class="requerido" placeholder="">
 				</li>
 				<li>
 					<label>Apellido Paterno:</label>
-					<input type="text" name="paterno_evaluador" id="paterno_evaluador_n" max-lenght="100" value="">
+					<input type="text" name="paterno_evaluador" id="paterno_evaluador_n" max-lenght="100" value="" class="requerido" placeholder="">
 				</li>
 			</ul>
 			<ul>
 				<li>
 					<label>Apellido Materno:</label>
-					<input type="text" name="materno_evaluador" id="materno_evaluador_n"  max-lenght="100" value="">
+					<input type="text" name="materno_evaluador" id="materno_evaluador_n"  max-lenght="100" value="" class="requerido" placeholder="">
 				</li>
 			</ul>
 			<button type="button" class="save_btn" id="guardar_acreditados_n" onclick="guardarEvaluadores(this, \'n\');">Guardar</button>';

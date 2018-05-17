@@ -19,6 +19,15 @@ class Funciones
 	{
 		 $this->nameArch = $val;
 	}
+
+	function emailValido($email)
+	{ 
+	    if (!ereg("^([a-zA-Z0-9._]+)@([a-zA-Z0-9.-]+).([a-zA-Z]{2,4})$",$email)){ 
+	       return false; 
+	    } else { 
+	        return true; 
+	    } 
+	}
 	
 	//Generamos un password aleatorio
 	function randomPassword()

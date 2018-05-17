@@ -1,0 +1,99 @@
+/* 
+Colors
+#20C1C7
+#204648
+#189094
+#61CED2
+#0C4648
+*/
+
+button,
+a.btn {
+    background-color: #189094;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: none;
+    display: inline-block;
+    cursor: pointer;
+}
+input[type="file"] {
+    cursor: pointer;
+}
+button:focus {
+    outline: 0;
+}
+
+.file-btn {
+    position: relative;
+}
+.file-btn input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.actions {
+    padding: 5px 0;
+}
+.actions button {
+    margin-right: 5px;
+}
+
+
+.container_demo {
+    position: relative;
+    width: 190px;
+    max-width: 200px;
+    margin: 0 auto;
+
+    padding: 0 10px;
+}
+
+
+.upload-demo .upload-demo-wrap,
+.upload-demo .upload-result,
+.upload-demo.ready .upload-msg {
+    display: none;
+}
+.upload-demo.ready .upload-demo-wrap {
+    display: block;
+}
+.upload-demo.ready .upload-result {
+    display: inline-block;    
+}
+.upload-demo-wrap {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+}
+
+.upload-msg {
+    text-align: center;
+    padding: 5px;
+    font-size: 22px;
+    color: #aaa;
+    width: 170px;
+    height: 160px;
+    margin: 10px auto;
+    border: 1px solid #aaa;
+}
+
+@media handheld, only screen and (max-width: 767px) {
+
+    .container, 
+    .section-header h2 {
+        min-width: 0;
+    }
+
+    .croppie-container {
+        padding: 30px 0;
+    }
+}

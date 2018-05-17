@@ -24,20 +24,41 @@
 </head>
 <body>
 	<header>
-			<div class="logo"><img src="../img/logo_conaed.png" /></div>
+			<div class="logo"><img src="../img/logo_conaed.png" width="100%" height="100%"/></div>
 			<span>Consejo para la Acreditación de la Enseñanza de Derecho, A.C.</span>
 			<a href="../php/cerrar_sesion.php" class="close_s">Cerrar Sesión</a>
+			<link rel="Stylesheet" type="text/css" href="../plugins/croppie/prism.css">
+			<link rel="Stylesheet" type="text/css" href="../plugins/croppie/croppie.css">
+			<link rel="Stylesheet" type="text/css" href="../plugins/croppie/imagenPerfil.css">
 	</header>
 <div class="main_wrapper">
 	<div class="menu_cont">
 		<div class="cont_img">
-			<span class="image">
-					<img src="../img/pic.png" alt="">
-			</span>
-			<a href="javascript:void(0)" class="edit">
-					<img src="../img/edit.png" alt="">
-			</a>
-			<span class="n_usuario">Marco Picil</span>
+			<div class="demo-wrap upload-demo">
+                <div class="container_demo">
+                    <div class="grid">
+                        <div class="actions">
+                            <a class="btn file-btn">
+                                <span>Upload</span>
+                                <input type="file" id="img_usr" value="Choose a file" accept="image/*" />
+                            </a>
+                            <button class="upload-result">Result</button>
+                        </div>
+                        <div class="upload-msg">
+                            <img id="perfil_usuario" src="../img/users/<?php echo $_SESSION['imgPerfil']; ?>" width="100%" height="100%"/>
+                        </div>
+                        <div class="upload-demo-wrap">
+                            <div id="upload-demo"></div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+			<span class="n_usuario" style="font-size:10px"><?php echo $_SESSION['nombreCompleto']; ?></span>
+           	
+                
+
+
+
 		</div>
 		
 		<?php include('./menu.php') ?>

@@ -99,19 +99,12 @@ $('.muestra_msg').click(function(){
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
 	});
 	
-
-
-
-	
-	var nom_slide  = 1;
 	$(document).on('click','.add_n_slider',function (e) {
-		
+		var nom_slide  = 1;
 		$('.order_box_s').each(function(i, elem){
-			nom_slide = (i+1);
+			nom_slide++;	
 		});
-
-		nom_slide = nom_slide+1;
-
+		
 		if(nom_slide > 5){
 			return false;
 		}
@@ -120,7 +113,7 @@ $('.muestra_msg').click(function(){
 									+'<span class="title_sl">Slider '+nom_slide+'</span>'
 									+'<div class="left mr">'
 										+'<span class="indications">Imágen .jpg ó .png</span>'
-										+'<input type="text" class="order_box_s requerido" name="num_slider[]" id="num_slider"  value="'+nom_slide+'" size="2" style="width: 5%"/>'
+										+'<input type="text" class="order_box_s requerido" name="num_slider[]" value="'+nom_slide+'" size="2" style="width: 5%"/>'
 										+'<div class="img_loaded"><img src="../img/pic.png"></div>'
 										+'<div class="path">ruta del archivo</div>'
 										+'<div class="cont_r">'
@@ -144,7 +137,6 @@ $('.muestra_msg').click(function(){
 									+'<input type="hidden" name="idSlide[]"   value=""/>'
 								+'</div><!--slider_fill-->');
 
-		
 		
 	});
 	
@@ -170,7 +162,6 @@ $('.muestra_msg').click(function(){
   			console.log(e.currentTarget.value);
   			e.currentTarget.value = '';
   		}
-
     });
     
     //===================================================
@@ -279,9 +270,70 @@ $('.muestra_msg').click(function(){
 		        }
 	        }
 		});
-	});	
+	});
+
+
+    //VALIDAMOS LA DISFICULTAD DE LA CONTRASEÑA
+    var strength = {
+		  0: "Necesitas Mejorar",
+		  1: "Muy débil",
+		  2: "Débil",
+		  3: "Buena",
+		  4: "Perfecta"
+	};
 	
-	
+	//validamos la complejidad de la contraseña
+	$(document).on('input','.pass_complexity',function (e) {
+		var pibote = $(this).attr('id').substring($(this).attr('id').length -1);
+		var meter  = $('#password-strength-meter_'+pibote);
+        var text   = $('#password-strength-text_'+pibote);
+        
+        var val    = $(this).val();
+  		var result = zxcvbn(val);
+  		meter.val(result.score);
+  		
+  		if (val !== "") {
+    		text.html("Strength: " + strength[result.score]); 
+  		} else {
+    		text.html("");
+  		}
+    });
+
+
+    // ELIMINANDO REGISTRO USUARIO
+	$('.delete_usuario').click(function( elem ){
+		var idUsuario = this.nextElementSibling.value;
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxUsuarios.php",
+	        data: {
+		        accion  : "eliminar",
+		        id      : idUsuario
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	console.log('SE HA ELIMIANDO EL USUARIO');
+		        }
+	        }
+		});
+	});
+
+
+	$(".validarEmail").blur(function(e){ 
+		$(this).css({'border':'1px solid #737373'}); // Rregresamos el estilo
+    	if(this.value != ''){
+	    	var expr = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;;
+	    	if ( !expr.test(this.value) ){
+	        	console.log ( "Error" ,  'La dirección de correo " ' + this.value + ' " es incorrecta' ,  "error" );
+	        	//$("#"+this.id).focus();
+	        	$(this).css({'border':'1px solid red'});
+	      	}  
+    	}               
+	});
+
 });//ready
 
 
@@ -347,7 +399,7 @@ $('.muestra_msg').click(function(){
 
 //ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR EVALUADORES
 	function guardarEvaluadores( elem, consec ){
-	
+
 		var error  = 0;
 		//validamos los campos 
 		var nombre      = $("#nombre_evaluador_"+consec);
@@ -392,3 +444,99 @@ $('.muestra_msg').click(function(){
 	        }
 		});	
 	}	
+
+	//===================================================
+	//				USUARIOS
+	function guardarUsuarios( elem, consec ){
+
+   	    var error     = 0;
+   	    var idUs      = $( '#idUsuario_'+consec ).val();
+   	    //VALIDAMOS CAMPOS REQUERIDOS
+   		$('.requerido_usu').each(function( i, elem ) { 	
+   			$(elem).css({'border':'1px solid #737373'}); // regresamos el estilo
+			if($(elem).val() == ''){
+				$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
+				if($(elem).val() == ''){
+					var pibote = $(elem).attr('id').substring($(elem).attr('id').length -1); 
+					if(pibote == consec) //Validamos solo la seccion trabajada
+					{
+						if($(elem).attr('name') == 'contrasena_usu[]' && idUs != ''){} // validamos contraseña solo si tiene dato y es nuevo reg usuario
+						else
+						{
+							$(elem).css({'border':'1px solid red'});
+							error++;	
+						}	
+					}	
+				}
+			}	
+		});
+
+		//VALIDAMOS LOS CHECKS
+        var layPermisosSelecc = [];
+        $('.check_usu_permisos:checked').each(function( i , elem ) { //Buscamos los checkeados
+        	var pibote = $(elem).attr('id').substring($(elem).attr('id').length -1); 
+			if(pibote == consec) //Validamos solo la seccion trabajada
+			{
+        		layPermisosSelecc.push( $(this).val() );
+        	}	
+    	});	
+
+    	if( 0 >= layPermisosSelecc.length){
+    		console.log('NO HAY CHECKS SELECCIONADOS');
+    		error++;
+    	}
+    	//validamos password que sea el mismo en la confirmacion
+    	if( $('#contrasena_usu_'+consec).val() != '' && 
+    				$('#contrasena_usu_'+consec).val() != $('#conf_contrasena_'+consec).val())
+    	{
+    		//Validamos siempre y cuando sea nuevo usuario, si es edicion solo si tiene algun dato
+    		console.log('las contraseñas no son iguales');
+    		$('#conf_contrasena_'+consec).css({'border':'1px solid red'});
+			error++;	
+    	}
+    	//Si la contraseña es debil mandamos error
+    	if($('#password-strength-meter_'+consec).val() <=1 ){
+    		if(idUs == ''){
+    			$('#contrasena_usu_'+consec).css({'border':'1px solid red'});
+				error++;		
+			}	
+    	}
+    	//validamos email que sean los mismos
+    	if($('#email_usario_'+consec).val() != $('#conf_email_usuario_'+consec).val() && idUs == ''){
+    		console.log('los correos no son iguales');
+    		$('#conf_email_usuario__'+consec).css({'border':'1px solid red'});
+			error++;	
+    	}
+
+		if(error > 0){
+			console.log('Falta rellenar campos');
+			$('.msg').html('<span>Debe rellenar los campos requeridos </span>');
+			return false;	
+		}
+
+		//Realizamos el guardado y edicion de la informacion
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxUsuarios.php",
+	        data: {
+		        "accion"   : "guardar",
+		        "id"       : $('#idUsuario_'+consec).val(),
+		        "nombre"   : $('#nombre_usuario_'+consec).val(),
+		        "paterno"  : $('#paterno_usuario_'+consec).val(),
+		        "materno"  : $('#materno_usuario_'+consec).val(),
+		        "usuario"  : $('#usuario_'+consec).val(),
+		        "email"    : $('#email_usario_'+consec).val(),
+		        "pass"     : $('#contrasena_usu_'+consec).val(),
+		        "permisos" : layPermisosSelecc, 
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	console.log("SE HA GUARDADO");	
+		        }
+	        }
+		});	
+
+	}

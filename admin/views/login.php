@@ -24,7 +24,7 @@
 			<label>Usuario:</label>
 			<input type="text" name="usuario" id="usuario" class="" maxlength="10" required />
 			<label>Contraseña:</label>
-			<input type="password" name="contrasena" id="contrasena" class="" maxlength="8" required />
+			<input type="password" name="contrasena" id="contrasena" class="" maxlength="20" required />
 			<a href="#" title="" class="">Reestablecer Contraseña</a>
 			<div class="restablecer">
 				<span class="txt"><?=$_REQUEST['msg']?></span>
@@ -37,7 +37,7 @@
 	</div>
 </div><!--middle_wrapper-->
 <script src="../js/jquery-3.3.1.min.js"></script>
-<script src="../js/main.js"></script>
+<!--<script src="../js/main.js"></script>-->
 </body>
 
 </html>

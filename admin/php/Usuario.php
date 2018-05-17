@@ -57,72 +57,90 @@ class Usuario extends DbConnect
   { 
     parent::__construct();  
   }
+
+
+   function fnListadoUsuarios( $empezarDesde = '', $cantidadReg = '' ){
+		$limit = (!empty($cantidadReg) ? " LIMIT {$empezarDesde}, {$cantidadReg} " : '');
+		$sql   = "SELECT * FROM usuario WHERE activo = 1 ORDER BY apellido_pat ".$limit;
+		$res   = $this->query($sql) or die( "Error en Usuarios ". $oCnx->errno() );
+		$regs  = $res->num_rows;
+	    if( $regs != 0 ){
+		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
+		   		$infoUsuarios[] =  $info;
+		   }
+		}
+		
+		return $infoUsuarios;
+	}
+	
+
     	
   // =========================================	
   // Inserta un usuario
   // =========================================
-  function insertarUsuario($data){
-	  
-	  (!empty($data['contrasena'])) ? $data['contrasena'] = password_hash($data['contrasena'], PASSWORD_DEFAULT) : $data['contrasena'] = null;
-		($data['tipoUsuario'] == 2) ? $acceso = "movil" : $acceso = "web";
-		$data['idPais'] = (!empty($data['idPaisA'])) ? $data['idPaisA'] : $data['idPaisE'];
-		
-	  $fechaHoy = date("Y-m-d H:i:s");
-	  if(empty($data['telefono'])) $data['telefono'] = "";
-	  
-	  /*
-		  1 Activo 
-		  0 Inactivo 
-		*/  
-	  
-	  if(empty($data['idAyudante']))
-	  {
+  function fnInsertaUsuarios( $usrReg, $nombre, $paterno, $materno, $usuario, $email, $password, $permisos ){
+
+	   $password =  (!empty($password)) ? md5($password) : '';
+
 		  $sql = "INSERT INTO usuario(
-		  							  id_tipousuario
-		  							, usuario
+		  							  usuario
+		  							, id_tipousuario  
 		  							, nombre
 		  							, apellido_pat
 		  							, apellido_mat
-		  							, tipo_acceso
-		  							, telefono
-		  							, pais
+		  							, password
 		  							, activo
-		  							, fecha_registro
+		  							, email
+		  							, permisos_menu
+		  							, last_update
+		  							, by_user
 		  					)
-		  					VALUES(
-			  					{$data['tipoUsuario']}
-			  					,'{$data['usuario']}'
-			  					,'".addslashes($data['nombre'])."'
-			  					,'".addslashes($data['apellido'])."'
-	                ,'".$data['contrasena']."'
-			  					,'{$acceso}'
-			  					,'{$data['telefono']}'
-			  					,'".strtolower($data['idPais'])."'
-			  					, 0  -- Todos se registran como inactivos
-			  					,'{$fechaHoy}'
+		  					VALUES( '".addslashes(trim($usuario))."'
+		  						, 2
+			  					,'".addslashes( $nombre  )."'
+			  					,'".addslashes( $paterno )."'
+			  					,'".addslashes( $materno )."'
+	               			    ,'".$password."'
+	               			    , 1
+			  					,'".$email."'
+			  					,'".$permisos."'
+			  					, NOW()
+			  					,'".$usrReg."'
 		  					)";
-		  				//	echo $sql;
 		  	$res  = $this->query($sql) or 
 		   			die("Error en query insertar usuario ". $this->errno());
 		   	
 		   	$idUsr = $this->insert_id();
-    }
-    else{
-	    $con = "";
-	    if(!empty($data['contrasena'])) $con = ", password  ='".$data['contrasena']."'";
+     			
+	   	
+	   	return $idUsr;
+  }
+
+  public function fnActualizarUsuario( $usrReg, $nombre, $paterno, $materno, $email, $password, $permisos, $idUsuario ){
+		$con =  (!empty($password)) ? ", password  ='".md5($password)."'" : '';
+
 	     $sql = "UPDATE usuario SET
-	     									  nombre    = '".addslashes($data['nombre'])."'
-	     									, apellidos = '".addslashes($data['apellido'])."'
-	     									{$con}
-	     					WHERE id =". $data['idAyudante'];
+	     							  nombre        = '".addslashes( $nombre  )."'
+		  							, apellido_pat  = '".addslashes( $paterno )."'
+		  							, apellido_mat  = '".addslashes( $materno )."'
+		  							, email         = '".$email."'
+		  							, permisos_menu = '".$permisos."'
+		  							, last_update   = NOW()
+		  							, by_user       = '".$usrReg."'
+	     							{$con}
+	     					WHERE id =". $idUsuario;
 	      $res  = $this->query($sql) or 
 		   			die("Error en query insertar usuario ". $this->errno());
 		   								
 	     $idUsr = $data['idAyudante'];
-    }	   			
-	   	$msg = array('status' => 'OK', 'idUsr' => $idUsr);
-	   	
-	   	return $msg;
+  }
+
+  function desactivarUsuario( $idUsr )
+  {
+	  $sql = "UPDATE usuario SET activo = 0 WHERE id=".$idUsr;
+	  $this->query($sql) or 
+	   			die("Error en query info perfiles ". $this->errno());
+    return "OK";
   }
 
 
@@ -290,58 +308,6 @@ class Usuario extends DbConnect
 	  }
 	  return json_encode($msg);
   }
-
-  
-  /*
-	 * Edita la información de usuario desde el Perfil
-	 */ 
-  function guardarUsuario($idUsr, $info, $img = ""){
-	  
-	  
-	  $elPassAnt = $this->obtenPassword($info['usuario']);
-	  
-		if(!password_verify($info['oldPass'], $elPassAnt['password']))
-		{ 
-		   $info['contrasena'] = '';
-		   if(!empty($elPassAnt['password']) && !empty($info['oldPass'])) return "Hubo un problema con el cambio de contraseña";
-	  }
-
-	  $info['password'] = (!empty($info['contrasena'])) ?  ",password = MD5('".$info['contrasena']."')" : '';
-	  
-	  $imgPerfil = "";
-	  if(!empty($img)) $imgPerfil = " ,img_perfil='{$img}'";
-	  
-	  $extra = "";			
-		if(!empty($info['rol'])){
-			foreach($info['rol'] as $key => $value){
-		  	$extra .= "{$value}|";	
-			}
-		}								
-
-	  $sql = "UPDATE usuario SET nombre = '{$info['nombre']}'
-	  													 , apellidos='{$info['apellidos']}'
-	  													   {$imgPerfil}
-	  													 , telefono = '{$info['telefono']}'
-	  													 ".$info['password']."
-	  													 , cedula = '{$info['cedula']}'
-	  													 , roles='{$extra}'
-									WHERE id = {$idUsr}";
-		$this->query($sql) or 
-	   			die("Error en query info perfiles ". $this->errno());
-	   			
-	   						
-	  
-	  return "OK";
-  }
-  
-  function activarCuentaUsuario($usr)
-  {
-	  $sql = "UPDATE usuario SET activo = 1 WHERE usuario = '{$usr}'";
-	  $this->query($sql) or 
-	   			die("Error en query info perfiles ". $this->errno());
-    return "OK";
-  }
-  
 
 }	
 	

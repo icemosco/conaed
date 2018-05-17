@@ -6,11 +6,8 @@ class Modelo extends DbConnect
 	{	 
     	parent::__construct();  
   	}
-
-
   	function fnBuscaSlide(){
   		$infoSlider = array();
-
   		$sql   = "SELECT * FROM slider ORDER BY orden";
   		$res   = $this->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
 		$regs  = $res->num_rows;
@@ -34,12 +31,10 @@ class Modelo extends DbConnect
 		 return $id;	
 		
 	}
-
 	function fnActualizaSlide( $idSlide, $numSlide, $titulo, $subTitulo, $nomImagen)
 	{
 		$extra = '';
 		if(!empty($nomImagen)) $extra = ", img = '".$nomImagen."'";
-
 		$sql = "UPDATE slider SET titulo    = '{$titulo}'
 									, subtitulo = '{$subTitulo}'
 									, orden     = '{$numSlide}' 
@@ -138,22 +133,5 @@ class Modelo extends DbConnect
 		
 		return "OK";		
 	}
-
-	function fnListadoUsuarios( $empezarDesde = '', $cantidadReg = '' ){
-
-		$limit = (!empty($cantidadReg) ? " LIMIT {$empezarDesde}, {$cantidadReg} " : '');
-
-		$sql   = "SELECT * FROM usuario ".$limit;
-		$res   = $this->query($sql) or die( "Error en Usuarios ". $oCnx->errno() );
-		$regs  = $res->num_rows;
-	    if( $regs != 0 ){
-		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
-		   		$infoUsuarios[] =  $info;
-		   }
-		}
-		
-		return $infoUsuarios;
-	}
-	
 }	
 ?>	
