@@ -18,7 +18,7 @@
     
     $folderSlider = "/Applications/MAMP/htdocs/coned_git/conaed/img/slider/";
     
-    $folderPerfilUsu = "/Applications/MAMP/htdocs/coned_git/conaed/admins/img/users/";
+    $folderPerfilUsu = "/Applications/MAMP/htdocs/coned_git/conaed/admin/img/users/";
 
 
 ?>
