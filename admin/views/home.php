@@ -119,7 +119,7 @@
 	
 
 	<div class="forms_cont temasynoticias oxygenlight">
-		<div class="add_tema">
+		<div class="add_tema" style="display:none;">
 			<div class="temas_fill">
 				<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
