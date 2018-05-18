@@ -148,11 +148,11 @@ include_once('./header.php');
 	
 
 	
-	<div class="msg">
-	</div>
+	
 </div><!--wrapper_right-->
 
 </div><!--main_wrapper-->
+<div class="msg"><span>kjshdvkj bdsvkjb </span></div>
 <script src="../js/jquery-3.3.1.min.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

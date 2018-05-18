@@ -8,6 +8,7 @@ $(document).ready(function(){
 		$(this).addClass('selected');
 		$(this).find('.icon').addClass('selected');
 		$('.forms_cont').hide();
+		$('.msg').hide();
 		
 		switch (btn) {
 		    case "sliders":
@@ -81,9 +82,9 @@ $(document).on('click','.add_item',function (e) {
 	
 $('.muestra_msg').click(function(){
 	//alert('hey');
-	$('.msg').fadeIn(100).animate({"bottom":"0px"}, "slow");
+	$('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
 	 setTimeout(function() {
-        $(".msg").fadeOut(1500).animate({"bottom":"-120px"}, "slow");
+        $(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
     },3000);
 
 
