@@ -7,25 +7,6 @@
 	include_once("../php/ControllerAsociados.php");
 	include_once("../php/ControllerNoticias.php");
 
-	//======================= SLIDER
-	//Guardado / Edicion
-	if(isset($_POST['guardar_slider'])){
-		$idSlide   = $_POST['idSlide'];
-		$msgErr    = '';
-		$mostrarMsgSlider = '';		
-		
-		foreach( $idSlide as $key => $info){
-			$msgErr .= fnGuardarSlide( $key, $idSlide[ $key ]
-								, $_POST['titulo'][ $key ]
-								, $_POST['subtitulo'][ $key ]
-								, $_POST['num_slider'][ $key ]
-								, $folderSlider
-								, $_FILES['imagenSlider'] );
-		}
-		if(empty($msgErr))
-			$mostrarMsgSlider = 'Se ha guardado la información';		
-	}
-
 	//======================= ACREDITADOS
 	$numPaginaAcreditados = 1;
 	if(isset( $_REQUEST['npa']) ){
@@ -63,7 +44,7 @@
 		<form class="slider" name="sliders" id="sliders" action="./home.php" method="post" enctype="multipart/form-data">
 			
 			<?php echo fnTemplateSlide(); ?>
-			<button type="submit"  class="save_btn" name="guardar_slider" id="guardar_slider" >Guardar</button>
+			<button type="button"  class="save_btn" name="guardar_slider" id="guardar_slider" onclick="guardarSlider()" >Guardar</button>
 		</form>
 		
 	</div><!--forms_cont. SLIDE-->
@@ -125,9 +106,9 @@
 	</div><!--form_cont-asociados-->
 	
 
-	<!------------------------- -->
+	<!-- ----------------------- -->
 	<!-- --------NOTICIAS -->
-	<!------------------------- -->
+	<!-- ----------------------- -->
 	<div class="forms_cont temasynoticias oxygenlight">
 		<!---termina add tema-->
 		<form class="frm_temasynoticias" name="temasynoticias" id="temasynoticias" action="./home.php" method="post" enctype="multipart/form-data">
@@ -135,9 +116,6 @@
 			<button type="submit"  class="save_btn" name="guardar_noticia" id="guardar_noticia" >Guardar</button>
 		</form>
 	</div>
-	
-
-	
 	
 </div><!--wrapper_right-->
 
