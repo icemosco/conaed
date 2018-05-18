@@ -87,6 +87,15 @@ $(document).on('click','.add_item',function (e) {
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'"/>');
 	});
 	
+	$(document).on('change','.file_upload_1',function (e) {
+		var fupload=$(this).val();
+		var tmppath = URL.createObjectURL(e.target.files[0]);
+		$(this).parent().parent().find('#path_asociados').html(fupload);
+		$(this).parent().parent().find('#img_loaded_asociados').html('<img src="'+tmppath+'" width="100%" height="100%"/>');
+	});
+	
+	
+	
 	$(document).on('click','.add_n_slider',function (e) {
 		var nom_slide  = 0;
 		$('.order_box_s').each(function(i, elem){
@@ -401,18 +410,6 @@ $(document).on('click','.add_item',function (e) {
 		var materno     = $("#materno_evaluador_"+consec);
 		var idEvaluador = $("#idEvaluador_"+consec);
 
-		if( nombre.val() == ''){
-			$(nombre).css({'border':'1px solid red'});
-			error++;	
-		}
-		if( paterno.val() == ''){
-			$(paterno).css({'border':'1px solid red'});
-			error++;	
-		}
-		if( materno.val() == ''){
-			$(materno).css({'border':'1px solid red'});
-			error++;	
-		}
 		if(error > 0){
 			return false;
 		}
@@ -534,3 +531,30 @@ $(document).on('click','.add_item',function (e) {
 		});	
 
 	}
+	
+	
+	//ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR ASOCIADOS
+	function guardarAsociados( elem, consec ){
+
+
+        var form_data = new FormData();                 
+        form_data.append('file', $('#imagenAsociado').prop('files')[0]);
+        form_data.append("accion", 'imagen_Asociado');
+                    
+	        $.ajax({
+	            url: '../ajax/ajaxGuardaImagenes.php', 
+	            dataType: 'text',  
+	            cache: false,
+	            contentType: false,
+	            processData: false,
+	            data: form_data,                         
+	            type: 'post',
+	               	success: function(img_reponse){        
+		               	info = JSON.parse( img_reponse );
+		               	if(info.imagenResize == 'OK')
+		               		showMessages( "<span> La información se ha guardado</span>" );
+	                    
+	                 }
+	        });
+	}
+	
