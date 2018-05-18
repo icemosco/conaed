@@ -61,9 +61,9 @@ class Modelo extends DbConnect
 	}
 	
 	
-	function fnInsertaAcreditados( $nombreUni, $paginaWeb, $fechaIni, $fechaFin ){
-		$sql  = "INSERT INTO programas_1(nombre_uni, website, vigencia_ini, vigencia_fin)
-					VALUES('".$nombreUni."','".$paginaWeb."',STR_TO_DATE('".$fechaIni."', '%d-%m-%Y'),STR_TO_DATE('".$fechaFin."', '%d-%m-%Y'))";	
+	function fnInsertaAcreditados( $nombreUni, $paginaWeb, $anio, $idCategoria ){
+		$sql  = "INSERT INTO programas_1(nombre_uni, website, anio, id_categoria)
+					VALUES('".addslashes( $nombreUni )."','".$paginaWeb."', ".$anio.", ".$idCategoria.")";	
 		$res  = $this->query($sql) or 
 		   			die("Error en query insertar acreditados ". $this->errno());
 		   	
@@ -71,13 +71,14 @@ class Modelo extends DbConnect
 		 return $id;
 	}
 	
-	function fnActualizaAcreditados( $idAcreditado, $nombreUni, $paginaWeb, $fechaIni, $fechaFin)
+	function fnActualizaAcreditados( $idAcreditado, $nombreUni, $paginaWeb, $anio, $idCategoria )
 	{
-		$sql = "UPDATE programas_1 SET nombre_uni    = '{$nombreUni}'
-									, website        = '{$paginaWeb}'
-									, vigencia_ini   = STR_TO_DATE('".$fechaIni."', '%d-%m-%Y')
-									, vigencia_fin   = STR_TO_DATE('".$fechaFin."', '%d-%m-%Y')
-						WHERE id_universidad = {$idAcreditado}";				
+		//STR_TO_DATE('".$fechaIni."', '%d-%m-%Y')
+		$sql = "UPDATE programas_1 SET nombre_uni    = '".addslashes( $nombreUni )."'
+									, website        = '".$paginaWeb."'
+									, anio   		 = ".$anio."
+									, id_categoria   = ".$idCategoria."
+						WHERE id_universidad = ".$idAcreditado;				
 		$res  = $this->query($sql);		
 		return $idAcreditado;	
 	}
@@ -141,6 +142,12 @@ class Modelo extends DbConnect
 		   			die("Error en query insertar asociados ". $this->errno());
 		 return 'OK';
 	}
+
+	function fnActualizaOrdenAsociado($idAsociado, $orden){
+		$sql = "UPDATE referencias_asociados SET orden = {$orden} WHERE id={$idAsociado}";
+		$this->query($sql) or die( "Error en orden asociados ". $oCnx->errno() );
+		return "OK";
+	}
 	
 	
 	function fnListAsociados(){
@@ -156,5 +163,35 @@ class Modelo extends DbConnect
 		}
 		return $infoASociados;
   	}
+
+  	//Obtenemos las categorias de acreditados
+  	 function fnListCategorias(){
+  	 	$listCategorias = array();
+  		$sql   = "SELECT * FROM cat_categorias ORDER BY nombre";
+  		$res   = $this->query($sql) or die( "Error en categorias ". $oCnx->errno() );
+		$regs  = $res->num_rows;
+		
+	    if( $regs != 0 ){
+		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
+		   		$listCategorias[] =  $info;
+		   }
+		}
+		return $listCategorias;
+
+  	 }
+
+  	 function fnBuscaNoticias(){
+  	 	$noticias = array();
+  		$sql   = "SELECT * FROM temas_noticias ORDER BY fecha";
+  		$res   = $this->query($sql) or die( "Error en noticias ". $oCnx->errno() );
+		$regs  = $res->num_rows;
+		
+	    if( $regs != 0 ){
+		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
+		   		$noticias[] =  $info;
+		   }
+		}
+		return $noticias;	
+  	 }
 }	
-?>	
+?>
