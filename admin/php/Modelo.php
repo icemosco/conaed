@@ -134,18 +134,27 @@ class Modelo extends DbConnect
 		return "OK";		
 	}
 	
+	function fnInsertaAsociados( $imgAsociado ){
+		$sql  = "INSERT INTO referencias_asociados(img)
+					VALUES('".$imgAsociado."')";	
+		$this->query($sql) or 
+		   			die("Error en query insertar asociados ". $this->errno());
+		 return 'OK';
+	}
+	
+	
 	function fnListAsociados(){
-  		/*$infoSlider = array();
-  		$sql   = "SELECT * FROM slider ORDER BY orden";
-  		$res   = $this->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
+  		$infoASociados = array();
+  		$sql   = "SELECT * FROM referencias_asociados ORDER BY orden";
+  		$res   = $this->query($sql) or die( "Error en asociados ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 		
 	    if( $regs != 0 ){
 		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
-		   		$infoSlider[] =  $info;
+		   		$infoASociados[] =  $info;
 		   }
 		}
-		return $infoSlider;*/
+		return $infoASociados;
   	}
 }	
 ?>	

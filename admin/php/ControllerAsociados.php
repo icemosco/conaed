@@ -6,17 +6,17 @@
 	$oFun = new Funciones();
 	
 	function fnTemplateAsociados(  ){
-		global $oMod, $oFun;
+		global $oMod;
 
 
 		$infoSociados = $oMod->fnListAsociados( );
-		if(!empty( $infoAcreditado )){
+		if(!empty( $infoSociados )){
 			$cont  = 0;
 			foreach($infoSociados as $key =>$info){
 
 				$template .= '<li>
-					  			<span class="img_asoc"><img src="../img/pic.png" /></span>
-					  			<span class="cont_ord"><input type="text" name="order_asoc[]" class="asoc" maxlength="1" >
+					  			<span class="img_asoc"><img src="../../img/asociados/'.$info['img'].'" /></span>
+					  			<span class="cont_ord"><input type="text" name="order_asoc[]" class="asoc" maxlength="1" value="'.$info['orden'].'">
 					  		 </li>';
 				$cont++;	
 			}

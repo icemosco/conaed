@@ -197,11 +197,6 @@
  <script src="../js/main.js"></script>
  <script>
 	 
-<<<<<<< HEAD
-	
-	 
-=======
->>>>>>> fe730cb96ba4996fe1bed9f1cbcde5ecec33a3a9
 	 $(document).ready(function(){
 		 
 		function showMessages( msg ){

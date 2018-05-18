@@ -95,6 +95,9 @@ $(document).on('click','.add_item',function (e) {
 		$(this).parent().parent().find('#img_loaded_asociados').html('<img src="'+tmppath+'" width="100%" height="100%"/>');
 	});
 	
+	 
+	
+	
 	
 	
 	$(document).on('click','.add_n_slider',function (e) {
@@ -341,6 +344,15 @@ $(document).on('click','.add_item',function (e) {
 //READY
 //=============
 
+	function showMessages2( msg ){
+		$(".msg").html(msg); 
+	    $('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
+		setTimeout(function() {
+			$(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
+		},3000);
+	 }
+
+
 //ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR ACREDITADOS
 	function guardarAcreditados( elem, consec ){
 
@@ -553,7 +565,7 @@ $(document).on('click','.add_item',function (e) {
 	               	success: function(img_reponse){        
 		               	info = JSON.parse( img_reponse );
 		               	if(info.imagenResize == 'OK')
-		               		showMessages( "<span> La información se ha guardado</span>" );
+		               		showMessages2( "<span> La información se ha guardado</span>" );
 	                    
 	                 }
 	        });
