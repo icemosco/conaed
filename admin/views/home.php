@@ -140,6 +140,8 @@ include_once('./header.php');
 					  <span class="img_asoc"><img src="../img/pic.png" /></span>
 					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="">
 					</li>
+					
+
 				</ul>
 			</div>
 
