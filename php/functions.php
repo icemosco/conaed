@@ -107,5 +107,20 @@ function mostrarSlider(){
 		
 }
 
+function mostrarAsociados(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM referencias_asociados WHERE orden > 0 ORDER BY orden"; 
+	$regs = $oCnx->query($sql) or die( "Error en asociados ". $oCnx->errno() );
+	$rowAsociados = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$rowAsociados .= '<li><img src="img/asociados/'.$info['img'].'"></li>';
+		}
+	}
+	return $rowAsociados;	
+}
+
 
 ?>
