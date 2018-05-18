@@ -2,6 +2,7 @@ $(document).ready(function(){
 	//MENU
 
 	$('.btns_menu').click(function(){
+	
 		var btn=$(this).attr('rel');
 		$('.btns_menu').removeClass('selected');
 		$('.icon').removeClass('selected');
@@ -14,7 +15,7 @@ $(document).ready(function(){
 		    case "sliders":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Slider Home Page');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>')
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>');
 
 		        break;
 		    case "programas":
@@ -25,7 +26,7 @@ $(document).ready(function(){
 		    case "evaluadores":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Padrón de Evaluadores');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador"><img src="../img/plus.png" alt="" /></a>')
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "asociados":
 		        	$('.'+btn).show();
