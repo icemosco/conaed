@@ -133,5 +133,19 @@ class Modelo extends DbConnect
 		
 		return "OK";		
 	}
+	
+	function fnListAsociados(){
+  		/*$infoSlider = array();
+  		$sql   = "SELECT * FROM slider ORDER BY orden";
+  		$res   = $this->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
+		$regs  = $res->num_rows;
+		
+	    if( $regs != 0 ){
+		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
+		   		$infoSlider[] =  $info;
+		   }
+		}
+		return $infoSlider;*/
+  	}
 }	
 ?>	

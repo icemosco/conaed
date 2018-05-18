@@ -4,7 +4,7 @@
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
 	include_once("../php/ControllerUsuarios.php");
-	//include_once("../php/ControllerAsociados.php");
+	include_once("../php/ControllerAsociados.php");
 
 	//======================= SLIDER
 	//Guardado / Edicion
@@ -101,13 +101,16 @@
 		<ul class="paginator"> <?php echo $infoUsus['paginador']; ?> </ul>
 	</div><!--forms_cont-->
 
-<div class="forms_cont asociados oxygenlight">
-		<div class="add_asociado"></div><!--add_asociado-->
+	<div class="forms_cont asociados oxygenlight">
+		<div class="add_asociado"><?php echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
+
 		
 		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
 			<div class="reel_asociados">
 				<ul>
-					
+
+					<?php echo fnTemplateAsociados(); ?>
+
 				</ul>
 			</div>
 			<button type="button" class="save_btn" id="guardar_asociados_i" onclick="">Guardar</button>
@@ -194,8 +197,11 @@
  <script src="../js/main.js"></script>
  <script>
 	 
+<<<<<<< HEAD
 	
 	 
+=======
+>>>>>>> fe730cb96ba4996fe1bed9f1cbcde5ecec33a3a9
 	 $(document).ready(function(){
 		 
 		function showMessages( msg ){
