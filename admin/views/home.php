@@ -4,7 +4,7 @@
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
 	include_once("../php/ControllerUsuarios.php");
-	//include_once("../php/ControllerAsociados.php");
+	include_once("../php/ControllerAsociados.php");
 
 	//======================= SLIDER
 	//Guardado / Edicion
@@ -103,12 +103,12 @@
 
 
 	<div class="forms_cont asociados oxygenlight">
-		<div class="add_asociado"><?php //echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
+		<div class="add_asociado"><?php echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
 		
 		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
 			<div class="reel_asociados">
 				<ul>
-					<?php //echo fnTemplateAsociados(); ?>
+					<?php echo fnTemplateAsociados(); ?>
 				</ul>
 			</div>
 			<button type="button" class="save_btn" id="guardar_asociados_i" onclick="guardar_asociados(this, 'i');">Guardar</button>
@@ -193,8 +193,6 @@
 
  <script src="../js/main.js"></script>
  <script>
-	 
-	 alert("hi");
 	 
 	 $(document).ready(function(){
 		 
