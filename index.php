@@ -294,10 +294,7 @@ include_once("./php/functions.php")
   		
   	</style>
   		<ul class="logos_reel">
-  			<li><img src="img/barra.jpg"></li>
-  			<li><img src="img/colegio-abogados.jpg"></li>
-  			<li><img src="img/copaes.jpg"></li>
-  			<li><img src="img/escuela.jpg"></li>
+			<?php echo mostrarAsociados(); ?>
   		</ul>
 
 	</article>
