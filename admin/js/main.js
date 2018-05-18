@@ -15,7 +15,7 @@ $(document).ready(function(){
 		    case "sliders":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Slider Home Page');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider">Nuevo</a>')
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_item add_n_slider" title="Agregar un nuevo slider">Nuevo</a>')
 
 		        break;
 		    case "programas":
@@ -152,6 +152,7 @@ $(document).on('click','.add_item',function (e) {
 
 		
 	});
+
 	
 	//Coloca el numero de caracteres de los textarea de la seccion de slide
 	$(document).on('keyup','.infoSlide',function (e) {	
@@ -162,7 +163,7 @@ $(document).on('click','.add_item',function (e) {
     });
 
     //Limitamos a que sean solo numeros 
-   	$(document).on('keypress','#num_slider',function (e) {	
+   	$(document).on('keypress','.order_box_s, .asociados_orden, .anioAcre',function (e) {	
 		var key = window.event ? e.which : e.keyCode;
   		if (key < 48 || key > 57) {
     		e.preventDefault();
@@ -170,7 +171,7 @@ $(document).on('click','.add_item',function (e) {
     }); 
 
     //Validamos que el numero solo sea de 1-5
-	$(document).on('keyup','#num_slider',function (e) {		
+	$(document).on('keyup','.order_box_s',function (e) {		
   		if(e.currentTarget.value > 5 || e.currentTarget.value < 1){
   			console.log(e.currentTarget.value);
   			e.currentTarget.value = '';
@@ -209,7 +210,7 @@ $(document).on('click','.add_item',function (e) {
 	
 	//===================================================
    	//DATAPICKER DE PROGRAMAS ACREDITADOS
-   	
+   	/*
    	$( '#datepickerinit_n' ).datepicker({dateFormat: 'dd-mm-yy'});
    	$( '#datepickerfinit_n' ).datepicker({dateFormat: 'dd-mm-yy'});
    	
@@ -223,7 +224,8 @@ $(document).on('click','.add_item',function (e) {
 		$( '#datepickerfinit_'+i ).datepicker({
 		    dateFormat: 'dd-mm-yy'
 	    });
-	});
+	});*/
+
 	$('.edit_evaluador').click(function(){
 		$(".new_evaluador").css("display", "none");
 		$(this).parent().next().find( ".new_evaluador" ).slideDown(500);
@@ -370,10 +372,10 @@ $(document).on('click','.add_item',function (e) {
 
 		var error  = 0;
 		//validamos los campos 
-		var nombre = $("#nombre_uni_"+consec);
-		var pagina = $("#pagina_web_"+consec);
-		var dateI  = $("#datepickerinit_"+consec);
-		var dateF  = $("#datepickerfinit_"+consec);
+		var nombre       = $("#nombre_uni_"+consec);
+		var pagina       = $("#pagina_web_"+consec);
+		var anio         = $("#anioAcreditado_"+consec);
+		var categoria    = $("#categoriaAcreditado_"+consec);
 		var idAcreditado = $("#idAcreditado_"+consec);
 
 		if( nombre.val() == ''){
@@ -384,20 +386,17 @@ $(document).on('click','.add_item',function (e) {
 			$(pagina).css({'border':'1px solid red'});
 			error++;	
 		}
-		if( dateI.val() == ''){
-			$(dateI).css({'border':'1px solid red'});
+		if( anio.val() == ''){
+			$(anio).css({'border':'1px solid red'});
 			error++;	
 		}
-		if( dateF.val() == ''){
-			$(dateF).css({'border':'1px solid red'});
+		if( categoria.val() == ''){
+			$(anio).css({'border':'1px solid red'});
 			error++;	
 		}
 		if(error > 0){
 			return false;
 		}
-		
-		//Validar que la fecha final sea mayor a la inicial
-		
 		
 		//Realizamos el guardado y edicion de la informacion
 		$.ajax({
@@ -405,19 +404,19 @@ $(document).on('click','.add_item',function (e) {
 	        url: "../ajax/ajaxAcreditados.php",
 	        //dataType: "json",
 	        data: {
-		        "accion"  : "guardar",
-		        "id"      : idAcreditado.val(),
-		        "nombre"  : nombre.val(),
-		        "pagina"  : pagina.val(),
-		        "fechaI"  : dateI.val(),
-		        "fechaF"  : dateF.val()
+		        "accion"    : "guardar",
+		        "id"        : idAcreditado.val(),
+		        "nombre"    : nombre.val(),
+		        "pagina"    : pagina.val(),
+		        "anio"      : anio.val(),
+		        "categoria" : categoria.val()
 		    },
 	        success: function(data)
 	        { 
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	console.log("SE HA GUARDADO");	
+			     	showMessages2( "<span> La información se ha guardado</span>" );
 		        }
 	        }
 		});	
@@ -582,4 +581,44 @@ $(document).on('click','.add_item',function (e) {
 	                 }
 	        });
 	}
-	
+
+	function guardarOrdenAsociados(){ 
+		var error = 0;
+		var layIdAsociados    = [];
+		var layOrdenAsociados = [];
+		$('.asociados_orden').each(function(i, elem){
+
+			layIdAsociados.push( $(this).prop('id') );
+			layOrdenAsociados.push( $(this).val() );
+			$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
+			if($(elem).val() == ''){
+				$(elem).css({'border':'1px solid red'});
+				error++;	
+			}
+		});
+		if(error > 0){
+			showMessages2('<span>Falta ingresar el orden de asociados</span>');
+			return false;	
+		}
+
+		//Realizamos el guardado del orden de las imagenes
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxAsociados.php",
+	        data: {
+		        "accion"         : "guardarOrden",
+		        "idAsociados"    : layIdAsociados,
+		        "ordenAsociados" : layOrdenAsociados, 
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+		            showMessages2( "<span> La información se ha guardado</span>" );
+		        }
+	        }
+	     })   
+
+
+	}
