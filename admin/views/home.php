@@ -172,10 +172,18 @@ include_once('./header.php');
 			
 			$(".msg").html(msg); 
 			
-			$('.msg').fadeIn(100).animate({"bottom":"0px"}, "slow");
+			/*$('.msg').fadeIn(100).animate({"bottom":"0px"}, "slow");
 			 setTimeout(function() {
 		        $(".msg").fadeOut(1500).animate({"bottom":"-120px"}, "slow");
-		    },3000);
+		    },3000);*/
+		    
+		    $('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
+			setTimeout(function() {
+				$(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
+    		},3000);
+		    
+		    
+		    
 		 } 
 		 
 		 //Muestra imagenes de slider

@@ -15,24 +15,24 @@ var Demo = (function() {
         form_data.append('file', file_data);
         form_data.append("accion", 'imagen_perfil');
                     
-        $.ajax({
-            url: '../ajax/ajaxGuardaImagenes.php', 
-            dataType: 'text',  
-            cache: false,
-            contentType: false,
-            processData: false,
-            data: form_data,                         
-            type: 'post',
-               	success: function(img_reponse){        
-	               	info = JSON.parse( img_reponse );
-	               	console.log(info.imagenResize);
-                    var texto = "<img  id='perfil_usuario' src='../img/users/" + info.imagenResize + "' width='100%' height='100%'>";
-                    $(".upload-demo-wrap").html('').hide();
-                    $(".upload-result").hide();
-                    $(".upload-msg").html(texto).show();
-                    
-                 }
-         });
+	        $.ajax({
+	            url: '../ajax/ajaxGuardaImagenes.php', 
+	            dataType: 'text',  
+	            cache: false,
+	            contentType: false,
+	            processData: false,
+	            data: form_data,                         
+	            type: 'post',
+	               	success: function(img_reponse){        
+		               	info = JSON.parse( img_reponse );
+		               	console.log(info.imagenResize);
+	                    var texto = "<img  id='perfil_usuario' src='../img/users/" + info.imagenResize + "' width='100%' height='100%'>";
+	                    $(".upload-demo-wrap").html('').hide();
+	                    $(".upload-result").hide();
+	                    $(".upload-msg").html(texto).show();
+	                    
+	                 }
+	        });
 			
 			
 			

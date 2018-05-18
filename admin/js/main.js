@@ -79,18 +79,6 @@ $(document).on('click','.add_item',function (e) {
 
     });
 
-	
-
-$('.muestra_msg').click(function(){
-	//alert('hey');
-	$('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
-	 setTimeout(function() {
-        $(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
-    },3000);
-
-
-})
-
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
 		var tmppath = URL.createObjectURL(e.target.files[0]);
