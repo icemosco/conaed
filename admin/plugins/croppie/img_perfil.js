@@ -23,11 +23,14 @@ var Demo = (function() {
             processData: false,
             data: form_data,                         
             type: 'post',
-               	success: function(php_script_response){        
-	               	console.log(php_script_response);
-                    var texto = "<img  id='perfil_usuario' src='" + php_script_response + " alt='Imagen de usuario' alt='Imagen de usuario' width='100%' height='100%'>";
-                    $("#upload-msg").html('');
-                    $("#upload-msg").html(texto);
+               	success: function(img_reponse){        
+	               	info = JSON.parse( img_reponse );
+	               	console.log(info.imagenResize);
+                    var texto = "<img  id='perfil_usuario' src='../img/users/" + info.imagenResize + "' width='100%' height='100%'>";
+                    $(".upload-demo-wrap").html('').hide();
+                    $(".upload-result").hide();
+                    $(".upload-msg").html(texto).show();
+                    
                  }
          });
 			
@@ -66,11 +69,11 @@ var Demo = (function() {
 		if(jQuery().croppie) {
 		$uploadCrop = $('#upload-demo').croppie({
 			viewport: {
-				width: 175,
-				height: 170,
+				width: 165,
+				height: 165,
 				type: 'circle'
 			},
-			boundary: { width: 180, height: 175 },
+			boundary: { width: 170, height: 170 },
 			showZoomer: false,
 			enableExif: true
 		});

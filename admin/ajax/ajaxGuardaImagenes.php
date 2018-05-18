@@ -18,6 +18,7 @@
     		    file_put_contents($folderPerfilUsu.$nombreArchivo.'.png', $datos);
     		    
     		    $imageNueva =  trim( $nombreArchivo.'.png' );
+    		    $_SESSION['imgPerfil'] = $imageNueva;
     		    //Guardamos la imagen
     		    $oUsr->fnGuardarImgUsuario( $usuario, $imageNueva  );
     		    

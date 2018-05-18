@@ -53,8 +53,7 @@ button:focus {
     width: 190px;
     max-width: 200px;
     margin: 0 auto;
-
-    padding: 0 10px;
+    /*padding: 0 10px;*/
 }
 
 
@@ -77,12 +76,12 @@ button:focus {
 
 .upload-msg {
     text-align: center;
-    padding: 5px;
+    /*padding: 5px;*/
     font-size: 22px;
     color: #aaa;
     width: 170px;
-    height: 160px;
-    margin: 10px auto;
+    height: 180px;
+    /*margin: 10px auto;*(
     border: 1px solid #aaa;
 }
 
