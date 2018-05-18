@@ -1,9 +1,10 @@
 <?php
-include_once('./header.php'); 
+    include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
 	include_once("../php/ControllerUsuarios.php");
+	include_once("../php/ControllerAsociados.php");
 
 	//======================= SLIDER
 	//Guardado / Edicion
@@ -44,6 +45,7 @@ include_once('./header.php');
 		$numPaginaUsuario = $_REQUEST['npu'];
 	}
 	$infoUsus =  fnTemplateUsuarios( $numPaginaUsuarios );
+
 	
 ?>
 
@@ -101,48 +103,15 @@ include_once('./header.php');
 
 
 	<div class="forms_cont asociados oxygenlight">
-		<div class="add_asociado">
-
-			<div class="asociado_fill">
-				<div class="left mr">
-					<span class="indications">Imágen .jpg ó .png</span>
-					<input type="text" class="order_box_s requerido" name="" id=""  size="2" maxlength="1" value="" style="width: 5%"/> 
-					<div class="img_loaded"><img src="" /></div>
-					<div class="path">ruta del archivo</div>
-					<div class="cont_r">
-						<input type="hidden" name="" value=""/>
-						<input type="file" name="" class="file_upload_1 " name="file" />
-						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
-					</div><!--cont_r-->
-			</div><!--left-->
-				
-				
-				<input type="hidden" name="" value=""/>
-			</div><!--asociado_fill-->
-		</div><!--add_asociado-->
+		<div class="add_asociado"><?php echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
 		
 		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
 			<div class="reel_asociados">
 				<ul>
-					<li>
-					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" >
-					</li>
-					<li>
-					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" >
-					</li>
-					<li>
-					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" >
-					</li>
-					<li>
-					  <span class="img_asoc"><img src="../img/pic.png" /></span>
-					  <span class="cont_ord"><input type="text" name="order_asoc" class="asoc" maxlength="1" style="">
-					</li>
+					<?php echo fnTemplateAsociados(); ?>
 				</ul>
 			</div>
-
+			<button type="button" class="save_btn" id="guardar_asociados_i" onclick="guardar_asociados(this, 'i');">Guardar</button>
 		</form>
 
 
@@ -169,24 +138,14 @@ include_once('./header.php');
 	 $(document).ready(function(){
 		 
 		function showMessages( msg ){
-			
 			$(".msg").html(msg); 
-			
-			/*$('.msg').fadeIn(100).animate({"bottom":"0px"}, "slow");
-			 setTimeout(function() {
-		        $(".msg").fadeOut(1500).animate({"bottom":"-120px"}, "slow");
-		    },3000);*/
-		    
 		    $('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
 			setTimeout(function() {
 				$(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
     		},3000);
-		    
-		    
-		    
 		 } 
 		 
-		 //Muestra imagenes de slider
+		 //Muestra mensajes del slider
 		 var msgSlider = "<?php echo $mostrarMsgSlider; ?>";
 		 if(msgSlider ){
 			 var msg = "<span>"+msgSlider+"</span>";
