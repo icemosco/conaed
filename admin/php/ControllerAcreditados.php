@@ -4,6 +4,20 @@
 
 	$oMod = new Modelo();
 	$oFun = new Funciones();
+
+	function fnComboCategorias( $idSelect = ''){
+		global $oMod;
+		$combo = "";
+		$infoCategorias = $oMod->fnListCategorias(); 
+		if(!empty( $infoCategorias )){
+			foreach($infoCategorias as $key =>$info){
+				$selected = ( $idSelect == $info['id_categoria'] ? 'selected' : '');
+				$combo .= '<option value="'.$info['id_categoria'].'" '.$selected.'>'.$info['nombre'].'</option>';
+			}
+		}
+
+		return $combo;		
+	}
 	
 	function fnTemplateAcreditados( $numPagina ){
 		global $oMod, $oFun;
@@ -23,8 +37,7 @@
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
 
-				$fechaI = 	(!empty($info["vigencia_ini"]) ? date('d-m-Y', strtotime($info["vigencia_ini"])) : '');
-				$fechaF = 	(!empty($info["vigencia_fin"]) ? date('d-m-Y', strtotime($info["vigencia_fin"])) : '');
+				
 				
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
@@ -49,14 +62,15 @@
 								</ul>
 								<ul>
 									<li>
-										<label>Vigencia desde:</label>
-										<input type="text" name="datepickerinit[]" max-lenght="25"  readonly
-										value="'.$fechaI.'" id="datepickerinit_'.$i.'" class="datepickerinit" placeholder="">
+										<label>Anio:</label>
+										<input type="text" name="anioAcreditado[]" maxlength="4" 
+										 value="'.$info["anio"].'" id="anioAcreditado_'.$i.'" class="anioAcre">
 									</li>
 									<li>
-										<label>Vigencia hasta:</label>
-										<input type="text" name="datepickerfinit[]" max-lenght="25"  readonly
-										value="'.$fechaF.'" id="datepickerfinit_'.$i.'"  class="datepickerfinit" placeholder="">
+										<label>Categorías:</label>
+										<select name="categoriaAcreditado[]" id="categoriaAcreditado_'.$i.'">
+											'.fnComboCategorias( $info["id_categoria"] ).'
+										</select>
 									</li>
 								</ul>
 								<button type="button" class="save_btn" id="guardar_acreditados_'.$i.'" onclick="guardarAcreditados(this, '.$i.');">Guardar</button>
@@ -86,16 +100,16 @@
 			</ul>
 			<ul>
 				<li>
-					<label>Vigencia desde:</label>
-					<input type="text" name="datepickerinit[]" max-lenght="25"  id="datepickerinit_n" class="">
+					<label>A&ntilde;o:</label>
+					<input type="text" name="anioAcreditado[]" maxlength="4"  id="anioAcreditado_n" class="anioAcre" value="">
 				</li>
 				<li>
-					<label>Vigencia hasta:</label>
-					<input type="text" name="datepickerfinit[]" max-lenght="25"  id="datepickerfinit_n" class="">
+					<label>Categorías:</label>
+					<select name="categoriaAcreditado[]" id="categoriaAcreditado_n">'.fnComboCategorias( ).'</select>
 					</li>
 			</ul>
 			<button type="button" class="save_btn" id="guardar_acreditados_n" onclick="guardarAcreditados(this, \'n\');">Guardar</button>';
 
 		return $template;	
 	 }
-?>	
+?>
