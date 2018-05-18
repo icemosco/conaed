@@ -181,7 +181,11 @@
 </div><!--wrapper_right-->
 
 </div><!--main_wrapper-->
+<<<<<<< HEAD
+<div class="msg"></div>
+=======
 <div class="msg"><</div>
+>>>>>>> 38b20f282819012a89f618551d15daaadb1879c3
 <script src="../js/jquery-3.3.1.min.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>

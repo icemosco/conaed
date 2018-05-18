@@ -14,34 +14,32 @@ $(document).ready(function(){
 		    case "sliders":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Slider Home Page');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider">Nuevo</a>')
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider"><img src="../img/plus.png" alt="" /></a>')
 
 		        break;
 		    case "programas":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Programas Acreditados');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="programas_plus" class="add_item" title="Agregar una nueva universidad">Nuevo</a>');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="programas_plus" class="add_item" title="Agregar una nueva universidad"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "evaluadores":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Padrón de Evaluadores');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador">Nuevo</a>')
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador"><img src="../img/plus.png" alt="" /></a>')
 		        break;
 		    case "asociados":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Referencias y Asociados');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="asociados_plus" class="add_item" title="Agregar un nuevo Asociado">Nuevo</a>');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="asociados_plus" class="add_item" title="Agregar un nuevo Asociado"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		    case "temasynoticias":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Temas y Noticias');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="temas_plus" class="add_item" title="Agregar un nuevo Tema">Nuevo</a>');
-		         break;
 		        
 		    case "usuarios":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Gestor de Usuarios');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="usuarios_plus" class="add_item" title="Agregar un nuevo Usuario">Nuevo</a>');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="usuarios_plus" class="add_item" title="Agregar un nuevo Usuario"><img src="../img/plus.png" alt="" /></a>');
 		        break;
 		   
 		}
@@ -75,20 +73,14 @@ $(document).on('click','.add_item',function (e) {
 				//$('.add_usuario').slideUp('300');
 		    
 		    break;
-		case "temas_plus":
-				$('.add_tema').slideDown('500');
-				//$('.add_usuario').slideUp('300');
-		    
-		    break;
-
-
-
-		    
 
 		   // add_evaluador
 		}
 
     });
+
+
+
 
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
@@ -96,15 +88,6 @@ $(document).on('click','.add_item',function (e) {
 		$(this).parent().parent().find('.path').html(fupload);
 		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'"/>');
 	});
-	
-	$(document).on('change','.file_upload_1',function (e) {
-		var fupload=$(this).val();
-		var tmppath = URL.createObjectURL(e.target.files[0]);
-		$(this).parent().parent().find('#path_asociados').html(fupload);
-		$(this).parent().parent().find('#img_loaded_asociados').html('<img src="'+tmppath+'" width="100%" height="100%"/>');
-	});
-	
-	
 	
 	$(document).on('click','.add_n_slider',function (e) {
 		var nom_slide  = 0;
@@ -420,6 +403,18 @@ $(document).on('click','.add_item',function (e) {
 		var materno     = $("#materno_evaluador_"+consec);
 		var idEvaluador = $("#idEvaluador_"+consec);
 
+		if( nombre.val() == ''){
+			$(nombre).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( paterno.val() == ''){
+			$(paterno).css({'border':'1px solid red'});
+			error++;	
+		}
+		if( materno.val() == ''){
+			$(materno).css({'border':'1px solid red'});
+			error++;	
+		}
 		if(error > 0){
 			return false;
 		}
@@ -541,30 +536,3 @@ $(document).on('click','.add_item',function (e) {
 		});	
 
 	}
-	
-	
-	//ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR ASOCIADOS
-	function guardarAsociados( elem, consec ){
-
-
-        var form_data = new FormData();                 
-        form_data.append('file', $('#imagenAsociado').prop('files')[0]);
-        form_data.append("accion", 'imagen_Asociado');
-                    
-	        $.ajax({
-	            url: '../ajax/ajaxGuardaImagenes.php', 
-	            dataType: 'text',  
-	            cache: false,
-	            contentType: false,
-	            processData: false,
-	            data: form_data,                         
-	            type: 'post',
-	               	success: function(img_reponse){        
-		               	info = JSON.parse( img_reponse );
-		               	if(info.imagenResize == 'OK')
-		               		showMessages( "<span> La información se ha guardado</span>" );
-	                    
-	                 }
-	        });
-	}
-	
