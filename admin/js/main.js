@@ -113,7 +113,7 @@ $(document).on('click','.add_item',function (e) {
 	
 	
 	$(document).on('click','.add_n_slider',function (e) {
-		var nom_slide  = 0;
+		var nom_slide  = 1;
 		$('.order_box_s').each(function(i, elem){
 			nom_slide++;	
 		});
@@ -126,12 +126,12 @@ $(document).on('click','.add_item',function (e) {
 									+'<span class="title_sl">Slider '+nom_slide+'</span>'
 									+'<div class="left mr">'
 										+'<span class="indications">Imágen .jpg ó .png</span>'
-										+'<input type="text" class="order_box_s requerido" name="num_slider[]" value="'+nom_slide+'" size="2" style="width: 5%"/>'
+										+'<input type="text" class="order_box_s requeridoSlider" name="num_slider[]" value="'+nom_slide+'" size="2" style="width: 5%"/>'
 										+'<div class="img_loaded"><img src="../img/pic.png"></div>'
 										+'<div class="path">ruta del archivo</div>'
 										+'<div class="cont_r">'
 											+'<input type="hidden" name="nombreSlideImg[]" value=""/>'
-											+'<input type="file" name="imagenSlider[]" class="file_upload requerido" name="file" />'
+											+'<input type="file" name="imagenSlider[]" class="file_upload requeridoSlider" name="file" />'
 											+'<a href="javascript:void(0)" class="btn_cargar">Cargar</a>'
 										+'</div>'
 									+'</div><!--left-->'
@@ -139,18 +139,16 @@ $(document).on('click','.add_item',function (e) {
 										+'<div class="sub_text_cont">'
 											+'<span class="">Titulo (100 caracteres máx) *</span>'
 											+'<span class="conteo_char">0 caracteres</span>'
-											+'<textarea name="titulo[]" class="infoSlide requerido" maxlength="100"></textarea>'
+											+'<textarea name="titulo[]" class="infoSlide requeridoSlider" maxlength="100"></textarea>'
 										+'</div>'
 										+'<div class="sub_text_cont">'
 											+'<span class="">Subtitulo (225 caracteres máx) *</span>'
 											+'<span class="conteo_char">0 caracteres</span>'
-											+'<textarea name="subtitulo[]" class="infoSlide requerido"  maxlength="225" ></textarea>'
+											+'<textarea name="subtitulo[]" class="infoSlide requeridoSlider"  maxlength="225" ></textarea>'
 										+'</div>'
 									+'</div>'
 									+'<input type="hidden" name="idSlide[]"   value=""/>'
 								+'</div><!--slider_fill-->');
-
-		
 	});
 
 	
@@ -180,7 +178,7 @@ $(document).on('click','.add_item',function (e) {
     
     //===================================================
    	//Validamos los inputs de SLIDERS
-   	$(document).on('submit','#sliders',function(event){
+   	/*$(document).on('submit','#sliders',function(event){
 		var error     = 0;
 		$('.requeridoSlider').each(function(i, elem){
 			var imgSlider = '';			
@@ -203,7 +201,7 @@ $(document).on('click','.add_item',function (e) {
 				$('.msg').html('<span>Debe rellenar los campos requeridos </span>');
 			//error = 0;	
 		}
-	});
+	});*/
 	//FIN Validamos los inputs de SLIDERS
 	//===================================================
 	
@@ -259,7 +257,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	console.log('SE HA ELIMIANDO EL PROGRAMA');
+			     	showMessages('<span>Se ha eliminado el registro.</span>');
 		        }
 	        }
 		});
@@ -281,7 +279,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	console.log('SE HA ELIMIANDO EL PROGRAMA');
+			     	showMessages('<span>Se ha eliminado el registro.</span>');
 		        }
 	        }
 		});
@@ -330,7 +328,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	console.log('SE HA ELIMIANDO EL USUARIO');
+			     	showMessages('<span>Se ha eliminado el registro.</span>');
 		        }
 	        }
 		});
@@ -358,14 +356,58 @@ $(document).on('click','.add_item',function (e) {
 //READY
 //=============
 
-	function showMessages2( msg ){
+function showMessages( msg ){
 		$(".msg").html(msg); 
 	    $('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
 		setTimeout(function() {
 			$(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
 		},3000);
-	 }
+}
 
+
+
+	function guardarSlider(){
+		var error = 0;
+		//Validamos campos obligatorios
+		$('#sliders').find('.requeridoSlider').each(function(i, elem){
+			var imgSlider = '';			
+			$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
+			if($(elem).val() == ''){
+				if($(elem).attr('name') == 'imagenSlider[]'){		
+					if(this.previousElementSibling.value == ''){
+						$(elem).css({'border':'1px solid red'});
+						error++;
+					}
+				}else{
+					$(elem).css({'border':'1px solid red'});
+					error++;	
+				}
+			}
+		});
+		if(error > 0){
+			showMessages('<span>Debe llenar los campos requeridos.</span>');
+			return false;
+		}
+
+		var form = new FormData($('#sliders')[0]);
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxSliders.php",
+	        data: form,
+	        contentType: false, 
+            processData: false,
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	showMessages( "<span> La información se ha guardado.</span>" );
+		        }else{
+		        	showMessages( "<span> Hubo un error al guardar la información.</span>" );
+		        }
+	        }
+		});	
+	}
 
 //ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR ACREDITADOS
 	function guardarAcreditados( elem, consec ){
@@ -395,6 +437,7 @@ $(document).on('click','.add_item',function (e) {
 			error++;	
 		}
 		if(error > 0){
+			showMessages('<span>Debe llenar los campos requeridos.</span>');
 			return false;
 		}
 		
@@ -416,7 +459,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	showMessages2( "<span> La información se ha guardado</span>" );
+			     	showMessages( "<span> La información se ha guardado</span>" );
 		        }
 	        }
 		});	
@@ -454,7 +497,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	console.log("SE HA GUARDADO");	
+			     	showMessages( "<span> La información se ha guardado</span>" );
 		        }
 	        }
 		});	
@@ -497,35 +540,34 @@ $(document).on('click','.add_item',function (e) {
     	});	
 
     	if( 0 >= layPermisosSelecc.length){
-    		console.log('NO HAY CHECKS SELECCIONADOS');
-    		error++;
+    		showMessages( "<span>No hay permisos seleccionados.</span>" );
+    		return false;
     	}
     	//validamos password que sea el mismo en la confirmacion
     	if( $('#contrasena_usu_'+consec).val() != '' && 
     				$('#contrasena_usu_'+consec).val() != $('#conf_contrasena_'+consec).val())
     	{
     		//Validamos siempre y cuando sea nuevo usuario, si es edicion solo si tiene algun dato
-    		console.log('las contraseñas no son iguales');
+    		showMessages( "<span>Las contraseñas no son iguales.</span>" );
     		$('#conf_contrasena_'+consec).css({'border':'1px solid red'});
-			error++;	
+			return false;
     	}
     	//Si la contraseña es debil mandamos error
     	if($('#password-strength-meter_'+consec).val() <=1 ){
     		if(idUs == ''){
     			$('#contrasena_usu_'+consec).css({'border':'1px solid red'});
-				error++;		
+				return false;		
 			}	
     	}
     	//validamos email que sean los mismos
     	if($('#email_usario_'+consec).val() != $('#conf_email_usuario_'+consec).val() && idUs == ''){
-    		console.log('los correos no son iguales');
+    		showMessages( "<span>Los correos no son iguales.</span>" );
     		$('#conf_email_usuario__'+consec).css({'border':'1px solid red'});
-			error++;	
+			return false;
     	}
 
 		if(error > 0){
-			console.log('Falta rellenar campos');
-			$('.msg').html('<span>Debe rellenar los campos requeridos </span>');
+			showMessages('<span>Debe llenar los campos requeridos.</span>');
 			return false;	
 		}
 
@@ -549,7 +591,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	console.log("SE HA GUARDADO");	
+			     	showMessages( "<span> La información se ha guardado.</span>" );
 		        }
 	        }
 		});	
@@ -576,7 +618,7 @@ $(document).on('click','.add_item',function (e) {
 	               	success: function(img_reponse){        
 		               	info = JSON.parse( img_reponse );
 		               	if(info.imagenResize == 'OK')
-		               		showMessages2( "<span> La información se ha guardado</span>" );
+		               		showMessages( "<span> La información se ha guardado.</span>" );
 	                    
 	                 }
 	        });
@@ -597,7 +639,7 @@ $(document).on('click','.add_item',function (e) {
 			}
 		});
 		if(error > 0){
-			showMessages2('<span>Falta ingresar el orden de asociados</span>');
+			showMessages('<span>Falta ingresar el orden de asociados</span>');
 			return false;	
 		}
 
@@ -615,7 +657,7 @@ $(document).on('click','.add_item',function (e) {
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-		            showMessages2( "<span> La información se ha guardado</span>" );
+		            showMessages( "<span> La información se ha guardado.</span>" );
 		        }
 	        }
 	     })   
