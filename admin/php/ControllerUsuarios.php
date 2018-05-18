@@ -54,7 +54,7 @@
 										</li>
 										<li>
 											<label>Email:</label>
-											<input type="text" name="email_usario[]" id="email_usario_'.$i.'" maxlength="50" value="'.$infoUsu['email'].'" class="requerido_usu validarEmail" placeholder="correo@correo.com" />
+											<input type="email" name="email_usario[]" id="email_usario_'.$i.'" maxlength="50" value="'.$infoUsu['email'].'" class="requerido_usu validarEmail" placeholder="correo@correo.com" />
 										</li>
 										<li>
 											<label>Confirmar Email:</label>
@@ -138,11 +138,11 @@
 				<ul>
 					<li>
 						<label>Nombre de usuario:</label>
-						<input type="text" name="usuario[]" id="usuario_n" class="requerido_usu" maxlength="20" placeholder="máximo 20 caracteres" />
+						<input type="email" name="usuario[]" id="usuario_n" class="requerido_usu" maxlength="20" placeholder="máximo 20 caracteres" />
 					</li>
 					<li>
 						<label>Email:</label>
-						<input type="text" name="email_usario[]" id="email_usario_n" class="requerido_usu validarEmail" maxlength="50" placeholder="correo@correo.com" />
+						<input type="email" name="email_usario[]" id="email_usario_n" class="requerido_usu validarEmail" maxlength="50" placeholder="correo@correo.com" />
 					</li>
 					<li>
 						<label>Confirmar Email:</label>
@@ -152,8 +152,8 @@
 				<ul>
 					<li>
 						<label>Contraseña:</label>
-						<input type="password" name="contrasena_usu[]" id="contrasena_usu_n"  class="requerido_usu pass_complexity" maxlength="10"
-						placeholder="máximo 10 caracteres" />
+						<input type="password" name="contrasena_usu[]" id="contrasena_usu_n"  class="requerido_usu pass_complexity" maxlength="15"
+						placeholder="máximo 15 caracteres" />
 					</li>
 					<li>
 						<label>Confirmar contraseña:</label>
@@ -205,32 +205,12 @@
 	{
 		global $oUsu;
 		
-
-		/*if(isset($fileImgUsu['name'][$id]) && !empty($fileImgUsu['name'][$id])){
-
-			$infoImg = array( 'name' => $fileImgUsu['name'][$id]
-							, 'type' => $fileImgUsu['type'][$id]
-							, 'tmp_name' => $fileImgUsu['tmp_name'][$id]
-							, 'error' =>  $fileImgUsu['error'][$id]
-							, 'size' =>$fileImgUsu['size'][$id]);	
-			$newSizeW = 1366;
-			$newSizeH = 620;
-			$msgArch = $oFun->guardarArchivos($folderSlider, $infoImg, $newSizeW, $newSizeH );
-
-			if($msgArch == "OK"){ 
-				$nomImgUsu  = $oFun->getnameArch();}
-			else{
-				$error = "Hubo un problema con la imagen";
-			} 
-		}*/
-
-		if(empty($error)){
 			$nomImagen = (!empty($nomImgUsu) ? $nomImgSlide : '');
 			if( empty($idSlide )){
 				$id = $oUsu->insertarUsuario( $data, $usuario , $numSlide, $titulo, $subTitulo, $nomImagen);
 			}else{
 				$id = $oMod->actualizarUsuario( $idSlide, $numSlide, $titulo, $subTitulo, $nomImagen);
-			}	
+				
 		}
 		return $error;
 	}

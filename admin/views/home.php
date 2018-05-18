@@ -10,6 +10,7 @@ include_once('./header.php');
 	if(isset($_POST['guardar_slider'])){
 		$idSlide   = $_POST['idSlide'];
 		$msgErr    = '';
+		$mostrarMsgSlider = '';		
 		
 		foreach( $idSlide as $key => $info){
 			$msgErr .= fnGuardarSlide( $key, $idSlide[ $key ]
@@ -18,8 +19,9 @@ include_once('./header.php');
 								, $_POST['num_slider'][ $key ]
 								, $folderSlider
 								, $_FILES['imagenSlider'] );
-			//echo $msgErr;
-		}		
+		}
+		if(empty($msgErr))
+			$mostrarMsgSlider = 'Se ha guardado la información';		
 	}
 
 	//======================= ACREDITADOS
@@ -102,20 +104,20 @@ include_once('./header.php');
 		<div class="add_asociado">
 
 			<div class="asociado_fill">
-				<!--<div class="left mr">
+				<div class="left mr">
 					<span class="indications">Imágen .jpg ó .png</span>
 					<input type="text" class="order_box_s requerido" name="" id=""  size="2" maxlength="1" value="" style="width: 5%"/> 
 					<div class="img_loaded"><img src="" /></div>
-					<div class="path">ruta del archivo</div>-->
-					<!--<div class="cont_r">
-						<input type="hidden" name="" value=""/>-->
-						<!--<input type="file" name="" class="file_upload_1 " name="file" />-->
-						<!--<a href="javascript:void(0)" class="btn_cargar">Cargar</a>-->
-					<!--</div>--><!--cont_r-->
-			<!--</div>--><!--left-->
+					<div class="path">ruta del archivo</div>
+					<div class="cont_r">
+						<input type="hidden" name="" value=""/>
+						<input type="file" name="" class="file_upload_1 " name="file" />
+						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
+					</div><!--cont_r-->
+			</div><!--left-->
 				
 				
-				<!--<input type="hidden" name="" value=""/>--> 	
+				<input type="hidden" name="" value=""/>
 			</div><!--asociado_fill-->
 		</div><!--add_asociado-->
 		
@@ -164,10 +166,26 @@ include_once('./header.php');
 
  <script src="../js/main.js"></script>
  <script>
-
-            Demo.init();
-          
-        </script>
+	 $(document).ready(function(){
+		 
+		function showMessages( msg ){
+			
+			$(".msg").html(msg); 
+			
+			$('.msg').fadeIn(100).animate({"bottom":"0px"}, "slow");
+			 setTimeout(function() {
+		        $(".msg").fadeOut(1500).animate({"bottom":"-120px"}, "slow");
+		    },3000);
+		 } 
+		 
+		 //Muestra imagenes de slider
+		 var msgSlider = "<?php echo $mostrarMsgSlider; ?>";
+		 if(msgSlider ){
+			 var msg = "<span>"+msgSlider+"</span>";
+			 showMessages( msg );
+		 } 
+	 })	 
+ </script>
 </body>
 
 </html>

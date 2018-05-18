@@ -144,6 +144,14 @@ class Usuario extends DbConnect
   }
 
 
+  function fnGuardarImgUsuario( $usuario, $imgUsuario  )
+  {
+	  $sql = "UPDATE usuario SET img_perfil = '".$imgUsuario."' WHERE usuario='".$usuario."'";
+	  $this->query($sql) or 
+	   			die("Error en query usuario imagen ". $this->errno());
+    return "OK";
+  }
+
   // ============================	
   // LOGIN DEL USUARIO	
   // ============================
