@@ -4,7 +4,7 @@
 	include_once("../php/ControllerAcreditados.php");
 	include_once("../php/ControllerEvaluadores.php");
 	include_once("../php/ControllerUsuarios.php");
-	include_once("../php/ControllerAsociados.php");
+	//include_once("../php/ControllerAsociados.php");
 
 	//======================= SLIDER
 	//Guardado / Edicion
@@ -98,24 +98,80 @@
 		<form class="users_gest" name="usuarios" id="usuarios" action="./home.php" method="post">
 			<ul class="table_res"> <?php echo $infoUsus['template']; ?> </ul>
 		</form>
-		<ul class="paginator"> <?php //echo $infoUsus['paginador']; ?> </ul>
+		<ul class="paginator"> <?php echo $infoUsus['paginador']; ?> </ul>
 	</div><!--forms_cont-->
 
 
 	<div class="forms_cont asociados oxygenlight">
-		<div class="add_asociado"><?php echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
+		<div class="add_asociado"><?php //echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
 		
 		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
 			<div class="reel_asociados">
 				<ul>
-					<?php echo fnTemplateAsociados(); ?>
+					<?php //echo fnTemplateAsociados(); ?>
 				</ul>
 			</div>
 			<button type="button" class="save_btn" id="guardar_asociados_i" onclick="guardar_asociados(this, 'i');">Guardar</button>
 		</form>
-
-
 	</div><!--form_cont-asociados-->
+
+	<div class="forms_cont temasynoticias oxygenlight">
+		<div class="add_tema">
+			<div class="temas_fill">
+				<div class="left mr">
+					<span class="indications">Imágen .jpg ó .png</span>
+					<div class="img_loaded" style="margin-top:0;" ><img src="../../img/noticias/"/></div>
+					<div class="path">ruta del archivo</div>
+					<div class="cont_r">
+						<input type="hidden" name="" value=""/>
+						<input type="file" name="" class="file_upload_2" name="file" />
+						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
+					</div><!--cont_r-->
+				</div><!--left-->
+				
+				<div class="right">
+					<div class="sub_text_cont">
+						<textarea name="titulo_tema" class="infoSlide requeridoSlider"  maxlength="200" placeholder="Titulo del Tema" ></textarea>
+					</div>
+					
+					<div class="sub_text_cont">
+						<textarea name="contenido_tema" class="infoSlide requeridoSlider" maxlength="" placeholder="Nota completa del Tema"></textarea>
+					</div>
+					
+				</div>
+				<input type="hidden" name="" value=""/> 	
+			</div><!--tema_fill-->
+		</div>
+		<!---termina add tema-->
+		<form class="frm_temasynoticias" name="temasynoticias" id="temasynoticias" action="./home.php" method="post" enctype="multipart/form-data">
+			<div class="temas_fill">
+				<div class="left mr">
+					<span class="indications">Imágen .jpg ó .png</span>
+					<div class="img_loaded" style="margin-top:0;" ><img src="../../img/noticias/"/></div>
+					<div class="path">ruta del archivo</div>
+					<div class="cont_r">
+						<input type="hidden" name="" value=""/>
+						<input type="file" name="" class="file_upload_2" name="file" />
+						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
+					</div><!--cont_r-->
+				</div><!--left-->
+				
+				<div class="right">
+					<div class="sub_text_cont">
+						<textarea name="titulo_tema" class="infoSlide requeridoSlider"  maxlength="200" placeholder="Titulo del Tema" ></textarea>
+					</div>
+					
+					<div class="sub_text_cont">
+						<textarea name="contenido_tema" class="infoSlide requeridoSlider" maxlength="" placeholder="Nota completa del Tema"></textarea>
+					</div>
+					
+					
+				</div><!--right-->
+				<input type="hidden" name="" value=""/> 	
+			</div><!--tema_fill-->
+
+		</form>
+	</div>
 	
 
 	
@@ -123,7 +179,9 @@
 </div><!--wrapper_right-->
 
 </div><!--main_wrapper-->
-<div class="msg"><</div>
+
+<div class="msg"></div>
+
 <script src="../js/jquery-3.3.1.min.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -135,6 +193,9 @@
 
  <script src="../js/main.js"></script>
  <script>
+	 
+	 alert("hi");
+	 
 	 $(document).ready(function(){
 		 
 		function showMessages( msg ){
