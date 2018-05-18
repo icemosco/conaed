@@ -144,6 +144,14 @@ class Usuario extends DbConnect
   }
 
 
+  function fnGuardarImgUsuario( $usuario, $imgUsuario  )
+  {
+	  $sql = "UPDATE usuario SET img_perfil = '".$imgUsuario."' WHERE usuario='".$usuario."'";
+	  $this->query($sql) or 
+	   			die("Error en query usuario imagen ". $this->errno());
+    return "OK";
+  }
+
   // ============================	
   // LOGIN DEL USUARIO	
   // ============================
@@ -195,7 +203,7 @@ class Usuario extends DbConnect
 	  $nom = $inf['nombre']." ".$inf['apellido_pat']." ".$inf['apellido_mat'];
 	  //Si la imagen de perfil no se ha dado de alta
 	  //colocamos una por default
-	  if(empty($inf['img_perfil'])) $inf['img_perfil'] = "usuario_default.png";
+	  if(empty($inf['img_perfil'])) $inf['img_perfil'] = "pic.png";
 	  
 	  session_start();
 	  

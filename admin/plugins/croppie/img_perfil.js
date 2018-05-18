@@ -1,12 +1,19 @@
 var Demo = (function() {
 
-	function uploadImagenPerfil(img){  
-        var file_data = img;
+	function uploadImagenPerfil( result ){  
+		
+		var html;
+		if (result.html) {
+			html = result.html;
+		}
+		if (result.src) {
+			html = '<img src="' + result.src + '" />';
+			
+		var file_data = html;
         var form_data = new FormData(); 
                         
         form_data.append('file', file_data);
         form_data.append("accion", 'imagen_perfil');
-        form_data.append("id_usuario", "<?php echo $_SESSION['imgPerfil']?>");
                     
         $.ajax({
             url: '../ajax/ajaxGuardaImagenes.php', 
@@ -16,12 +23,20 @@ var Demo = (function() {
             processData: false,
             data: form_data,                         
             type: 'post',
-               	success: function(php_script_response){        
-                    var texto = "<img  id='perfil_usuario' src='" + php_script_response + " alt='Imagen de usuario' alt='Imagen de usuario' width='100%' height='100%'>";
-                    $("#upload-msg").html('');
-                    $("#upload-msg").html(texto);
+               	success: function(img_reponse){        
+	               	info = JSON.parse( img_reponse );
+	               	console.log(info.imagenResize);
+                    var texto = "<img  id='perfil_usuario' src='../img/users/" + info.imagenResize + "' width='100%' height='100%'>";
+                    $(".upload-demo-wrap").html('').hide();
+                    $(".upload-result").hide();
+                    $(".upload-msg").html(texto).show();
+                    
                  }
          });
+			
+			
+			
+		}
       } 
 
 
@@ -54,13 +69,13 @@ var Demo = (function() {
 		if(jQuery().croppie) {
 		$uploadCrop = $('#upload-demo').croppie({
 			viewport: {
-				width: 170,
-				height: 160/*,
-				type: 'circle'*/
+				width: 165,
+				height: 165,
+				type: 'circle'
 			},
-			boundary: { width: 180, height: 170 },
-			showZoomer: false			/*,
-			enableExif: true*/
+			boundary: { width: 170, height: 170 },
+			showZoomer: false,
+			enableExif: true
 		});
 		}
 
@@ -72,18 +87,10 @@ var Demo = (function() {
 			$uploadCrop.croppie('result', {
 				type: 'canvas',
 				size: 'viewport'
-			}).then(function (result) {
-
-				
-				var html;
-		if (result.html) {
-			html = result.html;
-		}
-		if (result.src) {
-			html = '<img src="' + result.src + '" />';
-			uploadImagen(html); // Guardamos la imagen
-		}
-
+			}).then(function (resp) {
+				uploadImagenPerfil({
+					src: resp
+				});
 			});
 		});
 	}

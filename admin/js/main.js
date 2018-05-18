@@ -80,6 +80,7 @@ $(document).on('click','.add_item',function (e) {
     });
 
 	
+
 $('.muestra_msg').click(function(){
 	//alert('hey');
 	$('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
@@ -89,19 +90,16 @@ $('.muestra_msg').click(function(){
 
 
 })
-	
+
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
-		console.log($(this));
-		console.log(fupload);
-		console.log(e.target.files[0]);
 		var tmppath = URL.createObjectURL(e.target.files[0]);
 		$(this).parent().parent().find('.path').html(fupload);
-		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'" />');
+		$(this).parent().parent().find('.img_loaded').html('<img src="'+tmppath+'"/>');
 	});
 	
 	$(document).on('click','.add_n_slider',function (e) {
-		var nom_slide  = 1;
+		var nom_slide  = 0;
 		$('.order_box_s').each(function(i, elem){
 			nom_slide++;	
 		});
@@ -334,9 +332,15 @@ $('.muestra_msg').click(function(){
 	      	}  
     	}               
 	});
+	
+	
+	//Inicializamos imagen de perfil
+	Demo.init(); 
 
-});//ready
-
+});
+//=============
+//READY
+//=============
 
 //ENVIAMOS LOS VALORES PARA GUARDAR O EDITAR ACREDITADOS
 	function guardarAcreditados( elem, consec ){
