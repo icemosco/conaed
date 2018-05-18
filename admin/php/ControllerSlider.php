@@ -45,6 +45,7 @@ include_once("../php/Modelo.php");
 		$infoSlide = $oMod->fnBuscaSlide();	
 		if(!empty( $infoSlide )){
 			foreach($infoSlide as $key =>$info){
+				
 				if(empty($info['img'])) $info['img'] = $imgSlider;
 
 				$tmpl = str_replace("[NUMSLIDE]", $info['orden'], $template);	
