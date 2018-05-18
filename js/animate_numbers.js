@@ -197,9 +197,9 @@ var counter=0;
 $(window).scroll(function() {
 	  //alert('scroll');
    if (($('#numeros').isOnScreen() == true) && (counter == 0) ) {
-    $('#n1').prop('number', 0).animateNumber({number: 64},3000);
-	 $('#n2').prop('number', 0).animateNumber({number: 35},3000); 
-	 $('#n3').prop('number', 0).animateNumber({number: 12},3000);
+    $('#n1').prop('number', 0).animateNumber({number: 450},3000);
+	 $('#n2').prop('number', 0).animateNumber({number: 100},3000); 
+	 $('#n3').prop('number', 0).animateNumber({number: 25},3000);
 
 	
 	counter = 1;

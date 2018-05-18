@@ -107,7 +107,7 @@ class Funciones
 	    if(!$movido) return "error";
 	    
 	    if(!empty($newSizeW) && !empty($newSizeH)){
-	    	 $this->redimensionar_imagen($archivo, $ext, $carpeta.$archivo, $newSizeW, $newSizeH);
+	    	echo $this->redimensionar_imagen($archivo, $ext, $carpeta.$archivo, $newSizeW, $newSizeH);
 	    }   	
 			
 	 	  return "OK";

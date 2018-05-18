@@ -11,16 +11,14 @@
     define('DB_CHARSET','UTF8');*/
     
     define('DB_HOST','127.0.0.1');
-    define('DB_USER','root');
-    define('DB_PASS','p3r3z0s4'); 
+    define('DB_USER','icemosco');
+    define('DB_PASS',''); 
     define('DB_NAME','conaed');
     define('DB_CHARSET','UTF8');
     
-    $folderSlider = "/Users/perezosa/Sites/conaed/img/slider/";
+    $folderSlider = "/Applications/MAMP/htdocs/coned_git/conaed/img/slider/";
     
-    $folderPerfilUsu = "/Users/perezosa/Sites/conaed/admin/img/users/";
-    
-    $folderAsociados = "/Users/perezosa/Sites/conaed/img/asociados/";
+    $folderPerfilUsu = "/Applications/MAMP/htdocs/coned_git/conaed/admins/img/users/";
 
 
 ?>

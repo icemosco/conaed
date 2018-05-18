@@ -116,64 +116,6 @@
 
 
 	</div><!--form_cont-asociados-->
-
-	<div class="forms_cont temasynoticias oxygenlight">
-		<div class="add_tema">
-			<div class="temas_fill">
-				<div class="left mr">
-					<span class="indications">Imágen .jpg ó .png</span>
-					<div class="img_loaded" style="margin-top:0;" ><img src="../../img/noticias/"/></div>
-					<div class="path">ruta del archivo</div>
-					<div class="cont_r">
-						<input type="hidden" name="" value=""/>
-						<input type="file" name="" class="file_upload_2" name="file" />
-						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
-					</div><!--cont_r-->
-				</div><!--left-->
-				
-				<div class="right">
-					<div class="sub_text_cont">
-						<textarea name="titulo_tema" class="infoSlide requeridoSlider"  maxlength="200" placeholder="Titulo del Tema" ></textarea>
-					</div>
-					
-					<div class="sub_text_cont">
-						<textarea name="contenido_tema" class="infoSlide requeridoSlider" maxlength="" placeholder="Nota completa del Tema"></textarea>
-					</div>
-					
-				</div>
-				<input type="hidden" name="" value=""/> 	
-			</div><!--tema_fill-->
-		</div>
-		<!---termina add tema-->
-		<form class="frm_temasynoticias" name="temasynoticias" id="temasynoticias" action="./home.php" method="post" enctype="multipart/form-data">
-			<div class="temas_fill">
-				<div class="left mr">
-					<span class="indications">Imágen .jpg ó .png</span>
-					<div class="img_loaded" style="margin-top:0;" ><img src="../../img/noticias/"/></div>
-					<div class="path">ruta del archivo</div>
-					<div class="cont_r">
-						<input type="hidden" name="" value=""/>
-						<input type="file" name="" class="file_upload_2" name="file" />
-						<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
-					</div><!--cont_r-->
-				</div><!--left-->
-				
-				<div class="right">
-					<div class="sub_text_cont">
-						<textarea name="titulo_tema" class="infoSlide requeridoSlider"  maxlength="200" placeholder="Titulo del Tema" ></textarea>
-					</div>
-					
-					<div class="sub_text_cont">
-						<textarea name="contenido_tema" class="infoSlide requeridoSlider" maxlength="" placeholder="Nota completa del Tema"></textarea>
-					</div>
-					
-					
-				</div><!--right-->
-				<input type="hidden" name="" value=""/> 	
-			</div><!--tema_fill-->
-
-		</form>
-	</div>
 	
 
 	
@@ -181,8 +123,7 @@
 </div><!--wrapper_right-->
 
 </div><!--main_wrapper-->
-
-<div class="msg"></div>
+<div class="msg"><</div>
 <script src="../js/jquery-3.3.1.min.js"></script>
  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
