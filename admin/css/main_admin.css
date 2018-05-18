@@ -180,6 +180,8 @@ border-bottom-right-radius: 10px;};
 .cont_r{position: relative;float: left;width: 100%;margin-top: 4px;overflow: hidden;height: 49px;}
 .path{width:90%;padding:5px 10px;margin:15px 0 15px 15px;float:left;border:1px solid #dcdfe3;}
 .file_upload{position: absolute;bottom: 2%;right: 1%;display: block;z-index: 1;width: 80px;opacity:0;cursor: pointer!important;}
+.file_upload_1{position: absolute;bottom: 5%;right: 1%;display: block;z-index: 1;width:115px;opacity:0;cursor: pointer!important;height:43px;}
+
 
 .title_sl{width:100%; float:left;font-size:1.2em;}
 .btn_cargar{display: block;position: absolute;bottom: 29%;right: 0%;width: auto;background: #394180;color: #FFF;padding:5px 37px;font-size:1em;}
@@ -200,7 +202,7 @@ border-bottom-right-radius: 10px;};
 .asociado_fill .left, .right{width:48%;float:left;position:relative;}
 .asociado_fill .left span.indications{margin-top:5px;float:left;font-size:1em;}
 
-.reel_asociados{width:100%; height:auto; padding:20px 0;}
+.reel_asociados{width:100%; height:auto; padding:20px 0;white-space: nowrap;}
 .reel_asociados ul{width:100%;display:block;overflow-x:scroll;max-width:90%;}
 .reel_asociados ul li{display:inline-block; width:200px;height:200px; }
 .reel_asociados ul li span{width:100%; display:block;text-align: center;}
