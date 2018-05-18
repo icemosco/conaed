@@ -15,7 +15,7 @@ $(document).ready(function(){
 		    case "sliders":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Slider Home Page');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider">Nuevo</a>');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_n_slider" title="Agregar un nuevo slider">Nuevo</a>')
 
 		        break;
 		    case "programas":
@@ -26,7 +26,7 @@ $(document).ready(function(){
 		    case "evaluadores":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Padrón de Evaluadores');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador">Nuevo</a>');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador">Nuevo</a>')
 		        break;
 		    case "asociados":
 		        	$('.'+btn).show();
@@ -36,7 +36,8 @@ $(document).ready(function(){
 		    case "temasynoticias":
 		        	$('.'+btn).show();
 		        	$('.header_int > h2').html('Temas y Noticias');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="usuarios_plus" class="add_item" title="Agregar un nuevo Usuario">Nuevo</a>');
+		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="temas_plus" class="add_item" title="Agregar un nuevo Tema">Nuevo</a>');
+		         break;
 		        
 		    case "usuarios":
 		        	$('.'+btn).show();
@@ -75,11 +76,22 @@ $(document).on('click','.add_item',function (e) {
 				//$('.add_usuario').slideUp('300');
 		    
 		    break;
+		case "temas_plus":
+				$('.add_tema').slideDown('500');
+				//$('.add_usuario').slideUp('300');
+		    
+		    break;
+
+
+
+		    
 
 		   // add_evaluador
 		}
 
     });
+
+
 
 	$(document).on('change','.file_upload',function (e) {
 		var fupload=$(this).val();
