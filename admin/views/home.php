@@ -101,19 +101,19 @@
 		<ul class="paginator"> <?php echo $infoUsus['paginador']; ?> </ul>
 	</div><!--forms_cont-->
 
-
-	<div class="forms_cont asociados oxygenlight">
-		<div class="add_asociado"><?php //echo fnTemplateNuevoAsociado(); ?></div><!--add_asociado-->
+<div class="forms_cont asociados oxygenlight">
+		<div class="add_asociado"></div><!--add_asociado-->
 		
 		<form class="frm_asociados" name="asociados" id="asociados" action="./home.php" method="post" enctype="multipart/form-data">
 			<div class="reel_asociados">
 				<ul>
-					<?php //echo fnTemplateAsociados(); ?>
+					
 				</ul>
 			</div>
-			<button type="button" class="save_btn" id="guardar_asociados_i" onclick="guardar_asociados(this, 'i');">Guardar</button>
+			<button type="button" class="save_btn" id="guardar_asociados_i" onclick="">Guardar</button>
 		</form>
 	</div><!--form_cont-asociados-->
+	
 
 	<div class="forms_cont temasynoticias oxygenlight">
 		<div class="add_tema">
@@ -194,7 +194,7 @@
  <script src="../js/main.js"></script>
  <script>
 	 
-	 alert("hi");
+	
 	 
 	 $(document).ready(function(){
 		 
