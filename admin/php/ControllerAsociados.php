@@ -14,10 +14,13 @@
 			$cont  = 0;
 			foreach($infoSociados as $key =>$info){
 
-				$template .= '<li>
-					  			<span class="img_asoc"><img src="../../img/asociados/'.$info['img'].'" /></span>
-					  			<span class="cont_ord"><input type="text" name="order_asoc[]" class="asoc" maxlength="1" value="'.$info['orden'].'">
-					  		 </li>';
+				$template .= '
+					<li>
+					  	<span class="img_asoc"><img src="../../img/asociados/'.$info['img'].'" /></span>
+			  			<span class="cont_ord">
+			  				<input type="text" id="'.$info['id'].'" name="order_asoc[]" class="asoc asociados_orden" maxlength="2" value="'.$info['orden'].'">
+			  			</span>	
+					</li>';
 				$cont++;	
 			}
 		}
@@ -43,4 +46,4 @@
 
 		return $template;	
 	 }
-?>	
+?>
