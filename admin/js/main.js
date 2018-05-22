@@ -665,8 +665,16 @@ function showMessages( msg ){
 	}
 //comment
 $(window).load(function(){
-	 if(window.location.href.indexOf("npa") > -1) {
-      $('.forms_cont').hide();
-	  $('.programas').show();	
-    }
+	//var pag=window.location.href.indexOf("npa") > -1;
+		if(window.location.href.indexOf("npa") > -1) {
+			$('.forms_cont').hide();
+			$('.programas').show();
+			$('.header_int > h2').html('Programas Acreditados');
+		}
+	if(window.location.href.indexOf("npe") > -1) {
+			$('.forms_cont').hide();
+			$('.programas').show();
+			$('.header_int > h2').html('Padrón de Evaluadores');
+		}
+	
 });

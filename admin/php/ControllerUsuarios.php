@@ -27,9 +27,9 @@
 				$template .= '<li '.$clase.'>
 									<span class="num_id">'.$cont.'</span>
 									<span class="nom_user">'.$infoUsu['nombre'].' '.$infoUsu['apellido_pat'].' '.$infoUsu['apellido_mat'].'</span>
-									<a href="javascript:void(0)" class="delete_usuario funct">Eliminar</a>
+									<a href="javascript:void(0)" class="delete_usuario del_int funct">Eliminar</a>
 									<input type="hidden" name="idUsuario[]" id="idUsuario_'.$i.'" value="'.$infoUsu["id"].'"/> 
-									<a href="javascript:void(0)" class="edit_user funct">editar</a>
+									<a href="javascript:void(0)" class="edit_user edit_int funct">Editar</a>
 								</li>
 								<li>
 								<div class="new_user">

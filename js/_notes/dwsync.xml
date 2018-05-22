@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="jquery-3.3.1.min.js" server="107.180.4.49//" local="131696169560000000" remote="131714172600000000" Dst="2" />
-<file name="main.js" server="107.180.4.49//" local="131714244301193487" remote="131714172600000000" Dst="2" />
-<file name="jquery-ui.js" server="107.180.4.49//" local="131704755280000000" remote="131714172600000000" Dst="2" />
+<file name="jquery-3.3.1.min.js" server="107.180.4.49//" local="131714311293761054" remote="131714258400000000" Dst="2" />
+<file name="main.js" server="107.180.4.49//" local="131714311293917068" remote="131714258400000000" Dst="2" />
+<file name="jquery-ui.js" server="107.180.4.49//" local="131714311293917068" remote="131714258400000000" Dst="2" />
+<file name="animate_numbers.js" server="107.180.4.49//" local="131714311293761054" remote="131714258400000000" Dst="2" />
+<file name="swiper.min.js" server="107.180.4.49//" local="131714311294073268" remote="131714258400000000" Dst="2" />
 </dwsync>

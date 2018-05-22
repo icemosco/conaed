@@ -62,7 +62,7 @@
 								</ul>
 								<ul>
 									<li>
-										<label>Anio:</label>
+										<label>Año:</label>
 										<input type="text" name="anioAcreditado[]" maxlength="4" 
 										 value="'.$info["anio"].'" id="anioAcreditado_'.$i.'" class="anioAcre">
 									</li>

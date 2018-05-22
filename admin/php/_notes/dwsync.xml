@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="cerrar_sesion.php" server="107.180.4.49//" local="131708363340000000" remote="131714172600000000" Dst="2" />
-<file name="config.php" server="107.180.4.49//" local="131714229266242256" remote="131714172600000000" Dst="2" />
-<file name="ControllerAcreditados.php" server="107.180.4.49//" local="131714204788391370" remote="131714172600000000" Dst="2" />
-<file name="ControllerAsociados.php" server="107.180.4.49//" local="131711441186857398" remote="131714172600000000" Dst="2" />
-<file name="ControllerEvaluadores.php" server="107.180.4.49//" local="131714215186383571" remote="131714172600000000" Dst="2" />
-<file name="ControllerNoticias.php" server="107.180.4.49//" local="131711419500133533" remote="131714172600000000" Dst="2" />
-<file name="ControllerSlider.php" server="107.180.4.49//" local="131710950960000000" remote="131714172600000000" Dst="2" />
-<file name="ControllerUsuarios.php" server="107.180.4.49//" local="131710751820000000" remote="131714172600000000" Dst="2" />
-<file name="DbConnect.php" server="107.180.4.49//" local="131708710860000000" remote="131714172600000000" Dst="2" />
-<file name="Funciones.php" server="107.180.4.49//" local="131714218749419797" remote="131714172600000000" Dst="2" />
-<file name="index.php" server="107.180.4.49//" local="131708363340000000" remote="131714172600000000" Dst="2" />
-<file name="Modelo.php" server="107.180.4.49//" local="131711440665341173" remote="131714172600000000" Dst="2" />
-<file name="Usuario.php" server="107.180.4.49//" local="131710831220000000" remote="131714172600000000" Dst="2" />
-<file name="validateLogin.php" server="107.180.4.49//" local="131708710020000000" remote="131714172600000000" Dst="2" />
-<file name="validaSession.php" server="107.180.4.49//" local="131708363340000000" remote="131714172600000000" Dst="2" />
+<file name="cerrar_sesion.php" server="107.180.4.49//" local="131714311287435628" remote="131714256600000000" Dst="2" />
+<file name="config.php" server="107.180.4.49//" local="131714367252462717" remote="131714295000000000" Dst="2" />
+<file name="ControllerAcreditados.php" server="107.180.4.49//" local="131714344480873435" remote="131714272200000000" Dst="2" />
+<file name="ControllerAsociados.php" server="107.180.4.49//" local="131714311287239094" remote="131714256600000000" Dst="2" />
+<file name="ControllerEvaluadores.php" server="107.180.4.49//" local="131714311287259418" remote="131714256600000000" Dst="2" />
+<file name="ControllerNoticias.php" server="107.180.4.49//" local="131714311287279252" remote="131714256600000000" Dst="2" />
+<file name="ControllerSlider.php" server="107.180.4.49//" local="131714349460737063" remote="131714277000000000" Dst="2" />
+<file name="ControllerUsuarios.php" server="107.180.4.49//" local="131714338810000000" remote="131714266800000000" Dst="2" />
+<file name="DbConnect.php" server="107.180.4.49//" local="131714311287279252" remote="131714256600000000" Dst="2" />
+<file name="Funciones.php" server="107.180.4.49//" local="131714311287279252" remote="131714256600000000" Dst="2" />
+<file name="index.php" server="107.180.4.49//" local="131714311287435628" remote="131714256600000000" Dst="2" />
+<file name="Modelo.php" server="107.180.4.49//" local="131714311287279252" remote="131714256600000000" Dst="2" />
+<file name="Usuario.php" server="107.180.4.49//" local="131714311287435628" remote="131714256600000000" Dst="2" />
+<file name="validateLogin.php" server="107.180.4.49//" local="131714311287591891" remote="131714256600000000" Dst="2" />
+<file name="validaSession.php" server="107.180.4.49//" local="131714311287435628" remote="131714256600000000" Dst="2" />
+<file name=".DS_Store" server="107.180.4.49//" local="131714311287057653" remote="131714256600000000" Dst="2" />
 </dwsync>

@@ -27,15 +27,15 @@ include_once("../php/Modelo.php");
 				
 				<div class="right">
 					<div class="sub_text_cont">
-						<span class="">Titulo (100 caracteres máx) *</span>
+						<span class="">Titulo (150 caracteres máx) *</span>
 						<span class="conteo_char">[CARCTITULO] caracteres</span>
-						<textarea name="titulo[]" class="infoSlide requeridoSlider"  maxlength="100" >[TITULO]</textarea>
+						<textarea name="titulo[]" class="infoSlide requeridoSlider"  maxlength="150" >[TITULO]</textarea>
 					</div>
 					
 					<div class="sub_text_cont">
-						<span class="">Subtitulo (225 caracteres máx) *</span>
+						<span class="">Subtitulo (400 caracteres máx) *</span>
 						<span class="conteo_char">[CARCSUBTITULO] caracteres</span>
-						<textarea name="subtitulo[]" class="infoSlide requeridoSlider" maxlength="225">[SUBTITULO]</textarea>
+						<textarea name="subtitulo[]" class="infoSlide requeridoSlider" maxlength="400">[SUBTITULO]</textarea>
 					</div>
 					
 				</div>
