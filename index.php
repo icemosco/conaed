@@ -166,7 +166,10 @@ include_once("./php/functions.php")
 			<span class="col3">Vigencia</span>
 		</div>
 		<ul class="programas">
-			<?php echo programas(10) ?>
+			<?php 
+				$infoProgramas =  programas( 1 );
+				echo $infoProgramas['template']; 
+			?>
 
 		</ul>
 		<a href="programas-acreditados.php" class="lista_c">ver lista completa</a>

@@ -2,6 +2,15 @@
 include_once("./admin/php/config.php");
 include_once("./admin/php/DbConnect.php");
 include_once("./php/functions.php");
+
+$numPaginaAcreditados = 1;
+if(isset( $_REQUEST['pro']) ){
+	$numPaginaAcreditados = $_REQUEST['pro'];
+}
+
+$infoAcreditados =  programas( $numPaginaAcreditados );
+
+
 ?>
 <!doctype html>
 <html>
@@ -70,7 +79,7 @@ include_once("./php/functions.php");
 			<a href="http://www.conaed.org.mx#programas_acreditados" class="clr_rose back">Regresar</a>
 			<ul class="update mr5">
 				<li class="calendar ">última actualización 02 de Mayo de 2018</li>
-				<li class="clr_rose numreg_total"><?php echo programas(0, true); ?> resultados</li>
+				<li class="clr_rose numreg_total"><?php echo $infoAcreditados['totalRegistros']; ?> resultados</li>
 			</ul>
 		</div>
 	<article>
@@ -82,11 +91,10 @@ include_once("./php/functions.php");
 			<span class="col3">Vigencia</span>
 		</div>
 		<ul class="programas">
-			<?php echo programas(100); ?>
-
+			<?php echo $infoAcreditados['template']; ?>
 		</ul>
-		
 	</article>
+	<?php echo $infoAcreditados['paginador']; ?>
 </section><!--ntec-->
 
 
@@ -207,25 +215,6 @@ solicitud.</p>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
 <script>
-	
-/*window.onload = function () {
-$("#pre-load-web").fadeOut(1000,function() { 
- $(this).remove();
- $("body").css({"overflow-y":"auto"}); }); 
-};
-
-/*
-$(document).ready(function(){
-  $("body").css({"overflow-y":"hidden"});
-    var alto=$(window).height();
-    $('body').append('<div id="pre-load-web"><div id="imagen-load"><img src="/img/logo_sasec.png" /><span>Cargando...</span><span><img src="/img/loading_spinner.gif" style="width:50px; height:50px;" alt="" /></span></div></div>');
-    $('#pre-load-web').css({height:alto+"px"}); 
-       
-    $("#imagen-load").css({"margin-top":(alto/2)-30+"px"}); 
-});     
-
-*/
-
 
 	var swiper = new Swiper('.swiper-container',{
     speed: 300,
@@ -246,5 +235,3 @@ $(document).ready(function(){
 </script>
 
 </html>
-
-?>
