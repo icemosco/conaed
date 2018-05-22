@@ -27,7 +27,7 @@
 			<input type="password" name="contrasena" id="contrasena" class="" maxlength="20" required />
 			<a href="#" title="" class="">Reestablecer Contraseña</a>
 			<div class="restablecer">
-				<span class="txt"><?=$_REQUEST['msg']?></span>
+				<!--<span class="txt"><?=$_REQUEST['msg']?></span>-->
 				<!--<a href="javascript:void(0)" class="env_res">Restablecer</a>-->
 				<div class="respuesta_res"></div>
 			</div>

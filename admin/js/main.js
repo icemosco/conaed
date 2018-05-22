@@ -664,3 +664,11 @@ function showMessages( msg ){
 
 
 	}
+//nuevo comment 
+$(window).load(function(){
+	 if(window.location.href.indexOf("npa") > -1) {
+		 alert('yo');
+      $('.forms_cont').hide();
+	  $('.programas').show();	
+    }
+});

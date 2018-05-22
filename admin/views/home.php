@@ -1,4 +1,6 @@
 <?php
+
+    error_reporting(0); 
     include_once('./header.php'); 
 	include_once("../php/ControllerSlider.php");
 	include_once("../php/ControllerAcreditados.php");
@@ -6,6 +8,10 @@
 	include_once("../php/ControllerUsuarios.php");
 	include_once("../php/ControllerAsociados.php");
 	include_once("../php/ControllerNoticias.php");
+
+
+
+
 
 	//======================= ACREDITADOS
 	$numPaginaAcreditados = 1;
