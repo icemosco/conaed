@@ -662,8 +662,8 @@ function showMessages( msg ){
 	        }
 	     })   
 
-
-
+	}
+//comment
 $(window).load(function(){
 	 if(window.location.href.indexOf("npa") > -1) {
       $('.forms_cont').hide();
