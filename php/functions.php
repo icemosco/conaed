@@ -6,7 +6,9 @@ function programas( $limite, $contador = false ){
 	}
 
 	$oCnx      = new DbConnect();
-	$sql  	   = "SELECT * FROM programas_1 ORDER BY id_universidad ".$extra;
+	$sql  	   = "SELECT * FROM programas_1 p 
+				  LEFT JOIN cat_categorias cat ON p.id_categoria = cat.id_categoria
+				  ORDER BY id_universidad ".$extra;
 	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
 	$regs      = $res->num_rows;
 	$rowsTable = '';
@@ -20,7 +22,7 @@ function programas( $limite, $contador = false ){
 
 								<span>'.$info['nombre_uni'].'</span>
 								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-								<span>'.$info['anio'].' - '.$info['id_categoria'].'</span>
+								<span>'.$info['anio'].'</span><span>'.$info['nombre'].'</span>
 																
 							</li>';	
 							$contAcreditados++;				
