@@ -1,12 +1,15 @@
 <?php
 	session_start();
+	
 	include_once("../php/config.php");
 	include_once("../php/DbConnect.php");
 	include_once("../php/Modelo.php");
+	include_once("../php/Funciones.php");
 	
-	$oMod           = new Modelo();
+	$oMod       = new Modelo();
+	$oFun 		= new Funciones();
 
-	function fnGuardarSlide( $id, $idSlide, $titulo, $subTitulo, $numSlide, $folderSlider, $fileImgSlide )
+	function fnGuardarSlide( $id, $titulo, $subTitulo, $numSlide, $folderSlider, $fileImgSlide, $idSlide = '' )
 	{
 		global $oMod, $oFun;
 		//Guardamos la imagen 
@@ -43,24 +46,23 @@
 	}
 
 
-	if(isset($_POST['guardar_slider'])){
+	if(isset($_POST['idSlide'])){
 		$idSlide   = $_POST['idSlide'];
 		$msgErr    = '';
 		$mostrarMsgSlider = '';		
 		
 		foreach( $idSlide as $key => $info){
-			$msgErr .= fnGuardarSlide( $key, $idSlide[ $key ]
+			$msgErr .= fnGuardarSlide( $key
 								, $_POST['titulo'][ $key ]
 								, $_POST['subtitulo'][ $key ]
 								, $_POST['num_slider'][ $key ]
 								, $folderSlider
-								, $_FILES['imagenSlider'] );
+								, $_FILES['imagenSlider']
+								, $idSlide[ $key ] );
 		}
-		if(empty($msgErr))
-			$mostrarMsgSlider = 'Se ha guardado la información';		
+		
 	}
-	if(empty($mostrarMsgSlider)) $mostrarMsgSlider = 'OK';	
 	
-	echo json_encode( array("success"=>$mostrarMsgSlider));
+	echo json_encode( array("success"=>"OK"));
 	
 ?>
