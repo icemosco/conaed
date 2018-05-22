@@ -20,7 +20,8 @@ function programas( $limite, $contador = false ){
 
 								<span>'.$info['nombre_uni'].'</span>
 								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-								<span>'.$info['vigencia_ini'].' - '.$info['vigencia_fin'].'</span>								
+								<span>'.$info['anio'].' - '.$info['id_categoria'].'</span>
+																
 							</li>';	
 							$contAcreditados++;				
 	   }
@@ -103,8 +104,7 @@ function mostrarSlider(){
 							</div>';
 		}
 	}
-	return $rowSliders;
-		
+	return $rowSliders;	
 }
 
 function mostrarAsociados(){
