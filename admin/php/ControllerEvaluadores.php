@@ -26,9 +26,9 @@
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["a_paterno"].' '.$info["a_materno"].' '.$info["nombre"].'</span>
-							<a href="javascript:void(0)" class="delete_evaluador funct">Eliminar</a>
+							<a href="javascript:void(0)" class="delete_evaluador del_int funct">Eliminar</a>
 							<input type="hidden" name="idEvaluador[]" id="idEvaluador_'.$i.'" value="'.$info["id_evaluador"].'"/> 
-							<a href="javascript:void(0)" class="edit_evaluador funct">editar</a>
+							<a href="javascript:void(0)" class="edit_evaluador edit_int funct">editar</a>
 						</li>
 						<li>
 							<div class="new_evaluador">

@@ -42,9 +42,9 @@
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
-							<a href="javascript:void(0)" class="delete_acreditado funct">Eliminar</a>
+							<a href="javascript:void(0)" class="delete_acreditado del_int funct">Eliminar</a>
 							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$i.'" value="'.$info["id_universidad"].'"/> 
-							<a href="javascript:void(0)" class="edit_acreditado funct">editar</a>
+							<a href="javascript:void(0)" class="edit_acreditado edit_int funct">Editar</a>
 						</li>
 						<li>
 							<div class="new_programa">
@@ -112,4 +112,4 @@
 
 		return $template;	
 	 }
-?>
+?>	

@@ -194,4 +194,4 @@ class Modelo extends DbConnect
 		return $noticias;	
   	 }
 }	
-?>
+?>	

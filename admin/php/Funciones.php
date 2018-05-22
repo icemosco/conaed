@@ -121,9 +121,9 @@ class Funciones
 			$paginador = '<li class="radius-left"><a href="./home.php?'.$var.'='.($numPagina-1).'">Anterior</a></li>';
 		for($i = 1; $totalPaginas >= $i; $i++){
 			$stylePag = ""; 
-			if( $numPagina == $i) $stylePag = "style='color:red'";
+			if( $numPagina == $i) $stylePag = "active_page";
 					
-			$paginador .= '<li><a href="./home.php?'.$var.'='.$i.'" class="number_link" '.$stylePag.'>'.$i .'</a></li>';
+			$paginador .= '<li><a href="./home.php?'.$var.'='.$i.'" class="number_link '.$stylePag.'">'.$i .'</a></li>';
 		}
 		if(($numPagina+1) <= $totalPaginas) 
 			$paginador .=  '<li class="radius-right"><a href="./home.php?'.$var.'='.($numPagina+1).'">Siguiente</a></li>';
