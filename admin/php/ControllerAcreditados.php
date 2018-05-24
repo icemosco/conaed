@@ -4,7 +4,7 @@
 
 	$oMod = new Modelo();
 	$oFun = new Funciones();
-
+//comment
 	function fnComboCategorias( $idSelect = ''){
 		global $oMod;
 		$combo = "";

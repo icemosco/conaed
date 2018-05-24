@@ -4,7 +4,7 @@
 
 	$oMod = new Modelo();
 	$oFun = new Funciones();
-	
+	//comment
 	function fnTemplateEvaluadores( $numPagina ){
 		global $oMod, $oFun;
 		
