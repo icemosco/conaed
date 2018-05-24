@@ -55,9 +55,10 @@ function programas( $numPagina ){
 		 	$rowsTable .= '<li>
 								<span class="num">'.$cont.'</span>
 
-								<span>'.$info['nombre_uni'].'</span>
+								<span class="nom">'.$info['nombre_uni'].'</span>
 								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-								<span>'.$info['anio'].'</span><span>'.$info['nombre'].'</span>
+								<span class="vig">'.$info['anio'].'</span>
+								<span class="cat">'.$info['nombre'].'</span>
 																
 							</li>';	
 			$cont++;				

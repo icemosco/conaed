@@ -89,6 +89,7 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 			<span class="col1">Institución Educativa</span>
 			<span class="col2">Página Web</span>
 			<span class="col3">Vigencia</span>
+			<span class="col4">Tipo de programa</span>
 		</div>
 		<ul class="programas">
 			<?php echo $infoAcreditados['template']; ?>

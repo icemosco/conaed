@@ -120,12 +120,19 @@ header ul.btns_call_mobile{display:none;}
 /****listado de programas******/
 article .row_titulo{width:99.5%; display:block; overflow:hidden; height:auto; padding:10px 0 0 35px;background:#e0e0ec;}
 article .row_titulo span{float:left;width:33%; max-width:33%;text-align:left;font-size:1.2em;padding:10px 0;}
+article .row_titulo span.col1{width:31%;max-width:31%;}
+article .row_titulo span.col2{width:30%;max-width:30%;}
+article .row_titulo span.col3{width:10%;max-width:10%;}
+article .row_titulo span.col4{width:29%;max-width:29%;}
 /*article .row_titulo span:before{content: url(../img/arrow_down.png);}*/
 article ul.programas{display:block; width:100%; }
 article ul.programas li{width:100%; display:flex;align-items: center;}
 article ul.programas li span{width:31%;max-width:33%;display: inline-block;font-size: 0.9em;text-align: left;padding:10px;}
 article ul.programas li span.num{width:1%;display: inline-block;font-size:0.8em;color:#434343;}
-article ul.programas li a{width:31%;max-width:33%;display: inline-block;font-size: 0.9em;text-align: left;padding:10px;color:#434343;word-wrap: break-word!important;}
+article ul.programas li span.nom{width:30%;max-width:30%;min-width:29%;display: inline-block;font-size:0.8em;color:#434343;}
+article ul.programas li span.vig{width:10%;max-width:10%;display: inline-block;font-size:0.8em;color:#434343;}
+article ul.programas li a{width:32%;max-width:29%;display: inline-block;font-size: 0.8em;text-align: left;padding:10px;color:#434343;word-wrap: break-word!important;min-width:30%;}
+
 article ul.programas li a:hover{text-decoration: underline;}
 ul.programas li:nth-child(odd){background:#FFF;}
 ul.programas li:nth-child(even){background:#e7e9ff}
