@@ -83,6 +83,25 @@ $(document).on('click','.close_contacto',function (e) {
 	$('.br1').val('');
 });
 
+
+$('.cmb_filtro').change(function(){
+	var filt_sel=$("#cmb_filter option:selected").text();
+	var gfval_sel=$("#cmb_filter").val();
+	$('.fake_select').html(filt_sel);
+	switch(gfval_sel){
+		case 0:
+			break;
+		case 'all':
+				
+			break;
+		case 'p1':
+				
+			break;
+	}
+	
+	
+});
+	
 	
 });//ready
 

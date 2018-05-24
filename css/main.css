@@ -118,7 +118,7 @@ header ul.btns_call_mobile{display:none;}
 .topnone{margin-top:0!important;}
 /***********************/
 /****listado de programas******/
-article .row_titulo{width:99.5%; display:block; overflow:hidden; height:auto; padding:10px 0 0 35px;background:#e0e0ec;}
+article .row_titulo{width:97.5%; display:block; overflow:hidden; height:auto; padding:10px 0 0 35px;background:#e0e0ec;}
 article .row_titulo span{float:left;width:33%; max-width:33%;text-align:left;font-size:1.2em;padding:10px 0;}
 article .row_titulo span.col1{width:31%;max-width:31%;}
 article .row_titulo span.col2{width:30%;max-width:30%;}
