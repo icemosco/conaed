@@ -141,7 +141,7 @@
 					
 					
 				</div><!--right-->
-				<input type="hidden" name="" class="idNoticiasCont" value="">
+				<!--<input type="hidden" name="" class="idNoticiasCont" value="">-->
 				<button type="submit"  class="save_btn" name="guardar_noticia" id="guardar_noticia" >Guardar</button>
 					</ul>
 				</div>
@@ -154,7 +154,7 @@
 				<span class="num_id">1</span>
 				<span class="nom_uni">Este es el titulo de la nota o tema</span>
 				<a href="javascript:void(0)" class="edit_tema edit_int funct">editar</a>
-				<input type="hidden" name="" id="" value=""> 
+				<!--<input type="hidden" name="" id="" value=""> -->
 				<a href="javascript:void(0)" class="delete_tema del_int funct">Eliminar</a>
 			</li>
 			<li>
@@ -169,7 +169,7 @@
 								</div>
 								<div class="path">ruta del archivo</div>
 								<div class="cont_r">
-									<input type="hidden" name="" value="">
+									<!--<input type="hidden" name="" value="">-->
 									<input type="file" name="" class="file_upload_2 requeridoNoticia">
 									<a href="javascript:void(0)" class="btn_cargar">Cargar</a>
 								</div><!--cont_r-->
