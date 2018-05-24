@@ -48,6 +48,11 @@ $(document).ready(function(){
 		}
 	});
 	
+	$('.fslect_cat').change(function(){
+		 //var thix=$(this);
+	     var catego=$('select[name="categoriaAcreditado[]"] option:selected').text();
+	     $(this).parent().find('.fake_select').html(catego);
+		});
 	$('.fslect').change(function(){
 	     var slider_s=$(this).val();
 	     $(this).parent().find('.fake_select').html(slider_s);
@@ -118,7 +123,8 @@ $(document).on('click','.add_item',function (e) {
 			nom_slide++;	
 		});
 		
-		if(nom_slide > 5){
+		if(nom_slide === 6){
+			alert('Solo puedes agregar 5 sliders, si deseas cambiar o eliminar alguno, por favor solo cambia la imagen y remplaza por los nuevos textos.');
 			return false;
 		}
 	
@@ -241,6 +247,12 @@ $(document).on('click','.add_item',function (e) {
 		$(".new_programa").css("display", "none");
 		$(this).parent().next().find( ".new_programa" ).slideDown(500);
 	});
+	$('.edit_tema').click(function(){
+		$(".new_tema").css("display", "none");
+		$(this).parent().next().find( ".new_tema" ).slideDown(500);
+	});
+	
+	
 	
 	// ELIMINANDO REGISTRO
 	$('.delete_acreditado').click(function( elem ){
@@ -663,6 +675,13 @@ function showMessages( msg ){
 	     })   
 
 	}
+
+
+$(document).on('click','.close_edit_btn',function (e) {
+	$(this).parent().parent().parent().slideUp(300);
+	
+});
+
 //comment
 $(window).load(function(){
 	//var pag=window.location.href.indexOf("npa") > -1;
