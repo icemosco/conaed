@@ -77,7 +77,7 @@
 	<div class="forms_cont evaluadores">
 		<div class="add_evaluador"><?php echo fnTemplateNuevoEvaluadores(); ?></div>
 		<form class="prog" name="evaluadores" id="evaluadores" action="./home.php" method="post" >
-			<ul class="table_res"><?php  echo $infoEval['template']; ?></ul>
+			<ul class="table_res"><?php  /*echo $infoEval['template'];*/  echo padronEvaluadores( 30 );?></ul>
 		</form>
 		<ul class="paginator"> <?php echo $infoEval['paginador']; ?> </ul>
 		

@@ -671,9 +671,9 @@ $(window).load(function(){
 			$('.programas').show();
 			$('.header_int > h2').html('Programas Acreditados');
 		}
-	if(window.location.href.indexOf("npe") > -1) {
+		if(window.location.href.indexOf("npe") > -1) {
 			$('.forms_cont').hide();
-			$('.programas').show();
+			$('.evaluadores').show();
 			$('.header_int > h2').html('Padrón de Evaluadores');
 		}
 	

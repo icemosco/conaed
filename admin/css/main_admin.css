@@ -28,12 +28,12 @@ form a:hover{text-decoration:underline;}
 form input.entrar{padding:10px 5px;background:#394180; text-align: center;color:#FFF;font-size:0.8em;width:50%;float:right; margin:10px 0;cursor:pointer;}
 
 /*******************/
-
+header{font-family:oxygenlight;font-size:0.8em;}
 header .logo{width:180px; max-width:185px;height:auto;margin-left:2%;float:left;font-size:0.85em;margin-top:5px;}
 header span{float:left;margin:20px 0 0 20px;}
 header a.close_s{float:right;padding:2px 0 5px 35px;margin-right:20px;text-align: center;background-image:url(../img/cerrar_sesion.png); background-repeat:no-repeat;background-position: 0 0;}
-.main_wrapper{width:100%;height:auto;padding-top:70px;display:block;position:relative;background:#e8eaef;}
-.menu_cont{width:200px;background:#394180;position:absolute;min-height:800px;z-index:2;font-family:oxygenlight;outline:1px solid red;}
+.main_wrapper{width:100%;height:auto;padding-top:70px;display:block;position:relative;background:#e8eaef;font-family:'oxygenlight';}
+.menu_cont{width:200px;background:#394180;position:absolute;min-height:800px;z-index:2;outline:1px solid red;}
 .menu_cont .cont_img{display:block; width:100%; height:auto; position:relative;outline:1px solid red;}
 .menu_cont .cont_img span.image{display:block;outline:1px solid red; margin:0 auto;width:150px;
     height:150px;border-radius:150px;overflow:hidden;margin-top:30px;}
