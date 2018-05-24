@@ -682,8 +682,9 @@ $(document).on('click','.close_edit_btn',function (e) {
 	
 });
 
-//comment
+var sec_active='';
 $(window).load(function(){
+	
 	//var pag=window.location.href.indexOf("npa") > -1;
 		if(window.location.href.indexOf("npa") > -1) {
 			$('.forms_cont').hide();
@@ -699,3 +700,15 @@ $(window).load(function(){
 });
 
 //new?comm
+
+$(document).on('click','.del_asociado',function () {
+	$(this).parent().hide();
+	// location.reload();
+});
+$(document).on('click','.fakecheck',function () {
+	$(this).toggleClass('checked');
+	$(this).parent().find('.del_asociado').toggleClass('show_del');
+	
+	
+	
+});
