@@ -92,7 +92,6 @@ class Usuario extends DbConnect
 		  							, activo
 		  							, email
 		  							, permisos_menu
-		  							, last_update
 		  							, by_user
 		  					)
 		  					VALUES( '".addslashes(trim($usuario))."'
@@ -104,7 +103,6 @@ class Usuario extends DbConnect
 	               			    , 1
 			  					,'".$email."'
 			  					,'".$permisos."'
-			  					, NOW()
 			  					,'".$usrReg."'
 		  					)";
 		  	$res  = $this->query($sql) or 
@@ -125,7 +123,6 @@ class Usuario extends DbConnect
 		  							, apellido_mat  = '".addslashes( $materno )."'
 		  							, email         = '".$email."'
 		  							, permisos_menu = '".$permisos."'
-		  							, last_update   = NOW()
 		  							, by_user       = '".$usrReg."'
 	     							{$con}
 	     					WHERE id =". $idUsuario;
