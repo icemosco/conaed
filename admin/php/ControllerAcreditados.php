@@ -42,13 +42,15 @@
 				$template .= '<li '.$clase.'>
 							<span class="num_id">'.$cont.'</span>
 							<span class="nom_uni">'.$info["nombre_uni"].'</span>
-							<a href="javascript:void(0)" class="delete_acreditado del_int funct">Eliminar</a>
-							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$i.'" value="'.$info["id_universidad"].'"/> 
 							<a href="javascript:void(0)" class="edit_acreditado edit_int funct">Editar</a>
+							<input type="hidden" name="idAcreditado[]" id="idAcreditado_'.$i.'" value="'.$info["id_universidad"].'"/> 
+							
+							<a href="javascript:void(0)" class="delete_acreditado del_int funct">Eliminar</a>
 						</li>
 						<li>
 							<div class="new_programa">
 								<ul>
+								<li class="close_edit"><a class="close_edit_btn" href="javascript:void(0)">X</a></li>
 									<li>
 										<label>Universidad o Institución Educativa:</label>
 										<input type="text" name="nombre_uni[]" id="nombre_uni_'.$i.'" max-lenght="500" value="'.$info["nombre_uni"].'" 
@@ -67,11 +69,13 @@
 										 value="'.$info["anio"].'" id="anioAcreditado_'.$i.'" class="anioAcre">
 									</li>
 									<li>
-										<label>Categorías:</label>
-										<select name="categoriaAcreditado[]" id="categoriaAcreditado_'.$i.'">
+										<label class="cat">Categorías:</label>
+										<select class="fslect_cat"  name="categoriaAcreditado[]" id="categoriaAcreditado_'.$i.'">
 											'.fnComboCategorias( $info["id_categoria"] ).'
 										</select>
+										<div class="fake_select"></div>
 									</li>
+									
 								</ul>
 								<button type="button" class="save_btn" id="guardar_acreditados_'.$i.'" onclick="guardarAcreditados(this, '.$i.');">Guardar</button>
 							</div>

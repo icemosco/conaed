@@ -94,7 +94,9 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 			<?php echo $infoAcreditados['template']; ?>
 		</ul>
 	</article>
+	<ul class="paginator">
 	<?php echo $infoAcreditados['paginador']; ?>
+	</ul>
 </section><!--ntec-->
 
 

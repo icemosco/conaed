@@ -10,7 +10,7 @@
     define('DB_NAME','cms-conaed');
     define('DB_CHARSET','UTF8');
     $folderSlider    = "/home/ppfbayaa9nb9/public_html/img/slider/";
-    $folderPerfilUsu = "/home/ppfbayaa9nb9/public_html/admin/img/usr/";     
+    $folderPerfilUsu = "/home/ppfbayaa9nb9/public_html/admin/img/users/";     
     $folderAsociados = "/home/ppfbayaa9nb9/public_html/img/asociados/";*/
 
 
@@ -22,7 +22,7 @@
     define('DB_CHARSET','UTF8');
     
     $folderSlider    = "c:/wamp/www/conaed/img/slider/";
-    $folderPerfilUsu = "c:/wamp/www/conaed/admin/img/usr/"; 
+    $folderPerfilUsu = "c:/wamp/www/conaed/admin/img/users/"; 
     
     $folderAsociados = "c:/wamp/www/conaed/img/asociados/";
 

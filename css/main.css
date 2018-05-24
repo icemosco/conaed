@@ -142,6 +142,13 @@ article .cont_names ul.padron li:nth-child(even){background:#e7e9ff}
 .logos img{width:100%; height:100%;}
 
 
+/*paginador*/
+ul.paginator{width:auto; float:right; margin-right:3%;}
+ul.paginator li{float:left;outline:1px solid #dddddd;}
+ul.paginator li a{display:block; padding:3px 10px; color:#3a4181;font-family:'oxygenlight';font-size:0.8em;}
+ul.paginator li a:hover, .active_page{background:#3a4181; color:#FFF!important; }
+ul.paginator li a.previuos_page{padding:3px 10px;}
+
 /*****************/
 /*form contacto*/
 .form_cont{width:100%; display: block;align-items: top;}
