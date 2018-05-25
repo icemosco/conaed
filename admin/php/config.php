@@ -24,6 +24,7 @@
     $folderSlider = "c:/wamp/www/conaed/img/slider/";
     $folderPerfilUsu = "c:/wamp/www/conaed/admin/img/users/";  
     $folderAsociados = "c:/wamp/www/conaed/img/asociados/";
+    $folderNoticias = "c:/xampp/htdocs/conaed/img/temas/";
 
 
 ?>
