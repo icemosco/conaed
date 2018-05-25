@@ -1,5 +1,5 @@
 <?php
-session_start();	
+if(!isset($_SESSION)) { session_start(); }
 class Modelo extends DbConnect 
 {
 	public function __construct()
@@ -179,18 +179,54 @@ class Modelo extends DbConnect
 
   	 }
 
-  	 function fnBuscaNoticias(){
+  	 function fnListNoticias( $empezarDesde = '', $cantidadReg = '' ){
   	 	$noticias = array();
-  		$sql   = "SELECT * FROM temas_noticias ORDER BY fecha";
-  		$res   = $this->query($sql) or die( "Error en noticias ". $oCnx->errno() );
-		$regs  = $res->num_rows;
+		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
 		
+		$sql   = "SELECT * FROM temas_noticias ORDER BY fecha DESC ".$limit;
+		$res   = $this->query($sql) or die( "Error en noticias ". $oCnx->errno() );
+		$regs  = $res->num_rows;
 	    if( $regs != 0 ){
 		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
 		   		$noticias[] =  $info;
 		   }
 		}
-		return $noticias;	
-  	 }
+		
+		return $noticias;
+	}
+
+
+	function fnInsertaNotica( $titulo, $contenido, $nomImagen)
+	{
+		$sql  = "INSERT INTO temas_noticias(titulo, contenido, img, fecha)
+					 VALUES('".$titulo."','".$contenido."','".$nomImagen."', NOW())";
+		$res  = $this->query($sql) or 
+		   			die("Error en query insertar noticia ". $this->errno());
+		   	
+		 $id   = $this->insert_id();	
+		 return $id;	
+		
+	}
+
+	function fnActualizaNoticia( $idNoticia, $titulo, $contenido, $nomImagen)
+	{
+		$extra = '';
+		if(!empty($nomImagen)) $extra = ", img = '".$nomImagen."'";
+
+		$sql = "UPDATE temas_noticias SET titulo    = '{$titulo}'
+									, contenido = '{$contenido}'
+									, fecha = NOW()
+									{$extra}
+						WHERE id= {$idNoticia}";
+		$res  = $this->query($sql);		
+		return $idNoticia;	
+	}
+	function fnEliminarNoticia ( $idNoticia ){
+		$sql = "DELETE FROM temas_noticias WHERE id = {$idNoticia}";
+		$this->query($sql);		
+		
+		return "OK";		
+	}
+	
 }	
 ?>	
