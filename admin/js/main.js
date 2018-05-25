@@ -702,23 +702,24 @@ $(window).load(function(){
 //new?comm
 
 $(document).on('click','.del_asociado',function () {
+	//obtiene el id del elemento a eliminar
 		var id_del=$(this).attr('rel');
-		$.ajax({
+		$(this).parent().hide();
+		/*$.ajax({
 	        type: "POST",
 	        url: "../php/del_asoc.php",
 	        data: id_del,
 	       	success: function(data){
-                 showMessages( "<span> Se ha eliminado el asociado.</span>" );
-				location.reload();
+                showMessages( "<span> Se ha eliminado el asociado.</span>" );
+				//location.reload();
+				
+				
+			 
 
-            },
-	     })   
+            }
+	     }); */  
 		
-		
-	
-		$(this).parent().hide();
-	
-	// location.reload();
+
 });
 $(document).on('click','.fakecheck',function () {
 	$(this).toggleClass('checked');

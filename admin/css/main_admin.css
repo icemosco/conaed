@@ -284,6 +284,7 @@ border-bottom-right-radius: 10px;};
 
 #perfil_usuario {
     width: 131px!important;
+	height:126px;
     margin-top: 18%;
     margin-left: 15%;
 }
