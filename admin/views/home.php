@@ -151,25 +151,7 @@
  <script src="../plugins/croppie/img_perfil.js"></script>
 
  <script src="../js/main.js"></script>
- <script>
-	 
-	 $(document).ready(function(){
-		 
-		 //Muestra mensajes del slider
-		 var msgSlider = "<?php echo $mostrarMsgSlider; ?>";
-		 if(msgSlider ){
-			 var msg = "<span>"+msgSlider+"</span>";
-			 
-			$(".msg").html(msg); 
-		    $('.msg').fadeIn(200).animate({"bottom":"0px"}, "slow");
-			setTimeout(function() {
-				$(".msg").fadeOut(1500).animate({"bottom":"-50px"}, "slow");
-    		},3000);
 
-
-		 } 
-	 })	 
- </script>
 </body>
 
 </html>
