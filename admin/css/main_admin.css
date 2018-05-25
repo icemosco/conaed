@@ -35,11 +35,11 @@ header .logo{width:180px; max-width:185px;height:auto;margin-left:2%;float:left;
 header span{float:left;margin:20px 0 0 20px;}
 header a.close_s{float:right;padding:2px 0 5px 35px;margin-right:20px;text-align: center;background-image:url(../img/cerrar_sesion.png); background-repeat:no-repeat;background-position: 0 0;}
 .main_wrapper{width:100%;height:auto;padding-top:70px;display:block;position:relative;background:#e8eaef;font-family:'oxygenlight';}
-.menu_cont{width:200px;background:#394180;position:fixed;min-height:100%;z-index:2;outline:1px solid red;}
-.menu_cont .cont_img{display:block; width:100%; height:auto; position:relative;outline:1px solid red;}
+.menu_cont{width:200px;background:#394180;position:fixed;min-height:100%;z-index:2;}
+.menu_cont .cont_img{display:block; width:100%; height:auto; position:relative;}
 .menu_cont .cont_img span.image{display:block;outline:1px solid red; margin:0 auto;width:150px;
     height:150px;border-radius:150px;overflow:hidden;margin-top:30px;}
-.menu_cont .cont_img span.n_usuario{width:100%; text-align:center; font-size:1em; color:#FFF;display:block;margin-top:10px;}
+.menu_cont .cont_img span.n_usuario{width:100%; text-align:center; font-size:0.8em!important; color:#FFF;display:block;margin-top:10px;}
 .menu_cont .cont_img a.edit{width:30px; height:30px; position:absolute; bottom:40px;right:25px;}
 .menu_cont ul.menu{width:90%; display:block; margin:0 auto;margin-top:50px; color:#FFF;}
 .menu_cont ul.menu li{border-bottom:1px solid #FFF; margin-bottom:5px;}
@@ -282,7 +282,11 @@ border-bottom-right-radius: 10px;};
 /*******************/
 .mr{margin-right:20px;}
 
-
+#perfil_usuario {
+    width: 131px!important;
+    margin-top: 18%;
+    margin-left: 15%;
+}
 
 
 /*******************/

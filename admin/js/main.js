@@ -702,7 +702,22 @@ $(window).load(function(){
 //new?comm
 
 $(document).on('click','.del_asociado',function () {
-	$(this).parent().hide();
+		var id_del=$(this).attr('rel');
+		$.ajax({
+	        type: "POST",
+	        url: "../php/del_asoc.php",
+	        data: id_del,
+	       	success: function(data){
+                 showMessages( "<span> Se ha eliminado el asociado.</span>" );
+				location.reload();
+
+            },
+	     })   
+		
+		
+	
+		$(this).parent().hide();
+	
 	// location.reload();
 });
 $(document).on('click','.fakecheck',function () {

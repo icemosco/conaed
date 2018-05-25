@@ -22,7 +22,7 @@
 						
 			  			</span>	
 						<span class="fakecheck"></span>
-						<a href="javascript:void(0)" class="del_asociado">Eliminar</a>
+						<a href="javascript:void(0)" rel="'.$info['id'].'" class="del_asociado">Eliminar</a>
 					</li>';
 				$cont++;	
 			}
