@@ -9,7 +9,28 @@ if(isset( $_REQUEST['pro']) ){
 }
 
 $infoAcreditados =  programas( $numPaginaAcreditados );
-
+function f_p1_2(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='1'"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_p1 = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_p1 .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Programas Presenciales</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_p1;	
+}
 
 ?>
 <!doctype html>
@@ -30,6 +51,10 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 <meta name="country" content="MX">
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+<style>
+	ul.programas{display:block;}
+	ul.paginator { margin-top:3%;}
+	</style>
 </head>
 <body>
 <header>
@@ -105,12 +130,11 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 			<span class="col3">Vigencia</span>
 			<span class="col4">Tipo de programa</span>
 		</div>
-		<!--<ul class="programas">
-			<?php /*echo $infoAcreditados['template']; */?>
-			
-		</ul>-->
-		<ul class="programas all"><?php echo f_all();?></ul>
-		<ul class="programas p1"><?php echo f_p1();?></ul>
+		<ul class="programas all" style="display:block">
+			<?php echo $infoAcreditados['template']; ?>
+		</ul>
+		
+		<ul class="programas p1"><?php echo f_p1_2();?></ul>
 		<ul class="programas p2"><?php echo f_p2();?></ul>
 		<ul class="programas c1"><?php echo f_c1();?></ul>
 		<ul class="programas ra"><?php echo f_ra();?></ul>
@@ -120,9 +144,9 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 		
 		
 	</article>
-	<!--<ul class="paginator">
-	<?php /*echo $infoAcreditados['paginador'];*/ ?>
-	</ul>-->
+	<ul class="paginator">
+	<?php echo $infoAcreditados['paginador']; ?>
+	</ul>
 </section><!--ntec-->
 
 

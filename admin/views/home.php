@@ -46,7 +46,7 @@
 		<div class="search">
 		</div>
 	</div>
-	<div class="forms_cont sliders">
+	<div class="forms_cont sliders" style="display:block">
 		<form class="slider" name="sliders" id="sliders" action="./home.php" method="post" enctype="multipart/form-data">
 			
 			<?php echo fnTemplateSlide(); ?>

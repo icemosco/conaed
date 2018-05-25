@@ -26,14 +26,16 @@
 				
 				$template .= '<li '.$clase.'>
 									<span class="num_id">'.$cont.'</span>
-									<span class="nom_user">'.$infoUsu['nombre'].' '.$infoUsu['apellido_pat'].' '.$infoUsu['apellido_mat'].'</span>
-									<a href="javascript:void(0)" class="delete_usuario del_int funct">Eliminar</a>
-									<input type="hidden" name="idUsuario[]" id="idUsuario_'.$i.'" value="'.$infoUsu["id"].'"/> 
+									<span class="nom_uni">'.$infoUsu['nombre'].' '.$infoUsu['apellido_pat'].' '.$infoUsu['apellido_mat'].'</span>
 									<a href="javascript:void(0)" class="edit_user edit_int funct">Editar</a>
+									<input type="hidden" name="idUsuario[]" id="idUsuario_'.$i.'" value="'.$infoUsu["id"].'"/> 
+									
+									<a href="javascript:void(0)" class="delete_usuario del_int funct">Eliminar</a>
 								</li>
 								<li>
 								<div class="new_user">
 									<ul>
+									<li class="close_edit"><a class="close_edit_btn" href="javascript:void(0)">X</a></li>
 										<li>
 											<label>Nombre(s):</label>
 											<input type="text" name="nombre_usuario[]" id="nombre_usuario_'.$i.'" value="'.$infoUsu['nombre'].'" class="requerido_usu"/>
@@ -157,7 +159,7 @@
 					</li>
 					<li>
 						<label>Confirmar contraseña:</label>
-						<input type="password" name="conf_contrasena[]"  id="conf_contrasena_n" class="" maxlength="10" placeholder="confirma la contraseña" />
+						<input type="password" name="conf_contrasena[]"  id="conf_contrasena_n" class="" maxlength="15" placeholder="confirma la contraseña" />
 					</li>
 				
 					<li>
