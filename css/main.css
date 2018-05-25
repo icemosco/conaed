@@ -132,7 +132,7 @@ article .filter_cont .middle .fake_select{width:100%; position:relative;backgrou
 
 
 
-article ul.programas{display:block; width:100%; }
+article ul.programas{display:none; width:100%; }
 article ul.programas li{width:100%; display:flex;align-items: center;}
 article ul.programas li span{width:31%;max-width:33%;display: inline-block;font-size: 0.9em;text-align: left;padding:10px;}
 article ul.programas li span.num{width:1%;display: inline-block;font-size:0.8em;color:#434343;}

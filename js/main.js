@@ -88,13 +88,39 @@ $('.cmb_filtro').change(function(){
 	var filt_sel=$("#cmb_filter option:selected").text();
 	var gfval_sel=$("#cmb_filter").val();
 	$('.fake_select').html(filt_sel);
+	//alert(gfval_sel);
+	$('.programas').hide();
 	switch(gfval_sel){
 		case 0:
 			break;
 		case 'all':
 				
+				$('.all').show();
+			
 			break;
 		case 'p1':
+				
+				$('.p1').show();
+				
+			break;
+		case 'p2':
+				
+				$('.p2').show();
+				
+			break;
+		case 'c1':
+				
+				$('.c1').show();
+				
+			break;
+		case 'ra':
+				
+				$('.ra').show();
+				
+			break;
+		case 'int':
+				
+				$('.int').show();
 				
 			break;
 	}

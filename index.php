@@ -186,13 +186,23 @@ include_once("./php/functions.php")
 		</div>
 		
 		
-		<ul class="programas">
+		<ul class="programas all" style="display:block;">
 			<?php 
 				$infoProgramas =  programas( 1 );
 				echo $infoProgramas['template']; 
 			?>
 
 		</ul>
+		<ul class="programas p1"><?php echo f_p1();?></ul>
+		<ul class="programas p2"><?php echo f_p2();?></ul>
+		<ul class="programas c1"><?php echo f_c1();?></ul>
+		<ul class="programas ra"><?php echo f_ra();?></ul>
+		<ul class="programas int"><?php echo f_int();?></ul>
+		
+		
+		
+		
+		
 		<a href="programas-acreditados.php" class="lista_c">ver lista completa</a>
 	</article>
 </section><!--ntec-->

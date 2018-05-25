@@ -159,6 +159,138 @@ function mostrarAsociados(){
 	}
 	return $rowAsociados;	
 }
+function f_p1(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='1' LIMIT 15"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_p1 = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_p1 .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Programas Presenciales</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_p1;	
+}
+function f_p2(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='2' LIMIT 15"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_p2 = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_p2 .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Programas a distancia o semipresenciales</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_p2;	
+}
+function f_c1(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='3' LIMIT 15"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_c1 = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_c1 .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Criminalística y Criminología</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_c1;	
+}
+function f_ra(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='4' LIMIT 15"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_ra = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_ra .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Reacreditados</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_ra;	
+}
+function f_int(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='5' LIMIT 15"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_int = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_int .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Internacionales</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_int;	
+}
+function f_all(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1  LIMIT 15"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_all = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_int .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Internacionales</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_int;	
+}
 
 
 ?>

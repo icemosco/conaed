@@ -74,7 +74,7 @@ span.header_title {width: 520px;display: block;position: absolute;z-index: 4;lef
 	</div>
 	<span class="header_title oxygenlight">Padrón de Evaluadores<br />COPAES / CONAED</span>
 </section>
-	<section id="padron_evaluadores">
+	<section id="padron_evaluadores" style="padding-top:0;">
 		<div class="menu_int_cont">
 			<a href="http://www.conaed.org.mx#padron_evaluadores" class="clr_rose back">Regresar</a>
 			<ul class="update">

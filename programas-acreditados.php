@@ -74,7 +74,7 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 	</div>
 	<span class="header_title oxygenlight" style="left:32%">Programas Acreditados</span>
 </section>
-	<section id="programas_acreditados" class="">
+	<section id="programas_acreditados" class="" style="padding-top:0;">
 		<div class="menu_int_cont">
 			<a href="http://www.conaed.org.mx#programas_acreditados" class="clr_rose back">Regresar</a>
 			<ul class="update mr5">
@@ -84,20 +84,45 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 		</div>
 	<article>
 		
-		
+		<div class="filter_cont">
+			<div class="middle">
+			
+				<select name="" class="cmb_filtro" id="cmb_filter">
+					<option value="0" >Filtrar por tipo de programa</option>
+					<option value="all">Todos</option>
+					<option value="p1">Programas Presenciales</option>
+					<option value="p2">Programas a distancia o semipresenciales</option>
+					<option value="c1">Criminalística y Criminología</option>
+					<option value="ra">Reacreditados</option>
+					<option value="int">Internacionales</option>
+				</select>
+				<div class="fake_select">Filtrar por tipo de programa</div>
+			</div>
+		</div>
 		<div class="row_titulo">
 			<span class="col1">Institución Educativa</span>
 			<span class="col2">Página Web</span>
 			<span class="col3">Vigencia</span>
 			<span class="col4">Tipo de programa</span>
 		</div>
-		<ul class="programas">
-			<?php echo $infoAcreditados['template']; ?>
-		</ul>
+		<!--<ul class="programas">
+			<?php /*echo $infoAcreditados['template']; */?>
+			
+		</ul>-->
+		<ul class="programas all"><?php echo f_all();?></ul>
+		<ul class="programas p1"><?php echo f_p1();?></ul>
+		<ul class="programas p2"><?php echo f_p2();?></ul>
+		<ul class="programas c1"><?php echo f_c1();?></ul>
+		<ul class="programas ra"><?php echo f_ra();?></ul>
+		<ul class="programas int"><?php echo f_int();?></ul>
+		
+		
+		
+		
 	</article>
-	<ul class="paginator">
-	<?php echo $infoAcreditados['paginador']; ?>
-	</ul>
+	<!--<ul class="paginator">
+	<?php /*echo $infoAcreditados['paginador'];*/ ?>
+	</ul>-->
 </section><!--ntec-->
 
 
@@ -217,24 +242,6 @@ solicitud.</p>
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
-<script>
 
-	var swiper = new Swiper('.swiper-container',{
-    speed: 300,
-    autoplay: true,
-    loop:4,
-    lazyLoading: true
-
-});
-	var swiper2 = new Swiper('.swiper-container-2',{
-    speed: 200,
-    autoplay: true,
-    loop:true,
-    slidesPerView: 3,
-    lazyLoading: true
-
-
-});
-</script>
 
 </html>
