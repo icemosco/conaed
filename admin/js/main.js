@@ -48,7 +48,7 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('.fslect_cat').change(function(){
+	/*$('.fslect_cat').change(function(){
 		 //var thix=$(this);
 	     var catego=$('select[name="categoriaAcreditado[]"] option:selected').text();
 	     $(this).parent().find('.fake_select').html(catego);
@@ -56,7 +56,7 @@ $(document).ready(function(){
 	$('.fslect').change(function(){
 	     var slider_s=$(this).val();
 	     $(this).parent().find('.fake_select').html(slider_s);
-		});
+		});*/
 
 $(document).on('click','.add_item',function (e) {	
 		var rel_plus=$(this).attr('rel');

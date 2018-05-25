@@ -219,6 +219,7 @@ footer .rights{width:100%; height:auto; text-align: center;float:left; margin:2%
 .close_contacto{float:right; color:#FFF;font-size:1em; margin:2% 2% 0;}
 .back{width:auto; display:block; margin-left:5%; padding-left:30px; background-image: url(../img/arrow_left.png); background-repeat:no-repeat; background-position:0 0;}
 .img_cont_head{width:100%; height:auto; position:relative;z-index:1;}
+.img_cont_head img{width:100%; height:100%;}
 span.header_title {width: 520px;display: block;position: absolute;z-index: 4;left: 37%;font-size: 2.3em;top: 50%;color: #FFf;text-align: center;}
 .menu_int_cont{position:relative; overflow:hidden; width:100%;margin-bottom:30px; }
 .menu_int_cont ul.update{float:right;margin-right:10%;}
