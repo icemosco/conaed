@@ -111,6 +111,14 @@ $(document).on('click','.add_item',function (e) {
 		$(this).parent().parent().find('#path_asociados').html(fupload);
 		$(this).parent().parent().find('#img_loaded_asociados').html('<img src="'+tmppath+'" width="100%" height="100%"/>');
 	});
+
+	$(document).on('change','.file_upload_2',function (e) {
+		var letra = $(this).attr('id').substr(-1);
+		var fupload=$(this).val();
+		var tmppath = URL.createObjectURL(e.target.files[0]);
+		$(this).parent().parent().find('#ruta_archivo_'+letra).html(fupload);
+		$(this).parent().parent().find('#img_noticia_'+letra).html('<img src="'+tmppath+'" width="100%" height="100%"/>');
+	});
 	
 	 
 	
@@ -181,54 +189,6 @@ $(document).on('click','.add_item',function (e) {
   			e.currentTarget.value = '';
   		}
     });
-    
-    //===================================================
-   	//Validamos los inputs de SLIDERS
-   	/*$(document).on('submit','#sliders',function(event){
-		var error     = 0;
-		$('.requeridoSlider').each(function(i, elem){
-			var imgSlider = '';			
-			$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
-			if($(elem).val() == ''){
-				if($(elem).attr('name') == 'imagenSlider[]'){		
-					if(this.previousElementSibling.value == ''){
-						$(elem).css({'border':'1px solid red'});
-						error++;
-					}
-				}else{
-					$(elem).css({'border':'1px solid red'});
-					error++;	
-				}
-			}
-		});
-		if(error > 0){
-			event.preventDefault();
-			console.log('Debe rellenar los campos requeridos');
-				$('.msg').html('<span>Debe rellenar los campos requeridos </span>');
-			//error = 0;	
-		}
-	});*/
-	//FIN Validamos los inputs de SLIDERS
-	//===================================================
-	
-	
-	//===================================================
-   	//DATAPICKER DE PROGRAMAS ACREDITADOS
-   	/*
-   	$( '#datepickerinit_n' ).datepicker({dateFormat: 'dd-mm-yy'});
-   	$( '#datepickerfinit_n' ).datepicker({dateFormat: 'dd-mm-yy'});
-   	
-   	$('.datepickerinit').each(function(i, elem){
-		$( '#datepickerinit_'+i ).datepicker({
-		    dateFormat: 'dd-mm-yy'
-	    });
-	});
-	
-	$('.datepickerfinit').each(function(i, elem){
-		$( '#datepickerfinit_'+i ).datepicker({
-		    dateFormat: 'dd-mm-yy'
-	    });
-	});*/
 
 	$('.edit_evaluador').click(function(){
 		$(".new_evaluador").css("display", "none");
@@ -256,7 +216,7 @@ $(document).on('click','.add_item',function (e) {
 	
 	// ELIMINANDO REGISTRO
 	$('.delete_acreditado').click(function( elem ){
-		var idAcreditado = this.nextElementSibling.value;
+		var idAcreditado = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
 	        url: "../ajax/ajaxAcreditados.php",
@@ -278,7 +238,7 @@ $(document).on('click','.add_item',function (e) {
 
 	// ELIMINANDO REGISTRO
 	$('.delete_evaluador').click(function( elem ){
-		var idEvaluador = this.nextElementSibling.value;
+		var idEvaluador = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
 	        url: "../ajax/ajaxEvaluadores.php",
@@ -327,7 +287,7 @@ $(document).on('click','.add_item',function (e) {
 
     // ELIMINANDO REGISTRO USUARIO
 	$('.delete_usuario').click(function( elem ){
-		var idUsuario = this.nextElementSibling.value;
+		var idUsuario = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
 	        url: "../ajax/ajaxUsuarios.php",
@@ -345,6 +305,29 @@ $(document).on('click','.add_item',function (e) {
 	        }
 		});
 	});
+
+
+// ELIMINANDO ELIMINANDO NOTICIA/TEMA
+	$('.delete_tema').click(function( elem ){
+		var idNoticia = this.previousElementSibling.value;
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxNoticias.php",
+	        data: {
+		        accion  : "eliminar",
+		        id      : idNoticia
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	showMessages('<span>Se ha eliminado el registro.</span>');
+		        }
+	        }
+		});
+	});
+
 
 
 	$(".validarEmail").blur(function(e){ 
@@ -675,6 +658,92 @@ function showMessages( msg ){
 	     })   
 
 	}
+
+
+	function guardarNoticias( elem, consec ){
+		var error = 0;
+
+		//Validamos campos obligatorios nuevo
+		if(consec == 'n'){
+			var titulo      = $("#titulo_n");
+			var contenido   = $("#contenido_n");
+			var archivoImg  = $("#imagenNoticia_n");
+			var rutaArchivo = $("#ruta_archivo_n");
+
+			if( titulo.val() == ''){
+				$(titulo).css({'border':'1px solid red'});
+				error++;	
+			}
+			if( contenido.val() == ''){
+				$(contenido).css({'border':'1px solid red'});
+				error++;	
+			}
+			if( archivoImg.val() == ''){
+				$(rutaArchivo).css({'border':'1px solid red'});
+				error++;	
+			}
+			var form = new FormData($('#temasynoticias_n')[0]);
+		}
+		else
+		{
+			//Validamos campos obligatorios existentes
+			$('#temasynoticias_'+consec).find('.requeridoNoticia').each(function(i, elem){
+				console.log('Entrando');	
+				$(elem).css({'border':'1px solid #737373'}); // Rregresamos el estilo
+				if($(elem).val() == ''){
+					if($(elem).attr('name') == 'imagenNoticia[]'){		
+						console.log(this.previousElementSibling);
+						console.log(this.previousElementSibling.value);
+						if(this.previousElementSibling.value == ''){
+							$(elem).css({'border':'1px solid red'});
+							error++;
+						}
+					}else{
+						$(elem).css({'border':'1px solid red'});
+						error++;	
+					}
+				}
+			});
+			var form = new FormData($('#temasynoticias_1')[0]);
+		}	
+		console.log(error);
+		if(error > 0){
+			showMessages('<span>Debe llenar los campos requeridos.</span>');
+			return false;
+		}
+
+
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxNoticias.php",
+	        data: form,
+	        contentType: false, 
+            processData: false,
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success == 'OK'){
+			     	showMessages( "<span> La información se ha guardado.</span>" );
+		        }else{
+		        	showMessages( "<span> Hubo un error al guardar la información.</span>" );
+		        }
+	        }
+		});	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 $(document).on('click','.close_edit_btn',function (e) {
