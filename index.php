@@ -167,7 +167,7 @@ include_once("./php/functions.php")
 			<div class="middle">
 			
 				<select name="" class="cmb_filtro" id="cmb_filter">
-					<option value="0" >Seleccionar una opcion</option>
+					<option value="0" >Filtrar por tipo de programa</option>
 					<option value="all">Todos</option>
 					<option value="p1">Programas Presenciales</option>
 					<option value="p2">Programas a distancia o semipresenciales</option>
@@ -175,7 +175,7 @@ include_once("./php/functions.php")
 					<option value="ra">Reacreditados</option>
 					<option value="int">Internacionales</option>
 				</select>
-				<div class="fake_select">Seleccionar una opción</div>
+				<div class="fake_select">Filtrar por tipo de programa</div>
 			</div>
 		</div>
 		<div class="row_titulo">
