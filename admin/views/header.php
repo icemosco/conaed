@@ -38,14 +38,15 @@
                 <div class="container_demo">
                     <div class="grid">
                         <div class="actions">
+                           <button class="upload-result">Aceptar</button>
                             <a class="btn file-btn">
-                                <span>Upload</span>
+                                <span class="glass"><img src="../img/edit.png" /></span>
                                 <input type="file" id="img_usr" value="Choose a file" accept="image/*" />
                             </a>
-                            <button class="upload-result">Result</button>
+                            
                         </div>
                         <div class="upload-msg">
-                            <img id="perfil_usuario" src="../img/users/<?php echo $_SESSION['imgPerfil']; ?>" width="100%" height="100%"/>
+                            <img id="perfil_usuario" src="../img/users/<?php echo $_SESSION['imgPerfil']; ?>" />
                         </div>
                         <div class="upload-demo-wrap">
                             <div id="upload-demo"></div>

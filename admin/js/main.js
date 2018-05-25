@@ -123,7 +123,7 @@ $(document).on('click','.add_item',function (e) {
 			nom_slide++;	
 		});
 		
-		if(nom_slide === 6){
+		if(nom_slide >= 6){
 			alert('Solo puedes agregar 5 sliders, si deseas cambiar o eliminar alguno, por favor solo cambia la imagen y remplaza por los nuevos textos.');
 			return false;
 		}

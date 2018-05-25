@@ -160,10 +160,7 @@ include_once("./php/functions.php")
 	<article>
 		<h2 class="oxygenlight">Programas Acreditados</h2>
 		<style>
-			.filter_cont{width:100%; height:auto;display:block;background:#AAA;padding:5px 0;}
-			.filter_cont .middle{width:40%; margin:0 auto;display:block;padding:5px 0;position:relative;overflow:hidden;}
-			.filter_cont .middle select{position:absolute; height:30px;width:100%;display:block;opacity:0;z-index:2; }
-			.filter_cont .middle .fake_select{width:100%; height:30px; position:relative;background:#FFF;background-image:url(img/arrow.png);background-position:top right;padding:4.5px 0 4.5px 2px ; height:20px;background-repeat:no-repeat;border:1px solid #dbdee2;}
+			
 			
 		</style>
 		<div class="filter_cont">
@@ -174,7 +171,7 @@ include_once("./php/functions.php")
 					<option value="all">Todos</option>
 					<option value="p1">Programas Presenciales</option>
 					<option value="p2">Programas a distancia o semipresenciales</option>
-					<option value="c1">Criminalística y Criminalogía</option>
+					<option value="c1">Criminalística y Criminología</option>
 					<option value="ra">Reacreditados</option>
 					<option value="int">Internacionales</option>
 				</select>
