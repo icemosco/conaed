@@ -9,7 +9,7 @@ class Modelo extends DbConnect
   	function fnBuscaSlide(){
   		$infoSlider = array();
   		$sql   = "SELECT * FROM slider ORDER BY orden";
-  		$res   = $this->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
+  		$res   = $this->query($sql) or die( "Error en el slider ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 		
 	    if( $regs != 0 ){
@@ -48,7 +48,7 @@ class Modelo extends DbConnect
 		
 		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
 		
-		$sql   = "SELECT * FROM programas_1 ORDER BY nombre_uni $limit";
+		$sql   = "SELECT * FROM programas_1 ORDER BY id_universidad ASC $limit";
 		$res   = $this->query($sql) or die( "Error en la Acreditados ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){
@@ -93,7 +93,7 @@ class Modelo extends DbConnect
 	function fnListEvaluadores( $empezarDesde = '', $cantidadReg = '' ){
 		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
 		
-		$sql   = "SELECT * FROM evaluadores ORDER BY a_paterno ".$limit;
+		$sql   = "SELECT * FROM evaluadores ORDER BY id_evaluador ASC ".$limit;
 		$res   = $this->query($sql) or die( "Error en evaluadores ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){
@@ -181,7 +181,7 @@ class Modelo extends DbConnect
 
   	 function fnBuscaNoticias(){
   	 	$noticias = array();
-  		$sql   = "SELECT * FROM temas_noticias ORDER BY fecha";
+  		$sql   = "SELECT * FROM temas_noticias ORDER BY id";
   		$res   = $this->query($sql) or die( "Error en noticias ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 		

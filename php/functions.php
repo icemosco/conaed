@@ -43,7 +43,7 @@ function programas( $numPagina ){
 	$oCnx      = new DbConnect();
 	$sql  	   = "SELECT * FROM programas_1 p 
 				  LEFT JOIN cat_categorias cat ON p.id_categoria = cat.id_categoria
-				  ORDER BY id_universidad ".$limit;
+				  ORDER BY id_universidad ASC ".$limit;
 	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
 	$regs      = $res->num_rows;
 	$rowsTable = '';
@@ -54,7 +54,6 @@ function programas( $numPagina ){
 	   {
 		 	$rowsTable .= '<li>
 								<span class="num">'.$cont.'</span>
-
 								<span class="nom">'.$info['nombre_uni'].'</span>
 								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
 								<span class="vig">'.$info['anio'].'</span>
@@ -79,7 +78,7 @@ function padronEvaluadores( $limite = '' , $contador = false ){
 	}
 	
 	$oCnx      = new DbConnect();
-	$sql  	   = "SELECT * FROM evaluadores ORDER BY a_paterno ".$extra;
+	$sql  	   = "SELECT * FROM evaluadores ORDER BY id_evaluador ".$extra;
 	$res       = $oCnx->query($sql) or die( "Error en la evaluadores ". $oCnx->errno() );
 	$regs      = $res->num_rows;
 	
