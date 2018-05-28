@@ -9,6 +9,28 @@ if(isset( $_REQUEST['pro']) ){
 }
 
 $infoAcreditados =  programas( $numPaginaAcreditados );
+function f_p1_2(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='1'"; 
+	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
+	$row_p1 = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$row_p1 .= '<li>
+							<span class="num">'.$cont.'</span>
+							<span class="nom">'.$info['nombre_uni'].'</span>
+							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+							<span class="vig">'.$info['anio'].'</span>
+							<span class="cat">Programas Presenciales</span>
+																
+							</li>';	
+			$cont++;
+		}
+	}
+	return $row_p1;	
+}
 
 ?>
 <!doctype html>
@@ -89,16 +111,15 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 		
 		<div class="filter_cont">
 			<div class="middle">
-				<input type="hidden" id="valPaginador" value="<?php echo $numPaginaAcreditados ?>"/>
-				<input type="hidden" id="tipoPagina" value="acreditados"/>
-				<select name="" class="cmb_filtro" id="cmb_filter_asociados">
+			
+				<select name="" class="cmb_filtro" id="cmb_filter">
 					<option value="0" >Filtrar por tipo de programa</option>
-					<?php
-						$lsCategorias = fnListCategorias();
-						foreach( $lsCategorias  as $key => $info){
-							echo '<option value="'.$info['id_categoria'].'">'.$info['nombre'].'</option>';
-						}
-					?>
+					<option value="all">Todos</option>
+					<option value="p1">Programas Presenciales</option>
+					<option value="p2">Programas a distancia o semipresenciales</option>
+					<option value="c1">Criminalística y Criminología</option>
+					<option value="ra">Reacreditados</option>
+					<option value="int">Internacionales</option>
 				</select>
 				<div class="fake_select">Filtrar por tipo de programa</div>
 			</div>
@@ -112,7 +133,16 @@ $infoAcreditados =  programas( $numPaginaAcreditados );
 		<ul class="programas all" style="display:block">
 			<?php echo $infoAcreditados['template']; ?>
 		</ul>
-
+		
+		<ul class="programas p1"><?php echo f_p1_2();?></ul>
+		<ul class="programas p2"><?php echo f_p2();?></ul>
+		<ul class="programas c1"><?php echo f_c1();?></ul>
+		<ul class="programas ra"><?php echo f_ra();?></ul>
+		<ul class="programas int"><?php echo f_int();?></ul>
+		
+		
+		
+		
 	</article>
 	<ul class="paginator">
 	<?php echo $infoAcreditados['paginador']; ?>

@@ -74,81 +74,19 @@ include_once("./php/functions.php");
 					
 					<div class="blocks_cont topnone nw100">
 						<div class="cont_art">
+							
 						<div class="block_t_int">
-							<h3>Hacia una educación jurídica de excelencia</h3>
-							<span class="sub_">15 May 2018 / Lic. Fernando Peniche</span>
-							<div class="img_t_int"><img src="img/clocks.png" alt="" /></div>
-							<p class="nopadding1 int_art">Sin determinar si es o no justa, es indudable que el mundo de hoy vive en una Economía Globalizada, que el Neo liberalismo tiene sus bases en la Economía de mercado y que esta,  mientras mas global sea, será mejor para el funcionamiento de éste sistema.</p>
-							<p class="nopadding1 int_art">En éste sentido, la Organización de Comercio y Desarrollo Económico OCDE, privilegia la importancia del conocimiento como motor de la producción y se empezó a mencionar el término de  la “Economía del Conocimiento” basada en la producción, distribución y  uso del conocimiento y de la información.</p>
-							<p class="nopadding1 int_art">Hoy en día resulta de suma importancia que las naciones pongan principal atención en la “Sociedad del conocimiento” en la que la educación junto con el desarrollo de los instrumentos tecnológicos, sean las herramientas que llevarán a esa sociedad a ser competitiva y al crecimiento económico, y por consiguiente a un bienestar para la mayoría.</p>
-							<p class="nopadding1 int_art">Educación del latín educare –formar, instruir o educere- guiar, conducir, es un proceso de transmisión de valores, conocimientos, costumbres, etc., pero también es un medio de control social que permite a los integrantes de un conglomerado  interactuar de manera armónica, facilitando su desarrollo.</p>
-							<p class="nopadding1 int_art">Para estos efectos la educación deberá servir para que la sociedad pueda enfrentar la problemática existente, que cada día se complica con los avances tecnológicos.</p>
-							<p class="nopadding1 int_art">Con esta dinámica social, la educación también tiene que ser dinámica y cambiante, para poder responder a las necesidades sociales.</p>
-							<p class="nopadding1 int_art">Mario Sánchez Silva, Director del Centro de Investigaciones Económicas, Administrativas y Sociales del Instituto Politécnico Nacional, en un artículo publicado en la revista CACECA, órgano de difusión de nuestro organismo hermano,  el Consejo de Acreditación de la Enseñanza de la Contaduría y la Administración, refiere “ La educación y el conocimiento deseable para la sociedad, tiene la gran misión del desarrollo humano: desea conformar grandes capacidades del saber experto y distribuirlas equitativamente como vía de acceso a mejores condiciones de vida; busca también, mejorar las realizaciones de los hombres, satisfaciendo necesidades como condición básica para realizar deseos y preferencias de los individuos y la sociedad”, o sea que por una parte es el control social,  pero por otra, es la ruta para que los integrantes del conglomerado social vivan de manera mas satisfactoria.</p>
-							<p class="nopadding1 int_art">Uno de los requisitos para alcanzar estas metas, es que las instituciones educativas deben ser adaptables al cambio, “atendiendo con pertinencia, equidad y calidad las nuevas y diversificadas demandas sociales, en las que los procesos educativos estén sometidos a constantes revisiones para ajustarse a los cambios, que redundará en una sociedad competitiva y globalizada.</p>
-							<div class="redes_int">
-								<a href="" class="">fb</a>
-								<a href="" class="">tw</a>
-								<a href="" class="">lnkd</a>
-							</div>
-					</div>
-					<div class="block_t_int">
-							<h3>LO BUENO ES ENEMIGO DE LA EXCELENCIA</h3>
-							<span class="sub_">15 May 2018 / Lic. Fernando Peniche</span>
-							<div class="img_t_int"><img src="img/temas/nota_2.png" alt="" /></div>
-							<p class="nopadding1 int_art">Se dice que es muy humano la reticencia al cambio, que por naturaleza lo evitamos, sobre todo cuando estamos instalados en la comodidad, cuando sabemos que si bien no progresaremos, pero tampoco vamos hacia atrás, procuramos conservar el statu quo, seguramente que todos alguna vez en la vida lo hemos experimentado y por tal motivo, no nos interesa aventurarnos en mejorar.</p>
-							<p class="nopadding1 int_art">Tal vez eso funcionaba de alguna manera en el pasado, pero el día de hoy, no podemos seguir en la mediocridad, so pena de ser rebasados y entonces si, quedar en la zaga.</p>
-							<p class="nopadding1 int_art">Para nuestros abuelos, ser bachiller era un logro importante, se utilizaba como título nobiliario, pero hoy en día, ya ni la licenciatura me garantiza un buen trabajo , bien remunerado y reconocido, hoy tenemos que pensar necesariamente en un posgrado para entrar con posibilidades de éxito en un mundo muy competido, carreras como la de abogado que tienen una gran demanda produce una gran cantidad de profesionistas del derecho, que tienen una mayor competencia que otras carreras, lo que les implica estar mejor preparados.</p>
-							<p class="nopadding1 int_art">Por una parte es necesario estudiar el posgrado y seguir estudiando, por otra es igual de importante escoger el lugar donde realizar mis estudios, en la actualidad hay personas que piensan que siguen en el pasado y que con el puro título de abogado ya están hechos, y hay instituciones educativas, muchas desafortunadamente, que brindan una educación jurídica deficiente y arcaica que de ninguna manera sirve para el desarrollo profesional de sus alumnos.</p>
-							<p class="nopadding1 int_art">Buscar la excelencia debe ser el objetivo general, no importa que deje mi situación de “bueno”, si puedo y debo ser mejor, pudiera exponerme a perder lo bueno, pero tarde que temprano encontraré lo mejor, si decido seguir instalado en la mediocridad, tal vez ahora funcione, pero en esta sociedad globalizada, en la que se privilegia la competitividad, seguramente que en breve seremos rebasados.</p>
-							<p class="nopadding1 int_art">La búsqueda de la excelencia, es pues la premisa que diariamente debo proponerme.</p>
-
-							<div class="redes_int">
-								<a href="" class="">fb</a>
-								<a href="" class="">tw</a>
-								<a href="" class="">lnkd</a>
-							</div>
-					</div>
-					<div class="block_t_int">
-							<h3>LA MEJORA CONTINUA EN LA BUSQUEDA DE LA EXCELENCIA</h3>
-							<span class="sub_">15 May 2018 / Lic. Fernando Peniche</span>
-							<div class="img_t_int"><img src="img/temas/nota_3.png" alt="" /></div>
-							<p class="nopadding1 int_art">Es sin dudad, una meta difícil de lograr, ya que cuando considere que soy excelente, seguramente al otro día, ya no lo seré, toda vez que la vida misma cambia en cada momento, por eso el ejercicio de la búsqueda de la excelencia debe ser un proceso dinámico y constante que me asegure estar actualizado con la información y las tecnologías de punta para poder enfrentar los retos diarios, con una mayor posibilidad de éxito.</p>
-							<p class="nopadding1 int_art">La información que es estática, debe ser el referente material del conocimiento que es dinámico, el abogado deberá tener la capacidad de obtener y procesar es información, para utilizarla en mejorar su conocimiento y en su aplicación para resolver  la problemática que se le presente en cada caso particular. </p>
-<p class="nopadding1 int_art">La Dra. Amalia Yoguez, del Departamento de Sistemas , SEPI.ESIME Zacatenco del IPN, en un artículo publicado en la “Revista de la Educación Superior “ de la Asociación Nacional de Universidades e Instituciones de Educación Superior ANUIES, señala que existen tres enfoques respecto a la excelencia en la educación superior:
-1.- Los recursos y/o reputación que hace énfasis en la importancia de la institución a través de los “rankings”, logros facultativos, niveles de investigación recursos materiales y financieros.
-2.- Es el modelo centrado en el cliente, el cual se enfoca en la experiencia del estudiante, prácticas de calidad, programas de la facultad, empleadores, y, lo más importante, la satisfacción de los estudiantes con los programas, servicios e instalaciones.
-3.- Es un modelo de investigación estratégica que se enfoca al retorno de la inversión, análisis de costo beneficio, control de gastos, productividad, retención de alumnos.
-Dice la Dra. Yoguez que el modelo 1 es el preferido sin dejar de lado las acreditaciones y revisiones externas, los estudiantes y padres de familia y los empleadores enfatizan en el 2 y los Gobiernos en general se inclinan por el modelo estratégico.</p>   
-<p class="nopadding1 int_art">En nuestro ejemplo jurídico, el ideal sería participar en un programa educativo acreditado que implica estar dentro de un proceso de mejora continua, que lo identifica como parte del selecto grupo de Instituciones de Educación Superior, que se sometieron a un proceso de acreditación y que derivado de ello, las obliga a cumplir con recomendaciones para explotar sus áreas de oportunidad.</p>
-<p class="nopadding1 int_art">Instituciones en las que, congruentes con la actualidad, se prevean cambios de los modelos educativos, que estén hechos para una sociedad en constante movimiento.</p>
-<p class="nopadding1 int_art">La UNESCO en su Informe “ La Educación Encierra un  Tesoro”, Coordinado por Jacques Delors, señala que los sistemas educativos deberán tener unas  estructuras mas abiertas y flexibles que posibiliten obtener una mayor información que además les permitan seguirse educando a través de su vida.</p>
-<p class="nopadding1 int_art">Refiere también que hay cuatro ejes rectores para un buen aprendizaje:
-Aprender a conocer, es decir, adquirir los instrumentos de comprensión.
-Aprender a hacer, para poder influir en su entorno
-Aprender a vivir juntos, para participar y cooperar con los demás en las actividades humanas
-Aprender a ser, que recogiendo los tres anteriores servirá para el desarrollo integral de la persona.</p> <p class="nopadding1 int_art">
-Para la construcción de estos aprendizajes el Dr. Tomás Miklos, Doctorado en Ciencias por la Sorbona de París, ex Director General del Centro Regional de Educación para Adultos de América Latina, señala que se requiere al menos la conjugación de cinco ejes instrumentales:
-Saber (conocimientos)
-Saber hacer (habilidades)
-Querer hacer (Actitudes)
-Saber Convivir (Valores)
-Poder hacer (aptitudes)
-“Los modelos educativos, a través de la escuela, deben superar los problemas que la complejidad y la acumulación de la información imponen, desarrollando la aptitud de la inteligencia humana con métodos que permitan comprender y aprovechar las relaciones y las influencias recíprocas entre las partes y todo de un mundo complejo”
-De manera enunciativa que no limitativa, la excelencia jurídica se debe alcanzar: teniendo una sólida formación, que se obtendrá participando en un proceso educativo, dentro de una institución comprometida, que considere que la modernidad exige profesionistas preparados para aprender a aprender.
-Gracias.
-</p>
-
-					</div><!--block_t_int-->
-				</div><!--cont_arrt-->
-
+							<? echo mostrarnota_int() ?>
+						</div><!--block_t_int-->
+					</div><!--cont_arrt-->
+				
 					
 
 
 					<div class="block_t block_t_r brleft">
 							<h4>Últimos temas sobre Acreditación</h4>
 							<ul class="news">
-								<li>
+								<!--<li>
 									<a href="javascript:void(0)">
 										<span>La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</span>
 									</a>
@@ -176,7 +114,9 @@ Gracias.
 									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
 									</span>
 								</li>
-							</ul>
+							</ul>-->
+							<? echo mostrartitulos_slider_int();?>
+							
 						</div>
 			</article>
 </section><!--pymes-->

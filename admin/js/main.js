@@ -48,16 +48,24 @@ $(document).ready(function(){
 		}
 	});
 	
-	/*$('.fslect_cat').change(function(){
-		 //var thix=$(this);
-	     var catego=$('select[name="categoriaAcreditado[]"] option:selected').text();
-	     $(this).parent().find('.fake_select').html(catego);
-		});
-	$('.fslect').change(function(){
-	     var slider_s=$(this).val();
-	     $(this).parent().find('.fake_select').html(slider_s);
-		});*/
+//Para cuando cambien el combo
+ $('.fslect_cat').change(function(e){
 
+  var id    = e.target.id;
+  var filt_sel  = $("#"+id+" option:selected").text();
+  var gfval_sel = $("#"+id ).val();
+  var fake_select = e.target.nextElementSibling.className;
+  $("."+fake_select).html(filt_sel);
+ });
+ //Para cuando cargue la pagina
+ $('.fslect_cat').each(function() {
+        var id    = this.id;
+  var filt_sel  = $("#"+id+" option:selected").text();
+  var gfval_sel = $("#"+id ).val();
+  var fake_select = this.nextElementSibling.className;
+  $("."+fake_select).html(filt_sel);
+    });
+	
 $(document).on('click','.add_item',function (e) {	
 		var rel_plus=$(this).attr('rel');
 		switch (rel_plus) {
@@ -190,32 +198,40 @@ $(document).on('click','.add_item',function (e) {
   		}
     });
 
-	$('.edit_evaluador').click(function(){
+	/*$('.edit_evaluador').click(function(){
+		$(".new_evaluador").css("display", "none");
+		$(this).parent().next().find( ".new_evaluador" ).slideDown(500);
+	});*/
+	$(document).on('click','.edit_evaluador',function (elem) {	
 		$(".new_evaluador").css("display", "none");
 		$(this).parent().next().find( ".new_evaluador" ).slideDown(500);
 	});
-	
-
+	$(document).on('click','.edit_user',function (elem) {	
+		$(".new_user").css("display", "none");
+		$(this).parent().next().find( ".new_user" ).slideDown(500);
+	});
+/*
 	$('.edit_user').click(function(){
 		$(".new_user").css("display", "none");
 		$(this).parent().next().find( ".new_user" ).slideDown(500);
 	});
-
+*/
 	//===================================================
    	// EDICION ACREDITADOS
-	$('.edit_acreditado').click(function(){
-		$(".new_programa").css("display", "none");
+	$(document).on('click','.edit_acreditado',function (elem) {	
+	$(".new_programa").css("display", "none");
 		$(this).parent().next().find( ".new_programa" ).slideDown(500);
 	});
-	$('.edit_tema').click(function(){
-		$(".new_tema").css("display", "none");
+	$(document).on('click','.edit_tema',function (elem) {	
+	$(".new_tema").css("display", "none");
 		$(this).parent().next().find( ".new_tema" ).slideDown(500);
 	});
 	
 	
 	
-	// ELIMINANDO REGISTRO
-	$('.delete_acreditado').click(function( elem ){
+	
+	
+	$(document).on('click','.delete_acreditado',function (elem) {	
 		var idAcreditado = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
@@ -228,16 +244,51 @@ $(document).on('click','.add_item',function (e) {
 	        { 
 		        info = JSON.parse(data);
 
-		        if(info.success == 'OK'){
-			     	showMessages('<span>Se ha eliminado el registro.</span>');
+		        if(info.success === 'OK'){
+			     	showMessages('<span>Se ha eliminado la universidad.</span>');
+					
+					
 		        }
+			
 	        }
 		});
-	});	
+		$.get("../ajax/rfsh_acreditados.php", function(text){
+			$('.programas').html(text);
+		});
+	});
+	
+	
+	// ELIMINANDO REGISTRO
+/*	$('.delete_acreditado').click(function( elem ){
+		var idAcreditado = this.previousElementSibling.value;
+		$.ajax({
+	        type: "POST",
+	        url: "../ajax/ajaxAcreditados.php",
+	        data: {
+		        accion  : "eliminar",
+		        id      : idAcreditado
+		    },
+	        success: function(data)
+	        { 
+		        info = JSON.parse(data);
+
+		        if(info.success === 'OK'){
+			     	showMessages('<span>Se ha eliminado el registro.</span>');
+					
+					
+		        }
+			
+	        }
+		});
+		$.get("../ajax/rfsh_acreditados.php", function(text){
+			$('.programas').html(text);
+		});
+		
+	});	*/
 
 
 	// ELIMINANDO REGISTRO
-	$('.delete_evaluador').click(function( elem ){
+	$(document).on('click','.delete_evaluador',function (e) {
 		var idEvaluador = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
@@ -250,12 +301,18 @@ $(document).on('click','.add_item',function (e) {
 	        { 
 		        info = JSON.parse(data);
 
-		        if(info.success == 'OK'){
-			     	showMessages('<span>Se ha eliminado el registro.</span>');
+		        if(info.success === 'OK'){
+			     	showMessages('<span>Se ha eliminado el evaluador.</span>');
 		        }
 	        }
 		});
+		$.get("../ajax/rfsh_evaluadores.php", function(text){
+			$('.evaluadores').html(text);
+		});
 	});
+	/*$('.delete_evaluador').click(function( elem ){
+		
+	});*/
 
 
     //VALIDAMOS LA DISFICULTAD DE LA CONTRASEÑA
@@ -286,7 +343,7 @@ $(document).on('click','.add_item',function (e) {
 
 
     // ELIMINANDO REGISTRO USUARIO
-	$('.delete_usuario').click(function( elem ){
+	$(document).on('click','.delete_usuario',function( elem ){
 		var idUsuario = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
@@ -299,16 +356,22 @@ $(document).on('click','.add_item',function (e) {
 	        { 
 		        info = JSON.parse(data);
 
-		        if(info.success == 'OK'){
-			     	showMessages('<span>Se ha eliminado el registro.</span>');
+		        if(info.success === 'OK'){
+			     	showMessages('<span>Se ha eliminado el usuario.</span>');
 		        }
 	        }
 		});
+		$.get("../ajax/rfsh_usuarios.php", function(text){
+			$('.usuarios').html(text);
+		});
 	});
-
+	/*$('.delete_usuario').click(function( elem ){
+		
+	});
+*/
 
 // ELIMINANDO ELIMINANDO NOTICIA/TEMA
-	$('.delete_tema').click(function( elem ){
+	$(document).on('input','.pass_complexity',function( elem ){
 		var idNoticia = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
@@ -321,7 +384,7 @@ $(document).on('click','.add_item',function (e) {
 	        { 
 		        info = JSON.parse(data);
 
-		        if(info.success == 'OK'){
+		        if(info.success === 'OK'){
 			     	showMessages('<span>Se ha eliminado el registro.</span>');
 		        }
 	        }
@@ -458,6 +521,10 @@ function showMessages( msg ){
 		        }
 	        }
 		});	
+		$.get("../ajax/rfsh_acreditados.php", function(text){
+			$('.programas').html(text);
+		});
+		
 	}
 
 
@@ -496,6 +563,9 @@ function showMessages( msg ){
 		        }
 	        }
 		});	
+		$.get("../ajax/rfsh_evaluadores.php", function(text){
+			$('.evaluadores').html(text);
+		});
 	}	
 
 	//===================================================
@@ -586,11 +656,14 @@ function showMessages( msg ){
 		        info = JSON.parse(data);
 
 		        if(info.success == 'OK'){
-			     	showMessages( "<span> La información se ha guardado.</span>" );
+			     	showMessages( "<span> El usuario se ha guardado.</span>" );
 		        }
 	        }
 		});	
-
+		
+		$.get("../ajax/rfsh_usuarios.php", function(text){
+			$('.usuarios').html(text);
+		});
 	}
 	
 	
@@ -612,11 +685,14 @@ function showMessages( msg ){
 	            type: 'post',
 	               	success: function(img_reponse){        
 		               	info = JSON.parse( img_reponse );
-		               	if(info.imagenResize == 'OK')
+		               	if(info.imagenResize === 'OK')
 		               		showMessages( "<span> La información se ha guardado.</span>" );
 	                    
 	                 }
 	        });
+		$.get("../ajax/rfsh_asociados.php", function(text){
+			$('.asociados').html(text);
+		});
 	}
 
 	function guardarOrdenAsociados(){ 
@@ -656,7 +732,9 @@ function showMessages( msg ){
 		        }
 	        }
 	     })   
-
+		$.get("../ajax/rfsh_asociados.php", function(text){
+			$('.asociados').html(text);
+		});
 	}
 
 
@@ -725,11 +803,18 @@ function showMessages( msg ){
 
 		        if(info.success == 'OK'){
 			     	showMessages( "<span> La información se ha guardado.</span>" );
-		        }else{
+					$('.add_tema').slideUp(500);
+					
+				}
+		        else{
 		        	showMessages( "<span> Hubo un error al guardar la información.</span>" );
 		        }
 	        }
 		});	
+		$.get("../ajax/rfsh_noticias.php", function(text){
+			$('.temasynoticias').html(text);
+		});
+	
 	}
 
 
@@ -751,8 +836,8 @@ $(document).on('click','.close_edit_btn',function (e) {
 	
 });
 
-var sec_active='';
-$(window).load(function(){
+
+/*$(window).load(function(){
 	
 	//var pag=window.location.href.indexOf("npa") > -1;
 		if(window.location.href.indexOf("npa") > -1) {
@@ -767,33 +852,38 @@ $(window).load(function(){
 		}
 	
 });
-
+*/
 //new?comm
 
 $(document).on('click','.del_asociado',function () {
-	//obtiene el id del elemento a eliminar
-		var id_del=$(this).attr('rel');
-		$(this).parent().hide();
-		/*$.ajax({
-	        type: "POST",
-	        url: "../php/del_asoc.php",
-	        data: id_del,
-	       	success: function(data){
-                showMessages( "<span> Se ha eliminado el asociado.</span>" );
-				//location.reload();
-				
-				
-			 
+ //obtiene el id del elemento a eliminar
+ var elem       = this;
+ var idAsociado = $(elem).attr('rel');
+  
+ $.ajax({
+        type: "POST",
+        url: "../ajax/ajaxAsociados.php",
+        data: {
+          "accion"         : "eliminar",
+          "idAsociados"    : idAsociado
+      },
+         success: function(data)
+         { 
+          info = JSON.parse(data);
 
-            }
-	     }); */  
-		
-
+          if(info.success == 'OK'){
+              showMessages( "<span> La información se ha eliminado.</span>" );
+              $(elem).parent().hide();
+          }
+         }
+     });   
+  
+$.get("../ajax/rfsh_asociados.php", function(text){
+			$('.asociados').html(text);
+		});	
 });
+
 $(document).on('click','.fakecheck',function () {
-	$(this).toggleClass('checked');
-	$(this).parent().find('.del_asociado').toggleClass('show_del');
-	
-	
-	
+ $(this).toggleClass('checked');
+ $(this).parent().find('.del_asociado').toggleClass('show_del');
 });

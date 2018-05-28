@@ -159,25 +159,23 @@ include_once("./php/functions.php")
 <section id="programas_acreditados" class="">
 	<article>
 		<h2 class="oxygenlight">Programas Acreditados</h2>
-		<style>
-			
-			
-		</style>
+
 		<div class="filter_cont">
-			<div class="middle">
-			
-				<select name="" class="cmb_filtro" id="cmb_filter">
-					<option value="0" >Filtrar por tipo de programa</option>
-					<option value="all">Todos</option>
-					<option value="p1">Programas Presenciales</option>
-					<option value="p2">Programas a distancia o semipresenciales</option>
-					<option value="c1">Criminalística y Criminología</option>
-					<option value="ra">Reacreditados</option>
-					<option value="int">Internacionales</option>
-				</select>
-				<div class="fake_select">Filtrar por tipo de programa</div>
-			</div>
-		</div>
+		   <div class="middle">
+			<input type="hidden" id="valPaginador" value="1"/>
+			<input type="hidden" id="tipoPagina" value="principal"/>
+			<select name="" class="cmb_filtro" id="cmb_filter_asociados">
+			 <option value="0" >Filtrar por tipo de programa</option>
+			 <?php
+			  $lsCategorias = fnListCategorias();
+			  foreach( $lsCategorias  as $key => $info){
+			   echo '<option value="'.$info['id_categoria'].'">'.$info['nombre'].'</option>';
+			  }
+			 ?>
+			</select>
+			<div class="fake_select">Filtrar por tipo de programa</div>
+		   </div>
+  		</div>
 		<div class="row_titulo">
 			<span class="col1">Institución Educativa</span>
 			<span class="col2">Página Web</span>
@@ -193,11 +191,7 @@ include_once("./php/functions.php")
 			?>
 
 		</ul>
-		<ul class="programas p1"><?php echo f_p1();?></ul>
-		<ul class="programas p2"><?php echo f_p2();?></ul>
-		<ul class="programas c1"><?php echo f_c1();?></ul>
-		<ul class="programas ra"><?php echo f_ra();?></ul>
-		<ul class="programas int"><?php echo f_int();?></ul>
+		
 		
 		
 		
@@ -222,11 +216,7 @@ include_once("./php/functions.php")
 					<h2 class="oxygenlight">Temas y Noticias</h2>
 					<div class="blocks_cont">
 						<div class="block_t">
-							<h3>Hacia una educación jurídica de excelencia</h3>
-							<span class="sub_">15 May 2018 / Lic. Fernando Peniche</span>
-							<div class="img_t"><img src="img/temas/img1.png" alt="" /></div>
-							<p>Sin determinar si es o no justa, es indudable que el mundo de hoy vive en una Economía Globalizada, que el Neo liberalismo tiene sus bases en la Economía de mercado y que esta,  mientras mas global sea, será mejor para el funcionamiento de éste sistema.</p>
-							<p>En éste sentido, la Organización de Comercio y Desarrollo Económico OCDE, privilegia la importancia del conocimiento como motor de la producción y se empezó a mencionar el término de  la “Economía del Conocimiento”.</p>
+							<? echo  mostrarnota_home() ?>
 
  
 
@@ -241,34 +231,7 @@ include_once("./php/functions.php")
 					<div class="block_t block_t_r brleft">
 							<h4>Últimas noticias</h4>
 							<ul class="news">
-								<li>
-									<a href="javascript:void(0)">
-										<span>La carrera de Derecho de la UPC es la única en recibir acreditación del CONAED.</span>
-									</a>
-									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
-									</span>
-								</li>
-								<li>
-									<a href="">
-										<span>CONAED acredita a la Facultad de Derecho de la UNITEC de Campus Sur.</span>
-									</a>
-									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
-									</span>
-								</li>
-								<li>
-									<a href="">
-										<span>La apuesta de la UP para crecer profesionalmente.</span>
-									</a>
-									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
-									</span>
-								</li>
-								<li>
-									<a href="">
-										<span>La carrera de Derecho de la Facultad de la UNAM cumple totalmente con lineamientos de calidad avalados por la CONAED.</span>
-									</a>
-									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
-									</span>
-								</li>
+								<? echo mostrartitulos_slider(); ?>
 							</ul>
 						</div>
 			</article>

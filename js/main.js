@@ -83,51 +83,69 @@ $(document).on('click','.close_contacto',function (e) {
 	$('.br1').val('');
 });
 
+$('#cmb_filter_asociados').change(function( e ){
 
-$('.cmb_filtro').change(function(){
-	var filt_sel=$("#cmb_filter option:selected").text();
-	var gfval_sel=$("#cmb_filter").val();
-	$('.fake_select').html(filt_sel);
-	//alert(gfval_sel);
-	$('.programas').hide();
-	switch(gfval_sel){
-		case 0:
-			break;
-		case 'all':
-				
-				$('.all').show();
-			
-			break;
-		case 'p1':
-				
-				$('.p1').show();
-				
-			break;
-		case 'p2':
-				
-				$('.p2').show();
-				
-			break;
-		case 'c1':
-				
-				$('.c1').show();
-				
-			break;
-		case 'ra':
-				
-				$('.ra').show();
-				
-			break;
-		case 'int':
-				
-				$('.int').show();
-				
-			break;
-	}
-	
-	
+ var filt_sel=$("#cmb_filter_asociados option:selected").text();
+ var gfval_sel=$("#cmb_filter_asociados").val();
+ $('.fake_select').html(filt_sel);
+
+ var id     = e.target.id;
+ var optionSelect = $("#"+id ).val();
+
+  $.ajax({
+         type: "POST",
+         url: "./php/ajaxAcreditados.php",
+         data: {
+          numPagina    : $('#valPaginador').val(),
+          idCategoria  : optionSelect
+      },
+         success: function(data)
+         { 
+          info = JSON.parse(data);
+          console.log(info.template);
+          $(".programas").empty();
+          $('.programas').append(info.template);
+          if($('#tipoPagina').val() === 'acreditados'){
+            $(".paginator").empty();
+            $('.paginator').append(info.paginador);
+
+            $(".numreg_total").empty();
+            $('.numreg_total').append(info.totalRegistros + ' resultados');
+
+          }
+          
+         }
+  });
 });
-	
+
 	
 });//ready
+
+function paginadorAcreditados( numPagina ){
+
+ var optionSelect = $('#cmb_filter_asociados').val();
+
+ $.ajax({
+         type: "POST",
+         url: "./php/ajaxAcreditados.php",
+         data: {
+          numPagina    : numPagina,
+          idCategoria  : optionSelect
+      },
+         success: function(data)
+         { 
+          info = JSON.parse(data);
+          console.log(info.template);
+          $(".programas").empty();
+          $('.programas').append(info.template);
+
+           $(".paginator").empty();
+           $('.paginator').append(info.paginador);
+
+           $(".numreg_total").empty();
+           $('.numreg_total').append(info.totalRegistros + ' resultados');
+         }
+  });
+
+}
 

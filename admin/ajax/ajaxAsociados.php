@@ -27,9 +27,10 @@
 	
 	switch( $accion ){
 		case 'eliminar':
-			//$oMod->fnEliminarAcreditados( $idAcreditado );
+			$oMod->fnEliminarSociados( $idAsociados );
 		break;
 		case 'guardarOrden':
+   			$ordenAsociados = $_POST['ordenAsociados'];
 			fnOrdenAsociados( $idAsociados, $ordenAsociados );
 		break;
 	}

@@ -20,56 +20,85 @@
 		
 	}
 
+//Paginador2
+ function Paginador2($numPagina, $totalPaginas, $var ){
+  $paginador = "";
+  
+  if(($numPagina-1) >= 1) 
+   $paginador = '<li class="radius-left"><a href="#" onclick="paginadorAcreditados('.($numPagina-1).')">Anterior</a></li>';
+  
+  for($i = 1; $totalPaginas >= $i; $i++){
+   $stylePag = ""; 
+   if( $numPagina == $i) $stylePag = "active_page";
+     
+   
+   $paginador .= '<li><a href="#" class="number_link '.$stylePag.'" onclick="paginadorAcreditados('.$i.')">'.$i.'</a></li>';
+  }
 
+  if(($numPagina+1) <= $totalPaginas) 
+   $paginador .= '<li class="radius-right"><a href="#" onclick="paginadorAcreditados('.($numPagina+1).')">Siguiente</a></li>';
+  
+  return $paginador; 
+  
+ }
 
-function programas( $numPagina ){
-	
-	$oCnx = new DbConnect();
-	
-	$totalRegXpag    = 15; 
-	$inf['cantidad'] = 0;
-	$sql             = "SELECT count(id_universidad) as cantidad FROM programas_1";
-	$res             = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
-	if( $res != 0 ){ $inf = $res->fetch_array( MYSQLI_ASSOC );}	
-	$totalRegistros  = $inf['cantidad'];
-	$totalPaginas    = ceil( $totalRegistros / $totalRegXpag );
-	$empezarDesde    = ($numPagina-1) * $totalRegXpag;
+function programas( $numPagina, $filtro = '' ){
+ 
+ $oCnx = new DbConnect();
 
-	
-	$limit = (!empty($totalRegXpag) ? "LIMIT {$empezarDesde}, {$totalRegXpag} " : '');
-	
-	
+ $condicion = '';
+ if(!empty($filtro)){
+  $condicion =  ' WHERE p.id_categoria = '.$filtro;
+ }
+ 
+ $totalRegXpag    = 15; 
+ $inf['cantidad'] = 0;
+ $sql             = "SELECT count(id_universidad) as cantidad FROM programas_1 p".$condicion;
+ $res             = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
+ if( $res != 0 ){ $inf = $res->fetch_array( MYSQLI_ASSOC );} 
 
-	$oCnx      = new DbConnect();
-	$sql  	   = "SELECT * FROM programas_1 p 
-				  LEFT JOIN cat_categorias cat ON p.id_categoria = cat.id_categoria
-				  ORDER BY id_universidad ASC ".$limit;
-	$res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
-	$regs      = $res->num_rows;
-	$rowsTable = '';
-	$cont      = ($empezarDesde+1);
+ $totalRegistros  = $inf['cantidad'];
+ $totalPaginas    = ceil( $totalRegistros / $totalRegXpag );
+ $empezarDesde    = ($numPagina-1) * $totalRegXpag;
+
+ 
+ $limit = (!empty($totalRegXpag) ? "LIMIT {$empezarDesde}, {$totalRegXpag} " : '');
+ 
+ 
+
+ $oCnx      = new DbConnect();
+ $sql      = "SELECT * FROM programas_1 p 
+      LEFT JOIN cat_categorias cat ON p.id_categoria = cat.id_categoria
+      ".$condicion."
+      ORDER BY id_universidad DESC ".$limit;
+ $res       = $oCnx->query($sql) or die( "Error en la universidad ". $oCnx->errno() );
+ $regs      = $res->num_rows;
+ $rowsTable = '';
+ $cont      = ($empezarDesde+1);
     if( $regs != 0 )
     {
-	   while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
-	   {
-		 	$rowsTable .= '<li>
-								<span class="num">'.$cont.'</span>
-								<span class="nom">'.$info['nombre_uni'].'</span>
-								<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-								<span class="vig">'.$info['anio'].'</span>
-								<span class="cat">'.$info['nombre'].'</span>
-																
-							</li>';	
-			$cont++;				
-	   }
+    while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
+    {
+    $rowsTable .= '<li>
+        <span class="num">'.$cont.'</span>
 
-	}
-	
-	$paginador = Paginador($numPagina, $totalPaginas, 'pro');
-	
-	return array( 'template' => $rowsTable, 'paginador' => $paginador, 'totalRegistros' => $totalRegistros);
-	
+        <span class="nom">'.$info['nombre_uni'].'</span>
+        <a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
+        <span class="vig">'.$info['anio'].'</span>
+        <span class="cat">'.$info['nombre'].'</span>
+                
+       </li>'; 
+   $cont++;    
+    }
+
+ }
+ 
+ $paginador = Paginador2($numPagina, $totalPaginas, 'pro');
+ 
+ return array( 'template' => $rowsTable, 'paginador' => $paginador, 'totalRegistros' => $totalRegistros);
+ 
 }
+
 
 function padronEvaluadores( $limite = '' , $contador = false ){
 	
@@ -158,138 +187,126 @@ function mostrarAsociados(){
 	}
 	return $rowAsociados;	
 }
-function f_p1(){
+
+function fnListCategorias(){
+   $oCnx = new DbConnect();
+     $listCategorias = array();
+    $sql   = "SELECT * FROM cat_categorias ORDER BY nombre";
+    $res   = $oCnx->query($sql) or die( "Error en categorias ". $oCnx->errno() );
+  $regs  = $res->num_rows;
+  
+     if( $regs != 0 ){
+     while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){ 
+       $listCategorias[] =  $info;
+     }
+  }
+  return $listCategorias;
+
+    }
+
+
+//funcion de noticias en home
+function mostrarnota_home(){
 	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='1' LIMIT 15"; 
-	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
-	$row_p1 = "";
+	$sql  = "SELECT * FROM temas_noticias ORDER BY id DESC LIMIT 1"; 
+	$regs = $oCnx->query($sql) or die( "Error en noticias ". $oCnx->errno() );
+	$rownoticias = "";
+	
 	if( count($regs) > 0 )
     {
 	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
 	    {
-			$row_p1 .= '<li>
-							<span class="num">'.$cont.'</span>
-							<span class="nom">'.$info['nombre_uni'].'</span>
-							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-							<span class="vig">'.$info['anio'].'</span>
-							<span class="cat">Programas Presenciales</span>
-																
-							</li>';	
-			$cont++;
+			$contenido=$info["contenido"];
+			$contenido = str_replace(PHP_EOL, '<br />', $contenido);
+			$rownoticias .= '
+								<h3>'.$info['titulo'].'</h3>
+							 <span class="sub_"><strong>'.$info['fecha'].' / Lic. Fernando Peniche</strong></span>
+							 <div class="img_t"><img src="img/temas/'.$info['img'].'" alt="" /></div>
+							<p>'.$contenido.'</p>
+							
+			
+			';
 		}
 	}
-	return $row_p1;	
-}
-function f_p2(){
-	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='2' LIMIT 15"; 
-	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
-	$row_p2 = "";
-	if( count($regs) > 0 )
-    {
-	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
-	    {
-			$row_p2 .= '<li>
-							<span class="num">'.$cont.'</span>
-							<span class="nom">'.$info['nombre_uni'].'</span>
-							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-							<span class="vig">'.$info['anio'].'</span>
-							<span class="cat">Programas a distancia o semipresenciales</span>
-																
-							</li>';	
-			$cont++;
-		}
-	}
-	return $row_p2;	
-}
-function f_c1(){
-	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='3' LIMIT 15"; 
-	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
-	$row_c1 = "";
-	if( count($regs) > 0 )
-    {
-	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
-	    {
-			$row_c1 .= '<li>
-							<span class="num">'.$cont.'</span>
-							<span class="nom">'.$info['nombre_uni'].'</span>
-							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-							<span class="vig">'.$info['anio'].'</span>
-							<span class="cat">Criminalística y Criminología</span>
-																
-							</li>';	
-			$cont++;
-		}
-	}
-	return $row_c1;	
-}
-function f_ra(){
-	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='4' LIMIT 15"; 
-	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
-	$row_ra = "";
-	if( count($regs) > 0 )
-    {
-	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
-	    {
-			$row_ra .= '<li>
-							<span class="num">'.$cont.'</span>
-							<span class="nom">'.$info['nombre_uni'].'</span>
-							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-							<span class="vig">'.$info['anio'].'</span>
-							<span class="cat">Reacreditados</span>
-																
-							</li>';	
-			$cont++;
-		}
-	}
-	return $row_ra;	
-}
-function f_int(){
-	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM programas_1 WHERE id_categoria='5' LIMIT 15"; 
-	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
-	$row_int = "";
-	if( count($regs) > 0 )
-    {
-	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
-	    {
-			$row_int .= '<li>
-							<span class="num">'.$cont.'</span>
-							<span class="nom">'.$info['nombre_uni'].'</span>
-							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-							<span class="vig">'.$info['anio'].'</span>
-							<span class="cat">Internacionales</span>
-																
-							</li>';	
-			$cont++;
-		}
-	}
-	return $row_int;	
-}
-function f_all(){
-	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM programas_1  LIMIT 15"; 
-	$regs = $oCnx->query($sql) or die( "Error en acreditados ". $oCnx->errno() );
-	$row_all = "";
-	if( count($regs) > 0 )
-    {
-	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
-	    {
-			$row_int .= '<li>
-							<span class="num">'.$cont.'</span>
-							<span class="nom">'.$info['nombre_uni'].'</span>
-							<a href="'.$info['website'].'" target="_blank">'.$info['website'].'</a>
-							<span class="vig">'.$info['anio'].'</span>
-							<span class="cat">Internacionales</span>
-																
-							</li>';	
-			$cont++;
-		}
-	}
-	return $row_int;	
+	return $rownoticias;	
 }
 
+function mostrarnota_int(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM temas_noticias ORDER BY id DESC"; 
+	$regs = $oCnx->query($sql) or die( "Error en noticias ". $oCnx->errno() );
+	$rownoticias_int = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$contenido=$info["contenido"];
+			$contenido = str_replace(PHP_EOL, '<br /><br />', $contenido);
+			$rownoticias_int .= '
+									<div class="block_t_int">
+									
+									<h3>'.$info['titulo'].'</h3>
+							 <span class="sub_"><strong>'.$info['fecha'].' / Lic. Fernando Peniche</strong></span>
+							 <div class="img_t_int"><img src="img/temas/'.$info['img'].'" alt="" /></div>
+							<p class="nopadding1 int_art">'.$contenido.'</p>
+							<div class="redes_int">
+								<a href="" class="">fb</a>
+								<a href="" class="">tw</a>
+								<a href="" class="">lnkd</a>
+							</div>
+							</div>
+							
+							
+			
+			';
+		}
+	}
+	return $rownoticias_int;	
+}
+function mostrartitulos_slider(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM slider ORDER BY id DESC LIMIT 3"; 
+	$regs = $oCnx->query($sql) or die( "Error en not_slider ". $oCnx->errno() );
+	$rownonot_slide = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$rownonot_slide .= '<li>
+									<a href="javascript:void(0)">
+										<span>'.$info['titulo'].'</span>
+									</a>
+									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
+									</span>
+								</li>
+			
+			';
+		}
+	}
+	return $rownonot_slide;	
+}
+
+function mostrartitulos_slider_int(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT * FROM slider ORDER BY id DESC"; 
+	$regs = $oCnx->query($sql) or die( "Error en not_slider ". $oCnx->errno() );
+	$rownonot_slide_int = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			$rownonot_slide_int .= '<li>
+									<a href="javascript:void(0)">
+										<span>'.$info['titulo'].'</span>
+									</a>
+									<span class="autor"><strong>03 May 2018 / Lic. Fernando Peniche</strong>
+									</span>
+								</li>
+			
+			';
+		}
+	}
+	return $rownonot_slide_int;	
+}
 
 ?>

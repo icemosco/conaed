@@ -22,7 +22,8 @@ include_once("../php/Modelo.php");
 			foreach($infoNoticias as $key =>$info){
 				$clase = "";	
 				if(($cont%2)==0){ $clase ='class="clr2"'; }
-
+				$contenido=$info["contenido"];
+				$contenido = str_replace(PHP_EOL, '<br />', $contenido);
 				$template .= '<li '.$clase.'>
 						<span class="num_id">'.$cont.'</span>
 						<span class="nom_uni">'.$info["titulo"].'</span>
@@ -51,7 +52,7 @@ include_once("../php/Modelo.php");
 										<textarea name="titulo[]" id="titulo_'.$i.'" class="infoNoticia requeridoNoticia" maxlength="200" placeholder="Titulo del Tema">'.$info["titulo"].'</textarea>
 									</div>
 									<div class="sub_text_cont">
-										<textarea name="contenido[]" id="contenido_'.$i.'" class="infoNoticia requeridoNoticia" maxlength="" placeholder="Nota completa del Tema">'.$info["contenido"].'</textarea>
+										<textarea name="contenido[]" id="contenido_'.$i.'" class="infoNoticia requeridoNoticia" maxlength="" placeholder="Nota completa del Tema">'.$contenido.'</textarea>
 									</div>
 								</div><!--right-->
 								<button type="button"  class="save_btn" name="guardar_noticia" id="guardar_noticia_'.$i.'" onclick="guardarNoticias(this, '.$i.');">Guardar</button>
@@ -88,7 +89,7 @@ include_once("../php/Modelo.php");
 						<textarea name="titulo[]" id="titulo_n" class="infoNoticia requeridoNoticia" maxlength="200" placeholder="Titulo del Tema"></textarea>
 					</div>
 					<div class="sub_text_cont">
-						<textarea name="contenido[]" id="contenido_n" class="infoNoticia requeridoNoticia" maxlength="" placeholder="Nota completa del Tema"></textarea>
+						<pre><textarea name="contenido[]" id="contenido_n" class="infoNoticia requeridoNoticia" maxlength="" placeholder="Nota completa del Tema"></textarea></pre>
 					</div>
 				</div><!--right-->
 				<input type="hidden" name="idNoticia[]" id="idNoticia_N" value=""/> 

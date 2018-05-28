@@ -11,8 +11,9 @@
     define('DB_CHARSET','UTF8');
     $folderSlider    = "/home/ppfbayaa9nb9/public_html/img/slider/";
     $folderPerfilUsu = "/home/ppfbayaa9nb9/public_html/admin/img/users/";     
-    $folderAsociados = "/home/ppfbayaa9nb9/public_html/img/asociados/";*/
-
+    $folderAsociados = "/home/ppfbayaa9nb9/public_html/img/asociados/";
+	$folderNoticias = "/home/ppfbayaa9nb9/public_html/img/temas/";
+*/
 
     
 	define('DB_HOST','127.0.0.1');
@@ -21,10 +22,9 @@
     define('DB_NAME','cms_conaed');
     define('DB_CHARSET','UTF8');
     
-    $folderSlider = "c:/wamp/www/conaed/img/slider/";
-    $folderPerfilUsu = "c:/wamp/www/conaed/admin/img/users/";  
-    $folderAsociados = "c:/wamp/www/conaed/img/asociados/";
-    $folderNoticias = "c:/xampp/htdocs/conaed/img/temas/";
-
+    $folderSlider = "c:/wamp/www/conaed_last_250518/img/slider/";
+    $folderPerfilUsu = "c:/wamp/www/conaed_last_250518/admin/img/users/";  
+    $folderAsociados = "c:/wamp/www/conaed_last_250518/img/asociados/";
+    $folderNoticias = "c:/wamp/www/conaed_last_250518/img/temas/";
 
 ?>

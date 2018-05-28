@@ -9,7 +9,8 @@
 	$oMod       = new Modelo();
 	$oFun 		= new Funciones();
 
-	function fnGuardarNoticia( $id, $titulo, $contenido, $folderNoticias, $fileImgNoticia, $idNoticia = '' )
+	function fnGuardarNoticia( $id, $titulo,$contenido, $folderNoticias, $fileImgNoticia, $idNoticia = '' )
+		
 	{
 		global $oMod, $oFun;
 		//Guardamos la imagen 

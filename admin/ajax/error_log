@@ -1,0 +1,94 @@
+[23-May-2018 23:15:17 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 09:32:58 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 09:49:01 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 11:55:54 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 11:55:54 America/Mexico_City] PHP Notice:  Undefined index: file in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxGuardaImagenes.php on line 14
+[24-May-2018 11:55:54 America/Mexico_City] PHP Notice:  Undefined variable: error in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxGuardaImagenes.php on line 49
+[24-May-2018 16:56:50 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 16:56:50 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 16:59:07 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 16:59:07 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 17:37:33 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 17:37:33 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 17:39:09 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 17:39:09 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 21:07:24 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 21:07:24 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 21:07:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 21:07:39 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 21:08:39 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 21:08:39 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 21:09:04 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[24-May-2018 21:09:04 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: nombre in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 11
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: paterno in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 12
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: materno in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 13
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: usuario in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 14
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: email in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 15
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: pass in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 16
+[24-May-2018 22:07:22 America/Mexico_City] PHP Notice:  Undefined index: permisos in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxUsuarios.php on line 17
+[25-May-2018 03:48:40 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 03:58:55 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 03:58:55 America/Mexico_City] PHP Notice:  Undefined index: file in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxGuardaImagenes.php on line 14
+[25-May-2018 03:58:55 America/Mexico_City] PHP Notice:  Undefined variable: error in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxGuardaImagenes.php on line 49
+[25-May-2018 14:52:38 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 14:52:38 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 14:52:41 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 14:52:41 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 15:06:31 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 15:06:31 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[25-May-2018 15:08:08 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 15:08:08 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[25-May-2018 10:22:10 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 15:50:52 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 15:50:52 UTC] PHP Notice:  Undefined index: id in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 9
+[25-May-2018 15:50:52 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 16:03:11 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 16:03:11 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[25-May-2018 16:04:15 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 16:04:15 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[25-May-2018 16:04:20 UTC] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 16:04:20 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAsociados.php on line 22
+[25-May-2018 11:05:02 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 11:05:42 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 11:07:09 America/Mexico_City] PHP Notice:  A session had already been started - ignoring session_start() in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 2
+[25-May-2018 11:07:48 America/Mexico_City] PHP Notice:  Undefined variable: data in /home/ppfbayaa9nb9/public_html/admin/php/Usuario.php on line 132
+[25-May-2018 17:48:07 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 17:48:32 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 17:48:45 UTC] PHP Notice:  Undefined index: nombre in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 10
+[25-May-2018 17:48:45 UTC] PHP Notice:  Undefined index: pagina in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 11
+[25-May-2018 17:48:45 UTC] PHP Notice:  Undefined index: anio in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 12
+[25-May-2018 17:48:45 UTC] PHP Notice:  Undefined index: categoria in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 13
+[25-May-2018 17:48:45 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 17:49:00 UTC] PHP Notice:  Undefined index: id in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 9
+[25-May-2018 17:49:00 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 17:49:47 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 17:50:01 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 17:50:08 UTC] PHP Notice:  Undefined index: nombre in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 10
+[25-May-2018 17:50:08 UTC] PHP Notice:  Undefined index: pagina in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 11
+[25-May-2018 17:50:08 UTC] PHP Notice:  Undefined index: anio in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 12
+[25-May-2018 17:50:08 UTC] PHP Notice:  Undefined index: categoria in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 13
+[25-May-2018 17:50:08 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 17:50:19 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 17:50:19 UTC] PHP Notice:  Undefined variable: idAcreditado in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 127
+[25-May-2018 17:50:26 UTC] PHP Notice:  Undefined index: nombre in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 10
+[25-May-2018 17:50:26 UTC] PHP Notice:  Undefined index: paterno in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 11
+[25-May-2018 17:50:26 UTC] PHP Notice:  Undefined index: materno in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 12
+[25-May-2018 17:50:26 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 20:10:45 UTC] PHP Notice:  Undefined index: id in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 9
+[25-May-2018 20:10:46 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 20:11:01 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 20:11:01 UTC] PHP Notice:  Undefined variable: idAcreditado in /home/ppfbayaa9nb9/public_html/admin/php/Modelo.php on line 127
+[25-May-2018 20:11:09 UTC] PHP Notice:  Undefined index: nombre in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 10
+[25-May-2018 20:11:09 UTC] PHP Notice:  Undefined index: paterno in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 11
+[25-May-2018 20:11:09 UTC] PHP Notice:  Undefined index: materno in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 12
+[25-May-2018 20:11:09 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxEvaluadores.php on line 28
+[25-May-2018 20:12:35 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 20:13:15 UTC] PHP Notice:  Undefined index: nombre in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 10
+[25-May-2018 20:13:15 UTC] PHP Notice:  Undefined index: pagina in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 11
+[25-May-2018 20:13:15 UTC] PHP Notice:  Undefined index: anio in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 12
+[25-May-2018 20:13:15 UTC] PHP Notice:  Undefined index: categoria in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 13
+[25-May-2018 20:13:15 UTC] PHP Notice:  Undefined variable: estatus in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxAcreditados.php on line 26
+[25-May-2018 20:22:35 UTC] PHP Notice:  Undefined variable: folderNoticias in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxNoticias.php on line 62
+[25-May-2018 20:22:38 UTC] PHP Notice:  Undefined variable: folderNoticias in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxNoticias.php on line 62
+[25-May-2018 20:22:38 UTC] PHP Notice:  Undefined variable: folderNoticias in /home/ppfbayaa9nb9/public_html/admin/ajax/ajaxNoticias.php on line 62

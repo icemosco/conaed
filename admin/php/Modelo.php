@@ -48,8 +48,8 @@ class Modelo extends DbConnect
 		
 		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
 		
-		$sql   = "SELECT * FROM programas_1 ORDER BY id_universidad ASC $limit";
-		$res   = $this->query($sql) or die( "Error en la Acreditados ". $oCnx->errno() );
+		$sql   = "SELECT * FROM programas_1 ORDER BY id_universidad DESC $limit";
+		$res   = $this->query($sql) or die( "Error en  Acreditados ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){
 		   while( $info = $res->fetch_array( MYSQLI_ASSOC ) ){	
@@ -93,7 +93,7 @@ class Modelo extends DbConnect
 	function fnListEvaluadores( $empezarDesde = '', $cantidadReg = '' ){
 		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
 		
-		$sql   = "SELECT * FROM evaluadores ORDER BY id_evaluador ASC ".$limit;
+		$sql   = "SELECT * FROM evaluadores ORDER BY id_evaluador DESC ".$limit;
 		$res   = $this->query($sql) or die( "Error en evaluadores ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){
@@ -147,7 +147,12 @@ class Modelo extends DbConnect
 		$this->query($sql) or die( "Error en orden asociados ". $oCnx->errno() );
 		return "OK";
 	}
-	
+	function fnEliminarSociados( $idAsociado ){
+		$sql = "DELETE FROM referencias_asociados WHERE id = {$idAsociado}";
+  	$this->query($sql);  
+  
+		return "OK";  
+	}
 	
 	function fnListAsociados(){
   		$infoASociados = array();
@@ -181,15 +186,15 @@ class Modelo extends DbConnect
 
   	 function fnListNoticias( $empezarDesde = '', $cantidadReg = '' ){
   	 	$noticias = array();
-<<<<<<< HEAD
-  		$sql   = "SELECT * FROM temas_noticias ORDER BY id";
+
+  		/*$sql   = "SELECT * FROM temas_noticias ORDER BY id";
   		$res   = $this->query($sql) or die( "Error en noticias ". $oCnx->errno() );
 		$regs  = $res->num_rows;
-=======
+
 		$limit = (!empty($cantidadReg) ? "LIMIT {$empezarDesde}, {$cantidadReg} " : '');
->>>>>>> 2f0a9ee80f769adf50889831b2b5704e2098ebee
+*/
 		
-		$sql   = "SELECT * FROM temas_noticias ORDER BY fecha DESC ".$limit;
+		$sql   = "SELECT * FROM temas_noticias ORDER BY id DESC ".$limit;
 		$res   = $this->query($sql) or die( "Error en noticias ". $oCnx->errno() );
 		$regs  = $res->num_rows;
 	    if( $regs != 0 ){
