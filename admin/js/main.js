@@ -371,7 +371,7 @@ $(document).on('click','.add_item',function (e) {
 */
 
 // ELIMINANDO ELIMINANDO NOTICIA/TEMA
-	$(document).on('input','.pass_complexity',function( elem ){
+	$(document).on('input','.delete_tema',function( elem ){
 		var idNoticia = this.previousElementSibling.value;
 		$.ajax({
 	        type: "POST",
@@ -837,7 +837,7 @@ $(document).on('click','.close_edit_btn',function (e) {
 });
 
 
-/*$(window).load(function(){
+$(window).load(function(){
 	
 	//var pag=window.location.href.indexOf("npa") > -1;
 		if(window.location.href.indexOf("npa") > -1) {
@@ -852,7 +852,7 @@ $(document).on('click','.close_edit_btn',function (e) {
 		}
 	
 });
-*/
+
 //new?comm
 
 $(document).on('click','.del_asociado',function () {
