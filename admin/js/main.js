@@ -860,7 +860,7 @@ $(document).on('click','.del_asociado',function () {
 
           if(info.success == 'OK'){
               showMessages( "<span> La información se ha eliminado.</span>" );
-			  setTimeout(function(){ location.href=paginaPrincipal+"?npa=1"}, 2000 );
+			  //setTimeout(function(){ location.href=paginaPrincipal+"?npa=1"}, 2000 );
              // $(elem).parent().hide();
           }
          }
