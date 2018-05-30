@@ -167,7 +167,7 @@ class Usuario extends DbConnect
 	   $regs = $res->num_rows;
 	   if($regs == 0)
        {
-	      $error = "El usuario no existe";
+	      $error = '<div class="error">El usuario no existe</div>';
           return  $error;
        }
 
@@ -176,7 +176,7 @@ class Usuario extends DbConnect
 
        if($fila["activo"] != 1)
        {
-          $error = "El usuario no está activo";
+          $error = '<div class="error">El usuario no está activo</div>';
           return  $error;
        }
        
@@ -289,7 +289,7 @@ class Usuario extends DbConnect
 			
 			//Setemamos variables para el envio de correo electrónico
 
-			$mAsunto = utf8_decode("Reenvío de contraseña, sistema Canifel");
+			$mAsunto = utf8_decode("Reenvío de contraseña");
 			$nameUsu = $correoBusqueda["nombre"]." ".$correoBusqueda["apellidos"];
 			$machote = file_get_contents("../views/emailNuevoUsuario.php");
 			$machote = str_replace("[VARURL]", $varUrl, $machote);

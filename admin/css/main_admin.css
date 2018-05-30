@@ -337,4 +337,8 @@ pre {
  word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
+.restablecer .txt .error{width:100%;background:#7F0002;padding:5px 0;color:#FFF;text-align:center; font-size:0.8em; font-weight:bold;}
 
+.recover_pwd{width:100%; height:auto; display:block;padding:10px 0; overflow:hidden;}
+.recover_pwd a{ float:right;color:#FFF; background:#000;text-align:center;}
+.recover_pwd input{height:15px; font-size:0.8em;}

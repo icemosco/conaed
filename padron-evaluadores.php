@@ -226,23 +226,6 @@ $(document).ready(function(){
 
 */
 
-
-	var swiper = new Swiper('.swiper-container',{
-    speed: 300,
-    autoplay: true,
-    loop:4,
-    lazyLoading: true
-
-});
-	var swiper2 = new Swiper('.swiper-container-2',{
-    speed: 200,
-    autoplay: true,
-    loop:true,
-    slidesPerView: 3,
-    lazyLoading: true
-
-
-});
 </script>
 
 </html>

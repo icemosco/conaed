@@ -10,15 +10,16 @@ error_reporting(E_ALL);*/
 	include_once("../php/ControllerUsuarios.php");
 	include_once("../php/ControllerAsociados.php");
 	include_once("../php/ControllerNoticias.php");
-
+	$menuSeccion = '';
 	$mostrarMsgSlider = '';
-
+	
 //cxomment
 
 	//======================= ACREDITADOS
 	$numPaginaAcreditados = 1;
 	if(isset( $_REQUEST['npa']) ){
 		$numPaginaAcreditados = $_REQUEST['npa'];
+		$menuSeccion       = 'npa';
 	}
 	$infoAcre =  fnTemplateAcreditados( $numPaginaAcreditados );
 	
@@ -26,6 +27,7 @@ error_reporting(E_ALL);*/
 	$numPaginaEvaluadores = 1;
 	if(isset( $_REQUEST['npe']) ){
 		$numPaginaEvaluadores = $_REQUEST['npe'];
+		$menuSeccion       = 'npe';
 	}
 	$infoEval =  fnTemplateEvaluadores( $numPaginaEvaluadores );
 
@@ -33,13 +35,15 @@ error_reporting(E_ALL);*/
 	$numPaginaUsuarios = 1;
 	if(isset( $_REQUEST['npu']) ){
 		$numPaginaUsuario = $_REQUEST['npu'];
+		$menuSeccion       = 'npu';
 	}
 	$infoUsus =  fnTemplateUsuarios( $numPaginaUsuarios );
 
 	//======================= NOTICIAS
 	$numPaginaNoticias = 1;
-	if(isset( $_REQUEST['np']) ){
+	if(isset( $_REQUEST['npn']) ){
 		$numPaginaNoticias = $_REQUEST['npn'];
+		$menuSeccion       = 'npn';
 	}
 	$infoNotice =  fnTemplateNoticias( $numPaginaNoticias );
 
@@ -55,7 +59,7 @@ error_reporting(E_ALL);*/
 		<div class="search">
 		</div>
 	</div>
-	<div class="forms_cont sliders" style="display:block">
+	<div class="forms_cont sliders" >
 		<form class="slider" name="sliders" id="sliders" action="./home.php" method="post" enctype="multipart/form-data">
 			
 			<?php echo fnTemplateSlide(); ?>
@@ -153,7 +157,45 @@ error_reporting(E_ALL);*/
  <script src="../plugins/croppie/img_perfil.js"></script>
 
  <script src="../js/main.js"></script>
-
+<script>
+  
+ //recogemos la variable para menu 
+ $(document).ready(function(){ 
+  
+  varMenu = "<?php echo $menuSeccion?>";
+  
+  if(varMenu != '')
+  {
+   var rel = '';
+   switch( varMenu ) {
+       //Acreditados    
+       case 'npa':
+           rel = 'programas';
+           break;
+       //Evaluadores    
+       case 'npe':
+           rel = 'evaluadores';
+           break;
+       //Noticias    
+       case 'npn':
+           rel = 'temasynoticias';
+           break;
+       //Usuarios
+       case 'npu':
+           rel = 'usuarios';
+           break;
+        //Slider   
+        default:
+       rel = 'sliders';
+   }
+   menu( rel );
+  } else{
+	   menu('sliders' );
+  }
+  
+ }); 
+  
+</script>
 </body>
 
 </html>

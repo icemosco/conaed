@@ -1,52 +1,7 @@
+var paginaPrincipal = "http://localhost/conaed_last_250518/admin/views/home.php";
 $(document).ready(function(){
 	//MENU
 
-	$('.btns_menu').click(function(){
-
-		var btn=$(this).attr('rel');
-		$('.btns_menu').removeClass('selected');
-		$('.icon').removeClass('selected');
-		$(this).addClass('selected');
-		$(this).find('.icon').addClass('selected');
-		$('.forms_cont').hide();
-		$('.msg').hide();
-		
-		switch (btn) {
-		    case "sliders":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Slider Home Page');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" class="add_item add_n_slider" title="Agregar un nuevo slider">Nuevo</a>')
-
-		        break;
-		    case "programas":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Programas Acreditados');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="programas_plus" class="add_item" title="Agregar una nueva universidad">Nuevo</a>');
-		        break;
-		    case "evaluadores":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Padrón de Evaluadores');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador">Nuevo</a>')
-		        break;
-		    case "asociados":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Referencias y Asociados');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="asociados_plus" class="add_item" title="Agregar un nuevo Asociado">Nuevo</a>');
-		        break;
-		    case "temasynoticias":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Temas y Noticias');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="temas_plus" class="add_item" title="Agregar un nuevo Tema">Nuevo</a>');
-		         break;
-		        
-		    case "usuarios":
-		        	$('.'+btn).show();
-		        	$('.header_int > h2').html('Gestor de Usuarios');
-		        	$('.header_int > .search').html('<a href="javascript:void(0)" rel="usuarios_plus" class="add_item" title="Agregar un nuevo Usuario">Nuevo</a>');
-		        break;
-		   
-		}
-	});
 	
 //Para cuando cambien el combo
  $('.fslect_cat').change(function(e){
@@ -246,45 +201,17 @@ $(document).on('click','.add_item',function (e) {
 
 		        if(info.success === 'OK'){
 			     	showMessages('<span>Se ha eliminado la universidad.</span>');
-					
-					
+					setTimeout(function(){ location.href=paginaPrincipal+"?npa=1"}, 2000 );
 		        }
 			
 	        }
 		});
-		$.get("../ajax/rfsh_acreditados.php", function(text){
-			$('.programas').html(text);
-		});
+		
 	});
 	
 	
 	// ELIMINANDO REGISTRO
-/*	$('.delete_acreditado').click(function( elem ){
-		var idAcreditado = this.previousElementSibling.value;
-		$.ajax({
-	        type: "POST",
-	        url: "../ajax/ajaxAcreditados.php",
-	        data: {
-		        accion  : "eliminar",
-		        id      : idAcreditado
-		    },
-	        success: function(data)
-	        { 
-		        info = JSON.parse(data);
 
-		        if(info.success === 'OK'){
-			     	showMessages('<span>Se ha eliminado el registro.</span>');
-					
-					
-		        }
-			
-	        }
-		});
-		$.get("../ajax/rfsh_acreditados.php", function(text){
-			$('.programas').html(text);
-		});
-		
-	});	*/
 
 
 	// ELIMINANDO REGISTRO
@@ -303,12 +230,11 @@ $(document).on('click','.add_item',function (e) {
 
 		        if(info.success === 'OK'){
 			     	showMessages('<span>Se ha eliminado el evaluador.</span>');
+					setTimeout(function(){ location.href=paginaPrincipal+"?npe=1"}, 2000 );
 		        }
 	        }
 		});
-		$.get("../ajax/rfsh_evaluadores.php", function(text){
-			$('.evaluadores').html(text);
-		});
+		
 	});
 	/*$('.delete_evaluador').click(function( elem ){
 		
@@ -358,12 +284,13 @@ $(document).on('click','.add_item',function (e) {
 
 		        if(info.success === 'OK'){
 			     	showMessages('<span>Se ha eliminado el usuario.</span>');
+					setTimeout(function(){ location.href=paginaPrincipal+"?npu=1"}, 2000 );
 		        }
 	        }
 		});
-		$.get("../ajax/rfsh_usuarios.php", function(text){
+		/*$.get("../ajax/rfsh_usuarios.php", function(text){
 			$('.usuarios').html(text);
-		});
+		});*/
 	});
 	/*$('.delete_usuario').click(function( elem ){
 		
@@ -386,6 +313,7 @@ $(document).on('click','.add_item',function (e) {
 
 		        if(info.success === 'OK'){
 			     	showMessages('<span>Se ha eliminado el registro.</span>');
+					setTimeout(function(){ location.href=paginaPrincipal+"?npn=1"}, 2000 );
 		        }
 	        }
 		});
@@ -413,6 +341,69 @@ $(document).on('click','.add_item',function (e) {
 //=============
 //READY
 //=============
+//funcionalidad del menu
+ function menu( obj ){
+  
+  $('.btns_menu').removeClass('selected');
+  $('.icon').removeClass('selected');
+ 
+  if(!$.isEmptyObject($(obj).attr('rel')))
+  {
+   var btn = $(obj).attr('rel');
+   $(obj).addClass('selected');
+   $(obj).find('.icon').addClass('selected');
+   
+  }else{
+   var btn  = obj;
+   var obj2 = '';
+   $('.btns_menu').each(function(i, elem){
+    if( obj == $(this).attr('rel')){
+     obj2 = this;
+    }
+   });
+   $(obj2).addClass('selected');
+   $(obj2).find('.icon').addClass('selected');
+  }
+  
+  $('.forms_cont').hide();
+  $('.msg').hide();
+  
+  switch (btn) {
+      case "sliders":
+           $('.'+btn).show();
+           $('.header_int > h2').html('Slider Home Page');
+           $('.header_int > .search').html('<a href="javascript:void(0)" class="add_item add_n_slider" title="Agregar un nuevo slider">Nuevo</a>')
+
+          break;
+      case "programas":
+           $('.'+btn).show();
+           $('.header_int > h2').html('Programas Acreditados');
+           $('.header_int > .search').html('<a href="javascript:void(0)" rel="programas_plus" class="add_item" title="Agregar una nueva universidad">Nuevo</a>');
+          break;
+      case "evaluadores":
+           $('.'+btn).show();
+           $('.header_int > h2').html('Padrón de Evaluadores');
+           $('.header_int > .search').html('<a href="javascript:void(0)" rel="evaluadores_plus" class="add_item" title="Agregar un nuevo evaluador">Nuevo</a>')
+          break;
+      case "asociados":
+           $('.'+btn).show();
+           $('.header_int > h2').html('Referencias y Asociados');
+           $('.header_int > .search').html('<a href="javascript:void(0)" rel="asociados_plus" class="add_item" title="Agregar un nuevo Asociado">Nuevo</a>');
+          break;
+      case "temasynoticias":
+           $('.'+btn).show();
+           $('.header_int > h2').html('Temas y Noticias');
+           $('.header_int > .search').html('<a href="javascript:void(0)" rel="temas_plus" class="add_item" title="Agregar un nuevo Tema">Nuevo</a>');
+           break;
+          
+      case "usuarios":
+           $('.'+btn).show();
+           $('.header_int > h2').html('Gestor de Usuarios');
+           $('.header_int > .search').html('<a href="javascript:void(0)" rel="usuarios_plus" class="add_item" title="Agregar un nuevo Usuario">Nuevo</a>');
+          break;
+     
+  }
+ }
 
 function showMessages( msg ){
 		$(".msg").html(msg); 
@@ -518,12 +509,11 @@ function showMessages( msg ){
 
 		        if(info.success == 'OK'){
 			     	showMessages( "<span> La información se ha guardado</span>" );
+					setTimeout(function(){ location.href=paginaPrincipal+"?npa=1"}, 2000 );
 		        }
 	        }
 		});	
-		$.get("../ajax/rfsh_acreditados.php", function(text){
-			$('.programas').html(text);
-		});
+		
 		
 	}
 
@@ -560,13 +550,11 @@ function showMessages( msg ){
 
 		        if(info.success == 'OK'){
 			     	showMessages( "<span> La información se ha guardado</span>" );
+					setTimeout(function(){ location.href=paginaPrincipal+"?npe=1"}, 2000 );
 		        }
 	        }
 		});	
-		$.get("../ajax/rfsh_evaluadores.php", function(text){
-			$('.evaluadores').html(text);
-		});
-	}	
+			}	
 
 	//===================================================
 	//				USUARIOS
@@ -657,13 +645,12 @@ function showMessages( msg ){
 
 		        if(info.success == 'OK'){
 			     	showMessages( "<span> El usuario se ha guardado.</span>" );
+					setTimeout(function(){ location.href=paginaPrincipal+"?npu=1"}, 2000 );
 		        }
 	        }
 		});	
 		
-		$.get("../ajax/rfsh_usuarios.php", function(text){
-			$('.usuarios').html(text);
-		});
+		
 	}
 	
 	
@@ -690,9 +677,9 @@ function showMessages( msg ){
 	                    
 	                 }
 	        });
-		$.get("../ajax/rfsh_asociados.php", function(text){
+		/*$.get("../ajax/rfsh_asociados.php", function(text){
 			$('.asociados').html(text);
-		});
+		});*/
 	}
 
 	function guardarOrdenAsociados(){ 
@@ -729,12 +716,11 @@ function showMessages( msg ){
 
 		        if(info.success == 'OK'){
 		            showMessages( "<span> La información se ha guardado.</span>" );
+					setTimeout(function(){ location.href=paginaPrincipal+"?npa=1"}, 2000 );
 		        }
 	        }
 	     })   
-		$.get("../ajax/rfsh_asociados.php", function(text){
-			$('.asociados').html(text);
-		});
+		
 	}
 
 
@@ -808,12 +794,13 @@ function showMessages( msg ){
 				}
 		        else{
 		        	showMessages( "<span> Hubo un error al guardar la información.</span>" );
+					setTimeout(function(){ location.href=paginaPrincipal+"?npn=1"}, 2000 );
 		        }
 	        }
 		});	
-		$.get("../ajax/rfsh_noticias.php", function(text){
+		/*$.get("../ajax/rfsh_noticias.php", function(text){
 			$('.temasynoticias').html(text);
-		});
+		});*/
 	
 	}
 
@@ -837,7 +824,7 @@ $(document).on('click','.close_edit_btn',function (e) {
 });
 
 
-$(window).load(function(){
+/*$(window).load(function(){
 	
 	//var pag=window.location.href.indexOf("npa") > -1;
 		if(window.location.href.indexOf("npa") > -1) {
@@ -851,7 +838,7 @@ $(window).load(function(){
 			$('.header_int > h2').html('Padrón de Evaluadores');
 		}
 	
-});
+});*/
 
 //new?comm
 
@@ -873,17 +860,29 @@ $(document).on('click','.del_asociado',function () {
 
           if(info.success == 'OK'){
               showMessages( "<span> La información se ha eliminado.</span>" );
-              $(elem).parent().hide();
+			  setTimeout(function(){ location.href=paginaPrincipal+"?npa=1"}, 2000 );
+             // $(elem).parent().hide();
           }
          }
      });   
-  
-$.get("../ajax/rfsh_asociados.php", function(text){
+	 $.get("../ajax/rfsh_asociados.php", function(text){
 			$('.asociados').html(text);
-		});	
+	 });
+
 });
 
 $(document).on('click','.fakecheck',function () {
  $(this).toggleClass('checked');
  $(this).parent().find('.del_asociado').toggleClass('show_del');
 });
+
+
+/*
+$('.rest_pwd').click(function(){
+	//$('recover_pwd').slideDown(500);	
+});
+
+$('.send_rest').click(function(){
+	var email=$(this).parent().find('.email_rec').val('');
+	alert(email);
+});*/

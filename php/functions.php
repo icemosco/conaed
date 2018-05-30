@@ -99,57 +99,64 @@ function programas( $numPagina, $filtro = '' ){
  
 }
 
-
 function padronEvaluadores( $limite = '' , $contador = false ){
-	
-	if(!empty ($limite) && $contador == false ){
-		$extra='LIMIT '.$limite;
-	}
-	
-	$oCnx      = new DbConnect();
-	$sql  	   = "SELECT * FROM evaluadores ORDER BY id_evaluador ".$extra;
-	$res       = $oCnx->query($sql) or die( "Error en la evaluadores ". $oCnx->errno() );
-	$regs      = $res->num_rows;
-	
-	if(!empty($limite))
-		$numColum = ceil( $limite / 3 );
-	else
-		$numColum = ceil( $regs / 3 );
-	
-	$rowsTable = '';
-	$contEvaluadores = 1;
-	$contTemp  = 0;
+ 
+ if(!empty ($limite) && $contador == false ){
+  $extra='LIMIT '.$limite;
+ }
+ 
+ $oCnx      = new DbConnect();
+ $sql      = "SELECT * FROM evaluadores ORDER BY id_evaluador DESC ".$extra;
+ $res       = $oCnx->query($sql) or die( "Error en la evaluadores ". $oCnx->errno() );
+ $regs      = $res->num_rows;
+ 
+ if(!empty($limite))
+  $numColum = ceil( $limite / 3 );
+ else
+  $numColum = ceil( $regs / 3 );
+ 
+ $rowsTable = '';
+ $contEvaluadores = 1;
+ $contTemp  = 0;
     if( $regs != 0 )
     {
-	   while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
-	   {
-		    if( $contTemp == $numColum ){
-			 	$rowsTable .="</ul></div>";  	
-			   	$contTemp = 0;
-		   	}
-		   	if( $contTemp == 0 ){
-				$rowsTable .= '<div class="cont_names">
-								<span class="title_top">Nombre</span>
-									<ul class="padron">';					
-		   	}
-		   	
-		   	$rowsTable .= '<li><span class="num">'.$contEvaluadores.'</span><span>'.$info['a_paterno'].' '.$info['a_materno'].' '.$info['nombre'].'</span></li>';
-		   	
-		 	
-		 	$contTemp++;
-			$contEvaluadores++;				
-	   }
-	   
-	   $rowsTable .="</ul></div>";  
-	   
-	   
-	   if($contador == true)
-			return ($contEvaluadores-1);
-		else
-			return $rowsTable;
+    while( $info = $res->fetch_array( MYSQLI_ASSOC ) )
+    {
+      if( $contTemp == $numColum ){
+     $rowsTable .="</ul></div>";   
+       $contTemp = 0;
+      }
+      if( $contTemp == 0 ){
+    $rowsTable .= '<div class="cont_names">
+        <span class="title_top">Nombre</span>
+         <ul class="padron">';     
+      }
+      
+      $rowsTable .= '<li><span class="num">'.$contEvaluadores.'</span><span>'.$info['a_paterno'].' '.$info['a_materno'].' '.$info['nombre'].'</span></li>';
+      
+    
+    $contTemp++;
+   $contEvaluadores++;    
+    }
+    
+    if($contTemp < $numColum)
+    {
+     for($i = ($contTemp); $numColum > $i ; $i++){
+      $rowsTable .= '<li><span class="num">&nbsp;</span><span>&nbsp;</span></li>';
+     }
+  }   
+    
+    $rowsTable .="</ul></div>";  
+    
+    
+    
+    if($contador == true)
+   return ($contEvaluadores-1);
+  else
+   return $rowsTable;
 
-	}
-	
+ }
+ 
 }
 
 
