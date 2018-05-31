@@ -223,11 +223,12 @@ function mostrarnota_home(){
     {
 	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
 	    {
+		        $fecha = date('Y-m-d', strtotime($info['fecha']));
 			$contenido=$info["contenido"];
 			$contenido = str_replace(PHP_EOL, '<br />', $contenido);
 			$rownoticias .= '
 								<h3>'.$info['titulo'].'</h3>
-							 <span class="sub_"><strong>'.$info['fecha'].' / Lic. Fernando Peniche</strong></span>
+							 <span class="sub_"><strong>'.$fecha.' / Lic. Fernando Peniche</strong></span>
 							 <div class="img_t"><img src="img/temas/'.$info['img'].'" alt="" /></div>
 							<p>'.$contenido.'</p>
 							
