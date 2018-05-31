@@ -39,7 +39,9 @@ include_once("./php/functions.php")
 
 <header>
 	<div class="cont_header">
+  		<div class="logo_flot"><img src="img/logo_transp.png" /></div>
 	  <ul class="contact_icons">
+	  
 		<li><a href="javascript:void(0)" class="phone_icon" style="margin:0 10px 0 25px;"><img src="img/phone.png" /></a></li>
 		<li class="nmt"><a href="tel:5514.1700" class="phone1">(55) 5514.1700 /&nbsp;</a></li>
 		<li class="nmt"><a href="tel:5538880671" class="phone2">55.3888.0671</a></li>
@@ -74,7 +76,7 @@ include_once("./php/functions.php")
 </header>
 <section id="slider" class="">
 	
-		<div class="logo_flot"><img src="img/logo_conaed_bco.png" /></div>
+		<!--<div class="logo_flot"><img src="img/logo_conaed_bco.png" /></div>-->
 	<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-button-next" style="width:30px; height:30px;">next</div>

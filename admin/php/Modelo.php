@@ -1,4 +1,4 @@
-<?php
+inserta<?php
 if(!isset($_SESSION)) { session_start(); }
 class Modelo extends DbConnect 
 {
@@ -209,6 +209,7 @@ class Modelo extends DbConnect
 
 	function fnInsertaNotica( $titulo, $contenido, $nomImagen)
 	{
+			
 		$sql  = "INSERT INTO temas_noticias(titulo, contenido, img, fecha)
 					 VALUES('".$titulo."','".$contenido."','".$nomImagen."', NOW())";
 		$res  = $this->query($sql) or 

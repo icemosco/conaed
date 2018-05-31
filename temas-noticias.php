@@ -22,7 +22,8 @@ include_once("./php/functions.php");
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 <style>
-
+section{text-align:center;}
+	header_title oxygenlight{width:50%; font-size:1em; left:0; right:0; margin:0 auto; display:block;}
 </style>
 </head>
 <body>
@@ -42,15 +43,15 @@ include_once("./php/functions.php");
 	  <span>Consejo para la Acreditación de la Enseñanza del Derecho A.C</span>
 <nav class="menu_p">
 		<ul>
-		  <li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu">Quienes somos</a></li>
+		  <li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu">Quiénes somos</a></li>
 		  <li><a href="http://www.conaed.org.mx#proceso_de_acreditacion" title="proceso_de_acreditación" class="btns_menu">Proceso de acreditación <br />de los programas</a></li>
-			<li><a href="jhttp://www.conaed.org.mx#quienes_somos" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
-			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
-			<li><a href="http://www.conaed.org.mx#padron_evaluadores" title="temas" class="btns_menu">Temas y noticias</a></li>
+			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="programas_acreditados" class="btns_menu">Programas acreditados</a></li>
+			<li><a href="http://www.conaed.org.mx#padron_evaluadores" title="padron_evaluadores" class="btns_menu">Padrón de evaluadores copaes / conaed</a></li>
+			<li><a href="http://www.conaed.org.mx#temas" title="temas" class="btns_menu">Temas y noticias</a></li>
 			<li><a href="http://www.conaed.org.mx#consejo" title="consejo" class="btns_menu">Consejo conaed</a></li>
 			
 			<li><a href="http://www.conaed.org.mx#referencias" title="referencias" class="btns_menu">Nuestras referencias <br />y Asociados</a></li>
-			<li><a href="http://www.conaed.org.mx#contacto" title="contacto" class="btns_menu">Contáctanos</a></li>
+			<li><a href="http://www.conaed.org.mx#contacto" title="contacto" class="btns_menu">Contactanos</a></li>
 		</ul>
 	</nav>
 	<ul class="btns_call_mobile">
@@ -84,7 +85,7 @@ include_once("./php/functions.php");
 
 
 					<div class="block_t block_t_r brleft">
-							<h4>Últimos temas sobre Acreditación</h4>
+							<h4>Últimas noticias</h4>
 							<ul class="news">
 								<!--<li>
 									<a href="javascript:void(0)">
@@ -216,15 +217,15 @@ solicitud.</p>
 		<div class="right_f">
 			<ul>
 			
-			<li><a href="javascript:void(0)" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
-			<li><a href="javascript:void(0)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
-			<li><a href="javascript:void(0)" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
-			<li><a href="javascript:void(0)" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
-			<li><a href="javascript:void(0)" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>
-			<li><a href="javascript:void(0)" title="consejo" class="v">Consejo CONAED</a></li>
+			<li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
+			<li><a href="http://www.conaed.org.mx#proceso_de_acreditacion)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
+			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
+			<li><a href="http://www.conaed.org.mx#padron_evaluadores" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
+			<li><a href="http://www.conaed.org.mx#temas" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>
+			<li><a href="http://www.conaed.org.mx#consejo" title="consejo" class="v">Consejo CONAED</a></li>
 			
-			<li><a href="javascript:void(0)" title="referencias" class="btns_menu_footer">Nuestras Referencias y Asociados</a></li>
-			<li><a href="javascript:void(0)" title="contacto" class="btns_menu_footer">Contacto</a></li>
+			<li><a href="http://www.conaed.org.mx#referencias" title="referencias" class="btns_menu_footer">Nuestras Referencias y Asociados</a></li>
+			<li><a href="http://www.conaed.org.mx#contacto" title="contacto" class="btns_menu_footer">Contacto</a></li>
 		</ul>
 		</div>
 		<div class="rights">CONAED, 2018. Todos los Derechos Reservados</div>

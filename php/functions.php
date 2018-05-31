@@ -227,7 +227,7 @@ function mostrarnota_home(){
 			$contenido = str_replace(PHP_EOL, '<br />', $contenido);
 			$rownoticias .= '
 								<h3>'.$info['titulo'].'</h3>
-							 <span class="sub_"><strong>'.$info['fecha'].' / Lic. Fernando Peniche</strong></span>
+							 <span class="sub_">'.$info['fecha'].' / Lic. Fernando Peniche</span>
 							 <div class="img_t"><img src="img/temas/'.$info['img'].'" alt="" /></div>
 							<p>'.$contenido.'</p>
 							
@@ -253,7 +253,7 @@ function mostrarnota_int(){
 									<div class="block_t_int">
 									
 									<h3>'.$info['titulo'].'</h3>
-							 <span class="sub_"><strong>'.$info['fecha'].' / Lic. Fernando Peniche</strong></span>
+							 <span class="sub_">'.$info['fecha'].' / Lic. Fernando Peniche</span>
 							 <div class="img_t_int"><img src="img/temas/'.$info['img'].'" alt="" /></div>
 							<p class="nopadding1 int_art">'.$contenido.'</p>
 							<div class="redes_int">
@@ -272,7 +272,7 @@ function mostrarnota_int(){
 }
 function mostrartitulos_slider(){
 	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM slider ORDER BY id DESC LIMIT 3"; 
+	$sql  = "SELECT * FROM slider ORDER BY id DESC LIMIT 5"; 
 	$regs = $oCnx->query($sql) or die( "Error en not_slider ". $oCnx->errno() );
 	$rownonot_slide = "";
 	if( count($regs) > 0 )

@@ -677,9 +677,9 @@ function showMessages( msg ){
 	                    
 	                 }
 	        });
-		/*$.get("../ajax/rfsh_asociados.php", function(text){
+		$.get("../ajax/rfsh_asociados.php", function(text){
 			$('.asociados').html(text);
-		});*/
+		});
 	}
 
 	function guardarOrdenAsociados(){ 
@@ -867,6 +867,7 @@ $(document).on('click','.del_asociado',function () {
      });   
 	 $.get("../ajax/rfsh_asociados.php", function(text){
 			$('.asociados').html(text);
+		 
 	 });
 
 });

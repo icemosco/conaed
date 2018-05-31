@@ -1,12 +1,10 @@
 <?php
-	ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+	
 	include_once("../php/config.php");
 	include_once("../php/DbConnect.php");
 	include_once("../php/Modelo.php");
 	include_once("../php/ControllerAsociados.php");
-
+sleep(5);
 
 ?>
 

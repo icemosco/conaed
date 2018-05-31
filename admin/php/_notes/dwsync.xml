@@ -11,9 +11,9 @@
 <file name="Funciones.php" server="107.180.4.49//" local="131717547903019994" remote="131717358000000000" Dst="2" />
 <file name="Usuario.php" server="107.180.4.49//" local="131717547905403567" remote="131717358000000000" Dst="2" />
 <file name="cerrar_sesion.php" server="107.180.4.49//" local="131717547907878665" remote="131717358000000000" Dst="2" />
-<file name="config.php" server="107.180.4.49//" local="131717597707082794" remote="131717525400000000" Dst="2" />
+<file name="config.php" server="107.180.4.49//" local="131720433756307117" remote="131720361600000000" Dst="2" />
 <file name="del_asoc.php" server="107.180.4.49//" local="131717547913895866" remote="131717358000000000" Dst="2" />
-<file name="error_log" server="107.180.4.49//" local="131717547918437527" remote="131717358600000000" Dst="2" />
+<file name="error_log" server="107.180.4.49//" local="131717547918437527" remote="131720348400000000" Dst="2" />
 <file name="index.php" server="107.180.4.49//" local="131717547919596688" remote="131717358000000000" Dst="2" />
 <file name="validateLogin.php" server="107.180.4.49//" local="131717547925771385" remote="131717358000000000" Dst="2" />
 <file name="validaSession.php" server="107.180.4.49//" local="131717547928311437" remote="131717358000000000" Dst="2" />
