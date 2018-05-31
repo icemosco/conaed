@@ -214,30 +214,30 @@ function fnListCategorias(){
 
 //funcion de noticias en home
 function mostrarnota_home(){
-	$oCnx = new DbConnect();
-	$sql  = "SELECT * FROM temas_noticias ORDER BY id DESC LIMIT 1"; 
-	$regs = $oCnx->query($sql) or die( "Error en noticias ". $oCnx->errno() );
-	$rownoticias = "";
-	
-	if( count($regs) > 0 )
+ $oCnx = new DbConnect();
+ $sql  = "SELECT * FROM temas_noticias ORDER BY id DESC LIMIT 1"; 
+ $regs = $oCnx->query($sql) or die( "Error en noticias ". $oCnx->errno() );
+ $rownoticias = "";
+ 
+ if( count($regs) > 0 )
     {
-	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
-	    {
-			$contenido=$info["contenido"];
-			$contenido = str_replace(PHP_EOL, '<br />', $contenido);
-			$rownoticias .= '
-								<h3>'.$info['titulo'].'</h3>
-							 <span class="sub_">'.$info['fecha'].' / Lic. Fernando Peniche</span>
-							 <div class="img_t"><img src="img/temas/'.$info['img'].'" alt="" /></div>
-							<p>'.$contenido.'</p>
-							
-			
-			';
-		}
-	}
-	return $rownoticias;	
+    while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+     {
+          $fecha = date('Y-m-d', strtotime($info['fecha']));
+   $contenido=$info["contenido"];
+   $contenido = str_replace(PHP_EOL, '<br />', $contenido);
+   $rownoticias .= '
+        <h3>'.$info['titulo'].'</h3>
+        <span class="sub_">'.$fecha.' / Lic. Fernando Peniche</span>
+        <div class="img_t"><img src="img/temas/'.$info['img'].'" alt="" /></div>
+       <p>'.$contenido.'</p>
+       
+   
+   ';
+  }
+ }
+ return $rownoticias; 
 }
-
 function mostrarnota_int(){
 	$oCnx = new DbConnect();
 	$sql  = "SELECT * FROM temas_noticias ORDER BY id DESC"; 
