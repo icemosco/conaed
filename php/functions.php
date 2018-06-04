@@ -169,12 +169,7 @@ function mostrarSlider(){
     {
 	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
 	    {
-			/*$rowSliders .= '<div class="swiper-slide">
-								<div class="screen_slider"></div>
-								<div class="txt1">'.$info['titulo'].'</div>
-								<div class="txt2">'.$info['subtitulo'].'</div>
-								<img src="img/slider/'.$info['img'].'">
-							</div>';*/
+			
 			$rowSliders.='<div>
 							 <div class="screen_slider"></div>
 							 <div class="txt1">'.$info['titulo'].'</div>
