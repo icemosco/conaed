@@ -11,7 +11,8 @@ include_once("./php/functions.php")
 <meta charset="utf-8">
 <title>.:: CONAED ::.</title>
 <link href="css/main.css" rel="stylesheet" title="stylesheet" type="text/css" />
-<link rel="stylesheet" href="css/swiper.min.css">
+<!--<link rel="stylesheet" href="css/swiper.min.css">-->
+ <link rel="stylesheet" type="text/css" href="css/slick.css"/>
 <meta name="viewport" content="width=device-width, user-scalable=no">
 <meta name="keywords" content="" />
 <meta name="description" content="El CONAEDes una organización civil sin fines de lucro que se constituyó en febrero de 2003, a instancias de la Barra Mexicana Colegio de Abogados A.C. con el propósito de contribuir al desarrollo de la enseñanza del Derecho en México. En abril de 2006, el COPAES lo reconoció como organismo acreditador." />
@@ -32,6 +33,12 @@ include_once("./php/functions.php")
   gtag('js', new Date());
 
   gtag('config', 'UA-118766206-1');
+</script>
+<script type="text/javascript">
+var dir = window.document.URL;
+var dir2 = encodeURIComponent(dir);
+var tit = 'mosco prueba';
+var tit2 = encodeURIComponent(tit);
 </script>
 
 </head>
@@ -75,14 +82,20 @@ include_once("./php/functions.php")
 	</ul>
 </header>
 <section id="slider" class="">
-	
+	<div class="your-class">
+   		<?php echo mostrarSlider();?>
+    <!--<div><img src="img/slider/sld_1.png" /></div>
+    <div><img src="img/slider/sld_2.png" /></div>
+    <div><img src="img/slider/sld_3.png" /></div>
+    <div><img src="img/slider/sld_4.png" /></div>-->
+  </div>
 		<!--<div class="logo_flot"><img src="img/logo_conaed_bco.png" /></div>-->
-	<div class="swiper-container">
+	<!--<div class="swiper-container">
 		<div class="swiper-wrapper">
 			<div class="swiper-button-next" style="width:30px; height:30px;">next</div>
-			<?php echo mostrarSlider();?>
+			
 		</div>
-  	</div>
+  	</div>-->
 </section>
 <section id="quienes_somos" class="">
 	<article>
@@ -224,9 +237,9 @@ include_once("./php/functions.php")
 
 							<a href="temas-noticias.php" class="leer_mas" id="">LEER MÁS</a>
 							<div class="redes_m">
-								<a href="" class=""></span>
-								<a href="" class=""></span>
-								<a href="" class=""></span>
+								<a href="javascript:window.location.href=('http://www.facebook.com/share.php?u='+dir2+'&t='+tit2+'')"><img src="img/fb.png"/></a>
+								<a href="" class=""><img src="img/twitter.png"/></a>
+								<a href="" class=""><img src="img/linkedin.png"/></a>
 							</div>
 							<div class="redes"></div>
 					</div>
@@ -415,23 +428,37 @@ solicitud.</p>
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/animate_numbers.js"></script>
 <script src="js/main.js"></script>
-<script src="js/swiper.min.js"></script>
+<!--<script src="js/swiper.min.js"></script>-->
 <script src='https://www.google.com/recaptcha/api.js'></script>
-
-<script>
+<script src="js/slick.min.js"></script>
+ <script type="text/javascript">
+$(document).ready(function(){
+     $('.your-class').slick({
+			dots: true,
+  			infinite: true,
+  			speed: 300,
+		 	autoplay:true,
+		 	autoplaySpeed:6000,
+		 	arrows:true,
+		 	pauseOnHover:true
+		});
+    });
+  </script>
+<!--<script>
 
 
 	var swiper = new Swiper('.swiper-container',{
     speed: 300,
     autoplay: {delay: 6000},
     loop:4,
-    navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+     navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
   },
+	 
+ 
 
-    preloadImages:true,
-    lazyLoading: true
+   
 
 });
 	var swiper2 = new Swiper('.swiper-container-2',{
@@ -443,6 +470,6 @@ solicitud.</p>
 
 
 });
-</script>
+</script>-->
 
 </html>

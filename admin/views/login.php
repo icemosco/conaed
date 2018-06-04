@@ -27,8 +27,7 @@
 			<input type="password" name="contrasena" id="contrasena" class="" maxlength="20" required />
 			<a href="#" title="" class="rest_pwd">Reestablecer Contraseña</a>
 			<div class="recover_pwd">
-				
-				<input type="email" class="email_rec" name="email" placeholder="introduce tu correo eléctronico"/>
+				<input type="email" class="email_rec" name="email" placeholder="introduce tu correo eléctronico" value="" />
 				<a href="javascript:void(0)" class="recover">Reestablecer</a>
 			</div>
 			<div class="restablecer">

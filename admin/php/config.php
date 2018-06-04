@@ -14,7 +14,6 @@
     $folderAsociados = "/home/ppfbayaa9nb9/public_html/img/asociados/";
 	$folderNoticias = "/home/ppfbayaa9nb9/public_html/img/temas/";
 */
-
     
 	define('DB_HOST','127.0.0.1');
     define('DB_USER','icemosco');

@@ -218,7 +218,7 @@ solicitud.</p>
 			<ul>
 			
 			<li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
-			<li><a href="http://www.conaed.org.mx#proceso_de_acreditacion)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
+			<li><a href="http://www.conaed.org.mx#proceso_de_acreditacion" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
 			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
 			<li><a href="http://www.conaed.org.mx#padron_evaluadores" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
 			<li><a href="http://www.conaed.org.mx#temas" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>
@@ -239,44 +239,6 @@ solicitud.</p>
 
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
-<script>
-	
-/*window.onload = function () {
-$("#pre-load-web").fadeOut(1000,function() { 
- $(this).remove();
- $("body").css({"overflow-y":"auto"}); }); 
-};
-
-/*
-$(document).ready(function(){
-  $("body").css({"overflow-y":"hidden"});
-    var alto=$(window).height();
-    $('body').append('<div id="pre-load-web"><div id="imagen-load"><img src="/img/logo_sasec.png" /><span>Cargando...</span><span><img src="/img/loading_spinner.gif" style="width:50px; height:50px;" alt="" /></span></div></div>');
-    $('#pre-load-web').css({height:alto+"px"}); 
-       
-    $("#imagen-load").css({"margin-top":(alto/2)-30+"px"}); 
-});     
-
-*/
-
-
-	var swiper = new Swiper('.swiper-container',{
-    speed: 300,
-    autoplay: true,
-    loop:4,
-    lazyLoading: true
-
-});
-	var swiper2 = new Swiper('.swiper-container-2',{
-    speed: 200,
-    autoplay: true,
-    loop:true,
-    slidesPerView: 3,
-    lazyLoading: true
-
-
-});
-</script>
 
 </html>
 

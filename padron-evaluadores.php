@@ -79,7 +79,7 @@ span.header_title {width: 520px;display: block;position: absolute;z-index: 4;lef
 		<div class="menu_int_cont">
 			<a href="http://www.conaed.org.mx#padron_evaluadores" class="clr_rose back">Regresar</a>
 			<ul class="update">
-				<li class="calendar">última actualización 02 de Mayo de 2018</li>
+				<li class="calendar">última actualización <?php echo last_update_evaluador()?></li>
 				<li class="clr_rose numreg_total"><? echo padronEvaluadores( '',true ); ?> resultados</li>
 			</ul>
 		</div>
@@ -187,7 +187,7 @@ solicitud.</p>
 			<ul>
 			
 			<li><a href="http://www.conaed.org.mx#quienes_somos" title="quienes_somos" class="btns_menu_footer">Quienes Somos</a></li>
-			<li><a href="http://www.conaed.org.mx#proceso_de_acreditacion)" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
+			<li><a href="http://www.conaed.org.mx#proceso_de_acreditacion" title="proceso_de_acreditación" class="btns_menu_footer">Proceso de Acreditación de los Programas</a></li>
 			<li><a href="http://www.conaed.org.mx#programas_acreditados" title="programas_acreditados" class="btns_menu_footer">Programas Acreditados</a></li>
 			<li><a href="http://www.conaed.org.mx#padron_evaluadores" title="padron_evaluadores" class="btns_menu_footer">Padrón de Evaluadores COPAES / CONAED</a></li>
 			<li><a href="http://www.conaed.org.mx#temas" title="temas" class="btns_menu_footer">Temas y Noticias</a></li>

@@ -1,4 +1,5 @@
-var paginaPrincipal = "http://localhost/conaed_last_250518/admin/views/home.php";
+//var paginaPrincipal = "http://localhost/conaed_last_250518/admin/views/home.php";
+var paginaPrincipal = "http://www.conaed.org.mx/admin/views/home.php";
 $(document).ready(function(){
 	//MENU
 
@@ -878,12 +879,21 @@ $(document).on('click','.fakecheck',function () {
 });
 
 
-/*
+
 $('.rest_pwd').click(function(){
-	//$('recover_pwd').slideDown(500);	
+	$('.recover_pwd').slideDown(500);	
 });
 
-$('.send_rest').click(function(){
-	var email=$(this).parent().find('.email_rec').val('');
-	alert(email);
-});*/
+$('.recover').click(function(){
+	var email=$(this).parent().find('.email_rec').val();
+	if(email!=''){
+	 $.post("../php/recover.php", {email: email}, function(mensaje) {
+		 	$('.restablecer >.txt').hide();
+		  $('.respuesta_res').html(mensaje);
+	 });
+	}else{
+		$('.restablecer >.txt').hide();
+		$('.respuesta_res').html('Debes introducir un correo.');
+	}
+	
+});

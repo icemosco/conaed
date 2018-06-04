@@ -169,12 +169,21 @@ function mostrarSlider(){
     {
 	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
 	    {
-			$rowSliders .= '<div class="swiper-slide">
+			/*$rowSliders .= '<div class="swiper-slide">
 								<div class="screen_slider"></div>
 								<div class="txt1">'.$info['titulo'].'</div>
 								<div class="txt2">'.$info['subtitulo'].'</div>
 								<img src="img/slider/'.$info['img'].'">
-							</div>';
+							</div>';*/
+			$rowSliders.='<div>
+							 <div class="screen_slider"></div>
+							 <div class="txt1">'.$info['titulo'].'</div>
+							 <div class="txt2">'.$info['subtitulo'].'</div>
+							 <img src="img/slider/'.$info['img'].'">
+			
+			</div>
+			
+			';
 		}
 	}
 	return $rowSliders;	
@@ -248,12 +257,13 @@ function mostrarnota_int(){
 	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
 	    {
 			$contenido=$info["contenido"];
-			$contenido = str_replace(PHP_EOL, '<br /><br />', $contenido);
+			 $fecha = date('Y-m-d', strtotime($info['fecha']));
+			//$contenido = str_replace(PHP_EOL, '<br />', $contenido);
 			$rownoticias_int .= '
 									<div class="block_t_int">
 									
 									<h3>'.$info['titulo'].'</h3>
-							 <span class="sub_">'.$info['fecha'].' / Lic. Fernando Peniche</span>
+							 <span class="sub_">'.$fecha.' / Lic. Fernando Peniche</span>
 							 <div class="img_t_int"><img src="img/temas/'.$info['img'].'" alt="" /></div>
 							<p class="nopadding1 int_art">'.$contenido.'</p>
 							<div class="redes_int">
@@ -314,6 +324,38 @@ function mostrartitulos_slider_int(){
 		}
 	}
 	return $rownonot_slide_int;	
+}
+
+
+function last_update_prog(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT last_update FROM programas_1 ORDER BY id_universidad DESC LIMIT 1"; 
+	$regs = $oCnx->query($sql) or die( "Error en last_update_programas ". $oCnx->errno() );
+	$last_update = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			//$fecha = date('Y-m-d', strtotime($info['fecha']));
+			$last_update .=date('Y-m-d', strtotime($info['last_update']));
+		}
+	}
+	return $last_update;	
+}
+function last_update_evaluador(){
+	$oCnx = new DbConnect();
+	$sql  = "SELECT last_update FROM evaluadores ORDER BY id_evaluador DESC LIMIT 1"; 
+	$regs = $oCnx->query($sql) or die( "Error en last_update_programas ". $oCnx->errno() );
+	$last_update = "";
+	if( count($regs) > 0 )
+    {
+	   while( $info = $regs->fetch_array( MYSQLI_ASSOC ) )
+	    {
+			//$fecha = date('Y-m-d', strtotime($info['fecha']));
+			$last_update .=date('Y-m-d', strtotime($info['last_update']));
+		}
+	}
+	return $last_update;	
 }
 
 ?>

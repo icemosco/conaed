@@ -4,7 +4,7 @@
 	include_once("../php/DbConnect.php");
 	include_once("../php/Modelo.php");
 	include_once("../php/ControllerAsociados.php");
-sleep(5);
+
 
 ?>
 
