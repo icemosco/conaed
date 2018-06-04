@@ -444,32 +444,5 @@ $(document).ready(function(){
 		});
     });
   </script>
-<!--<script>
-
-
-	var swiper = new Swiper('.swiper-container',{
-    speed: 300,
-    autoplay: {delay: 6000},
-    loop:4,
-     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-  },
-	 
- 
-
-   
-
-});
-	var swiper2 = new Swiper('.swiper-container-2',{
-    speed: 200,
-    autoplay: true,
-    loop:true,
-    slidesPerView: 3,
-    lazyLoading: true
-
-
-});
-</script>-->
 
 </html>
